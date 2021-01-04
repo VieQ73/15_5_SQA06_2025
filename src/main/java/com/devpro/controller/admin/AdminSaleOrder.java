@@ -53,24 +53,19 @@ public class AdminSaleOrder {
 		saleOrderRepo.save(saleOrderInDP);
 		model.addAttribute("saleorders", saleOrderService.searchAdmin(null));
 		
-//		String emaill = request.getParameter("FRIEND_EMAIL");
-//		MyConstants myConstants = new MyConstants();
-//		myConstants.setFRIEND_EMAIL(emaill);
-//		SimpleMailMessage mess = new SimpleMailMessage();
-//		mess.setTo(myConstants.getFRIEND_EMAIL());
-//		mess.setSubject("Imua.com");
-//		mess.setText("Xin chào! Đây là email từ imua.com Đơn hàng bạn đặt đã được chuyển đi. Vui lòng giữ liên lạc để nhận hàng");
-// 
-//        // Send Message!
-//        this.javaMailSender.send(mess);
 		
-        
-        
-        
+		String email = saleOrderInDP.getUser().getEmail();
+		MyConstants myConstants = new MyConstants();
+		myConstants.setFRIEND_EMAIL(email);
+		SimpleMailMessage mess = new SimpleMailMessage();
+		mess.setTo(myConstants.getFRIEND_EMAIL());
+		mess.setSubject("Xác nhận đơn hàng");
+		mess.setText("Xin chào! Đơn hàng của bạn đã được gửi. Vui lòng giữ liên lạc để nhận hàng. Cảm ơn bạn đã mua"
+				+ "hàng của chúng tôi");
+ 
+        // Send Message!
+        this.javaMailSender.send(mess);
 
-        
-        
-        
 		return "back-end/saleorder";
 	}
 }

@@ -47,7 +47,10 @@
 						<div class="spbc-title">
 							<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
 						</div>
-						<div class="spbc-price">${product.price } đ</div>
+						<div class="spbc-price">
+							<fmt:formatNumber type="number" maxIntegerDigits="13"
+										value="${product.price }" /> đ
+						</div>
 					</div>
 				</c:forEach>
 			</div>

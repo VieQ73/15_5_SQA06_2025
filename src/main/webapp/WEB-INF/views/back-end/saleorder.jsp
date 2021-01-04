@@ -38,6 +38,7 @@
 		<div class="content-main">
 			<div class="row">
 				<div class="col-md-12">
+				
 					<!-- DATA TABLE -->
 					<h3 class="title-5 m-b-35">Danh sách đơn hàng</h3>
 
@@ -63,7 +64,10 @@
 										<td>${saleorder.customerName}</td>
 										<td>${saleorder.customerAddress}</td>
 										<td>${saleorder.phone}</td>
-										<td>${saleorder.total}đ</td>
+										<td>
+											<fmt:formatNumber type="number" maxIntegerDigits="13"
+										value="${saleorder.total}" /> 
+										đ</td>
 										<td>
 											<c:if test="${saleorder.status_ok == 0}">
 												<span class="badge" style="background: red;">Đặt hàng</span>
@@ -80,10 +84,16 @@
 												<span style="color: red;">${saleorder.createdDate}</span>
 											</c:if>
 											<c:if test= "${saleorder.status_ok == 1}">
-												<span style="color: blue;">${saleorder.createdDate}</span>
+												<span style="color: blue;">
+													${saleorder.createdDate}
+												</span>
 											</c:if>
 											<c:if test= "${saleorder.status_ok == 2}">
-												<span style="color: green;">${saleorder.createdDate}</span>
+												<span style="color: green;">
+												
+												${saleorder.createdDate}
+												
+												</span>
 											</c:if>
 										</td>
 										<td>							

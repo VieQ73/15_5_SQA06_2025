@@ -35,8 +35,7 @@
 					<div class="ctgr-content-right col-xl-9">
 						<div class="ctgr-product">
 							<div class="ctgr-product-top">
-								<a href="${pageContext.request.contextPath}/category/${category.seo}"><i class="fas fa-th"></i>${category.name}
-								</a>
+								
 							</div>
 							<div class="ctgr-product-main">
 								<div class="body-main-product">

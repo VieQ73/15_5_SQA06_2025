@@ -18,12 +18,5 @@ public class MyConstants {
 		FRIEND_EMAIL = fRIEND_EMAIL;
 	}
 
-	public static String getMyEmail() {
-		return MY_EMAIL;
-	}
-
-	public static String getMyPassword() {
-		return MY_PASSWORD;
-	}
     
 }

@@ -54,7 +54,11 @@
 										<th scope="row">${loop.index + 1}</th>
 										<td>${item.tenSP }</td>
 										<td>${item.soluong }</td>
-										<td>${item.giaBan }</td>
+										<td>
+											<fmt:formatNumber type="number" maxIntegerDigits="13"
+										value="${item.giaBan }" /> đ
+										
+										</td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -69,11 +73,7 @@
 							<div class="form-group">
 								<label for="name">Tên khách hàng:</label>
 								<input type="text" class="form-control" id="name" name="name">
-							</div>
-							<div class="form-group">
-								<label for="email">Địa chỉ email:</label>
-								<input type="email" class="form-control" id="FRIEND_EMAIL" name="FRIEND_EMAIL">
-							</div>
+							</div>					
 							<div class="form-group">
 								<label for="phone">Điện thoại liên hệ:</label>
 								<input type="text" class="form-control" id="phone" name="phone">

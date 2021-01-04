@@ -111,7 +111,6 @@ public class CartController extends BaseController{
 		
 		
 		String name = request.getParameter("name");
-		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");
 		
@@ -136,7 +135,7 @@ public class CartController extends BaseController{
 		// lưu xong xoá giỏ hàng đi
 		httpSession.removeAttribute("GIO_HANG");
 
-		return "front-end/historyCart";
+		return "redirect:/user/historyCart/?add=success";
 	}
 	
 	@RequestMapping(value = { "/user/historyCart" }, method = RequestMethod.GET)

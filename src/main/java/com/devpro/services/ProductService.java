@@ -89,9 +89,13 @@ public class ProductService {
 	 * @return
 	 */
 	
+	public List<Product> searchProductWithSearch(String s) {
+
+		String sql = "select * from tbl_products where title like '%"+s+"%';";
+		Query query = entityManager.createNativeQuery(sql, Product.class);
+		return query.getResultList();
+	}
 	public List<Product> searchProductWithCate8(int idCate) {
-//		String jpql = "Select caijcungduoc from Product caijcungduoc";
-//		Query query = entityManager.createQuery(jpql, Product.class);
 
 		String sql = "select * from tbl_products where status = 1 and category_id="+idCate+" order by rand() limit 0,8;";
 		

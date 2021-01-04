@@ -100,7 +100,11 @@
 								<tr class="tr-shadow">
 									<td></td>
 									<td style="text-align: right; font-weight: bold;">Tổng tiền:</td>
-									<td >${saleorder.total}đ</td>
+									<td >
+										<fmt:formatNumber type="number" maxIntegerDigits="13"
+										value="${saleorder.total}" /> 
+									
+									đ</td>
 								</tr>
 								<tr>
 									<td></td>

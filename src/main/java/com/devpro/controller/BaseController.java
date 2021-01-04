@@ -16,4 +16,6 @@ public abstract class BaseController {
 	public List<Category> getCategories() {
 		return categoryRepo.findAll();
 	}
+	
+	
 }

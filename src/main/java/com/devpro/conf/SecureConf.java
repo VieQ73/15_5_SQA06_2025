@@ -15,7 +15,7 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 
 @Configuration
 @EnableWebSecurity
-@Order(1)
+
 public class SecureConf extends WebSecurityConfigurerAdapter {
 
 	@Autowired private UserDetailsService userDetailsService;
@@ -28,8 +28,8 @@ public class SecureConf extends WebSecurityConfigurerAdapter {
             .antMatchers("/css/**", "/js/**", "/images/**", "/summernote/**", "/file/upload/**").permitAll()
             
             // thực hiện xác thực với các url kiểu ..../admin/....
-            .antMatchers("/admin/**").hasAnyAuthority("ADMIN")
-//           .antMatchers("/admin/**").authenticated()
+//            .antMatchers("/admin/**").hasAnyAuthority("ADMIN")
+           .antMatchers("/admin/**").authenticated()
             
             .and() // kết hợp với điều kiện.
             .exceptionHandling().accessDeniedHandler(new CustomAccessDeniedHandler())

@@ -63,7 +63,8 @@
 										<td>${historyCart.customerName}</td>
 										<td>${historyCart.customerAddress}</td>
 										<td>${historyCart.phone}</td>
-										<td>${historyCart.total}đ</td>
+										<td><fmt:formatNumber type="number" maxIntegerDigits="13"
+										value="${historyCart.total}" /> đ</td>
 										<td>
 											<c:if test="${historyCart.status_ok == 0}">
 												<span  style="color: red;">${historyCart.createdDate}</span>

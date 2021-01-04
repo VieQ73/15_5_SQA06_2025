@@ -53,7 +53,10 @@
 							</ul>
 							<div class="price">
 								<p class="price-text">Giá bán:</p>
-								<p class="price-num">${product.price } đ</p>
+								<p class="price-num">
+									<fmt:formatNumber type="number" maxIntegerDigits="13"
+										value="${product.price }" /> đ
+								</p>
 							</div>
 							<div class="discount">
 								<p class="discount-text">Mã Code:</p>

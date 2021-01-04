@@ -77,7 +77,11 @@
 								<tr class="tr-shadow">
 									<td></td>
 									<td style="text-align: right; font-weight: bold;">Tổng tiền:</td>
-									<td >${historyCart.total}đ</td>
+									<td >
+									<fmt:formatNumber type="number" maxIntegerDigits="13"
+										value="${historyCart.total}" /> đ
+									
+									</td>
 								</tr>
 								<tr>
 									<td></td>

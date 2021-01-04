@@ -62,7 +62,10 @@
 										<th scope="row">${loop.index + 1}</th>
 										<td style="font-size: 16px;">${product.title}</td>
 										<td>${product.category.name}</td>
-										<td>$${product.price}</td>
+										<td>
+											<fmt:formatNumber type="number" maxIntegerDigits="13"
+										value="${product.price}" /> đ
+										</td>
 										<td>
 											<c:choose>
 												<c:when test="${product.selling}">

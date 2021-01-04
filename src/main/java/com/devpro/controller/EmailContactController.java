@@ -40,9 +40,5 @@ public class EmailContactController {
         return "thành công";
 	}
 	
-	@RequestMapping(value = { "/send-email" }, method = RequestMethod.GET)
-	public String index(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
-			throws Exception {
-		return "front-end/cart";
-	}
+	
 }
