@@ -7,7 +7,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.swing.text.StyledEditorKit.BoldAction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +16,7 @@ import com.devpro.entities.Product;
 import com.devpro.entities.ProductImages;
 import com.devpro.model.ProductSearch;
 import com.devpro.repositories.ProductRepo;
+
 
 @Service // -> Bean
 public class ProductService {
@@ -89,12 +89,16 @@ public class ProductService {
 	 * @return
 	 */
 	
-	public List<Product> searchProductWithSearch(String s) {
-
-		String sql = "select * from tbl_products where title like '%"+s+"%';";
-		Query query = entityManager.createNativeQuery(sql, Product.class);
-		return query.getResultList();
-	}
+	public List<Product> listAll(String keyword) {
+        if (keyword != null) {
+        	String sql = "SELECT * FROM tbl_products WHERE title LIKE '%"+keyword+"%';";
+    		Query query = entityManager.createNativeQuery(sql, Product.class);
+    		return query.getResultList();
+        }
+        return productRepo.findAll();
+    }
+	
+	
 	public List<Product> searchProductWithCate8(int idCate) {
 
 		String sql = "select * from tbl_products where status = 1 and category_id="+idCate+" order by rand() limit 0,8;";

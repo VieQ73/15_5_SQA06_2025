@@ -19,12 +19,13 @@ import com.devpro.services.ProductService;
 public class SearchController extends BaseController{
 	@Autowired 
 	ProductService productService;
-	@RequestMapping(value = { "/productsSerch" }, method = RequestMethod.GET)
-	public String index(@PathVariable("find") String seo,
-			final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
-			throws Exception {
-		List<Product> products = productService.searchProductWithCate(seo);
-		model.addAttribute("product", products);
+	
+	@RequestMapping(value = { "/search" })
+	public String viewHomePage(ModelMap model, final HttpServletRequest request,
+			final HttpServletResponse response) throws Exception {
+        String keyword = request.getParameter("keyword");
+		List<Product> products = productService.listAll(keyword);
+        model.addAttribute("products", products);
 		return "front-end/search";
 	}
 }

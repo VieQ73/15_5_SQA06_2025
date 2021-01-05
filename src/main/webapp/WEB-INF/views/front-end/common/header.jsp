@@ -36,21 +36,23 @@
 			<a href="${pageContext.request.contextPath}/"><img
 				src="${pageContext.request.contextPath}/images/mua-la-co-qua-ok.jpg"></a>
 		</div>
-		<form>
-			<input type="text" class="form-control"
-				placeholder="tìm kiếm sản phẩm...">
-			<button type="submit">
-				<i class="fas fa-search"></i>
-			</button>
-			<div>
+		<div class="search-cart">
+			<form action="${pageContext.request.contextPath}/search" method="post">
+				<input type="text" class="form-control"
+					placeholder="tìm kiếm sản phẩm..." name="keyword" id="keyword">
+				<button type="submit" id="btnClear" onclick="clearSearch()">
+					<i class="fas fa-search"></i>
+				</button>
+			</form>
+			
 				<div class="btn-cart container"  id="cart">
 					<a href="${pageContext.request.contextPath}/cart">
 						<i class="fas fa-shopping-cart "></i><span>(</span><span id="so_luong_sp"></span><span>)</span>
 					</a>
 				</div>
-			</div>
 			
-		</form>
+		</div>
+		
 	</div>
 	<div class="nav1">
 		<nav class="navbar navbar-expand-sm navbar-dark">
@@ -125,4 +127,8 @@
 		</div>
 	</div>
 </div>
-
+<script type="text/javascript">
+    function clearSearch() {
+        window.location = "[[@{/search}]]";
+    }
+</script>

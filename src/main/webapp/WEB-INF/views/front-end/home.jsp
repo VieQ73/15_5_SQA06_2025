@@ -281,43 +281,37 @@
 					<li>
 						<div class="news-img">
 							<a href="#"> <img
-								src="${pageContext.request.contextPath}/images/Cach-tri-seo-lom-thuy-dau-tu-thien-nhien-an-toan-hieu-qua-.jpg">
+								src="${pageContext.request.contextPath}/images/BI-QUYET-TRI-RUNG-TOC-HIEU-QUA-TAI-NHA-.jpg">
 							</a>
 						</div>
 						<div class="news-body">
-							<a href="#"> Cách trị sẹo lõm thủy đậu từ thiên nhiên an
-								toàn, hiệu quả </a>
-							<p>Chúng ta đều biết thủy đậu nếu như không điều trị kịp thời
-								đúng cách thì sẽ gây viêm nhiễm và dễ để lại sẹo lõm. Vậy đâu
-								mới là cách trị sẹo lõm an toàn và hiệu quả</p>
+							<a href="#"> Bí quyết trị rụng tóc hiệu quả tại nhà </a>
+							<p>Trị rụng tóc sẽ đơn giản hơn khi bạn tìm được cho mình được nguyên nhân gây 
+							rụng tóc cũng như biết kết hợp giữa các biện pháp chữa rụng tóc và bổ sung thực phẩm, 
+							chất dinh dưỡng cho tóc.</p>
 						</div>
 					</li>
 					<li>
 						<div class="news-img">
 							<a href="#"> <img
-								src="${pageContext.request.contextPath}/images/Cach-tri-seo-lom-thuy-dau-tu-thien-nhien-an-toan-hieu-qua-.jpg">
+								src="${pageContext.request.contextPath}/images/CACH-CHUA-RUNG-TOC-DAN-GIAN-DON-GIAN-HIEU-QUA-.png">
 							</a>
 						</div>
 						<div class="news-body">
-							<a href="#"> Cách trị sẹo lõm thủy đậu từ thiên nhiên an
-								toàn, hiệu quả </a>
-							<p>Chúng ta đều biết thủy đậu nếu như không điều trị kịp thời
-								đúng cách thì sẽ gây viêm nhiễm và dễ để lại sẹo lõm. Vậy đâu
-								mới là cách trị sẹo lõm an toàn và hiệu quả</p>
+							<a href="#"> Cách chữ rụng tóc dân gian, hiệu quả </a>
+							<p>Khi tình trạng rụng tóc chưa trầm trọng, bạn hãy áp dụng những cách chữa rụng tóc dân gian cùng những mẹo 
+							vặt sau đây để cải thiện tình trạng của mình nhé.</p>
 						</div>
 					</li>
 					<li>
 						<div class="news-img">
 							<a href="#"> <img
-								src="${pageContext.request.contextPath}/images/Cach-tri-seo-lom-thuy-dau-tu-thien-nhien-an-toan-hieu-qua-.jpg">
+								src="${pageContext.request.contextPath}/images/BI-QUYET-CHUA-TOC-RUNG-NHIEU-TU-THIEN-NHIEN-.jpg">
 							</a>
 						</div>
 						<div class="news-body">
-							<a href="#"> Cách trị sẹo lõm thủy đậu từ thiên nhiên an
-								toàn, hiệu quả </a>
-							<p>Chúng ta đều biết thủy đậu nếu như không điều trị kịp thời
-								đúng cách thì sẽ gây viêm nhiễm và dễ để lại sẹo lõm. Vậy đâu
-								mới là cách trị sẹo lõm an toàn và hiệu quả</p>
+							<a href="#"> Bí quyết chữa rụng tóc nhiều từ thiên nhiên </a>
+							<p>Nếu như bạn đang tìm cho mình cách chữa rụng tóc nhiều thì không nên bỏ qua bài viết này nhé!</p>
 						</div>
 					</li>
 				</ul>

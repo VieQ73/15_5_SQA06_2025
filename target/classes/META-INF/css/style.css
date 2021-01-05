@@ -41,9 +41,12 @@ body{
 	left: 200px;
 	bottom: 0px;
 }
-.header-main form{
+.header-main form, .btn-cart{
 	padding-left: 600px;
 	padding-top: 33px;
+	display: flex;
+}
+.header-main .search-cart{
 	display: flex;
 }
 .header-main form button{
@@ -55,7 +58,7 @@ body{
 	background: #fff;
 	border-radius: 5px;
 }
-.header-main form .btn-cart{
+.header-main .search-cart .btn-cart{
 	width: 80px;
 	height: 39px;
 	color: #f27922;
@@ -64,13 +67,15 @@ body{
 	background: #fff;
 	border-radius: 5px;
 }
-.header-main form .btn-cart a{
+.header-main .search-cart .btn-cart a{
 	text-decoration: none;
 	color: #f27922;
 	font-size:20px;
+	margin-top: -30px;
 }
 #cart{
 	margin-left: 50px;
+	margin-top: 33px;
 }
 nav{
 	background: #f27922;

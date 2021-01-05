@@ -18,7 +18,7 @@
 		<jsp:include page="/WEB-INF/views/front-end/common/header.jsp"></jsp:include>
 		<div class="bg">
 			<div class="content">
-				<jsp:include page="/WEB-INF/views/front-end/common/banner.jsp"></jsp:include>
+				
 				</div> 
 				<!-- end banner -->
 				<div class="ctgr-content">
