@@ -14,7 +14,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Admin</title>
+<title>Admin list category</title>
 <meta charset="utf-8">
 <jsp:include page="/WEB-INF/views/back-end/commonAdmin/css.jsp"></jsp:include>
 <style type="text/css">
@@ -98,9 +98,9 @@
 													</button>
 												</a>
 												<a href="#" data-target="#deleteAjax" data-toggle="modal">
-													 <button type="button" class="item"  data-toggle="modal" data-target="#myModal">
+													 <button type="button" class="item"  data-toggle="modal" data-target="#myModal" onclick="Productjs.deleteProduct(${product.id});">
 													 	<i class="far fa-trash-alt"></i>
-													 </button>
+													 </button></a>
 													<div class="modal fade" id="myModal" role="dialog">
 													    <div class="modal-dialog">
 													      <!-- Modal content-->
@@ -113,14 +113,13 @@
 													          <p>Bạn muốn xóa sản phẩm này?</p>
 													        </div>
 													        <div class="modal-footer">
-													          <button type="button" class="btn btn-danger" onclick="Productjs.deleteProduct(${product.id});">Yes</button>
+													          <button type="button" class="btn btn-danger" >Yes</button>
 													          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 													          
 													        </div>
 													      </div>
 													    </div>
 													</div>
-												</a>
 											</div>
 										</td>
 									</tr>

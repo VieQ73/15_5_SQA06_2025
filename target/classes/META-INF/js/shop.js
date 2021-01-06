@@ -16,6 +16,7 @@ var Shop = {
 						//alert(jsonResult.data);
 						
 						$("#so_luong_sp").html(jsonResult.data);
+						alert('Thêm vào giỏ hàng thành công');
 					} else {
 						alert('loi');
 					}

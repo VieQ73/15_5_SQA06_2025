@@ -10,7 +10,7 @@ pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Admin</title>
+	<title>Admin add category</title>
 	<meta charset="utf-8">
 	<jsp:include page="/WEB-INF/views/back-end/commonAdmin/css.jsp"></jsp:include>
 	

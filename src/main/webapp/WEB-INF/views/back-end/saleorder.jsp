@@ -1,3 +1,5 @@
+
+<%@page import="com.ibm.icu.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -14,7 +16,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Admin</title>
+<title>Admin saleorder</title>
 <meta charset="utf-8">
 <jsp:include page="/WEB-INF/views/back-end/commonAdmin/css.jsp"></jsp:include>
 <style type="text/css">
@@ -68,17 +70,7 @@
 											<fmt:formatNumber type="number" maxIntegerDigits="13"
 										value="${saleorder.total}" /> 
 										đ</td>
-										<td>
-											<c:if test="${saleorder.status_ok == 0}">
-												<span class="badge" style="background: red;">Đặt hàng</span>
-											</c:if>
-											<c:if test= "${saleorder.status_ok == 1}">
-												<span class="badge" style="background: blue;">Giao hàng</span>
-											</c:if>
-											<c:if test= "${saleorder.status_ok == 2}">
-												<span class="badge" style="background: green;">Nhận hàng</span>
-											</c:if>
-										</td>
+										
 										<td>
 											<c:if test="${saleorder.status_ok == 0}">
 												<span style="color: red;">${saleorder.createdDate}</span>
@@ -90,10 +82,20 @@
 											</c:if>
 											<c:if test= "${saleorder.status_ok == 2}">
 												<span style="color: green;">
-												
 												${saleorder.createdDate}
-												
 												</span>
+												
+											</c:if>
+										</td>
+										<td>
+											<c:if test="${saleorder.status_ok == 0}">
+												<span class="badge" style="background: red;">Đặt hàng</span>
+											</c:if>
+											<c:if test= "${saleorder.status_ok == 1}">
+												<span class="badge" style="background: blue;">Giao hàng</span>
+											</c:if>
+											<c:if test= "${saleorder.status_ok == 2}">
+												<span class="badge" style="background: green;">Nhận hàng</span>
 											</c:if>
 										</td>
 										<td>							

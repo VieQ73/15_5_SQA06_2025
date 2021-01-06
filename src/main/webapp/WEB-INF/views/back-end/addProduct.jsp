@@ -14,7 +14,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Admin</title>
+<title>Admin add product</title>
 <meta charset="utf-8">
 <jsp:include page="/WEB-INF/views/back-end/commonAdmin/css.jsp"></jsp:include>
 

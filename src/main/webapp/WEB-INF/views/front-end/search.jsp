@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>category</title>
+	<title>Search</title>
 	<meta charset="utf-8">
 	<jsp:include page="/WEB-INF/views/front-end/common/css.jsp"></jsp:include>
 </head>
@@ -23,16 +23,16 @@
 				<!-- end banner -->
 				<div class="ctgr-content">
 					<div class="ctgr-content-left col-xl-3.5">
-						<div class="category">
+						<%-- <div class="category">
 							<div class="category-top">DANH MỤC SẢN PHẨM</div>
 							<ul class="drop-menu">
 								<c:forEach var = "category" items = "${categories }">
 									<li ><a  href="${pageContext.request.contextPath}/category/${category.seo}">${category.name }</a></li>
 								</c:forEach>
 							</ul>
-						</div>
+						</div> --%>
 					</div>
-					<div class="ctgr-content-right col-xl-9">
+					<div class="ctgr-content-right col-xl-12">
 						<div class="ctgr-product">
 							<div class="ctgr-product-top">
 								
@@ -42,7 +42,7 @@
 									<div class="product1">
 										<div class="row">
 											<c:forEach var = "product" items = "${products }">				
-												<div class="col-lg-4 col-md-6 mb-4 product-cate">
+												<div class="col-lg-3 col-md-6 mb-4 product-cate">
 													<div class="card h-100">
 														<div class="product-img">
 															<a href="${pageContext.request.contextPath}/products/${product.seo }">

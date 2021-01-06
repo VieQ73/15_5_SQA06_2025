@@ -54,7 +54,7 @@ public class AdminSaleOrder {
 		model.addAttribute("saleorders", saleOrderService.searchAdmin(null));
 		
 		
-		String email = saleOrderInDP.getUser().getEmail();
+		String email = saleOrderInDP.getEmail();
 		MyConstants myConstants = new MyConstants();
 		myConstants.setFRIEND_EMAIL(email);
 		SimpleMailMessage mess = new SimpleMailMessage();

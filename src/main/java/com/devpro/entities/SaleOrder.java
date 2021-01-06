@@ -24,13 +24,29 @@ public class SaleOrder extends BaseEntity {
 	private BigDecimal total;
 
 	
+	
+	
 	/*
-	 * @Column(name = "user_id") private Integer user_id;
+	 * @Column(name = "user_id") private Integer user_id= 8;
 	 */
+	
+	 
 	
 	@Column(name = "phone")
 	private String phone;
 	
+	@Column(name = "email")
+	private String email;
+	
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Column(name = "customer_name")
 	private String customerName;
 

@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>products</title>
+	<title>History Cart Detail</title>
 	<meta charset="utf-8">
 	<jsp:include page="/WEB-INF/views/front-end/common/css.jsp"></jsp:include>
 </head>

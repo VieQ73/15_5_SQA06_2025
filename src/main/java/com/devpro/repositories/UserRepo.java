@@ -4,8 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.devpro.entities.SaleOrder;
+import com.devpro.entities.User;
 
 @Repository
-public interface UserRepo extends JpaRepository<SaleOrder, Integer> {
+public interface UserRepo extends JpaRepository<User, Integer> {
 
 }

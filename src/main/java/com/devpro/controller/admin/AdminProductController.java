@@ -57,7 +57,7 @@ public class AdminProductController extends BaseController {
 		String messsage = request.getParameter("add");
 		if (messsage != null && messsage.equalsIgnoreCase("success")) {
 			model.addAttribute("messsage", "<div class=\"alert alert-success\">"
-					+ "  <strong>Success!</strong> Thêm mới thành công." + "</div>");
+					+ "  <strong>Success!</strong> Cập nhật thành công." + "</div>");
 		}
 		model.addAttribute("products", productService.searchAdmin(null));
 		return "back-end/listProducts";
@@ -75,7 +75,10 @@ public class AdminProductController extends BaseController {
 			final HttpServletResponse response, @RequestBody Product product) {
 		
 		Product productInDB = productRepo.getOne(product.getId());
-		productInDB.setStatus(false);
+		if(productInDB.getStatus())
+			productInDB.setStatus(false);
+		else
+			productInDB.setStatus(true);
 		productRepo.save(productInDB);
 		return ResponseEntity.ok(new AjaxResponse(200, "Xóa thành công"));
 	}

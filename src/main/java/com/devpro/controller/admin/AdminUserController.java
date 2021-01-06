@@ -22,7 +22,7 @@ public class AdminUserController {
 	public String user(final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception{
 		model.addAttribute("users", userService.searchUser(null));
-		
+
 		return "back-end/listUser";
 	}
 }

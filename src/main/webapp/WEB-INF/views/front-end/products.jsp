@@ -70,7 +70,7 @@
 							<div class="dathang">
 								<input type="number" id="soluongdat" value="1">
 						
-								<button type="button" class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, parseInt($('#soluongdat').val()));"><i class="fas fa-cart-plus"></i>Thêm Vào Giỏ Hàng</button>
+								<button type="button" class="btn btn-warning addhi" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, parseInt($('#soluongdat').val()));"><i class="fas fa-cart-plus"></i>Thêm Vào Giỏ Hàng</button>
 							</div>
 							<div class="bonus">
 								<p class="bonus-top">Quà tặng khi mua sản phầm</p>
@@ -172,6 +172,9 @@
 				bigImg.innerHTML = "<img src ="+ imgSrc+">";
 			});
 		}
+		
+		
+		
 	});
 	</script>
 </body>

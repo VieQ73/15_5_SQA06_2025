@@ -91,7 +91,7 @@ public class ProductService {
 	
 	public List<Product> listAll(String keyword) {
         if (keyword != null) {
-        	String sql = "SELECT * FROM tbl_products WHERE title LIKE '%"+keyword+"%';";
+        	String sql = "SELECT * FROM tbl_products WHERE title LIKE '%"+keyword+"%' order by rand()";
     		Query query = entityManager.createNativeQuery(sql, Product.class);
     		return query.getResultList();
         }

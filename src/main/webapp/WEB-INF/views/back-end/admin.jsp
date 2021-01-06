@@ -37,7 +37,7 @@ pageEncoding="UTF-8"%>
 		<!-- //header-ends -->
 		<!-- main content start-->
 		<div class="content-main">
-			<p><%= getEmailLogined()%></p>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9704.935602631624!2d105.77083744403993!3d21.040828268014636!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x70d71b071349fa94!2zQ8O0bmcgVHkgQ-G7lSBQaOG6p24gRGV2cHJvIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1609826238547!5m2!1svi!2s" width="100%" height="700" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 		</div>
 	</div>
 	<jsp:include page="/WEB-INF/views/back-end/commonAdmin/footer.jsp"></jsp:include>

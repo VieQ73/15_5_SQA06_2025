@@ -14,7 +14,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Admin</title>
+<title>Admin list user</title>
 <meta charset="utf-8">
 <jsp:include page="/WEB-INF/views/back-end/commonAdmin/css.jsp"></jsp:include>
 <style type="text/css">

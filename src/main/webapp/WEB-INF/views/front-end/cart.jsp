@@ -24,7 +24,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>products</title>
+	<title>Cart</title>
 	<meta charset="utf-8">
 	<jsp:include page="/WEB-INF/views/front-end/common/css.jsp"></jsp:include>
 </head>
@@ -79,13 +79,18 @@
 								<input type="text" class="form-control" id="phone" name="phone">
 							</div>
 							<div class="form-group">
+								<label for="email">Email:</label>
+								<input type="text" class="form-control" id="email" name=email>
+							</div>
+							<div class="form-group">
 								<label for="address">Địa chỉ giao hàng:</label>
 								<input type="text" class="form-control" id="address" name="address">
 							</div>
+							
 							<button type="submit" class="btn btn-warning">Gửi đơn hàng</button>
 						</form>
 					</div>
-					<div class="col mb-6 col-lg-6">
+					<div class="col mb-6 col-lg-6" style="padding-top: 50px;">
 						<%-- <form action="${pageContext.request.contextPath}/send-email" method="post">
 							<div class="form-group">
 								<label for="email">Địa chỉ email:</label>
@@ -93,7 +98,8 @@
 							</div>
 							<button type="submit" class="btn btn-warning">Send</button>
 						</form> --%>
-						<a class="btn btn-success" href="${pageContext.request.contextPath}/user/historyCart">Lịch sử mua hàng</a>
+						<a class="btn btn-success" style="margin-left:50px" href="${pageContext.request.contextPath}/user/historyCart">Lịch sử mua hàng</a>
+						<button style="margin-left:30px" class="btn btn-info" onclick="quay_lai_trang_truoc()">Tiếp tục mua hàng</button>
 					</div>
 				</div>
 				
@@ -106,5 +112,10 @@
 		<jsp:include page="/WEB-INF/views/front-end/common/footer.jsp"></jsp:include>
 	</div>
 	<jsp:include page="/WEB-INF/views/front-end/common/js.jsp"></jsp:include>
+	 <script>
+      function quay_lai_trang_truoc(){
+          history.back();
+      }
+  </script>
 </body>
 </html>

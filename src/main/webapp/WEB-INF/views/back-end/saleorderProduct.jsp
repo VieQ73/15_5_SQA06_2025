@@ -14,7 +14,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Admin</title>
+<title>Admin saleorder detail</title>
 <meta charset="utf-8">
 <jsp:include page="/WEB-INF/views/back-end/commonAdmin/css.jsp"></jsp:include>
 
@@ -64,6 +64,10 @@
 						<td><span>${saleorder.phone}</span></td>
 					</tr>
 					<tr>
+						<td>Email:</td>
+						<td><span>${saleorder.email }</span></td>
+					</tr>
+					<tr>
 						<td>Ngày:</td>
 						<td>
 							<c:if test="${saleorder.status_ok == 0}">
@@ -89,22 +93,22 @@
 									<th>Số lượng</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody >
 								<c:forEach var="saleorderproduct" items="${saleorderproducts }" varStatus="loop">
-									<tr class="tr-shadow">
+									<tr class="tr-shadow" >
 										<th scope="row">${loop.index + 1}</th>
-										<td>${saleorderproduct.product.title}</td>
-										<td>${saleorderproduct.quality}</td>
+										<td style="font-size: 18px;">${saleorderproduct.product.title}</td>
+										<td style="font-size: 18px;">${saleorderproduct.quality}</td>
 									</tr>
 								</c:forEach>
 								<tr class="tr-shadow">
 									<td></td>
-									<td style="text-align: right; font-weight: bold;">Tổng tiền:</td>
-									<td >
-										<fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${saleorder.total}" /> 
+									<td style="text-align: right; font-weight: bold; font-size: 18px;">Tổng tiền:</td>
+									<td style="font-size: 18px; font-weight: bold;">
+										<span class="badge" style="font-size: 18px; font-weight: bold;"><fmt:formatNumber type="number" maxIntegerDigits="13"
+										value="${saleorder.total}" /></span>đ
 									
-									đ</td>
+									</td>
 								</tr>
 								<tr>
 									<td></td>

@@ -27,6 +27,7 @@ import com.devpro.entities.Product;
 import com.devpro.entities.ProductInCart;
 import com.devpro.entities.SaleOrder;
 import com.devpro.entities.SaleOrderProducts;
+import com.devpro.entities.User;
 import com.devpro.model.AjaxResponse;
 import com.devpro.repositories.ProductRepo;
 import com.devpro.repositories.SaleOrderRepo;
@@ -113,7 +114,7 @@ public class CartController extends BaseController{
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");
-		
+		String email = request.getParameter("email");
 		
 		
 		SaleOrder saleOrder = new SaleOrder();
@@ -122,6 +123,8 @@ public class CartController extends BaseController{
 		saleOrder.setCustomerName(name);
 		saleOrder.setCustomerAddress(address);
 		saleOrder.setPhone(phone);
+		saleOrder.setEmail(email);
+		saleOrder.setUser(userRepo.getOne(8));
 		saleOrder.setTotal(gioHang.getTotal(productRepo));
 		
 		for(ProductInCart sanPhamTrongGioHang : gioHang.getSanPhamTrongGioHangs()) {
