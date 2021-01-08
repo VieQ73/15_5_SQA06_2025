@@ -1,5 +1,7 @@
 package com.devpro.controller.admin;
 
+import java.time.LocalDateTime;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -46,6 +48,7 @@ public class AdminProductController extends BaseController {
 		Slugify slg = new Slugify();
 		String result = slg.slugify(product.getTitle() + "-" + System.currentTimeMillis());
 		product.setSeo(result);
+		product.setCreatedDate(LocalDateTime.now());
 		productService.save(productImages, product);
 		return "redirect:/admin/listProducts/?add=success";
 	}

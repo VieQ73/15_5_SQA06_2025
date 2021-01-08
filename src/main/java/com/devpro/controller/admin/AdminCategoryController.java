@@ -1,5 +1,7 @@
 package com.devpro.controller.admin;
 
+import java.time.LocalDateTime;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -43,6 +45,7 @@ public class AdminCategoryController {
 		Slugify slg = new Slugify();
 		String result = slg.slugify(category.getName() + "-" + System.currentTimeMillis());
 		category.setSeo(result);
+		category.setCreatedDate(LocalDateTime.now());
 		categoryService.save(category);
 		return "redirect:/admin/listCategory/?add=success";
 	}
@@ -55,7 +58,7 @@ public class AdminCategoryController {
 		String messsage = request.getParameter("add");
 		if (messsage != null && messsage.equalsIgnoreCase("success")) {
 			model.addAttribute("messsage", "<div class=\"alert alert-success\">"
-					+ "  <strong>Success!</strong> Thêm mới thành công." + "</div>");
+					+ "  <strong>Success!</strong> Cập nhật thành công." + "</div>");
 		}
 		model.addAttribute("categorys", categoryService.searchAdmin(null));
 		return "back-end/listCategory";

@@ -2,6 +2,7 @@ package com.devpro.services;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -47,7 +48,7 @@ public class ProductService {
 		if(product.getId() != null) { // chỉnh sửa
 			// lấy dữ liệu cũ của sản phẩm
 			Product productInDb = productRepo.findById(product.getId()).get();
-			
+			product.setUpdatedDate(LocalDateTime.now());
 			if(!isEmptyUploadFile(productImages)) { // nếu admin sửa ảnh sản phẩm
 				// lấy danh sách ảnh cũ của sản phẩm
 				List<ProductImages> oldProductImages = productInDb.getProductImages();
@@ -62,8 +63,8 @@ public class ProductService {
 				
 			} else { // ảnh phải giữ nguyên
 				product.setProductImages(productInDb.getProductImages());
+				product.setCreatedDate(productInDb.getCreatedDate());
 			}
-			
 		}
 		
 		if(!isEmptyUploadFile(productImages)) { // có upload ảnh lên.
@@ -162,8 +163,7 @@ public class ProductService {
 	}
 	
 	public List<Product> searchAdmin(final ProductSearch productSearch) {
-//		String jpql = "Select caijcungduoc from Product caijcungduoc";
-//		Query query = entityManager.createQuery(jpql, Product.class);
+
 
 		String sql = "select * from tbl_products where 1=1";
 
@@ -174,11 +174,12 @@ public class ProductService {
 			sql = sql + " and id=" + productSearch.getId();
 		}
 		if(productSearch != null && productSearch.getSeoProduct() != null) {
-			sql = sql + " and seo='"+productSearch.getSeoProduct()+"';";
+			sql = sql + " and seo='"+productSearch.getSeoProduct()+"'";
 		}
 		if(productSearch != null && productSearch.getSeoCategoty() != null) {
 			sql = sql + " and category_id in (select id from tbl_category where seo='"+productSearch.getSeoCategoty()+"')";
 		}
+		sql = sql + " order by updated_date desc;";
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		
 		return query.getResultList();

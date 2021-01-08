@@ -39,7 +39,7 @@ public class CategoryController extends BaseController {
 
 		ProductSearch productSearch = new ProductSearch();
 		productSearch.setSeoCategoty(seo);
-
+		
 		
 		Integer currentPage = 0; String strCurrentPage =
 		request.getParameter("page");

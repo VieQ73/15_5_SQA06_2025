@@ -22,7 +22,7 @@ public class SaleOrderService {
 	public List<SaleOrder> searchAdmin(final SaleOrder saleOrder) {
 
 
-		String sql = "select * from tbl_saleorder where 1=1";
+		String sql = "select * from tbl_saleorder where 1=1 order by created_date desc";
 		Query query = entityManager.createNativeQuery(sql, SaleOrder.class);
 		
 		return query.getResultList();
@@ -31,6 +31,15 @@ public class SaleOrderService {
 
 
 		String sql = "select * from tbl_saleorder where user_id="+id;
+		Query query = entityManager.createNativeQuery(sql, SaleOrder.class);
+		
+		return query.getResultList();
+	}
+	
+	public List<SaleOrder> searchUserNamme(String name) {
+
+
+		String sql = "select * from tbl_saleorder where user_id=(select id from tbl_users where username = '"+name+"') order by created_date desc";
 		Query query = entityManager.createNativeQuery(sql, SaleOrder.class);
 		
 		return query.getResultList();

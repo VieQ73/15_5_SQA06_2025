@@ -1,6 +1,7 @@
 package com.devpro.controller;
 
 import java.io.IOException;
+import java.security.Principal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -143,9 +144,9 @@ public class CartController extends BaseController{
 	
 	@RequestMapping(value = { "/user/historyCart" }, method = RequestMethod.GET)
 	public String saveProduct(final ModelMap model, final HttpServletRequest request,
-			final HttpServletResponse response) throws Exception {
-		
-		model.addAttribute("historyCarts", saleOrderService.searchUser(8));
+			final HttpServletResponse response, Principal principal) throws Exception {
+		String name = principal.getName();
+		model.addAttribute("historyCarts", saleOrderService.searchUserNamme(name));
 		return "front-end/historyCart";
 	}
 	

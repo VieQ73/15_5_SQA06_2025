@@ -30,7 +30,7 @@ public class SecureConf extends WebSecurityConfigurerAdapter {
             // thực hiện xác thực với các url kiểu ..../admin/....
             .antMatchers("/admin/**").hasAnyAuthority("ADMIN")
 //           .antMatchers("/admin/**").authenticated()
-            
+            .antMatchers("/user/**").hasAnyAuthority("USER", "ADMIN")
             .and() // kết hợp với điều kiện.
             .exceptionHandling().accessDeniedHandler(new CustomAccessDeniedHandler())
 			.and()
