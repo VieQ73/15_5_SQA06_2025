@@ -8,10 +8,43 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
+
+
+
+
+
+
+
+
+
 <head>
 	<title>Home</title>
 	<meta charset="utf-8">
 	<jsp:include page="/WEB-INF/views/front-end/common/css.jsp"></jsp:include>
+	<style type="text/css">
+		.sale{
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			z-index: 2;
+			animation: xoayvong 3s linear 0s infinite;
+		    -webkit-animation: xoayvong 3s linear 0s infinite;
+		    -moz-animation: xoayvong 3s linear 0s infinite;
+		    -o-animation: xoayvong 3s linear 0s infinite;
+		}
+		@-webkit-keyframes xoayvong{
+			from{
+			        -webkit-transform:rotateY(0deg);
+			        -moz-transform:rotateY(0deg);
+			        -o-transform:rotateY(0deg);
+			    }
+		    to{
+			        -webkit-transform:rotateY(360deg);
+			        -moz-transform:rotateY(360deg);
+			        -o-transform:rotateY(360deg);
+			}
+		}
+	</style>
 </head>
 <body>
 
@@ -30,9 +63,56 @@
 		<div class="spbc">
 			<div class="spbc-top">SẢN PHẨM BÁN CHẠY</div>
 			<div class="spbc-main">
+			
+				<%-- <div class="container-fluid" >
+						    <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="900000">
+						        <div class="carousel-inner row w-100 mx-auto" role="listbox">
+						            <c:forEach var = "product" items = "${productSelling }">
+						            <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-2 active">
+										
+											<div class="spbc-img ">
+												<a href="${pageContext.request.contextPath}/products/${product.seo }">
+													<c:choose>
+														<c:when test = "${empty product.productImages }">
+															<img class="card-img-top" src="http://placehold.it/700x400" alt="">
+														</c:when>
+														<c:otherwise>
+															<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${product.productImages.get(0).path }" alt="">
+														</c:otherwise>
+													</c:choose>
+												</a>
+												<div class="spbc-addcart">
+													<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
+												</div>
+											</div>
+											<div class="spbc-title">
+												<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
+											</div>
+											<div class="spbc-price">
+												<fmt:formatNumber type="number" maxIntegerDigits="13"
+															value="${product.price }" /> đ
+											</div>
+										
+										</div>
+									</c:forEach>
+						        </div>
+						        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+						            <i class="fa fa-chevron-left fa-lg text-muted"></i>
+						            <span class="sr-only">Previous</span>
+						        </a>
+						        <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
+						            <i class="fa fa-chevron-right fa-lg text-muted"></i>
+						            <span class="sr-only">Next</span>
+						        </a>
+						    </div>
+						</div> --%>
+			
 				<c:forEach var = "product" items = "${productSelling }">
 					<div class="spbc-body">
-						<div class="spbc-img">
+						<c:if test="${product.saleoff != 0 }">
+							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
+						</c:if>
+						<div class="spbc-img ">
 							<a href="${pageContext.request.contextPath}/products/${product.seo }">
 								<c:choose>
 									<c:when test = "${empty product.productImages }">
@@ -43,6 +123,9 @@
 									</c:otherwise>
 								</c:choose>
 							</a>
+							<div class="spbc-addcart">
+								<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
+							</div>
 						</div>
 						<div class="spbc-title">
 							<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
@@ -81,6 +164,9 @@
 						<c:forEach var = "product" items = "${products }">				
 							<div class="col-xl-3">
 								<div class="card h-100 product-home">
+								<c:if test="${product.saleoff != 0 }">
+							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
+						</c:if>
 									<div class="product-img">
 										<a href="${pageContext.request.contextPath}/products/${product.seo }">
 											<c:choose>
@@ -92,12 +178,16 @@
 											</c:otherwise>
 										</c:choose>
 										</a>
+										<div class="product-addcart">
+											<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
+										</div>
 									</div>
 									<div class="card-body">
 										<div class="product-title">
 											<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
 										</div>
-										<div class="product-price">${product.price } đ</div>
+										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
+										value="${product.price }" /> đ</div>
 									</div>
 								</div>
 							</div>
@@ -131,6 +221,9 @@
 						<c:forEach var = "product" items = "${products2 }">				
 							<div class="col-xl-3">
 								<div class="card h-100 product-home">
+								<c:if test="${product.saleoff != 0 }">
+							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
+						</c:if>
 									<div class="product-img">
 										<a href="${pageContext.request.contextPath}/products/${product.seo }">
 											<c:choose>
@@ -142,12 +235,16 @@
 											</c:otherwise>
 										</c:choose>
 										</a>
+										<div class="product-addcart">
+											<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
+										</div>
 									</div>
 									<div class="card-body">
 										<div class="product-title">
 											<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
 										</div>
-										<div class="product-price">${product.price } đ</div>
+										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
+										value="${product.price }" /> đ</div>
 									</div>
 								</div>
 							</div>
@@ -181,6 +278,9 @@
 						<c:forEach var = "product" items = "${products3 }">				
 							<div class="col-xl-3">
 								<div class="card h-100 product-home">
+								<c:if test="${product.saleoff != 0 }">
+							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
+						</c:if>
 									<div class="product-img">
 										<a href="${pageContext.request.contextPath}/products/${product.seo }">
 											<c:choose>
@@ -192,12 +292,16 @@
 											</c:otherwise>
 										</c:choose>
 										</a>
+										<div class="product-addcart">
+											<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
+										</div>
 									</div>
 									<div class="card-body">
 										<div class="product-title">
 											<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
 										</div>
-										<div class="product-price">${product.price } đ</div>
+										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
+										value="${product.price }" /> đ</div>
 									</div>
 								</div>
 							</div>
@@ -231,6 +335,9 @@
 						<c:forEach var = "product" items = "${products4 }">				
 							<div class="col-xl-3">
 								<div class="card h-100 product-home">
+								<c:if test="${product.saleoff != 0 }">
+							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
+						</c:if>
 									<div class="product-img">
 										<a href="${pageContext.request.contextPath}/products/${product.seo }">
 											<c:choose>
@@ -242,12 +349,16 @@
 											</c:otherwise>
 										</c:choose>
 										</a>
+										<div class="product-addcart">
+											<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
+										</div>
 									</div>
 									<div class="card-body">
 										<div class="product-title">
 											<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
 										</div>
-										<div class="product-price">${product.price } đ</div>
+										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
+										value="${product.price }" /> đ</div>
 									</div>
 								</div>
 							</div>
@@ -258,7 +369,7 @@
 		</div>
 		<!-- end body product -->
 		<div class="banner-up">
-			<img src="images/2.jpg">
+			<img src="images/2new.jpg">
 		</div>
 		<div class="news">
 			<div class="news-top">TIN NỔI BẬT</div>
@@ -322,6 +433,7 @@
 		<jsp:include page="/WEB-INF/views/front-end/common/footer.jsp"></jsp:include>
 	</div>
 	<jsp:include page="/WEB-INF/views/front-end/common/js.jsp"></jsp:include>
-
+	<script type="text/javascript" src="https://sites.google.com/site/iristipsblogger/file/hoamai-hoadao.js"></script>
+	
 </body>
 </html>

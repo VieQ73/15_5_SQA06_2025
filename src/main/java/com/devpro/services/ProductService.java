@@ -14,9 +14,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.devpro.entities.Product;
-import com.devpro.entities.ProductImages;
+import com.devpro.entities.Images;
 import com.devpro.model.ProductSearch;
 import com.devpro.repositories.ProductRepo;
+import com.taglib.PaginationTaglib;
 
 
 @Service // -> Bean
@@ -48,14 +49,17 @@ public class ProductService {
 		if(product.getId() != null) { // chỉnh sửa
 			// lấy dữ liệu cũ của sản phẩm
 			Product productInDb = productRepo.findById(product.getId()).get();
-			product.setUpdatedDate(LocalDateTime.now());
+			java.util.Calendar cal = java.util.Calendar.getInstance();
+			java.util.Date d = cal.getTime();
+			product.setUpdatedDate(d);
+			product.setAmount(product.getAmount() + productInDb.getAmount());
 			if(!isEmptyUploadFile(productImages)) { // nếu admin sửa ảnh sản phẩm
 				// lấy danh sách ảnh cũ của sản phẩm
-				List<ProductImages> oldProductImages = productInDb.getProductImages();
+				List<Images> oldProductImages = productInDb.getProductImages();
 				
 				// xoá ảnh cũ trên vật lí(host)
-				for(ProductImages _images : oldProductImages) {
-					new File("E:\\java\\template\\imua.com\\upload\\" + _images.getPath()).delete();
+				for(Images _images : oldProductImages) {
+					new File("E:\\java\\template\\BeautyShop\\upload\\" + _images.getPath()).delete();
 				}
 				
 				// xoá ảnh trên database
@@ -71,9 +75,9 @@ public class ProductService {
 			for(MultipartFile productImage : productImages) {
 				
 				// lưu vật lí
-				productImage.transferTo(new File("E:\\java\\template\\imua.com\\upload\\" + productImage.getOriginalFilename()));
+				productImage.transferTo(new File("E:\\java\\template\\BeautyShop\\upload\\" + productImage.getOriginalFilename()));
 				
-				ProductImages _productImages = new ProductImages();
+				Images _productImages = new Images();
 				_productImages.setPath(productImage.getOriginalFilename());
 				_productImages.setTitle(productImage.getOriginalFilename());
 				product.addProductImages(_productImages);
@@ -108,7 +112,8 @@ public class ProductService {
 		
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		return query.getResultList();
-	}public List<Product> searchProductWithCate(String seo) {
+	}
+	public List<Product> searchProductWithCate(String seo) {
 //		String jpql = "Select caijcungduoc from Product caijcungduoc";
 //		Query query = entityManager.createQuery(jpql, Product.class);
 
@@ -138,11 +143,13 @@ public class ProductService {
 			sql = sql + " and category_id in (select id from tbl_category where seo='"+productSearch.getSeoCategoty()+"')";
 		}
 		Query query = entityManager.createNativeQuery(sql, Product.class);
-		
-		if(productSearch.getCurrentPage() != null && productSearch.getCurrentPage() > 0){
-			query.setFirstResult((productSearch.getCurrentPage()-1) * ProductSearch.SIZE_ITEMS_ON_PAGE);
-			query.setMaxResults(ProductSearch.SIZE_ITEMS_ON_PAGE); 
+		//page
+		if(productSearch.getOffset() != null) {
+			productSearch.setCount(query.getResultList().size());
+			query.setFirstResult(productSearch.getOffset());
+			query.setMaxResults(PaginationTaglib.MAX);
 		}
+		
 		return query.getResultList();
 	}
 	
@@ -156,12 +163,24 @@ public class ProductService {
 	}
 	public List<Product> searchPrSelling2(final ProductSearch productSearch) {
 
-		String sql = "select * from tbl_products where status=true and selling = true order by rand() limit 0,6;";
+		String sql = "select * from tbl_products where status=true order by selling DESC limit 0,6;";
 
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		return query.getResultList();
 	}
 	
+	public List<Product> searchSaleOff(final ProductSearch productSearch){
+		String sql="select * from tbl_products where status = true and saleoff <> 0";
+		Query query = entityManager.createNativeQuery(sql, Product.class);
+		//page
+		/*
+		 * if(productSearch.getOffset() != null) {
+		 * productSearch.setCount(query.getResultList().size());
+		 * query.setFirstResult(productSearch.getOffset());
+		 * query.setMaxResults(PaginationTaglib.MAX); }
+		 */
+		return query.getResultList();
+	}
 	public List<Product> searchAdmin(final ProductSearch productSearch) {
 
 

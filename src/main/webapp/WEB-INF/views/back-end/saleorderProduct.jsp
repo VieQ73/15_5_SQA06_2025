@@ -81,6 +81,10 @@
 							</c:if>
 						</td>
 					</tr>
+					<tr>
+						<td>Ghi chú:</td>
+						<td><span>${saleorder.note}</span></td>
+					</tr>
 					</table>
 					<h2 class="title-5 m-b-35">Chi tiết đơn hàng:</h2>
 					<div class="table-responsive table-responsive-data2">
@@ -90,6 +94,7 @@
 								<tr>
 									<th>#</th>
 									<th>Sản phẩm</th>
+									<th>Hình ảnh</th>
 									<th>Số lượng</th>
 								</tr>
 							</thead>
@@ -98,22 +103,35 @@
 									<tr class="tr-shadow" >
 										<th scope="row">${loop.index + 1}</th>
 										<td style="font-size: 18px;">${saleorderproduct.product.title}</td>
+										<td>
+											<c:choose>
+											<c:when test = "${empty saleorderproduct.product.productImages }">
+												<img style="width: 70px; height: 90px;" src="http://placehold.it/700x400" alt="">
+											</c:when>
+											<c:otherwise>
+												<img style="width: 70px; height: 90px;" src="${pageContext.request.contextPath}/file/upload/${saleorderproduct.product.productImages.get(0).path }" alt="">
+											</c:otherwise>
+											</c:choose>
+										</td>
 										<td style="font-size: 18px;">${saleorderproduct.quality}</td>
 									</tr>
 								</c:forEach>
 								<tr class="tr-shadow">
 									<td></td>
+									<td></td>
 									<td style="text-align: right; font-weight: bold; font-size: 18px;">Tổng tiền:</td>
 									<td style="font-size: 18px; font-weight: bold;">
-										<span class="badge" style="font-size: 18px; font-weight: bold;"><fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${saleorder.total}" /></span>đ
+										<span class="badge" style="font-size: 18px; font-weight: bold; margin-right: 10px;"><fmt:formatNumber type="number" maxIntegerDigits="13"
+										value="${saleorder.total}" /></span>VNĐ
 									
 									</td>
 								</tr>
 								<tr>
 									<td></td>
 									<td></td>
+									<td></td>
 									<td>
+										<a style="margin-right: 30px;" class="btn btn-danger" href="#">Hủy</a>
 										<c:if test="${saleorder.status_ok == 0}">
 											<a class="btn btn-primary" 
 											href="${pageContext.request.contextPath}/confirm_saleProduct/${saleorder.id}">Xác nhận</a>

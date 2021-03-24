@@ -33,9 +33,7 @@ body{
 	margin: auto;
 	position: relative;
 }
-.logo1 img{
-	padding-top: 45px;
-}
+
 .logo2 img{
 	position: absolute;
 	left: 200px;
@@ -52,7 +50,7 @@ body{
 .header-main form button{
 	width: 90px;
 	height: 39px;
-	color: #f27922;
+	color: #ed68c1;
 	font-size: 20px;
 	border: 1px solid #bbbbbb;
 	background: #fff;
@@ -61,24 +59,38 @@ body{
 .header-main .search-cart .btn-cart{
 	width: 80px;
 	height: 39px;
-	color: #f27922;
+	color: #ed68c1;
 	font-size: 20px;
 	border: 1px solid #bbbbbb;
 	background: #fff;
 	border-radius: 5px;
 }
+.search-cart{
+	display: flex;
+	margin-left: -100px;
+}
 .header-main .search-cart .btn-cart a{
 	text-decoration: none;
-	color: #f27922;
+	color: #ed68c1;
 	font-size:20px;
 	margin-top: -30px;
 }
-#cart{
+.sign-in-out{
+	width: 80px;
+	height: 39px;
+	color: #f27922;
+	font-size: 20px;
 	margin-left: 50px;
+	background: #fff;
 	margin-top: 33px;
+	display: flex;
 }
+.sign-in-out p{
+	margin-right: 10px; 
+}
+
 nav{
-	background: #f27922;
+	background: #ed68c1;
 }
 nav ul{
 	width: 1200px;
@@ -199,14 +211,14 @@ nav ul li a:hover{
 }
 .fotten4{
 	margin-left: 60px;
-	z-index:2;
+	z-index:2; 
 }
 .line-bottom{
-	width: 1200px;
+	width: 100%;
 	margin: auto;
-	background: #eaeaea;
-	height: 1px;
-	margin-top: 15px; 
+	background: #f27922;
+	height: 3px;
+	margin-top: 5px; 
 }
 .spbc{
 	width: 1200px;
@@ -224,11 +236,12 @@ nav ul li a:hover{
 .spbc-main{
 	border-top: 1px solid #eaeaea;
 	display: flex;
+	
 }
 .spbc-body{
 	width: 20%;
 	border: 2px solid #eaeaea;
-	margin: 5px;
+	margin: 5px;position: relative;
 }
 .spbc-body:hover{
 	box-shadow: 2px 2px 20px #a7a7a6 inset;
@@ -255,11 +268,12 @@ nav ul li a:hover{
 .spbc-title a{
 	text-decoration: none;
 	color: black;
-	font-size: 18px;
+	font-size: 16px;
 	padding: 5px;
 }
 .spbc-title a:hover{
 	color: #f27922;
+	text-decoration: none;
 }
 .spbc-price{
 	color: #f27922;
@@ -268,33 +282,34 @@ nav ul li a:hover{
 	text-align: center;
 }
 .spbc-addcart{
-	left: 40px;
+	left: 30px;
 	bottom: -10px;
 	position: absolute;
 	transition: all 0.5s;
 	opacity: 0;
 }
-.spbc-addcart a{
-	text-decoration: none;
+
+.spbc-addcart button{
 	color: #f27922;
 	font-size: 15px;
 	padding: 5px;
-	transform: translate(-65%, 100%);
+	transform: translate(0%, 100%);
 	background: #f0f0f0;
 }
 .spbc-img:hover .spbc-addcart{
 	display: block;
-	transform: translate(0%, -150%);
+	transform: translate(0%, -250%);
 	opacity: 1;
+	transition-delay: 0.7s;
 }
 
-.spbc-addcart a:hover{
+.spbc-addcart button:hover{
 	background: #f27922;
 	color: #ffffff;
 	text-decoration: none;
 	
 }
-.spbc-addcart a i{
+.spbc-addcart button i{
 	margin-right: 7px;
 }
 .spbc-xemct{
@@ -443,33 +458,32 @@ nav ul li a:hover{
 	background: #f0f0f0;
 }
 .product-addcart{
-	left: 65px;
+	left: 5%;
 	bottom: -10px;
 	position: absolute;
-	transition: all 0.5s;
+	transition: all 0.7s;
 	opacity: 0;
 }
-.product-addcart a{
-	text-decoration: none;
+.product-addcart button{
 	color: #f27922;
 	font-size: 15px;
 	padding: 5px;
-	transform: translate(-65%, 100%);
+	transform: translate(20%, 100%);
+	background: #f0f0f0;
 }
 .product-img:hover .product-addcart{
 	display: block;
-	transform: translate(0%, -80%);
+	transform: translate(0%, -250%);
 	opacity: 1;
-	background: #f0f0f0;
+	transition-delay: 0.7s;
 }
 
-.product-addcart a:hover{
+.product-addcart button:hover{
 	background: #f27922;
 	color: #ffffff;
-	text-decoration: none;
 
 }
-.product-addcart a i{
+.product-addcart button i{
 	margin-right: 7px;
 }
 .product-xemct{
@@ -745,6 +759,7 @@ nav ul li a:hover{
 
 #big-img{
 	width: 400px;
+	position: relative;
 }
 #big-img img{
 	width: 300px;
@@ -847,7 +862,12 @@ nav ul li a:hover{
 	height: 40px;
 	margin-right: 10px;
 	color: #ffffff;
-	background: #f27922;
+}
+.dathang .addhi{
+	color: #000000;
+}
+.dathang .addhi:hover{
+	color: #ffffff;
 }
 .dathang button i{
 	margin-right: 5px;
@@ -993,6 +1013,214 @@ nav ul li a:hover{
 
 
 
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Show 3rd slide on md  if col-md-4*/
+        .carousel-inner .active.col-md-4.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;  /*change this with javascript in the future*/
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  /* Show 2 slide on md  if col-md-4*/
+        .carousel-inner .active.col-sm-6.carousel-item + .carousel-item + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -50%;  /*change this with javascript in the future*/
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+}
+@media (min-width: 576px) {
+  .carousel-item {
+  margin-right: 0;
+}
+
+    /* show 2 items */
+    .carousel-inner .active + .carousel-item {
+        display: block;
+    }
+    
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item {
+        transition: none;
+    }
+
+    .carousel-inner .carousel-item-next {
+      position: relative;
+      transform: translate3d(0, 0, 0);
+    }
+    
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    } 
+    
+    /* farthest right hidden item must be abso position for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+
+}
+
+/*MD*/
+@media (min-width: 768px) {
+
+    /* show 3rd of 3 item slide */
+  .carousel-inner .active + .carousel-item + .carousel-item {
+        display: block;
+    }
+ 
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+        transition: none;
+    }
+  
+    
+    .carousel-inner .carousel-item-next {
+      position: relative;
+      transform: translate3d(0, 0, 0);
+    }
+    
+    
+    /* left or forward direction */
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    
+    /* right or prev direction */
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+
+}
+
+
+/*LG 6th*/
+@media (min-width: 991px) {
+
+    /* show 4th item */
+    .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item {
+        display: block;
+    }
+    
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item {
+        transition: none;
+    }
+    
+
+
+    
+    /* right or prev direction //t - previous slide direction last item animation fix */
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+
+}
+
+/*LG 6th*/
+@media (min-width: 991px) {
+
+        /* show 5th and 6th item */
+    .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item + .carousel-item,
+  .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        display: block;
+    }
+
+    
+  
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item + .carousel-item,
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+      transition: none;
+    }
+
+    
+  
+  /*show 7th slide for animation when its a 6 slides carousel */
+       .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item  + .carousel-item {
+        position: absolute;
+        top: 0;
+        right: -16.666666666%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+  }
+  
+      /* forward direction > */
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+  
+      /* prev direction < last item animation fix */
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+
+}
+
+.line-gift{
+	width: 100%;
+	margin: auto;
+	background: #f27922;
+	height: 1px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+
+.phantrang nav{
+	background: #ffffff;
+}
+
+.hethang2{
+	position: absolute;
+	right: 10px;
+	top: 0px;
+	z-index: 10;
+}
 
 
 

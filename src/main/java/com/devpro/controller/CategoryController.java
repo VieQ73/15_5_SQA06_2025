@@ -1,5 +1,6 @@
 package com.devpro.controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.devpro.entities.Product;
 import com.devpro.model.ProductSearch;
 import com.devpro.repositories.CategoryRepo;
-import com.devpro.repositories.ProductRepo;
-import com.devpro.services.CategoryService;
 import com.devpro.services.ProductService;
 
 @Controller
@@ -26,13 +25,13 @@ public class CategoryController extends BaseController {
 	@Autowired
 	private CategoryRepo categoryRepo;
 
-	/*
-	 * @RequestMapping(value = { "/category" }, method = RequestMethod.GET) public
-	 * String index(final ModelMap model, final HttpServletRequest request, final
-	 * HttpServletResponse response) throws Exception {
-	 * model.addAttribute("products", productService.search(null)); return
-	 * "front-end/category"; }
-	 */
+	
+//	  @RequestMapping(value = { "/category" }, method = RequestMethod.GET) public
+//	  String index(final ModelMap model, final HttpServletRequest request, final
+//	  HttpServletResponse response) throws Exception {
+//	  model.addAttribute("products", productService.search(null)); return
+//	  "front-end/category"; }
+	 
 	@RequestMapping(value = { "/category/{seo}" }, method = RequestMethod.GET)
 	public String index(@PathVariable("seo") String seo, final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
@@ -40,18 +39,22 @@ public class CategoryController extends BaseController {
 		ProductSearch productSearch = new ProductSearch();
 		productSearch.setSeoCategoty(seo);
 		
-		
-		Integer currentPage = 0; String strCurrentPage =
-		request.getParameter("page");
-		if(strCurrentPage != null)
-			currentPage = Integer.parseInt(strCurrentPage);
-		productSearch.setCurrentPage(currentPage);
-		 
+		productSearch.buildPaging(request); 
+		model.addAttribute("page", productSearch);
 
 		List<Product> products = productService.search(productSearch);
+		for (Product item : products) {
+			BigDecimal gia = item.getPrice();
+			if(item.getSaleoff()!=0)
+			{
+				gia = gia.subtract(gia.multiply(new BigDecimal(item.getSaleoff()).divide(new BigDecimal(100))));
+			}
+			item.setPrice(gia);
+		}
 		Integer id = products.get(0).getCategory().getId();
 		model.addAttribute("category", categoryRepo.getOne(id));
 		model.addAttribute("products", products);
+		
 		return "front-end/category";
 	}
 

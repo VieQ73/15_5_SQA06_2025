@@ -1,5 +1,6 @@
 package com.devpro.entities;
 
+import java.util.Date;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -7,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+
+import com.ibm.icu.util.Calendar;
 
 @MappedSuperclass
 public abstract class BaseEntity {
@@ -17,11 +20,15 @@ public abstract class BaseEntity {
 	private Integer id; // primary-key
 
 	@Column(name = "created_date", nullable = false)
-	private LocalDateTime createdDate;
+	private Date createdDate ;
+	
+	
 
 	@Column(name = "updated_date", nullable = true)
-	private LocalDateTime updatedDate;
+	private java.util.Date updatedDate= Calendar.getInstance().getTime();
 
+	
+	
 	@Column(name = "created_by", nullable = true)
 	private Integer createdBy;
 
@@ -39,19 +46,23 @@ public abstract class BaseEntity {
 		this.id = id;
 	}
 
-	public LocalDateTime getCreatedDate() {
+	public Date getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(LocalDateTime createdDate) {
+	
+
+	
+
+	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
 
-	public LocalDateTime getUpdatedDate() {
+	public java.util.Date getUpdatedDate() {
 		return updatedDate;
 	}
 
-	public void setUpdatedDate(LocalDateTime updatedDate) {
+	public void setUpdatedDate(java.util.Date updatedDate) {
 		this.updatedDate = updatedDate;
 	}
 

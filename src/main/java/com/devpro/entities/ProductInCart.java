@@ -7,6 +7,23 @@ public class ProductInCart {
 	private String tenSP;
 	private int soluong;
 	private BigDecimal giaBan;
+	private BigDecimal tongGia;
+	private int amount;
+	private String seo;
+	
+	
+	public String getSeo() {
+		return seo;
+	}
+	public void setSeo(String seo) {
+		this.seo = seo;
+	}
+	public int getAmount() {
+		return amount;
+	}
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
 	public int getProductId() {
 		return productId;
 	}
@@ -30,6 +47,12 @@ public class ProductInCart {
 	}
 	public void setGiaBan(BigDecimal giaBan) {
 		this.giaBan = giaBan;
+	}
+	public BigDecimal getTongGia() {
+		return tongGia;
+	}
+	public void setTongGia(BigDecimal tongGia) {
+		this.tongGia = tongGia;
 	}
 	
 	

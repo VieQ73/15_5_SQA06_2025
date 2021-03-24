@@ -47,6 +47,17 @@ pageEncoding="UTF-8"%>
 							<li class="treeview">
 								<a href="#">
 									<i class="far fa-edit"></i>&nbsp
+									<span>Quản lý quà tặng</span>
+									<i class="fa fa-angle-left pull-right"></i>
+								</a>
+								<ul class="treeview-menu">
+				                  <li><a href="${pageContext.request.contextPath}/admin/listGift"><i class="fa fa-angle-right"></i> Danh sách quà tặng</a></li>
+				                  <li><a href="${pageContext.request.contextPath}/admin/addGift"><i class="fa fa-angle-right"></i> Thêm quà tặng</a></li>
+				                </ul>
+							</li>
+							<li class="treeview">
+								<a href="#">
+									<i class="far fa-edit"></i>&nbsp
 									<span>Quản lý đơn hàng</span>
 									<i class="fa fa-angle-left pull-right"></i>
 								</a>

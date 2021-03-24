@@ -67,7 +67,11 @@
 						<img src="${pageContext.request.contextPath}/images/icons/icon-google.jpg" alt="GOOGLE">
 					</a>
 				</div>
-
+				<div class="text-center">
+					<a href="${pageContext.request.contextPath}/registration_get" class="txt2 hov1">
+						Create Account
+					</a>
+				</div>
 				<div class="text-center">
 					<a href="${pageContext.request.contextPath}/" class="txt2 hov1">
 						Home

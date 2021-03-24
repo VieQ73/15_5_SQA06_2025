@@ -13,10 +13,33 @@
 	<title>products</title>
 	<meta charset="utf-8">
 	<jsp:include page="/WEB-INF/views/front-end/common/css.jsp"></jsp:include>
+	<style type="text/css">
+		.img-saleicon{
+			
+			animation: xoayvong 3s linear 0s infinite;
+		    -webkit-animation: xoayvong 3s linear 0s infinite;
+		    -moz-animation: xoayvong 3s linear 0s infinite;
+		    -o-animation: xoayvong 3s linear 0s infinite;
+		}
+		@-webkit-keyframes xoayvong{
+			from{
+			        -webkit-transform:rotateY(0deg);
+			        -moz-transform:rotateY(0deg);
+			        -o-transform:rotateY(0deg);
+			    }
+		    to{
+			        -webkit-transform:rotateY(360deg);
+			        -moz-transform:rotateY(360deg);
+			        -o-transform:rotateY(360deg);
+			}
+		}
+		
+	</style>
+
 </head>
 <body>
 	<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0" nonce="nrKNkviN"></script>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0" nonce="nrKNkviN"></script>
 	<div class="wapper">
 		<div class="go-to-top"> <button id="go-to-top"><i class="fas fa-chevron-up"></i></button></div>
 		
@@ -41,9 +64,6 @@
 								<c:forEach var="img" items= "${product.productImages}">
 									<img src="${pageContext.request.contextPath}/file/upload/${img.getPath()}">
 								</c:forEach>
-								<%-- <img src="${pageContext.request.contextPath}/images/Vien-Uong-Bo-Nao-Ginkgo-Biloba-2000-Hang-Chinh-Hang-Uc-4409.jpg">
-								<img src="${pageContext.request.contextPath}/images/Vien-Uong-Bo-Nao-Ginkgo-Biloba-2000-Hang-Chinh-Hang-Uc-4209.jpg">
-								<img src="${pageContext.request.contextPath}/images/Vien-Uong-Bo-Nao-Ginkgo-Biloba-2000-3828.jpg"> --%>
 							</div>
 						</div>
 						<div class="pro-infor">
@@ -53,14 +73,30 @@
 							</ul>
 							<div class="price">
 								<p class="price-text">Giá bán:</p>
-								<p class="price-num">
-									<fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${product.price }" /> đ
-								</p>
+								<c:choose>
+									<c:when test="${product.saleoff == 0 }">
+										<p class="price-num">
+											<fmt:formatNumber type="number" maxIntegerDigits="13"
+												value="${product.price }" /> đ
+										</p>
+									</c:when>
+									<c:otherwise>
+										<p style="margin-left: 10px; text-decoration: line-through; font-size: 18px; color: #424242; margin-right: 20px;" >
+											<fmt:formatNumber type="number" maxIntegerDigits="13"
+												value="${product.price }" /> đ
+										</p>
+										<img class="img-saleicon" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
+										<p class="price-num">
+											<fmt:formatNumber type="number" maxIntegerDigits="13"
+												value="${totalSale }" /> đ
+										</p>
+									</c:otherwise>
+								</c:choose>
+								
 							</div>
 							<div class="discount">
-								<p class="discount-text">Mã Code:</p>
-								<p class="discount-code">${product.id }</p>
+								<p class="discount-text">Số lượng mặt hàng:</p>
+								<p class="discount-code">${product.amount }</p>
 							</div>
 							<ul class="note">
 								<li><i class="fas fa-check-circle"></i>Nhập Khẩu Chính Hãng Mỹ.</li>
@@ -68,9 +104,17 @@
 								<li><i class="fas fa-check-circle"></i>Sáng đặt chiều giao: Áp dụng HCM.</li>
 							</ul>
 							<div class="dathang">
-								<input type="number" id="soluongdat" value="1">
-						
-								<button type="button" class="btn btn-warning addhi" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, parseInt($('#soluongdat').val()));"><i class="fas fa-cart-plus"></i>Thêm Vào Giỏ Hàng</button>
+								<c:choose>
+									<c:when test="${product.amount > 0 }">
+										<button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) result.value--;return false;" class="btn btn-info" type="button"><i class="fas fa-minus"></i></button>     
+			                          	<input onchange="maxNum(${product.amount })" type="text" class="input-text qty"  title="Qty" value="1" maxlength="12" id="qty"  name="qty">
+			                          	<button onClick="var result = document.getElementById('qty'); var qty = result.value; if(qty &lt; ${product.amount}) result.value++; return false;" class="btn btn-info" type="button"><i class="fas fa-plus"></i></button>
+		                          		<button type="button" class="btn btn-warning addhi" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, parseInt($('#qty').val()));"><i class="fas fa-cart-plus"></i>Thêm Vào Giỏ Hàng</button>
+									</c:when>
+									<c:otherwise>
+										<img src="${pageContext.request.contextPath}/images/hethang.jpg" width="120px" height="70px">
+									</c:otherwise>
+								</c:choose>
 							</div>
 							<div class="bonus">
 								<p class="bonus-top">Quà tặng khi mua sản phầm</p>
@@ -150,6 +194,7 @@
 		</div>
 		<jsp:include page="/WEB-INF/views/front-end/common/footer.jsp"></jsp:include>
 	</div>
+	</div>
 	<jsp:include page="/WEB-INF/views/front-end/common/js.jsp"></jsp:include>
 	<script type="text/javascript">
 	$(document).ready(function(){
@@ -173,9 +218,9 @@
 			});
 		}
 		
-		
-		
+
 	});
 	</script>
+	
 </body>
 </html>

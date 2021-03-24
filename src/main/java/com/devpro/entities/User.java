@@ -1,5 +1,6 @@
 package com.devpro.entities;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -8,6 +9,9 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -19,9 +23,23 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name = "tbl_users")
-public class User extends BaseEntity implements UserDetails {
+public class User implements UserDetails {
 	private static final long serialVersionUID = -1956195527415323516L;
 
+	@Id // xác định đây là khoá chính.
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment.
+	@Column(name = "id")
+	private Integer id; // primary-key
+
+	@Column(name = "created_date", nullable = false)
+	private LocalDateTime createdDate ;
+
+	@Column(name = "updated_date", nullable = true)
+	private LocalDateTime updatedDate= LocalDateTime.now();
+	
+	@Column(name = "status", nullable = false)
+	private Boolean status = Boolean.TRUE;
+	
 	@Column(name = "username", length = 45, nullable = false)
 	private String username;
 
@@ -77,6 +95,51 @@ public class User extends BaseEntity implements UserDetails {
 
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
+	}
+
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public LocalDateTime getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(LocalDateTime createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public LocalDateTime getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(LocalDateTime updatedDate) {
+		this.updatedDate = updatedDate;
+	}
+
+	public Boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
+
+	public List<SaleOrder> getSaleOrders() {
+		return saleOrders;
+	}
+
+	public void setSaleOrders(List<SaleOrder> saleOrders) {
+		this.saleOrders = saleOrders;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	/**

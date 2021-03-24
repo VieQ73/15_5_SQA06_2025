@@ -1,5 +1,6 @@
 package com.devpro.controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -45,6 +46,9 @@ public class ProductsController extends BaseController{
 			id= product2.getId();
 		}
 		model.addAttribute("product", productRepo.getOne(id));
+		BigDecimal total = productRepo.getOne(id).getPrice()
+				.multiply(new BigDecimal(productRepo.getOne(id).getSaleoff()).divide(new BigDecimal(100)));
+		model.addAttribute("totalSale", productRepo.getOne(id).getPrice().subtract(total));
 		return "front-end/products";
 	}
 	

@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.devpro.entities.MyConstants;
 
 import com.devpro.entities.SaleOrder;
 
@@ -54,17 +52,17 @@ public class AdminSaleOrder {
 		model.addAttribute("saleorders", saleOrderService.searchAdmin(null));
 		
 		
-		String email = saleOrderInDP.getEmail();
-		MyConstants myConstants = new MyConstants();
-		myConstants.setFRIEND_EMAIL(email);
-		SimpleMailMessage mess = new SimpleMailMessage();
-		mess.setTo(myConstants.getFRIEND_EMAIL());
-		mess.setSubject("Xác nhận đơn hàng");
-		mess.setText("Xin chào! Đơn hàng của bạn đã được gửi. Vui lòng giữ liên lạc để nhận hàng. Cảm ơn bạn đã mua"
-				+ "hàng của chúng tôi");
- 
-        // Send Message!
-        this.javaMailSender.send(mess);
+//		String email = saleOrderInDP.getEmail();
+//		MyConstants myConstants = new MyConstants();
+//		myConstants.setFRIEND_EMAIL(email);
+//		SimpleMailMessage mess = new SimpleMailMessage();
+//		mess.setTo(myConstants.getFRIEND_EMAIL());
+//		mess.setSubject("Xác nhận đơn hàng");
+//		mess.setText("Xin chào! Đơn hàng của bạn đã được gửi. Vui lòng giữ liên lạc để nhận hàng. Cảm ơn bạn đã mua"
+//				+ "hàng của chúng tôi");
+// 
+//        // Send Message!
+//        this.javaMailSender.send(mess);
 
 		return "back-end/saleorder";
 	}

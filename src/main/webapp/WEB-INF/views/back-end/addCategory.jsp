@@ -13,7 +13,7 @@ pageEncoding="UTF-8"%>
 	<title>Admin add category</title>
 	<meta charset="utf-8">
 	<jsp:include page="/WEB-INF/views/back-end/commonAdmin/css.jsp"></jsp:include>
-	
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
 </head> 
 <body class="cbp-spmenu-push">
 
@@ -62,6 +62,7 @@ pageEncoding="UTF-8"%>
 	<jsp:include page="/WEB-INF/views/back-end/commonAdmin/footer.jsp"></jsp:include>
     <!-- js-->
 	<jsp:include page="/WEB-INF/views/back-end/commonAdmin/js.jsp"></jsp:include>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
     <script type="text/javascript">
         	$( document ).ready(function() {
         		$('#txtDetailDescription').summernote();

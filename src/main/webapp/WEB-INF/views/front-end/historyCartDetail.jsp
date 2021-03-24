@@ -54,6 +54,27 @@
 						<td>Số điện thoại:</td>
 						<td><span>${historyCart.phone}</span></td>
 					</tr>
+					<tr>
+						<td>Ngày đặt:</td>
+						<td>					
+							<c:if test="${historyCart.status_ok == 0}">
+								<span  style="color: red;"><fmt:formatDate pattern = "dd-MM-yyyy" 
+         																			value = "${historyCart.createdDate}" /></span>
+							</c:if>
+							<c:if test= "${historyCart.status_ok == 1}">
+								<span  style="color: blue;"><fmt:formatDate pattern = "dd-MM-yyyy" 
+         																			value = "${historyCart.createdDate}" /></span>
+							</c:if>
+							<c:if test= "${historyCart.status_ok == 2}">
+								<span  style="color: green;"><fmt:formatDate pattern = "dd-MM-yyyy" 
+         																			value = "${historyCart.createdDate}" /></span>
+							</c:if>
+						</td>
+					</tr>
+					<tr>
+						<td>Ghi chú:</td>
+						<td><span>${historyCart.note}</span></td>
+					</tr>
 					</table>
 					<h2 class="title-5 m-b-35">Chi tiết đơn hàng:</h2>
 					<div class="table-responsive table-responsive-data2" style="background: #FFEFDB;">
@@ -63,6 +84,7 @@
 								<tr>
 									<th>#</th>
 									<th>Sản phẩm</th>
+									<th>Hình ảnh</th>
 									<th>Số lượng</th>
 								</tr>
 							</thead>
@@ -70,11 +92,24 @@
 								<c:forEach var="historyCartDetail" items="${historyCartDetails }" varStatus="loop">
 									<tr class="tr-shadow">
 										<th scope="row">${loop.index + 1}</th>
-										<td>${historyCartDetail.product.title}</td>
+										<td>
+											<a style="color: black;" href="${pageContext.request.contextPath}/products/${historyCartDetail.product.seo }" >${historyCartDetail.product.title}</a>
+										</td>
+										<td>
+											<c:choose>
+											<c:when test = "${empty historyCartDetail.product.productImages }">
+												<img style="width: 70px; height: 90px;" src="http://placehold.it/700x400" alt="">
+											</c:when>
+											<c:otherwise>
+												<img style="width: 70px; height: 90px;" src="${pageContext.request.contextPath}/file/upload/${historyCartDetail.product.productImages.get(0).path }" alt="">
+											</c:otherwise>
+											</c:choose>
+										</td>
 										<td>${historyCartDetail.quality}</td>
 									</tr>
 								</c:forEach>
 								<tr class="tr-shadow">
+									<td></td>
 									<td></td>
 									<td style="text-align: right; font-weight: bold;">Tổng tiền:</td>
 									<td >
@@ -84,6 +119,7 @@
 									</td>
 								</tr>
 								<tr>
+									<td></td>
 									<td></td>
 									<td></td>
 									<td>

@@ -49,9 +49,9 @@
 								<tr>
 									<th>#</th>
 									<th>title</th>
+									<th style="witdh:90px; min-height:100px;">Hình ảnh</th>
 									<th>category</th>
 									<th>price</th>
-									<th>Selling</th>
 									<th>Status</th>
 									<th></th>
 								</tr>
@@ -61,21 +61,22 @@
 									<tr class="tr-shadow" >
 										<th scope="row">${loop.index + 1}</th>
 										<td style="font-size: 16px;">${product.title}</td>
+										<td>
+											<c:choose>
+												<c:when test = "${empty product.productImages }">
+													<img style="width: 70px; height: 90px;" class="card-img-top" src="http://placehold.it/700x400" alt="">
+												</c:when>
+												<c:otherwise>
+													<img style="width: 70px; height: 90px;" class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${product.productImages.get(0).path }" alt="">
+												</c:otherwise>
+											</c:choose>
+										</td>
 										<td>${product.category.name}</td>
 										<td>
 											<fmt:formatNumber type="number" maxIntegerDigits="13"
 										value="${product.price}" /> đ
 										</td>
-										<td>
-											<c:choose>
-												<c:when test="${product.selling}">
-													<input type="checkbox" checked="checked" onclick="Productjs.sellingProduct(${product.id});">
-												</c:when>
-												<c:otherwise>
-													<input type="checkbox" onclick="Productjs.sellingProduct(${product.id});">
-												</c:otherwise>
-											</c:choose>
-										</td>
+										
 										
 										<td>
 											<c:choose>

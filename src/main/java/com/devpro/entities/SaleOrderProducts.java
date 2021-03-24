@@ -1,15 +1,24 @@
 package com.devpro.entities;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tbl_saleorder_products")
-public class SaleOrderProducts extends BaseEntity {
+public class SaleOrderProducts {
+	@Id // xác định đây là khoá chính.
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment.
+	@Column(name = "id")
+	private Integer id; // primary-key
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "product_id")
@@ -18,6 +27,9 @@ public class SaleOrderProducts extends BaseEntity {
 	@Column(name = "quality")
 	private Integer quality;
 
+	@Column(name="total")
+	private BigDecimal total;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "saleorder_id")
 	private SaleOrder saleOrder;
@@ -45,5 +57,23 @@ public class SaleOrderProducts extends BaseEntity {
 	public void setQuality(Integer quality) {
 		this.quality = quality;
 	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public BigDecimal getTotal() {
+		return total;
+	}
+
+	public void setTotal(BigDecimal total) {
+		this.total = total;
+	}
+	
+	
 
 }

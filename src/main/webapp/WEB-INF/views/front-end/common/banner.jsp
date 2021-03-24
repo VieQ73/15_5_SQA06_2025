@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <div class="banner">
 				
+
+				
 				<div class="banner-main">
 						<div class="container">
 						  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -12,9 +14,9 @@
 					  </ol>
 					  <div class="carousel-inner">
 					    <div class="carousel-item active">
-					      <img class="d-block w-100" src="${pageContext.request.contextPath}/images/mua-xuan-2020-0.jpg" alt="First slide">
+					      <img class="d-block w-100" src="${pageContext.request.contextPath}/images/bg21.jpg" alt="First slide">
 					    </div>
-					    <div class="carousel-item">
+					    <div class="carousel-item ">
 					      <img class="d-block w-100" src="${pageContext.request.contextPath}/images/-29.jpg" alt="Second slide">
 					    </div>
 					    <div class="carousel-item">

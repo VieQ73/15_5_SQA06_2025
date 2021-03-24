@@ -30,7 +30,7 @@
 	<div class="header-main">
 		<div class="logo1">
 			<a href="${pageContext.request.contextPath}/"><img
-				src="${pageContext.request.contextPath}/images/logo.jpg"></a>
+				src="${pageContext.request.contextPath}/images/logo_beauty.jpg"></a>
 		</div>
 		<div class="logo2">
 			<a href="${pageContext.request.contextPath}/"><img
@@ -38,19 +38,20 @@
 		</div>
 		<div class="search-cart">
 			<form action="${pageContext.request.contextPath}/search" method="post">
-				<input type="text" class="form-control"
+				<input type="text" class="form-control" style="width: 200px;"
 					placeholder="tìm kiếm sản phẩm..." name="keyword" id="keyword">
-				<button type="submit" id="btnClear" onclick="clearSearch()">
+				<button style="margin-left: 10px; width:60px; margin-top:2px;" type="submit" id="btnClear" onclick="clearSearch()">
 					<i class="fas fa-search"></i>
 				</button>
 			</form>
-			
-				<div class="btn-cart container"  id="cart">
-					<a href="${pageContext.request.contextPath}/cart">
-						<i class="fas fa-shopping-cart "></i><span>(</span><span id="so_luong_sp"></span><span>)</span>
-					</a>
-				</div>
-			
+			<div class="sign-in-out" style="margin-left:10px; ">
+				<%if(getEmailLogined().isEmpty()) {%>
+					<a  style="margin-left:115px;" class="btn btn-warning btn-sm" href="${pageContext.request.contextPath}/cai-nay-la-mapping-trong-adminlogincontroller" data-toggle="tooltip" title="Đăng nhập">Login<i class="fas fa-sign-in-alt"></i></a>
+				<%} else{%>
+					<div style="min-width: 110px; text-align: right;"><p ><%= getEmailLogined()%></p></div>
+					<a style="margin-left:5px;" class="btn btn-warning btn-sm" href="${pageContext.request.contextPath}/cai-nay-la-thuoc-tinh-href-trong-the-a-logout" data-toggle="tooltip" title="Đăng xuất">Logout<i class="fas fa-sign-out-alt"></i></a>
+				<%} %>
+			</div>
 		</div>
 		
 	</div>
@@ -69,64 +70,21 @@
 					    </div>
 					 </div>
 				</li>
-				<li><a class="nav-link" href="#">HƯỚNG DẪN MUA HÀNG</a></li>
-				<li><a class="nav-link" href="#">TIN NỔI BẬT</a></li>
-				<li><a class="nav-link" href="#">SẢN PHẨM SALE OFF</a></li>
-				<li><a class="nav-link" href="#">KHO QUÀ TẶNG</a></li>
-				<li><a class="nav-link" href="#" data-toggle="modal"
-					data-target="#exampleModal">LIÊN HỆ</a>
+				<li><a class="nav-link" href="${pageContext.request.contextPath}/huongdanmuahang">HƯỚNG DẪN MUA HÀNG</a></li>
+				<li><a class="nav-link" href="${pageContext.request.contextPath}/news">TIN NỔI BẬT</a></li>
+				<li><a class="nav-link" href="${pageContext.request.contextPath}/saleoff">SẢN PHẨM SALE OFF</a></li>
+				<li><a class="nav-link" href="${pageContext.request.contextPath}/gift">KHO QUÀ TẶNG</a></li>
+				<li><a class="nav-link" href="https://www.facebook.com/BeautyShop-110318264452364/">LIÊN HỆ</a>
 				</li>
 				<li>
-				<%if(getEmailLogined().isEmpty()) {%>
-					<a class="nav-link" href="${pageContext.request.contextPath}/cai-nay-la-mapping-trong-adminlogincontroller">ĐĂNG NHẬP</a>
-				<%} else{%>
-					<a class="nav-link" href="${pageContext.request.contextPath}/cai-nay-la-thuoc-tinh-href-trong-the-a-logout">ĐĂNG XUẤT</a>
-				<%} %>
+					<a class="btn btn-success" href="${pageContext.request.contextPath}/cart"><i class="fas fa-shopping-cart"></i><span id="so_luong_sp" class="badge"></span></a>
 				</li>
 			</ul>
 		</nav>
 		
 	</div>
 </header>
-<!-- contact -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-	aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Contact</h5>
-				<button type="button" class="close" data-dismiss="modal"
-					aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button> 
-			</div>
-			<div class="modal-body">
-				<div class="wrap-input2 validate-input"
-					data-validate="Name is required">
-					<input class="input2" type="text" id="name"></input> <span
-						class="focus-input2" data-placeholder="NAME"></span>
-				</div>
-				<div class="wrap-input2 validate-input"
-					data-validate="Valid email is required: ex@abc.xyz">
-					<input class="input2" type="text" id="email"></input> <span
-						class="focus-input2" data-placeholder="EMAIL"></span>
-				</div>
-				<div class="wrap-input2 validate-input"
-					data-validate="Message is required">
-					<textarea class="input2" id="message"></textarea>
-					<span class="focus-input2" data-placeholder="MESSAGE"></span>
-				</div>
-				<div class="container-contact2-form-btn">
-					<div class="wrap-contact2-form-btn">
-						<div class="contact2-form-bgbtn"></div>
-						<button class="contact2-form-btn" onclick="Shop.saveContact();">
-							Send Your Message</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
 <script type="text/javascript">
     function clearSearch() {
         window.location = "[[@{/search}]]";

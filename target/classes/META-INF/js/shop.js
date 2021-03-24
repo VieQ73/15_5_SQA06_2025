@@ -1,4 +1,5 @@
 var Shop = {
+		
 		chon_san_pham_dua_vao_gio_hang: function(productId, soluong) {
 			var data = {};
 			data["productId"] = productId;
@@ -17,6 +18,7 @@ var Shop = {
 						
 						$("#so_luong_sp").html(jsonResult.data);
 						alert('Thêm vào giỏ hàng thành công');
+						
 					} else {
 						alert('loi');
 					}
@@ -26,6 +28,36 @@ var Shop = {
 			    }
 			});
 		},
+		/*Xóa sản phẩm trong giỏ hàng*/
+		xoa_sp_trong_gio_hang: function(productId) {
+			var data = {};
+			data["productId"] = productId;
+			
+			
+			$.ajax({
+				url: "/xoa-sp-gio-hang",
+				type: "post",
+				contentType: "application/json", 
+				data: JSON.stringify(data), 
+				
+				dataType: "json", 
+				success: function(jsonResult) { 
+					if(jsonResult.status == 200) {
+						
+						$('#sp'+productId).remove();
+						$("#tongtienT").html(jsonResult.data +'đ');
+				
+					} else {
+						alert('Lỗi');
+					}
+				},
+				error: function (jqXhr, textStatus, errorMessage) { // error callback 
+			        
+			    }
+			});
+		},
+		
+		
 		/**
 		 * https://www.w3schools.com/js/js_json_syntax.asp
 		 */

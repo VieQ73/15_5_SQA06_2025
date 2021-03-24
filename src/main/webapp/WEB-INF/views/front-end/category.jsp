@@ -4,6 +4,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!-- Paging -->
+<%@ taglib prefix="tag" uri="/WEB-INF/taglib/pagingTagLibs.tld"%>
 
 <!DOCTYPE html>
 <html>
@@ -11,6 +13,30 @@
 	<title>Category</title>
 	<meta charset="utf-8">
 	<jsp:include page="/WEB-INF/views/front-end/common/css.jsp"></jsp:include>
+	<style type="text/css">
+		.sale{
+			position: absolute;
+			top: 7px;
+			right: 18px;
+			z-index: 1;
+			animation: xoayvong 3s linear 0s infinite;
+		    -webkit-animation: xoayvong 3s linear 0s infinite;
+		    -moz-animation: xoayvong 3s linear 0s infinite;
+		    -o-animation: xoayvong 3s linear 0s infinite;
+		}
+		@-webkit-keyframes xoayvong{
+			from{
+			        -webkit-transform:rotateY(0deg);
+			        -moz-transform:rotateY(0deg);
+			        -o-transform:rotateY(0deg);
+			    }
+		    to{
+			        -webkit-transform:rotateY(360deg);
+			        -moz-transform:rotateY(360deg);
+			        -o-transform:rotateY(360deg);
+			}
+		}
+	</style>
 </head>
 <body>
 <div class="wapper">
@@ -44,6 +70,10 @@
 										<div class="row">
 											<c:forEach var = "product" items = "${products }">				
 												<div class="col-lg-4 col-md-6 mb-4 product-cate">
+													<c:if test="${product.saleoff != 0 }">
+														<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg"} width="80px" height="40px">
+													</c:if>
+													
 													<div class="card h-100">
 														<div class="product-img">
 															<a href="${pageContext.request.contextPath}/products/${product.seo }">
@@ -66,17 +96,18 @@
 													</div>
 													<div class="card-footer" style="display: flex;">
 														<small class="text-muted">&#9733; &#9733; &#9733;
-															&#9733; &#9734;</small>
+															&#9734; &#9734;</small>
 															<button class="btn btn-danger" type="button" style="margin-left: 30px;" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, 1);">Mua hàng</button>
 													</div>
 												</div>
 											</div>
 										</c:forEach>
 									</div>
-								</div><div class="phan-trang container col-xl-2">
-							<a href="#" class="previous round">&#8249;</a>
-							<a href="#" class="next round">&#8250;</a>
-						</div>
+								</div>
+								<div class="phantrang container col-xl-6" style="background: #ffffff;">
+									<tag:paginate offset="${page.offset }"
+										count="${page.count }" uri="${pageUrl}" />
+								</div>
 							</div>
 						</div>
 						

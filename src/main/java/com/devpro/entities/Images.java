@@ -3,6 +3,9 @@ package com.devpro.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -10,8 +13,13 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "tbl_products_images")
-public class ProductImages extends BaseEntity {
+@Table(name = "tbl_images")
+public class Images {
+	@Id // xác định đây là khoá chính.
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment.
+	@Column(name = "id")
+	private Integer id; // primary-key
+	
 	@Column(name = "title", nullable = false)
 	private String title;
 
@@ -22,29 +30,43 @@ public class ProductImages extends BaseEntity {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "product_id") // tên field khoá ngoại
 	private Product product;
-
+	@JsonIgnore
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "gift_id") // tên field khoá ngoại
+	private Gift gift;
+	
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getTitle() {
 		return title;
 	}
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 	public String getPath() {
 		return path;
 	}
-
 	public void setPath(String path) {
 		this.path = path;
 	}
-
 	public Product getProduct() {
 		return product;
 	}
-
 	public void setProduct(Product product) {
 		this.product = product;
 	}
+	public Gift getGift() {
+		return gift;
+	}
+	public void setGift(Gift gift) {
+		this.gift = gift;
+	}
+	
+	
 
 }

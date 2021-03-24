@@ -17,7 +17,7 @@
 <title>Admin add product</title>
 <meta charset="utf-8">
 <jsp:include page="/WEB-INF/views/back-end/commonAdmin/css.jsp"></jsp:include>
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
 </head>
 <body class="cbp-spmenu-push">
 
@@ -60,7 +60,14 @@
 											<label>Price</label>
 											<form:input type="text" class="form-control" path="price"></form:input>
 										</div>
-										
+										<div class="form-group">
+											<label>Số lượng</label>
+											<form:input type="text" class="form-control" path="amount"></form:input>
+										</div>
+										<div class="form-group">
+											<label>Giảm giá</label>
+											<form:input type="text" class="form-control" path="saleoff"></form:input>
+										</div>
 										<div class="form-group">
 											<label>Short Descrition</label>
 											<form:textarea id="txtShortlDescription" class="form-control" path="shortDes"
@@ -95,6 +102,7 @@
 	<jsp:include page="/WEB-INF/views/back-end/commonAdmin/footer.jsp"></jsp:include>
 	<!-- js-->
 	<jsp:include page="/WEB-INF/views/back-end/commonAdmin/js.jsp"></jsp:include>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
 	<script type="text/javascript">
         	$( document ).ready(function() {
         		$('#txtDetailDescription').summernote(

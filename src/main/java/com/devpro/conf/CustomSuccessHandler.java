@@ -20,7 +20,7 @@ public class CustomSuccessHandler extends SavedRequestAwareAuthenticationSuccess
 		if(logined.hasAuthority("ADMIN")) {
 			response.sendRedirect(request.getContextPath() + "/admin");
 		} else if(logined.hasAuthority("USER")) {
-			response.sendRedirect(request.getContextPath() + "/user/historyCart");
+			response.sendRedirect(request.getContextPath() + "/");
 		}
 	}
 	

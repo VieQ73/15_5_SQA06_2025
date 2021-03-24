@@ -2,6 +2,7 @@ package com.devpro.controller;
 
 
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.devpro.entities.Category;
+import com.devpro.entities.Product;
 import com.devpro.model.AjaxResponse;
-import com.devpro.model.Contact;
 import com.devpro.repositories.CategoryRepo;
 import com.devpro.services.CategoryService;
 import com.devpro.services.ProductService;
@@ -52,18 +53,57 @@ public class IndexController {
 		
 		List<Category> categories = categoryService.search(null);
 		model.addAttribute("categories", categories);
-		model.addAttribute("products", productService.searchProductWithCate8(16));
-		model.addAttribute("products2", productService.searchProductWithCate8(17));
-		model.addAttribute("products3", productService.searchProductWithCate8(18));
-		model.addAttribute("products4", productService.searchProductWithCate8(19));
+		List<Product> products = productService.searchProductWithCate8(16);
+		for (Product item : products) {
+			BigDecimal gia = item.getPrice();
+			if(item.getSaleoff()!=0)
+			{
+				gia = gia.subtract(gia.multiply(new BigDecimal(item.getSaleoff()).divide(new BigDecimal(100))));
+			}
+			item.setPrice(gia);
+		}
+		model.addAttribute("products", products);
+		List<Product> products1 = productService.searchProductWithCate8(17);
+		for (Product item : products1) {
+			BigDecimal gia = item.getPrice();
+			if(item.getSaleoff()!=0)
+			{
+				gia = gia.subtract(gia.multiply(new BigDecimal(item.getSaleoff()).divide(new BigDecimal(100))));
+			}
+			item.setPrice(gia);
+		}
+		model.addAttribute("products2", products1);
+		List<Product> products2 = productService.searchProductWithCate8(18);
+		for (Product item : products2) {
+			BigDecimal gia = item.getPrice();
+			if(item.getSaleoff()!=0)
+			{
+				gia = gia.subtract(gia.multiply(new BigDecimal(item.getSaleoff()).divide(new BigDecimal(100))));
+			}
+			item.setPrice(gia);
+		}
+		model.addAttribute("products3", products2);
+		List<Product> products3 = productService.searchProductWithCate8(19);
+		for (Product item : products3) {
+			BigDecimal gia = item.getPrice();
+			if(item.getSaleoff()!=0)
+			{
+				gia = gia.subtract(gia.multiply(new BigDecimal(item.getSaleoff()).divide(new BigDecimal(100))));
+			}
+			item.setPrice(gia);
+		}
+		model.addAttribute("products4", products3);
 		model.addAttribute("productSelling", productService.searchPrSelling2(null));
 		return "front-end/home";
 	}
 	
-	@RequestMapping(value = { "/save-contact-with-ajax" }, method = RequestMethod.POST)
-	public ResponseEntity<AjaxResponse> saveWithAjax(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response,
-													@RequestBody Contact data) {
-		
-		return ResponseEntity.ok(new AjaxResponse(200, "Thành công"));
+
+	
+	@RequestMapping(value = { "/huongdanmuahang" }, method = RequestMethod.GET)
+	public String hdmh(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
+			throws Exception {
+		List<Category> categories = categoryService.search(null);
+		model.addAttribute("categories", categories);
+		return "front-end/huongdanmuahang";
 	}
 }

@@ -38,6 +38,6 @@ public class WebConf implements WebMvcConfigurer {
 		registry.addResourceHandler("/fonts/**").addResourceLocations("classpath:/META-INF/fonts/");
 		registry.addResourceHandler("/vendor/**").addResourceLocations("classpath:/META-INF/vendor/");
 		registry.addResourceHandler("/summernote/**").addResourceLocations("classpath:/META-INF/summernote/");
-		registry.addResourceHandler("file/upload/**").addResourceLocations("file:E:\\java\\template\\imua.com\\upload\\");
+		registry.addResourceHandler("file/upload/**").addResourceLocations("file:E:\\java\\template\\BeautyShop\\upload\\");
 	}
 }

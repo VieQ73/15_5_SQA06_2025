@@ -1,6 +1,8 @@
 package com.devpro.controller.admin;
 
-import java.time.LocalDateTime;
+
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,11 +16,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.devpro.entities.Category;
-import com.devpro.entities.Product;
+
 import com.devpro.model.AjaxResponse;
 import com.devpro.repositories.CategoryRepo;
 import com.devpro.services.CategoryService;
@@ -45,7 +45,8 @@ public class AdminCategoryController {
 		Slugify slg = new Slugify();
 		String result = slg.slugify(category.getName() + "-" + System.currentTimeMillis());
 		category.setSeo(result);
-		category.setCreatedDate(LocalDateTime.now());
+		Date d = Calendar.getInstance().getTime();
+		category.setCreatedDate(d);
 		categoryService.save(category);
 		return "redirect:/admin/listCategory/?add=success";
 	}

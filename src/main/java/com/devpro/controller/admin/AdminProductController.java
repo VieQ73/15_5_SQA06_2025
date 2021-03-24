@@ -1,6 +1,7 @@
 package com.devpro.controller.admin;
 
-import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.Calendar;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +21,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.devpro.controller.BaseController;
 import com.devpro.entities.Product;
 import com.devpro.model.AjaxResponse;
-import com.devpro.model.ProductSearch;
 import com.devpro.repositories.ProductRepo;
 import com.devpro.services.ProductService;
 import com.github.slugify.Slugify;
@@ -48,7 +48,9 @@ public class AdminProductController extends BaseController {
 		Slugify slg = new Slugify();
 		String result = slg.slugify(product.getTitle() + "-" + System.currentTimeMillis());
 		product.setSeo(result);
-		product.setCreatedDate(LocalDateTime.now());
+		Date d = Calendar.getInstance().getTime();
+		product.setCreatedDate(d);
+		product.setPrice_sale(product.discount(product.getPrice(), product.getSaleoff()));
 		productService.save(productImages, product);
 		return "redirect:/admin/listProducts/?add=success";
 	}
@@ -86,16 +88,4 @@ public class AdminProductController extends BaseController {
 		return ResponseEntity.ok(new AjaxResponse(200, "Xóa thành công"));
 	}
 	
-	@RequestMapping(value = { "/selling-product-with-ajax" }, method = RequestMethod.POST)
-	public ResponseEntity<AjaxResponse> sellingProduct(final ModelMap model, final HttpServletRequest request,
-			final HttpServletResponse response, @RequestBody Product product) {
-		
-		Product productInDB = productRepo.getOne(product.getId());
-		if(productInDB.getSelling() == false)
-			productInDB.setSelling(true);
-		else
-			productInDB.setSelling(false);
-		productRepo.save(productInDB);
-		return ResponseEntity.ok(new AjaxResponse(200, "Selling thành công"));
-	}
 }
