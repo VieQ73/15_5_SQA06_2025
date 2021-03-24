@@ -24,13 +24,6 @@ public class CategoryController extends BaseController {
 	ProductService productService;
 	@Autowired
 	private CategoryRepo categoryRepo;
-
-	
-//	  @RequestMapping(value = { "/category" }, method = RequestMethod.GET) public
-//	  String index(final ModelMap model, final HttpServletRequest request, final
-//	  HttpServletResponse response) throws Exception {
-//	  model.addAttribute("products", productService.search(null)); return
-//	  "front-end/category"; }
 	 
 	@RequestMapping(value = { "/category/{seo}" }, method = RequestMethod.GET)
 	public String index(@PathVariable("seo") String seo, final ModelMap model, final HttpServletRequest request,

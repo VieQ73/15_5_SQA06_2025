@@ -2,10 +2,9 @@ package com.devpro.controller;
 
 import java.io.IOException;
 import java.security.Principal;
-import java.text.NumberFormat;
-import java.time.LocalDateTime;
+
 import java.util.List;
-import java.util.Locale;
+
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -58,13 +57,11 @@ public class CartController extends BaseController{
 	public String index(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
 			throws Exception {
 		HttpSession httpSession = request.getSession();
-		Cart gioHang = (Cart) httpSession.getAttribute("GIO_HANG");;
+		Cart gioHang = (Cart) httpSession.getAttribute("GIO_HANG");
 		return "front-end/cart";
 	}
 	
-	
-	
-	
+
 	@RequestMapping(value = { "/chon-san-pham-dua-vao-gio-hang" }, method = RequestMethod.POST)
 	public ResponseEntity<AjaxResponse> muaHang(@RequestBody ProductInCart sanPhamTrongGioHang,
 			final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
@@ -149,7 +146,6 @@ public class CartController extends BaseController{
 		
 		// lấy đối tượng SESSION trong memory dựa vào SESSION_ID có trong request.
 		HttpSession httpSession = request.getSession();
-		
 		Cart gioHang = (Cart) httpSession.getAttribute("GIO_HANG");;
 		
 		if(checkSL(gioHang) != "")
@@ -262,11 +258,6 @@ public class CartController extends BaseController{
 				itemRemove = item;
 			}
 		}
-		/*
-		 * Product productInDB = productRepo.getOne(itemRemove.getProductId());
-		 * productInDB.setAmount(productInDB.getAmount() + itemRemove.getSoluong());
-		 * productRepo.save(productInDB);
-		 */
 		gioHang.getSanPhamTrongGioHangs().remove(itemRemove);
 		BigDecimal sum = BigDecimal.ZERO;
 		for(ProductInCart item : gioHang.getSanPhamTrongGioHangs()) {
@@ -284,25 +275,15 @@ public class CartController extends BaseController{
 		Cart gioHang = (Cart) httpSession.getAttribute("GIO_HANG");
 		for (ProductInCart item : gioHang.getSanPhamTrongGioHangs()) {
 			if(item.getProductId() == sanPhamTrongGioHang.getProductId())
-			{
-//				Product productInDB = productRepo.getOne(item.getProductId());
-//				productInDB.setAmount(productInDB.getAmount() + item.getSoluong() -sanPhamTrongGioHang.getSoluong());
-				
+			{			
 				item.setSoluong(sanPhamTrongGioHang.getSoluong());
 				item.setTongGia(item.getGiaBan().multiply(new BigDecimal(item.getSoluong())));
-//				productRepo.save(productInDB);
 			}
 		}
 		BigDecimal sum = BigDecimal.ZERO;
 		for(ProductInCart item : gioHang.getSanPhamTrongGioHangs()) {
 			sum = sum.add(item.getTongGia());
-		}
-		/*
-		 * Locale localeVN = new Locale("vi", "VN"); NumberFormat currencyVN =
-		 * NumberFormat.getCurrencyInstance(localeVN); String str2
-		 * =currencyVN.format(sum);
-		 */
-		
+		}	
 		httpSession.setAttribute("tong_gia", sum);
 		return ResponseEntity.ok(new AjaxResponse(200, sum));
 	}

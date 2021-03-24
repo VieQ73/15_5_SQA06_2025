@@ -49,7 +49,6 @@ public class SaleOrder {
 		return note;
 	}
 
-
 	public void setNote(String note) {
 		this.note = note;
 	}

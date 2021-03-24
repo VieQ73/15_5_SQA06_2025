@@ -1,7 +1,6 @@
 package com.devpro.entities;
 
 import java.util.Date;
-import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -49,10 +48,6 @@ public abstract class BaseEntity {
 	public Date getCreatedDate() {
 		return createdDate;
 	}
-
-	
-
-	
 
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;

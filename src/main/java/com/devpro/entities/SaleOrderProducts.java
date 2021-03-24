@@ -74,6 +74,4 @@ public class SaleOrderProducts {
 		this.total = total;
 	}
 	
-	
-
 }

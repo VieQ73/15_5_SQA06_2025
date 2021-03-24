@@ -1,6 +1,5 @@
 package com.devpro.controller;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.devpro.entities.Category;
 import com.devpro.entities.Product;
-import com.devpro.model.ProductSearch;
-import com.devpro.repositories.ProductRepo;
 import com.devpro.services.CategoryService;
 import com.devpro.services.ProductService;
 

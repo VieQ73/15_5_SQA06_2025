@@ -1,8 +1,8 @@
 package com.devpro.entities;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -21,6 +21,7 @@ import javax.persistence.Table;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+
 @Entity
 @Table(name = "tbl_users")
 public class User implements UserDetails {
@@ -32,10 +33,10 @@ public class User implements UserDetails {
 	private Integer id; // primary-key
 
 	@Column(name = "created_date", nullable = false)
-	private LocalDateTime createdDate ;
+	private Date createdDate ;
 
 	@Column(name = "updated_date", nullable = true)
-	private LocalDateTime updatedDate= LocalDateTime.now();
+	private Date updatedDate;
 	
 	@Column(name = "status", nullable = false)
 	private Boolean status = Boolean.TRUE;
@@ -106,19 +107,19 @@ public class User implements UserDetails {
 		this.id = id;
 	}
 
-	public LocalDateTime getCreatedDate() {
+	public Date getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(LocalDateTime createdDate) {
+	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
 
-	public LocalDateTime getUpdatedDate() {
+	public Date getUpdatedDate() {
 		return updatedDate;
 	}
 
-	public void setUpdatedDate(LocalDateTime updatedDate) {
+	public void setUpdatedDate(Date updatedDate) {
 		this.updatedDate = updatedDate;
 	}
 
