@@ -30,13 +30,8 @@
 			">
 				<div class="row mb-4">
 					<div class="col">
-						<div class="input-group" style="width: 30%; margin: auto; margin-top: 3%">
-						  <input type="text" class="form-control" placeholder="Số điện thoại">
-						  <div class="input-group-append" style="margin-left: 5%">
-						    <button class="btn btn-success" onclick="search_hisCart()">Tìm kiếm</button>
-						  </div>
-						</div>
-						<div class="list-historyCart" style="display: ;">
+						
+						<div class="list-historyCart">
 						<h3 class="title-5 m-b-35">Danh sách đơn hàng</h3>
 							<div class="table-responsive table-responsive-data2">
 								<table class="table table-data2 display" style="background: #FFEFDB;" id="">

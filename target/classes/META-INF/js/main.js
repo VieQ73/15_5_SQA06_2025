@@ -69,6 +69,7 @@ function checkPhone(){
 	});
 }
 
+
 function main(){
 	$('.drop-menu > li').click(function(){
 		if($(this).hasClass('active')){

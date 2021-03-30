@@ -35,7 +35,12 @@
 		<jsp:include page="/WEB-INF/views/front-end/common/header.jsp"></jsp:include>
 		<div class="bg">
 			<div class="container">
-			<div class="col-lg-12">
+			<div class="col-lg-12" style="min-height:30em;
+			background-image:linear-gradient(40deg, rgba(237,104,193,0.2) 20%, rgba(255,255,255,0));
+			background-position: center;
+		    background-size: cover;
+		    background-attachment: fixed;
+			">
 				<div class="row mb-4">
 					<div class="col">
 						<c:choose>
@@ -120,9 +125,14 @@
 							<button type="submit" class="btn btn-warning">Gửi đơn hàng</button>
 						</form>
 					</div>
-					<div class="col mb-6 col-lg-6" style="padding-top: 50px;">
-						<a class="btn btn-success" style="margin-left:50px" href="${pageContext.request.contextPath}/historyCart">Lịch sử mua hàng</a>
-						<a style="margin-left:30px" class="btn btn-info" href="${pageContext.request.contextPath}/">Tiếp tục mua hàng</a>
+					<div class="col mb-6 col-lg-6" style="margin-top: -5px;">
+						<h4>Lịch sử mua hàng</h4>
+						<div class="input-group">
+						  <input type="text" class="form-control" placeholder="Nhập số điện thoại" id="his-phone">
+						  <div class="input-group-append" style="margin-left: 5%">
+						    <button class="btn btn-success" onclick="search_hisCart()">Tìm kiếm</button>
+						  </div>
+						</div>
 					</div>
 				</div>
 				
