@@ -74,7 +74,7 @@
 							<div class="price">
 								<p class="price-text">Giá bán:</p>
 								<c:choose>
-									<c:when test="${product.saleoff == 0 }">
+									<c:when test="${product.price_sale == 0 }">
 										<p class="price-num">
 											<fmt:formatNumber type="number" maxIntegerDigits="13"
 												value="${product.price }" /> đ

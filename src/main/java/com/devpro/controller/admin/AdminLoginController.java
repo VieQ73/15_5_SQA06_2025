@@ -1,8 +1,6 @@
 package com.devpro.controller.admin;
 
-import java.time.LocalDateTime;
-import java.util.Calendar;
-import java.util.Date;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,16 +38,5 @@ public class AdminLoginController {
 	public String registration(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
 			throws Exception {
 		return "back-end/Registration";
-	}
-	@RequestMapping(value = { "/registration" }, method = RequestMethod.POST)
-	public String registration(@ModelAttribute("account") User user,final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
-			throws Exception {
-		Date d = Calendar.getInstance().getTime();
-		user.setCreatedDate(d);
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(8);
-		String result = encoder.encode(user.getPassword());
-		user.setPassword(result);
-		userR.save(user);
-		return "back-end/login";
 	}
 }

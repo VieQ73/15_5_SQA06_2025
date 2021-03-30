@@ -36,14 +36,7 @@ public class CategoryController extends BaseController {
 		model.addAttribute("page", productSearch);
 
 		List<Product> products = productService.search(productSearch);
-		for (Product item : products) {
-			BigDecimal gia = item.getPrice();
-			if(item.getSaleoff()!=0)
-			{
-				gia = gia.subtract(gia.multiply(new BigDecimal(item.getSaleoff()).divide(new BigDecimal(100))));
-			}
-			item.setPrice(gia);
-		}
+		
 		Integer id = products.get(0).getCategory().getId();
 		model.addAttribute("category", categoryRepo.getOne(id));
 		model.addAttribute("products", products);

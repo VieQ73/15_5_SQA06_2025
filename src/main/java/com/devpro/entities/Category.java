@@ -16,7 +16,7 @@ public class Category extends BaseEntity{
 	@Column(name = "name", nullable = true)
 	private String name;
 
-	@Column(name = "description", nullable = true)
+	@Column(name = "description",columnDefinition = "LONGTEXT",  nullable = true)
 	private String description;
 
 	@Column(name = "seo", nullable = false)

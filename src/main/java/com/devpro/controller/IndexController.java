@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.devpro.entities.Category;
 import com.devpro.entities.Product;
+import com.devpro.entities.Sale;
+import com.devpro.repositories.ProductRepo;
 import com.devpro.services.CategoryService;
 import com.devpro.services.ProductService;
 
@@ -32,6 +34,8 @@ public class IndexController {
 	private ProductService productService;
 	@Autowired
 	private CategoryService categoryService;
+	@Autowired
+	private ProductRepo productRepo;
 	/**
 	 * 
 	 * @param model: trung gian trao đổi thông tin giữa Controller và View(Jsp)
@@ -44,48 +48,36 @@ public class IndexController {
 	public String index(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
 			throws Exception {
 		
+		List<Product> p = productService.getProductSale(null);
+		for (Product item : p) {
+			Sale k =productService.getDiscount(item.getId());
+			item.setDiscount(k.getDiscount());
+			item.setPrice_sale(item.getPrice().subtract(item.getPrice().multiply(new BigDecimal(item.getDiscount()))));
+			productRepo.save(item);
+		}
+		List<Product> prod = productService.getAllProduct();
+		for (Product item : prod) {
+			if(item.getDiscount() != 0)
+				item.setPrice_sale(item.getPrice().subtract(item.getPrice().multiply(new BigDecimal(item.getDiscount())).divide(new BigDecimal(100))));
+			else
+				item.setPrice_sale(item.getPrice());
+			productRepo.save(item);
+		}
 		
 		List<Category> categories = categoryService.search(null);
 		model.addAttribute("categories", categories);
+		
 		List<Product> products = productService.searchProductWithCate8(16);
-		for (Product item : products) {
-			BigDecimal gia = item.getPrice();
-			if(item.getSaleoff()!=0)
-			{
-				gia = gia.subtract(gia.multiply(new BigDecimal(item.getSaleoff()).divide(new BigDecimal(100))));
-			}
-			item.setPrice(gia);
-		}
+		
 		model.addAttribute("products", products);
 		List<Product> products1 = productService.searchProductWithCate8(17);
-		for (Product item : products1) {
-			BigDecimal gia = item.getPrice();
-			if(item.getSaleoff()!=0)
-			{
-				gia = gia.subtract(gia.multiply(new BigDecimal(item.getSaleoff()).divide(new BigDecimal(100))));
-			}
-			item.setPrice(gia);
-		}
+		
 		model.addAttribute("products2", products1);
 		List<Product> products2 = productService.searchProductWithCate8(18);
-		for (Product item : products2) {
-			BigDecimal gia = item.getPrice();
-			if(item.getSaleoff()!=0)
-			{
-				gia = gia.subtract(gia.multiply(new BigDecimal(item.getSaleoff()).divide(new BigDecimal(100))));
-			}
-			item.setPrice(gia);
-		}
+		
 		model.addAttribute("products3", products2);
 		List<Product> products3 = productService.searchProductWithCate8(19);
-		for (Product item : products3) {
-			BigDecimal gia = item.getPrice();
-			if(item.getSaleoff()!=0)
-			{
-				gia = gia.subtract(gia.multiply(new BigDecimal(item.getSaleoff()).divide(new BigDecimal(100))));
-			}
-			item.setPrice(gia);
-		}
+		
 		model.addAttribute("products4", products3);
 		model.addAttribute("productSelling", productService.searchPrSelling2(null));
 		return "front-end/home";

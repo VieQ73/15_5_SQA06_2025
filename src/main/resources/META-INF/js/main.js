@@ -33,20 +33,40 @@ function addP(id, gia, maxSl){
 				
 				dataType: "json", 
 				success: function(jsonResult) { 
-					if(jsonResult.status == 200) {
-						$('.slBD'+id).val(aaa);
-						$('.giatien'+id).html(aaa*gia +'đ');
-						$("#tongtienT").html(jsonResult.data + 'đ');
-				
-					} else {
-						alert('Lỗi');
-					}
+					$('.slBD'+id).val(aaa);
+					$('.giatien'+id).html(jsonResult.data.ngang);
+					$("#tongtienT").html(jsonResult.data.doc);
 				},
 				error: function (jqXhr, textStatus, errorMessage) { // error callback 
 			        
 			    }
 			});
 	}
+}
+
+function checkPhone(){
+	var phone = Number($('#phone').val());
+	$.ajax({
+		url: "/check-phone",
+		type: "post",
+		contentType: "application/json", 
+		data: JSON.stringify(phone), 
+		
+		dataType: "json", 
+		success: function(jsonResult) { 
+			//alert("Số lượng sản phẩm không đủ"+jsonResult.data.name);
+			$('.namef').css("display", "block");
+			$('.emailf').css("display", "block");
+			$('.addressf').css("display", "block");
+			$('.notef').css("display", "block");
+			$('#name').val(jsonResult.data.name);
+			$('#email').val(jsonResult.data.email);
+			$('#address').val(jsonResult.data.address);
+		},
+		error: function (jqXhr, textStatus, errorMessage) { // error callback 
+	        
+	    }
+	});
 }
 
 function main(){

@@ -6,19 +6,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<%@page import="org.springframework.security.core.userdetails.UserDetails"%>
-<%@page import="com.devpro.entities.User"%>
-<%@page import="org.springframework.security.core.context.SecurityContextHolder"%>
-<%!
-	public String getEmailLogined() {
-		String email = "";
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-			email = ((User)principal).getUsername();
-		}
-		return email;
-	}
-%>
 
 <header>
 	<span></span>
@@ -44,14 +31,6 @@
 					<i class="fas fa-search"></i>
 				</button>
 			</form>
-			<div class="sign-in-out" style="margin-left:10px; ">
-				<%if(getEmailLogined().isEmpty()) {%>
-					<a  style="margin-left:115px;" class="btn btn-warning btn-sm" href="${pageContext.request.contextPath}/cai-nay-la-mapping-trong-adminlogincontroller" data-toggle="tooltip" title="Đăng nhập">Login<i class="fas fa-sign-in-alt"></i></a>
-				<%} else{%>
-					<div style="min-width: 110px; text-align: right;"><p ><%= getEmailLogined()%></p></div>
-					<a style="margin-left:5px;" class="btn btn-warning btn-sm" href="${pageContext.request.contextPath}/cai-nay-la-thuoc-tinh-href-trong-the-a-logout" data-toggle="tooltip" title="Đăng xuất">Logout<i class="fas fa-sign-out-alt"></i></a>
-				<%} %>
-			</div>
 		</div>
 		
 	</div>

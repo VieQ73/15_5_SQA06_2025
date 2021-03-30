@@ -79,10 +79,7 @@
 													 	<i class="far fa-trash-alt"></i>
 													</button>
 												</td>
-												
-												
 											</tr>
-											
 										</c:forEach>
 										<tr>
 											<td></td>
@@ -91,7 +88,6 @@
 											<td id="tongtienT">
 													<fmt:formatNumber type="number" maxIntegerDigits="13"
 												value="${tong_gia }" /> đ
-												
 												</td>
 											<td></td>
 										</tr>
@@ -101,28 +97,23 @@
 						</c:choose>
 					</div>
 				</div>
-				
 				<h1 class="my-4">Gửi đơn hàng</h1>
 				<div class="row mb-6">
 					<div class="col col-lg-6">
-						<form action="${pageContext.request.contextPath}/user/luu_don_hang " method="post">
-							<div class="form-group">
-								<label for="name">Tên khách hàng:</label>
-								<input type="text" class="form-control" id="name" name="name">
-							</div>					
+						<form action="${pageContext.request.contextPath}/luu_don_hang " method="post">
 							<div class="form-group">
 								<label for="phone">Điện thoại liên hệ:</label>
-								<input type="tel" class="form-control" id="phone" name="phone">
+								<input type="tel" class="form-control" id="phone" name="phone" onblur="checkPhone()">
 							</div>
-							<div class="form-group">
-								<label for="email">Email:</label>
-								<input type="email" class="form-control" id="email" name=email>
+							<div class="form-group namef" style="display: none">
+								<label for="name">Tên khách hàng:</label>
+								<input type="text" class="form-control" id="name" name="name">
 							</div>
-							<div class="form-group">
+							<div class="form-group addressf" style="display: none">
 								<label for="address">Địa chỉ giao hàng:</label>
 								<input type="text" class="form-control" id="address" name="address">
 							</div>
-							<div class="form-group">
+							<div class="form-group notef" style="display: none">
 								<label for="note">Ghi chú:</label>
 								<textarea class="form-control" id="note" name="note"></textarea>
 							</div>
@@ -130,7 +121,7 @@
 						</form>
 					</div>
 					<div class="col mb-6 col-lg-6" style="padding-top: 50px;">
-						<a class="btn btn-success" style="margin-left:50px" href="${pageContext.request.contextPath}/user/historyCart">Lịch sử mua hàng</a>
+						<a class="btn btn-success" style="margin-left:50px" href="${pageContext.request.contextPath}/historyCart">Lịch sử mua hàng</a>
 						<a style="margin-left:30px" class="btn btn-info" href="${pageContext.request.contextPath}/">Tiếp tục mua hàng</a>
 					</div>
 				</div>

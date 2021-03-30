@@ -47,7 +47,7 @@ public class AdminSaleOrder {
 	public String confirm_sale(@PathVariable("id") Integer id, final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
 		SaleOrder saleOrderInDP = saleOrderRepo.getOne(id);
-		saleOrderInDP.setStatus_ok(1);
+		saleOrderInDP.setStatus(1);
 		saleOrderRepo.save(saleOrderInDP);
 		model.addAttribute("saleorders", saleOrderService.searchAdmin(null));
 		

@@ -7,20 +7,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-
-<%@page import="org.springframework.security.core.userdetails.UserDetails"%>
-<%@page import="com.devpro.entities.User"%>
-<%@page import="org.springframework.security.core.context.SecurityContextHolder"%>
-<%!
-	public Integer getEmailLogined() {
-		Integer id=8;
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-			id = ((User)principal).getId();
-		}
-		return id;
-	}
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,9 +21,22 @@
 		<jsp:include page="/WEB-INF/views/front-end/common/header.jsp"></jsp:include>
 		<div class="bg">
 		<div class="container">
-			<div class="col-lg-12">
+			
+			<div class="col-lg-12" style="min-height:30em;
+			background-image:linear-gradient(180deg, rgba(237,104,193,0.8) 20%, rgba(255,255,255,1) 100%), url('${pageContext.request.contextPath}/images/history_cart.jpg');
+			background-position: center;
+		    background-size: cover;
+		    background-attachment: fixed;
+			">
 				<div class="row mb-4">
 					<div class="col">
+						<div class="input-group" style="width: 30%; margin: auto; margin-top: 3%">
+						  <input type="text" class="form-control" placeholder="Số điện thoại">
+						  <div class="input-group-append" style="margin-left: 5%">
+						    <button class="btn btn-success" onclick="search_hisCart()">Tìm kiếm</button>
+						  </div>
+						</div>
+						<div class="list-historyCart" style="display: ;">
 						<h3 class="title-5 m-b-35">Danh sách đơn hàng</h3>
 							<div class="table-responsive table-responsive-data2">
 								<table class="table table-data2 display" style="background: #FFEFDB;" id="">
@@ -50,7 +49,6 @@
 											<th>Tổng giá</th>
 											<th>Ngày đặt</th>
 											<th>Trạng thái</th>
-											
 											<th></th>
 										</tr>
 									</thead>
@@ -103,6 +101,7 @@
 										</c:forEach>
 									</tbody>
 								</table>
+							</div>
 							</div>
 						</div>
 					</div>

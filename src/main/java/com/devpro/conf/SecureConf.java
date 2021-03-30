@@ -30,8 +30,7 @@ public class SecureConf extends WebSecurityConfigurerAdapter {
             // thực hiện xác thực với các url kiểu ..../admin/....
             .antMatchers("/admin/**").hasAnyAuthority("ADMIN")
 //           .antMatchers("/admin/**").authenticated()
-            .antMatchers("/user/**").hasAnyAuthority("USER", "ADMIN")
-            .and() // kết hợp với điều kiện.
+            .and()
             .exceptionHandling().accessDeniedHandler(new CustomAccessDeniedHandler())
 			.and()
             
@@ -67,7 +66,7 @@ public class SecureConf extends WebSecurityConfigurerAdapter {
     }
 	
 	@Autowired public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+		auth.inMemoryAuthentication().passwordEncoder(passwordEncoder()).withUser("admin").password("$2a$08$2y/ltiry83DevVSMbkhk/.KMw7lkW28Q2DUkAHGa6eQc7QKxsRH2O").roles("ADMIN");
 	}
 	
 	/*

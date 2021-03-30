@@ -50,7 +50,6 @@ public class AdminProductController extends BaseController {
 		product.setSeo(result);
 		Date d = Calendar.getInstance().getTime();
 		product.setCreatedDate(d);
-		product.setPrice_sale(product.discount(product.getPrice(), product.getSaleoff()));
 		productService.save(productImages, product);
 		return "redirect:/admin/listProducts/?add=success";
 	}

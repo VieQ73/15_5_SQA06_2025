@@ -9,7 +9,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -23,7 +25,7 @@ public class Product extends BaseEntity{
 	@Column(name = "price", precision = 13, scale = 2, nullable = false)
 	private BigDecimal price = BigDecimal.ZERO;
 
-	@Column(name = "short_description", length = 3000, nullable = false)
+	@Column(name = "short_description", columnDefinition = "LONGTEXT", nullable = false)
 	private String shortDes;
 
 	@Lob
@@ -33,28 +35,25 @@ public class Product extends BaseEntity{
 	@Column(name = "seo", nullable = false)
 	private String seo;
 	
-	@Column(name = "selling", nullable = false)
-	private int selling = 0;
 	
 	@Column(name = "amount")
-	private int amount = 100;
+	private int amount=100;
 	
-	@Column(name ="saleoff", nullable = false)
-	private int saleoff=0;
+	@Column(name = "selling")
+	private int selling;
 	
 	@Column(name="price_sale", nullable = false)
-	private BigDecimal price_sale = price.subtract(price).multiply(new BigDecimal(saleoff).divide(new BigDecimal(100)));
+	private BigDecimal price_sale = price;
 	
-	public BigDecimal discount(BigDecimal gia, int giam) {
-		return gia.subtract(gia.multiply(new BigDecimal(giam).divide(new BigDecimal(100))));
-	}
+	@Column(name = "discount")
+	private int discount =0;
 	
-	public int getSaleoff() {
-		return saleoff;
+	public int getDiscount() {
+		return discount;
 	}
 
-	public void setSaleoff(int saleoff) {
-		this.saleoff = saleoff;
+	public void setDiscount(int discount) {
+		this.discount = discount;
 	}
 
 	public int getAmount() {
@@ -65,6 +64,23 @@ public class Product extends BaseEntity{
 		this.amount = amount;
 	}
 	
+	
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinTable(name = "tbl_product_sale",
+			  joinColumns = @JoinColumn(name = "product_id"), 
+			  inverseJoinColumns = @JoinColumn(name = "sale_id"))
+	private List<Sale> sale = new ArrayList<Sale>();
+
+	
+	
+	public List<Sale> getSale() {
+		return sale;
+	}
+
+	public void setSale(List<Sale> sale) {
+		this.sale = sale;
+	}
+
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "gift_id")
@@ -112,6 +128,15 @@ public class Product extends BaseEntity{
 	public BigDecimal getPrice() {
 		return price;
 	}
+	
+
+	public int getSelling() {
+		return selling;
+	}
+
+	public void setSelling(int selling) {
+		this.selling = selling;
+	}
 
 	public void setPrice(BigDecimal price) {
 		this.price = price;
@@ -157,15 +182,6 @@ public class Product extends BaseEntity{
 		this.productImages = productImages;
 	}
 
-
-	public int getSelling() {
-		return selling;
-	}
-
-	public void setSelling(int selling) {
-		this.selling = selling;
-	}
-
 	public BigDecimal getPrice_sale() {
 		return price_sale;
 	}
@@ -174,18 +190,4 @@ public class Product extends BaseEntity{
 		this.price_sale = price_sale;
 	}
 
-	
-
-	
-	
-
-	
-	
-
-	
-
-	
-
-	
-	
 }

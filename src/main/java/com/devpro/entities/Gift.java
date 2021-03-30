@@ -22,7 +22,7 @@ public class Gift extends BaseEntity{
 
 
 	@Lob
-	@Column(name = "description", nullable = true)
+	@Column(name = "description",columnDefinition = "LONGTEXT", nullable = true)
 	private String description;
 
 	
@@ -77,8 +77,4 @@ public class Gift extends BaseEntity{
 		this.giftImages = giftImages;
 	}
 
-	
-	
-	
-	
 }

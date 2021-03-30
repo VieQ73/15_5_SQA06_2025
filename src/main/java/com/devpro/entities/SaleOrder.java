@@ -35,16 +35,20 @@ public class SaleOrder {
 	private Date createdDate;
 	 
 	
-	@Column(name = "phone")
-	private String phone;
-	
-	@Column(name = "email")
-	private String email;
-	
-	@Column(name="note")
+	@Column(name="note", columnDefinition = "LONGTEXT", nullable = false)
 	private String note;
 	
+	@Column(name="address", columnDefinition = "LONGTEXT")
+	private String address;
 	
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	public String getNote() {
 		return note;
 	}
@@ -52,26 +56,9 @@ public class SaleOrder {
 	public void setNote(String note) {
 		this.note = note;
 	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	@Column(name = "customer_name")
-	private String customerName;
-
-	@Column(name = "customer_address")
-	private String customerAddress;
-
 	
 	@Column(name = "status")
-	private Integer status_ok= 0;
+	private Integer status= 0;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "saleOrder", fetch = FetchType.LAZY)
 	private List<SaleOrderProducts> saleOrderProducts = new ArrayList<SaleOrderProducts>();
@@ -89,22 +76,6 @@ public class SaleOrder {
 		this.total = total;
 	}
 
-	public String getCustomerName() {
-		return customerName;
-	}
-
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
-
-	public String getCustomerAddress() {
-		return customerAddress;
-	}
-
-	public void setCustomerAddress(String customerAddress) {
-		this.customerAddress = customerAddress;
-	}
-
 	public List<SaleOrderProducts> getSaleOrderProducts() {
 		return saleOrderProducts;
 	}
@@ -113,17 +84,12 @@ public class SaleOrder {
 		this.saleOrderProducts = saleOrderProducts;
 	}
 
-	
-
-	
-
-	public Integer getStatus_ok() {
-		return status_ok;
+	public Integer getStatus() {
+		return status;
 	}
 
-
-	public void setStatus_ok(Integer status_ok) {
-		this.status_ok = status_ok;
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -134,51 +100,24 @@ public class SaleOrder {
 		return user;
 	}
 
-
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-
-	public String getPhone() {
-		return phone;
-	}
-
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
 
 	public Integer getId() {
 		return id;
 	}
 
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 
 	public Date getCreatedDate() {
 		return createdDate;
 	}
 
-
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
-
-
-	
-
-	
-	
-	/*
-	 * public User getUser() { return user; }
-	 * 
-	 * public void setUser(User user) { this.user = user; }
-	 */
-
 	
 }

@@ -70,7 +70,7 @@
 										<div class="row">
 											<c:forEach var = "product" items = "${products }">				
 												<div class="col-lg-4 col-md-6 mb-4 product-cate">
-													<c:if test="${product.saleoff != 0 }">
+													<c:if test="${product.price_sale != 0 }">
 														<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg"} width="80px" height="40px">
 													</c:if>
 													

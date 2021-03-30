@@ -109,7 +109,7 @@
 			
 				<c:forEach var = "product" items = "${productSelling }">
 					<div class="spbc-body">
-						<c:if test="${product.saleoff != 0 }">
+						<c:if test="${product.discount != 0 }">
 							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
 						</c:if>
 						<div class="spbc-img ">
@@ -139,22 +139,22 @@
 			</div>
 		</div>
 		<!-- end spbc -->
+		
 		<div class="body">
 			<div class="body-top">
 				<div class="body-top-right">
 					<a href="#">MỸ PHẨM TRANG ĐIỂM</a>
 				</div>
 				<div class="body-top-mid">
-					<a href="#" class="btn">Son Môi</a> <a href="#" class="btn">Kem
-						Nền</a> <a href="#" class="btn">Phấn Nước</a> <a href="#" class="btn">Che
-						Khuyết Điểm</a>
+					<a href="#" class="btn">Son môi</a> <a href="#" class="btn">Kem nền</a> <a href="#" class="btn">Phấn nước</a> <a
+						href="#" class="btn">Che khuyết điểm</a>
 				</div>
 				<div class="body-top-left">
 					<a href="#" class="btn">Xem thêm</a>
 				</div>
 			</div>
 			<div class="body-main row">
-				<div class="body-main-banner col-xl-3">
+				<div class="body-main-banner">
 					<a href="#"> <img
 						src="${pageContext.request.contextPath}/images/my-pham-trang-diem-menu-left.jpg">
 					</a>
@@ -164,7 +164,7 @@
 						<c:forEach var = "product" items = "${products }">				
 							<div class="col-xl-3">
 								<div class="card h-100 product-home">
-								<c:if test="${product.saleoff != 0 }">
+								<c:if test="${product.discount != 0 }">
 							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
 						</c:if>
 									<div class="product-img">
@@ -196,6 +196,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<div class="body">
 			<div class="body-top">
 				<div class="body-top-right">
@@ -221,7 +222,7 @@
 						<c:forEach var = "product" items = "${products2 }">				
 							<div class="col-xl-3">
 								<div class="card h-100 product-home">
-								<c:if test="${product.saleoff != 0 }">
+								<c:if test="${product.discount != 0 }">
 							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
 						</c:if>
 									<div class="product-img">
@@ -278,7 +279,7 @@
 						<c:forEach var = "product" items = "${products3 }">				
 							<div class="col-xl-3">
 								<div class="card h-100 product-home">
-								<c:if test="${product.saleoff != 0 }">
+								<c:if test="${product.discount != 0 }">
 							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
 						</c:if>
 									<div class="product-img">
@@ -335,7 +336,7 @@
 						<c:forEach var = "product" items = "${products4 }">				
 							<div class="col-xl-3">
 								<div class="card h-100 product-home">
-								<c:if test="${product.saleoff != 0 }">
+								<c:if test="${product.discount != 0 }">
 							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
 						</c:if>
 									<div class="product-img">

@@ -36,10 +36,10 @@ public class SaleOrderService {
 		return query.getResultList();
 	}
 	
-	public List<SaleOrder> searchUserNamme(String name) {
+	public List<SaleOrder> searchUserPhone(String phone) {
 
 
-		String sql = "select * from tbl_saleorder where created_by=(select id from tbl_users where username = '"+name+"') order by created_date desc";
+		String sql = "select * from tbl_saleorder where created_by=(select id from tbl_users where phone = '"+phone+"') order by created_date desc";
 		Query query = entityManager.createNativeQuery(sql, SaleOrder.class);
 		
 		return query.getResultList();

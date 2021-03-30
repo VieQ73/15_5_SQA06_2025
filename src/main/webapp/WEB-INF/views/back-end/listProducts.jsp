@@ -76,8 +76,6 @@
 											<fmt:formatNumber type="number" maxIntegerDigits="13"
 										value="${product.price}" /> đ
 										</td>
-										
-										
 										<td>
 											<c:choose>
 												<c:when test="${product.status}">

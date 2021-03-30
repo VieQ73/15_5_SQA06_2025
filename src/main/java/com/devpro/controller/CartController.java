@@ -2,9 +2,9 @@ package com.devpro.controller;
 
 import java.io.IOException;
 import java.security.Principal;
-
+import java.text.NumberFormat;
 import java.util.List;
-
+import java.util.Locale;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,10 +34,12 @@ import com.devpro.entities.SaleOrder;
 import com.devpro.entities.SaleOrderProducts;
 import com.devpro.entities.User;
 import com.devpro.model.AjaxResponse;
+import com.devpro.model.luutru;
 import com.devpro.repositories.ProductRepo;
 import com.devpro.repositories.SaleOrderRepo;
 import com.devpro.repositories.UserRepo;
 import com.devpro.services.SaleOrderService;
+import com.devpro.services.UserService;
 import com.ibm.icu.util.Calendar;
 
 import java.math.*;
@@ -53,6 +55,9 @@ public class CartController extends BaseController{
 	
 	@Autowired
 	private SaleOrderService saleOrderService;
+	
+	@Autowired
+	private UserService userService;
 	@RequestMapping(value = { "/cart" }, method = RequestMethod.GET)
 	public String index(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
 			throws Exception {
@@ -131,16 +136,8 @@ public class CartController extends BaseController{
 		return ResponseEntity.ok(new AjaxResponse(200, String.valueOf(gioHang.getSanPhamTrongGioHangs().size())));
 	}
 	
-	public Integer getIdLogined() {
-		Integer id=8;
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-			id = ((User)principal).getId();
-		}
-		return id;
-	}
 	
-	@RequestMapping(value = { "/user/luu_don_hang" }, method = RequestMethod.POST)
+	@RequestMapping(value = { "/luu_don_hang" }, method = RequestMethod.POST)
 	public String save(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
 			throws Exception {
 		
@@ -158,20 +155,29 @@ public class CartController extends BaseController{
 			String name = request.getParameter("name");
 			String phone = request.getParameter("phone");
 			String address = request.getParameter("address");
-			String email = request.getParameter("email");
 			String note = request.getParameter("note");
 			
 			SaleOrder saleOrder = new SaleOrder();
 			Date d = Calendar.getInstance().getTime();
 			saleOrder.setCreatedDate(d);
-			saleOrder.setCustomerName(name);
-			saleOrder.setCustomerAddress(address);
-			saleOrder.setPhone(phone);
-			saleOrder.setEmail(email);
 			saleOrder.setNote(note);
-			saleOrder.setUser(userRepo.getOne(getIdLogined()));
+			saleOrder.setAddress(address);
 			saleOrder.setTotal(gioHang.getTotal(productRepo));
 			
+			List<User> u = userService.searUserByPhone(phone);
+			if(u.size()==0) {
+				User user = new User();
+				user.setAddress(address);
+				user.setName(name);
+				user.setPhone(phone);
+				userRepo.save(user);
+			}
+			List<User> u2 = userService.searUserByPhone(phone);
+			for (User user : u2) {
+				user.setAddress(address);
+				userRepo.save(user);
+				saleOrder.setUser(user);
+			}
 			for(ProductInCart sanPhamTrongGioHang : gioHang.getSanPhamTrongGioHangs()) {
 				Product prInDB = productRepo.getOne(sanPhamTrongGioHang.getProductId());
 				SaleOrderProducts saleOrderProducts = new SaleOrderProducts();
@@ -186,8 +192,16 @@ public class CartController extends BaseController{
 			httpSession.removeAttribute("GIO_HANG");
 			httpSession.removeAttribute("tong_gia");
 	
-			return "redirect:/user/historyCart/?add=success";
+			return "redirect:/buy-success/?add=success";
 		}
+	}
+	
+	@RequestMapping(value = { "/buy-success" }, method = RequestMethod.GET)
+	public String buy_success(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
+			throws Exception {
+		HttpSession httpSession = request.getSession();
+		Cart gioHang = (Cart) httpSession.getAttribute("GIO_HANG");
+		return "front-end/buySuccess";
 	}
 	
 	public String checkSL(Cart gioHang) {
@@ -202,32 +216,22 @@ public class CartController extends BaseController{
 		return err;
 	}
 	
-	@RequestMapping(value = { "/user/historyCart" }, method = RequestMethod.GET)
-	public String saveProduct(final ModelMap model, final HttpServletRequest request,
-			final HttpServletResponse response, Principal principal) throws Exception {
-		String name = principal.getName();
-		model.addAttribute("historyCarts", saleOrderService.searchUserNamme(name));
+	
+	
+	@RequestMapping(value = { "/historyCart" }, method = RequestMethod.GET)
+	public String saveProduct( final ModelMap model, final HttpServletRequest request,
+			final HttpServletResponse response) throws Exception {
 		return "front-end/historyCart";
 	}
 	
-	
-	@RequestMapping(value = { "/user/historyCart/{id}" }, method = RequestMethod.GET)
-	public String saveProduct(@PathVariable("id") Integer id, final ModelMap model, final HttpServletRequest request,
-			final HttpServletResponse response) throws Exception {
-		SaleOrder saleOrder = saleOrderRepo.getOne(id);
-		model.addAttribute("historyCart", saleOrder);
-		model.addAttribute("historyCartDetails", saleOrderService.searchProduct(id));
-		return "front-end/historyCartDetail";
-	}
-	
 	@RequestMapping(value = { "/user/historyCartDetail/{id}" }, method = RequestMethod.GET)
-	public String confirm_sale(@PathVariable("id") Integer id, final ModelMap model, final HttpServletRequest request,
+	public String confirm_sale(@PathVariable("id") Integer id, @RequestBody String phone, final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
 		SaleOrder saleOrderInDP = saleOrderRepo.getOne(id);
 		
-		if(saleOrderInDP.getStatus_ok()==1)
+		if(saleOrderInDP.getStatus()==1)
 		{
-			saleOrderInDP.setStatus_ok(2);
+			saleOrderInDP.setStatus(2);
 			saleOrderRepo.save(saleOrderInDP);
 		}
 		else
@@ -241,9 +245,11 @@ public class CartController extends BaseController{
 			saleOrderRepo.delete(saleOrderInDP);
 		}
 		
-		model.addAttribute("historyCarts", saleOrderService.searchUser(getIdLogined()));
+		model.addAttribute("historyCarts", saleOrderService.searchUserPhone(phone));
 		return "front-end/historyCart";
 	}
+	
+	
 	
 	@RequestMapping(value = { "/xoa-sp-gio-hang" }, method = RequestMethod.POST)
 	public ResponseEntity<AjaxResponse> xoaSP_in_Cart(@RequestBody ProductInCart sanPhamTrongGioHang,
@@ -278,14 +284,41 @@ public class CartController extends BaseController{
 			{			
 				item.setSoluong(sanPhamTrongGioHang.getSoluong());
 				item.setTongGia(item.getGiaBan().multiply(new BigDecimal(item.getSoluong())));
+				sanPhamTrongGioHang.setTongGia(item.getTongGia());
 			}
 		}
 		BigDecimal sum = BigDecimal.ZERO;
 		for(ProductInCart item : gioHang.getSanPhamTrongGioHangs()) {
 			sum = sum.add(item.getTongGia());
-		}	
+		}
+		Locale localeVN = new Locale("vi", "VN");
+		NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
+		String str2 =currencyVN.format(sum);
+		String str3 = currencyVN.format(sanPhamTrongGioHang.getTongGia());
+		luutru dta = new luutru();
+		dta.setNgang(str3);
+		dta.setDoc(str2);
 		httpSession.setAttribute("tong_gia", sum);
-		return ResponseEntity.ok(new AjaxResponse(200, sum));
+		return ResponseEntity.ok(new AjaxResponse(200, dta));
+	}
+	
+	@RequestMapping(value = { "/check-phone" }, method = RequestMethod.POST)
+	public ResponseEntity<AjaxResponse> checkPhone(@RequestBody Integer phone,
+			final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
+			throws IOException {
+		User u= new User();
+		
+		List<User> ur=userService.searUserByPhone(phone.toString());
+		if(ur.size()==0) {
+			return ResponseEntity.ok(new AjaxResponse(200,u ));
+		}
+		System.out.println(ur.size());
+		for (User user : ur) {
+			u.setName(user.getName());
+			u.setAddress(user.getAddress());
+		}
+		
+		return ResponseEntity.ok(new AjaxResponse(200,u ));
 	}
 	
 }

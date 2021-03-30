@@ -1,7 +1,6 @@
 package com.devpro.entities;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -24,7 +23,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name = "tbl_users")
-public class User implements UserDetails {
+public class User {
 	private static final long serialVersionUID = -1956195527415323516L;
 
 	@Id // xác định đây là khoá chính.
@@ -32,30 +31,18 @@ public class User implements UserDetails {
 	@Column(name = "id")
 	private Integer id; // primary-key
 
-	@Column(name = "created_date", nullable = false)
-	private Date createdDate ;
-
-	@Column(name = "updated_date", nullable = true)
-	private Date updatedDate;
 	
 	@Column(name = "status", nullable = false)
 	private Boolean status = Boolean.TRUE;
 	
-	@Column(name = "username", length = 45, nullable = false)
-	private String username;
-
-	@Column(name = "password", length = 100, nullable = false)
-	private String password;
-
-	@Column(name = "email", length = 45, nullable = false)
-	private String email;
-
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinTable(name = "tbl_users_roles",
-			  joinColumns = @JoinColumn(name = "user_id"), 
-			  inverseJoinColumns = @JoinColumn(name = "role_id"))
-	private List<Role> roles = new ArrayList<Role>();
+	@Column(name = "name", length = 200, nullable = false)
+	private String name;
 	
+	@Column(name="phone", length = 45, nullable = false)
+	private String phone;
+	
+	@Column(name="address", length = 1000, nullable = false)
+	private String address;
 	
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
@@ -66,39 +53,6 @@ public class User implements UserDetails {
 		saleOrders.add(_saleOrder);
 	}
 	
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public List<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
-	}
-
-	
 	public Integer getId() {
 		return id;
 	}
@@ -106,21 +60,29 @@ public class User implements UserDetails {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	public Date getCreatedDate() {
-		return createdDate;
+	
+	public String getName() {
+		return name;
 	}
 
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public Date getUpdatedDate() {
-		return updatedDate;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setUpdatedDate(Date updatedDate) {
-		this.updatedDate = updatedDate;
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public Boolean getStatus() {
@@ -143,47 +105,9 @@ public class User implements UserDetails {
 		return serialVersionUID;
 	}
 
-	/**
-	 * trả về danh sách các roles của user.
-	 */
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return roles;
-	}
-
-	@Override
-	public boolean isAccountNonExpired() {
-		return true;
-	}
-
-	@Override
-	public boolean isAccountNonLocked() {
-		return true;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		return true;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		return true;
-	}
-
-	public boolean hasAuthority(String ...roles) {
-		for(String r : roles) {
-			if(hasAuthority(r))
-				return true;
-		}
+	public boolean hasAuthority(String string) {
+		// TODO Auto-generated method stub
 		return false;
 	}
-	
-	public boolean hasAuthority(String role) {
-		for(Role role2 : roles) {
-			if(role2.getName().equals(role))
-				return true;
-		}
-		return false;
-	}
+
 }

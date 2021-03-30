@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.devpro.entities.Product;
+import com.devpro.entities.Sale;
 import com.devpro.entities.Images;
 import com.devpro.model.ProductSearch;
 import com.devpro.repositories.ProductRepo;
@@ -117,12 +118,28 @@ public class ProductService {
 //		String jpql = "Select caijcungduoc from Product caijcungduoc";
 //		Query query = entityManager.createQuery(jpql, Product.class);
 
-		String sql = "select * from tbl_products where category_id in (select id from tbl_category where seo='"+seo+"')";
+		String sql = "select * from tbl_products where status = 1 and category_id in (select id from tbl_category where seo='"+seo+"')";
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		return query.getResultList();
 	}
 	
+	public List<Product> getProductSale(final ProductSearch productSreach) {
+		String sql = "SELECT a.* FROM tbl_products a, tbl_product_sale b, tbl_sale c where a.status = 1 and a.id = b.product_id and b.sale_id = c.id and curdate() >= c.start_date and curdate() <= c.end_date;";
+		Query query = entityManager.createNativeQuery(sql, Product.class);
+		return query.getResultList();
+	}
 	
+	public Sale getDiscount(int id) {
+		String sql ="SELECT c.* FROM tbl_products a, tbl_product_sale b, tbl_sale c where a.id="+id+" and a.status = 1 and a.id = b.product_id and b.sale_id = c.id and curdate() >= c.start_date and curdate() <= c.end_date order by datediff(curdate(), c.start_date) asc limit 1;";
+		Query query = entityManager.createNativeQuery(sql, Sale.class);
+		return (Sale) query.getSingleResult();
+	}
+	
+	public List<Product> getAllProduct(){
+		String sql = "select * from tbl_products where status=true";
+		Query query = entityManager.createNativeQuery(sql, Product.class);
+		return query.getResultList();
+	}
 	
 	public List<Product> search(final ProductSearch productSearch) {
 //		String jpql = "Select caijcungduoc from Product caijcungduoc";

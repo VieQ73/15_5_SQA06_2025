@@ -24,15 +24,7 @@ public abstract class BaseEntity {
 	
 
 	@Column(name = "updated_date", nullable = true)
-	private java.util.Date updatedDate= Calendar.getInstance().getTime();
-
-	
-	
-	@Column(name = "created_by", nullable = true)
-	private Integer createdBy;
-
-	@Column(name = "updated_by", nullable = true)
-	private Integer updatedBy;
+	private java.util.Date updatedDate;
 
 	@Column(name = "status", nullable = false)
 	private Boolean status = Boolean.TRUE;
@@ -61,21 +53,6 @@ public abstract class BaseEntity {
 		this.updatedDate = updatedDate;
 	}
 
-	public Integer getCreatedBy() {
-		return createdBy;
-	}
-
-	public void setCreatedBy(Integer createdBy) {
-		this.createdBy = createdBy;
-	}
-
-	public Integer getUpdatedBy() {
-		return updatedBy;
-	}
-
-	public void setUpdatedBy(Integer updatedBy) {
-		this.updatedBy = updatedBy;
-	}
 
 	public Boolean getStatus() {
 		return status;
