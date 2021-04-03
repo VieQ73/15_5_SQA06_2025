@@ -14,8 +14,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 
@@ -218,13 +216,16 @@ public class CartController extends BaseController{
 	
 	
 	
-	@RequestMapping(value = { "/historyCart" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/historyCart" })
 	public String saveProduct( final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
+		String phone = request.getParameter("keyphone");
+		List<SaleOrder> list = saleOrderService.searchUserPhone(phone);
+		model.addAttribute("historyCarts", list);
 		return "front-end/historyCart";
 	}
 	
-	@RequestMapping(value = { "/user/historyCartDetail/{id}" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/historyCartDetail/{id}" }, method = RequestMethod.GET)
 	public String confirm_sale(@PathVariable("id") Integer id, @RequestBody String phone, final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
 		SaleOrder saleOrderInDP = saleOrderRepo.getOne(id);
@@ -246,7 +247,7 @@ public class CartController extends BaseController{
 		}
 		
 		model.addAttribute("historyCarts", saleOrderService.searchUserPhone(phone));
-		return "front-end/historyCart";
+		return "front-end/historyCartDetail";
 	}
 	
 	

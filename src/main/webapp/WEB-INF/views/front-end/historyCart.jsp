@@ -51,21 +51,21 @@
 										<c:forEach var="historyCart" items="${historyCarts }" varStatus="loop">
 											<tr class="tr-shadow">
 												<th scope="row">${loop.index + 1}</th>
-												<td>${historyCart.customerName}</td>
-												<td>${historyCart.customerAddress}</td>
-												<td>${historyCart.phone}</td>
+												<td>${historyCart.user.name}</td>
+												<td>${historyCart.address}</td>
+												<td>${historyCart.user.phone}</td>
 												<td><fmt:formatNumber type="number" maxIntegerDigits="13"
 												value="${historyCart.total}" /> đ</td>
 												<td>
-													<c:if test="${historyCart.status_ok == 0}">
+													<c:if test="${historyCart.status == 0}">
 														<span  style="color: red;"><fmt:formatDate pattern = "dd-MM-yyyy" 
          																			value = "${historyCart.createdDate}" /></span>
 													</c:if>
-													<c:if test= "${historyCart.status_ok == 1}">
+													<c:if test= "${historyCart.status == 1}">
 														<span  style="color: blue;"><fmt:formatDate pattern = "dd-MM-yyyy" 
          																			value = "${historyCart.createdDate}" /></span>
 													</c:if>
-													<c:if test= "${historyCart.status_ok == 2}">
+													<c:if test= "${historyCart.status == 2}">
 														<span  style="color: green;">
 															<fmt:formatDate pattern = "dd-MM-yyyy" 
          																			value = "${historyCart.createdDate}" />
@@ -73,18 +73,18 @@
 													</c:if>
 												</td>
 												<td>
-													<c:if test="${historyCart.status_ok == 0}">
+													<c:if test="${historyCart.status == 0}">
 														<span class="badge" style="background: red;">Đặt hàng</span>
 													</c:if>
-													<c:if test= "${historyCart.status_ok == 1}">
+													<c:if test= "${historyCart.status == 1}">
 														<span class="badge" style="background: blue;">Giao hàng</span>
 													</c:if>
-													<c:if test= "${historyCart.status_ok == 2}">
+													<c:if test= "${historyCart.status == 2}">
 														<span class="badge" style="background: green;">Nhận hàng</span>
 													</c:if>
 												</td>
 												<td>							
-													<a href="${pageContext.request.contextPath}/user/historyCart/${historyCart.id}">
+													<a href="${pageContext.request.contextPath}/historyCart/${historyCart.id}">
 														<button
 															class="item" data-toggle="tooltip" data-placement="top"
 															title="Edit">

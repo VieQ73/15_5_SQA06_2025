@@ -108,7 +108,7 @@
 						<form action="${pageContext.request.contextPath}/luu_don_hang " method="post">
 							<div class="form-group">
 								<label for="phone">Điện thoại liên hệ:</label>
-								<input type="tel" class="form-control" id="phone" name="phone" onblur="checkPhone()">
+								<input type="tel" class="form-control" id="phone" name="phone" onchange="checkPhone()">
 							</div>
 							<div class="form-group namef" style="display: none">
 								<label for="name">Tên khách hàng:</label>
@@ -126,13 +126,23 @@
 						</form>
 					</div>
 					<div class="col mb-6 col-lg-6" style="margin-top: -5px;">
-						<h4>Lịch sử mua hàng</h4>
-						<div class="input-group">
+						
+						<!-- <div class="input-group">
 						  <input type="text" class="form-control" placeholder="Nhập số điện thoại" id="his-phone">
 						  <div class="input-group-append" style="margin-left: 5%">
 						    <button class="btn btn-success" onclick="search_hisCart()">Tìm kiếm</button>
 						  </div>
-						</div>
+						</div> -->
+						
+						
+						<h4>Lịch sử mua hàng</h4>
+						<form action="${pageContext.request.contextPath}/historyCart" method="post" class="input-group">
+							<input type="text" class="form-control" style="width: 150px;"
+								placeholder="Nhập số điện thoại" name="keyphone" id="keyphone">
+							<button type="submit" id="btnClear" class="btn btn-success">
+								<i class="fas fa-search"></i>
+							</button>
+						</form>
 					</div>
 				</div>
 				
@@ -148,6 +158,9 @@
 	 <script>
       function quay_lai_trang_truoc(){
           history.back();
+      }
+      function search_hisCart(){
+    	  
       }
   	</script>
   	

@@ -25,7 +25,7 @@
 		</div>
 		<div class="search-cart">
 			<form action="${pageContext.request.contextPath}/search" method="post">
-				<input type="text" class="form-control" style="width: 200px;"
+				<input type="text" class="form-control" style="width: 300px;"
 					placeholder="tìm kiếm sản phẩm..." name="keyword" id="keyword">
 				<button style="margin-left: 10px; width:60px; margin-top:2px;" type="submit" id="btnClear" onclick="clearSearch()">
 					<i class="fas fa-search"></i>

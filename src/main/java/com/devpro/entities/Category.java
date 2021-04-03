@@ -18,7 +18,7 @@ public class Category extends BaseEntity{
 
 	@Column(name = "description",columnDefinition = "LONGTEXT",  nullable = true)
 	private String description;
-
+	
 	@Column(name = "seo", nullable = false)
 	private String seo;
 
