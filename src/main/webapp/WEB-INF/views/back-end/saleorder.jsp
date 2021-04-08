@@ -63,24 +63,24 @@
 								<c:forEach var="saleorder" items="${saleorders }" varStatus="loop">
 									<tr class="tr-shadow">
 										<th scope="row">${loop.index + 1}</th>
-										<td>${saleorder.customerName}</td>
-										<td>${saleorder.customerAddress}</td>
-										<td>${saleorder.phone}</td>
+										<td>${saleorder.user.name}</td>
+										<td>${saleorder.user.address}</td>
+										<td>${saleorder.user.phone}</td>
 										<td>
 											<fmt:formatNumber type="number" maxIntegerDigits="13"
 										value="${saleorder.total}" /> 
 										đ</td>
 										
 										<td>
-											<c:if test="${saleorder.status_ok == 0}">
+											<c:if test="${saleorder.status == 0}">
 												<span style="color: red;">${saleorder.createdDate}</span>
 											</c:if>
-											<c:if test= "${saleorder.status_ok == 1}">
+											<c:if test= "${saleorder.status == 1}">
 												<span style="color: blue;">
 													${saleorder.createdDate}
 												</span>
 											</c:if>
-											<c:if test= "${saleorder.status_ok == 2}">
+											<c:if test= "${saleorder.status == 2}">
 												<span style="color: green;">
 												${saleorder.createdDate}
 												</span>
@@ -88,13 +88,13 @@
 											</c:if>
 										</td>
 										<td>
-											<c:if test="${saleorder.status_ok == 0}">
+											<c:if test="${saleorder.status == 0}">
 												<span class="badge" style="background: red;">Đặt hàng</span>
 											</c:if>
-											<c:if test= "${saleorder.status_ok == 1}">
+											<c:if test= "${saleorder.status == 1}">
 												<span class="badge" style="background: blue;">Giao hàng</span>
 											</c:if>
-											<c:if test= "${saleorder.status_ok == 2}">
+											<c:if test= "${saleorder.status == 2}">
 												<span class="badge" style="background: green;">Nhận hàng</span>
 											</c:if>
 										</td>

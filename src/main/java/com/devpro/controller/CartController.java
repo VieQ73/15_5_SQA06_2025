@@ -197,8 +197,6 @@ public class CartController extends BaseController{
 	@RequestMapping(value = { "/buy-success" }, method = RequestMethod.GET)
 	public String buy_success(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
 			throws Exception {
-		HttpSession httpSession = request.getSession();
-		Cart gioHang = (Cart) httpSession.getAttribute("GIO_HANG");
 		return "front-end/buySuccess";
 	}
 	
@@ -222,32 +220,8 @@ public class CartController extends BaseController{
 		String phone = request.getParameter("keyphone");
 		List<SaleOrder> list = saleOrderService.searchUserPhone(phone);
 		model.addAttribute("historyCarts", list);
+//		model.addAttribute("historyCartDetails", saleOrderService.s);
 		return "front-end/historyCart";
-	}
-	
-	@RequestMapping(value = { "/historyCartDetail/{id}" }, method = RequestMethod.GET)
-	public String confirm_sale(@PathVariable("id") Integer id, @RequestBody String phone, final ModelMap model, final HttpServletRequest request,
-			final HttpServletResponse response) throws Exception {
-		SaleOrder saleOrderInDP = saleOrderRepo.getOne(id);
-		
-		if(saleOrderInDP.getStatus()==1)
-		{
-			saleOrderInDP.setStatus(2);
-			saleOrderRepo.save(saleOrderInDP);
-		}
-		else
-		{
-			List<SaleOrderProducts> saleOr = saleOrderInDP.getSaleOrderProducts();
-			for (SaleOrderProducts item : saleOr) {
-				Product productU = productRepo.getOne(item.getProduct().getId());
-				productU.setAmount(productU.getAmount()+item.getQuality());
-				productRepo.save(productU);
-			}
-			saleOrderRepo.delete(saleOrderInDP);
-		}
-		
-		model.addAttribute("historyCarts", saleOrderService.searchUserPhone(phone));
-		return "front-end/historyCartDetail";
 	}
 	
 	

@@ -124,7 +124,7 @@ public class ProductService {
 	}
 	
 	public List<Product> getProductSale(final ProductSearch productSreach) {
-		String sql = "SELECT a.* FROM tbl_products a, tbl_product_sale b, tbl_sale c where a.status = 1 and a.id = b.product_id and b.sale_id = c.id and curdate() >= c.start_date and curdate() <= c.end_date;";
+		String sql = "SELECT distinct a.* FROM tbl_products a, tbl_product_sale b, tbl_sale c where a.status = 1 and a.id = b.product_id and b.sale_id = c.id and curdate() >= c.start_date and curdate() <= c.end_date;";
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		return query.getResultList();
 	}
@@ -187,7 +187,7 @@ public class ProductService {
 	}
 	
 	public List<Product> searchSaleOff(final ProductSearch productSearch){
-		String sql="select * from tbl_products where status = true and saleoff <> 0";
+		String sql="SELECT distinct b.* FROM shop_beauty.tbl_saleorder_products a left join tbl_products b on a.product_id=b.id where b.status <> 0 order by rand() limit 0,8;";
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		//page
 		/*

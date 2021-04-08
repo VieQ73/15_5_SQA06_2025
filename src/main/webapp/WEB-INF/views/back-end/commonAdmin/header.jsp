@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" 
 pageEncoding="UTF-8"%>
-<%@page import="org.springframework.security.core.userdetails.UserDetails"%>
+<%-- <%@page import="org.springframework.security.core.userdetails.UserDetails"%>
 <%@page import="com.devpro.entities.User"%>
 <%@page import="org.springframework.security.core.context.SecurityContextHolder"%>
 <%!
@@ -12,7 +12,7 @@ pageEncoding="UTF-8"%>
 		}
 		return email;
 	}
-%>
+%> --%>
 
 <div class="sticky-header header-section ">
 			<div class="header-left">
@@ -95,7 +95,7 @@ pageEncoding="UTF-8"%>
 								<div class="profile_img">	
 									<span class="prfil-img"><img src="${pageContext.request.contextPath}/images/ad2.jpg"> </span> 
 									<div class="user-name">
-										<p><%= getEmailLogined()%></p>
+										<p>Hello</p>
 										
 										<span>Administrator</span>
 									</div>

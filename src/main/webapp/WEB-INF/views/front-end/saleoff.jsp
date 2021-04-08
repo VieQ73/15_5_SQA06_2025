@@ -95,8 +95,8 @@
 														<div class="product-title">
 															<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
 														</div>
-														<div class="price-text" style="display: inline">
-															<span style="margin-left: 10px; text-decoration: line-through; font-size: 18px; color: #424242; margin-right: 10px;" >
+														<div class="price-text" style="display: inline; text-align: center;">
+															<span style=" text-decoration: line-through; font-size: 18px; color: #424242; margin-right: 10px;" >
 																<fmt:formatNumber type="number" maxIntegerDigits="13"
 																	value="${product.price }" /> đ
 															</span>

@@ -31,41 +31,41 @@
 						<tr>
 							<td>Trạng thái:</td>
 							<td>	
-								<c:if test="${historyCart.status_ok == 0}">
+								<c:if test="${historyCart.status == 0}">
 									<span class="badge" style="background: red;"><h6>Đặt hàng</h6></span>
 								</c:if>
-								<c:if test= "${historyCart.status_ok == 1}">
+								<c:if test= "${historyCart.status == 1}">
 									<span class="badge" style="background: blue;"><h6>Đơn hàng của bạn đang được giao</h6></span>
 								</c:if>
-								<c:if test= "${historyCart.status_ok == 2}">
+								<c:if test= "${historyCart.status == 2}">
 									<span class="badge" style="background: green;"><h6>Nhận hàng</h6></span>
 								</c:if>
 							</td>
 						</tr>
 						<tr>
 							<td>Tên khách hàng:</td>
-							<td><span>${historyCart.customerName}</span></td>
+							<td><span>${historyCart.user.name}</span></td>
 						</tr>
 						<tr>
 							<td>Địa chỉ: </td>
-							<td><span>${historyCart.customerAddress}</span></td>
+							<td><span>${historyCart.address}</span></td>
 						</tr>
 					<tr>
 						<td>Số điện thoại:</td>
-						<td><span>${historyCart.phone}</span></td>
+						<td><span>${historyCart.user.phone}</span></td>
 					</tr>
 					<tr>
 						<td>Ngày đặt:</td>
 						<td>					
-							<c:if test="${historyCart.status_ok == 0}">
+							<c:if test="${historyCart.status == 0}">
 								<span  style="color: red;"><fmt:formatDate pattern = "dd-MM-yyyy" 
          																			value = "${historyCart.createdDate}" /></span>
 							</c:if>
-							<c:if test= "${historyCart.status_ok == 1}">
+							<c:if test= "${historyCart.status == 1}">
 								<span  style="color: blue;"><fmt:formatDate pattern = "dd-MM-yyyy" 
          																			value = "${historyCart.createdDate}" /></span>
 							</c:if>
-							<c:if test= "${historyCart.status_ok == 2}">
+							<c:if test= "${historyCart.status == 2}">
 								<span  style="color: green;"><fmt:formatDate pattern = "dd-MM-yyyy" 
          																			value = "${historyCart.createdDate}" /></span>
 							</c:if>
@@ -123,11 +123,11 @@
 									<td></td>
 									<td></td>
 									<td>
-										<c:if test="${historyCart.status_ok == 1}">
+										<c:if test="${historyCart.status == 1}">
 											<a class="btn btn-primary" 
-											href="${pageContext.request.contextPath}/user/historyCartDetail/${historyCart.id}">Nhận hàng</a>
+											href="${pageContext.request.contextPath}/historyCartDetail/${historyCart.id}">Nhận hàng</a>
 										</c:if>
-										<c:if test="${historyCart.status_ok == 0}">
+										<c:if test="${historyCart.status == 0}">
 											<a class="btn" style="background: red; color: white;" 
 											href="${pageContext.request.contextPath}/user/historyCartDetail/${historyCart.id}">Hủy đơn</a>
 										</c:if>

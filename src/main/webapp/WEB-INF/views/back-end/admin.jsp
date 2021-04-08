@@ -5,7 +5,7 @@ pageEncoding="UTF-8"%>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 
 
-<%@page import="org.springframework.security.core.userdetails.UserDetails"%>
+<%-- <%@page import="org.springframework.security.core.userdetails.UserDetails"%>
 <%@page import="com.devpro.entities.User"%>
 <%@page import="org.springframework.security.core.context.SecurityContextHolder"%>
 <%!
@@ -17,7 +17,7 @@ pageEncoding="UTF-8"%>
 		}
 		return email;
 	}
-%>
+%> --%>
 <!DOCTYPE HTML>
 <html>
 <head>

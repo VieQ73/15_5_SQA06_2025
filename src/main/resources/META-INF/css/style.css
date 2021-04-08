@@ -11,16 +11,15 @@ body{
 .header-top{
 	background: #f0f0f0;
 	height: 36px;
-	position: relative;
+	width: 100%;
 }
 .header-top-text{
-	position: absolute;
-	right: 200px;
 	font-size: 15px;
 	color: #919099;
 	border-right: 2px solid #d4d2d2;
 	margin: 5px;
 	padding-right: 20px;
+	margin-left: 70%;
 }
 .header-top-text b{
 	color: red;
@@ -250,6 +249,7 @@ nav ul li a:hover{
 	margin-left: 10px;
 	height: 70px;
 	margin-top: -15px;
+	overflow: hidden;
 }
 .spbc-title a{
 	text-decoration: none;
@@ -1209,5 +1209,9 @@ nav ul li a:hover{
 }
 
 
-
+@media only screen and (max-width:480px){
+	.header-main .logo2 img{
+		display: none;
+	}
+}
 

@@ -30,7 +30,7 @@ public class SaleOffContrller {
 			throws Exception {
 		List<Category> categories = categoryService.search(null);
 		model.addAttribute("categories", categories);
-		List<Product> products = productService.searchSaleOff(null);
+		List<Product> products = productService.getProductSale(null);
 		model.addAttribute("products", products);
 
 		return "front-end/saleoff";

@@ -65,10 +65,6 @@
 											<form:input type="text" class="form-control" path="amount"></form:input>
 										</div>
 										<div class="form-group">
-											<label>Giảm giá</label>
-											<form:input type="text" class="form-control" path="saleoff"></form:input>
-										</div>
-										<div class="form-group">
 											<label>Short Descrition</label>
 											<form:textarea id="txtShortlDescription" class="form-control" path="shortDes"
 												placeholder="Thông tin sản phẩm"></form:textarea>

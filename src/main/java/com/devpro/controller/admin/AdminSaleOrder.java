@@ -43,11 +43,20 @@ public class AdminSaleOrder {
 		model.addAttribute("saleorderproducts", saleOrderService.searchProduct(id));
 		return "back-end/saleorderProduct";
 	}
-	@RequestMapping(value = { "/confirm_saleProduct/{id}" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/admin/confirm_saleProduct/{id}" }, method = RequestMethod.GET)
 	public String confirm_sale(@PathVariable("id") Integer id, final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
+		String status = request.getParameter("status");
 		SaleOrder saleOrderInDP = saleOrderRepo.getOne(id);
-		saleOrderInDP.setStatus(1);
+		if(status.equals("1")) {
+			saleOrderInDP.setStatus(1);
+		}
+		if(status.equals("2")) {
+			saleOrderInDP.setStatus(2);
+		}
+		if(status.equals("3")) {
+			saleOrderInDP.setStatus(3);
+		}
 		saleOrderRepo.save(saleOrderInDP);
 		model.addAttribute("saleorders", saleOrderService.searchAdmin(null));
 		

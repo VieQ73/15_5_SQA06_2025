@@ -40,43 +40,40 @@
 						<tr>
 							<td>Trạng thái:</td>
 							<td>	
-								<c:if test="${saleorder.status_ok == 0}">
+								<c:if test="${saleorder.status == 0}">
 									<span class="badge" style="background: red;"><h4>Đặt hàng</h4></span>
 								</c:if>
-								<c:if test= "${saleorder.status_ok == 1}">
+								<c:if test= "${saleorder.status == 1}">
 									<span class="badge" style="background: blue;"><h4>Giao hàng</h4></span>
 								</c:if>
-								<c:if test= "${saleorder.status_ok == 2}">
+								<c:if test= "${saleorder.status == 2}">
 									<span class="badge" style="background: green;"><h4>Nhận hàng</h4></span>
 								</c:if>
 							</td>
 						</tr>
 						<tr>
 							<td>Tên khách hàng:</td>
-							<td><span>${saleorder.customerName}</span></td>
+							<td><span>${saleorder.user.name}</span></td>
 						</tr>
 						<tr>
 							<td>Địa chỉ: </td>
-							<td><span>${saleorder.customerAddress}</span></td>
+							<td><span>${saleorder.user.address}</span></td>
 						</tr>
 					<tr>
 						<td>Số điện thoại:</td>
-						<td><span>${saleorder.phone}</span></td>
+						<td><span>${saleorder.user.phone}</span></td>
 					</tr>
-					<tr>
-						<td>Email:</td>
-						<td><span>${saleorder.email }</span></td>
-					</tr>
+					
 					<tr>
 						<td>Ngày:</td>
 						<td>
-							<c:if test="${saleorder.status_ok == 0}">
+							<c:if test="${saleorder.status == 0}">
 								<span  style="color: red;">${saleorder.createdDate}</span>
 							</c:if>
-							<c:if test= "${saleorder.status_ok == 1}">
+							<c:if test= "${saleorder.status == 1}">
 								<span style="color: blue;">${saleorder.createdDate}</span>
 							</c:if>
-							<c:if test= "${saleorder.status_ok == 2}">
+							<c:if test= "${saleorder.status == 2}">
 								<span  style="color: green;">${saleorder.createdDate}</span>
 							</c:if>
 						</td>
@@ -131,10 +128,16 @@
 									<td></td>
 									<td></td>
 									<td>
-										<a style="margin-right: 30px;" class="btn btn-danger" href="#">Hủy</a>
-										<c:if test="${saleorder.status_ok == 0}">
+										
+										<c:if test="${saleorder.status == 0}">
+											<a style="margin-right: 30px;" class="btn btn-danger"
+											href="${pageContext.request.contextPath}/admin/confirm_saleProduct/${saleorder.id}?status=3">Hủy</a>
 											<a class="btn btn-primary" 
-											href="${pageContext.request.contextPath}/confirm_saleProduct/${saleorder.id}">Xác nhận</a>
+											href="${pageContext.request.contextPath}/admin/confirm_saleProduct/${saleorder.id}?status=1">Xác nhận</a>
+										</c:if>
+										<c:if test="${saleorder.status == 1}">
+											<a class="btn btn-primary" 
+											href="${pageContext.request.contextPath}/admin/confirm_saleProduct/${saleorder.id}?status=2">Nhận hàng</a>
 										</c:if>
 									</td>
 								</tr>

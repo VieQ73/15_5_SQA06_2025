@@ -44,6 +44,7 @@
 			        -o-transform:rotateY(360deg);
 			}
 		}
+
 	</style>
 </head>
 <body>
@@ -154,19 +155,19 @@
 				</div>
 			</div>
 			<div class="body-main row">
-				<div class="body-main-banner">
-					<a href="#"> <img
-						src="${pageContext.request.contextPath}/images/my-pham-trang-diem-menu-left.jpg">
+				<div class="body-main-banner col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+					<a href="#"> 
+						<img src="${pageContext.request.contextPath}/images/my-pham-trang-diem-menu-left.jpg">
 					</a>
 				</div>
-				<div class="body-main-product col-xl-9">
+				<div class=" col-lg-9 col-md-9 col-sm-12 col-xs-12 ">
 					<div class="row">
 						<c:forEach var = "product" items = "${products }">				
-							<div class="col-xl-3">
+							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
 								<div class="card h-100 product-home">
-								<c:if test="${product.discount != 0 }">
-							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
-						</c:if>
+									<c:if test="${product.discount != 0 }">
+										<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
+									</c:if>
 									<div class="product-img">
 										<a href="${pageContext.request.contextPath}/products/${product.seo }">
 											<c:choose>
