@@ -68,13 +68,16 @@
 						<td>Ngày:</td>
 						<td>
 							<c:if test="${saleorder.status == 0}">
-								<span  style="color: red;">${saleorder.createdDate}</span>
+								<span  style="color: red;"><fmt:formatDate pattern = "dd-MM-yyyy" 
+         																			value = "${saleorder.createdDate}" /></span>
 							</c:if>
 							<c:if test= "${saleorder.status == 1}">
-								<span style="color: blue;">${saleorder.createdDate}</span>
+								<span style="color: blue;"><fmt:formatDate pattern = "dd-MM-yyyy" 
+         																			value = "${saleorder.createdDate}" /></span>
 							</c:if>
 							<c:if test= "${saleorder.status == 2}">
-								<span  style="color: green;">${saleorder.createdDate}</span>
+								<span  style="color: green;"><fmt:formatDate pattern = "dd-MM-yyyy" 
+         																			value = "${saleorder.createdDate}" /></span>
 							</c:if>
 						</td>
 					</tr>
@@ -99,7 +102,9 @@
 								<c:forEach var="saleorderproduct" items="${saleorderproducts }" varStatus="loop">
 									<tr class="tr-shadow" >
 										<th scope="row">${loop.index + 1}</th>
-										<td style="font-size: 18px;">${saleorderproduct.product.title}</td>
+										<td style="font-size: 18px;">
+											<a href="${pageContext.request.contextPath}/products/${saleorderproduct.product.seo}" >${saleorderproduct.product.title}</a>
+										</td>
 										<td>
 											<c:choose>
 											<c:when test = "${empty saleorderproduct.product.productImages }">

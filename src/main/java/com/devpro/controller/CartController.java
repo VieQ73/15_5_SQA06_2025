@@ -293,7 +293,7 @@ public class CartController extends BaseController{
 			u.setAddress(user.getAddress());
 		}
 		
-		return ResponseEntity.ok(new AjaxResponse(200,u ));
+		return ResponseEntity.ok(new AjaxResponse(200,u));
 	}
 	
 }

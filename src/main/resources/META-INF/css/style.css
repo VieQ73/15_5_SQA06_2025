@@ -93,46 +93,16 @@ nav ul li a:hover{
 	color: black !important;
 }
 .content{
-	background: #f0f0f0;
+	width: 1200px;
 }
 .banner{
 	background: #ffffff;
 }
-.banner a img{
-	margin-left: 160px;
+.menu-top-content{
+	margin-top: 1rem;
 }
-.banner-main{
-	height: 425px;
-}
-.menu-top-content ul{
-	padding: 0px;
-	margin-left: 160px;
-	margin-top: 20px;
-	padding-bottom: 20px;
-	display: flex;
-}
-.menu-top-content ul li{
-	display: flex;
-	list-style: none;
-	border-right: 1px solid #919099;
-	padding-right: 30px;
-	padding-left: 15px;
-}
-.menu-top-content ul li:last-child{
-	border-right: 0px;
-}
-.menu-top-content ul li .icon img{
-	margin-right: 20px;
-}
-.menu-top-content ul li .menu-top-content-text{
-	font-size: 14px;
-}
-.menu-top-content ul li .menu-top-content-text1{
-	font-weight: bold;
-	text-align: center;
-}
-.menu-top-content ul li .menu-top-content-text2{
-	color: #919099;
+.menu-top-content-text{
+	margin-left: 0.6rem;
 }
 .bg{
 	background: #f4f4f4;
@@ -1112,8 +1082,21 @@ nav ul li a:hover{
     }
 
 }
-
-
+.menu-1200{
+	width: 1200px;
+	padding-bottom: 0.5rem;
+}
+.menu-top-conten-element{
+	display: flex;
+}
+.menu-top-content-text1{
+	font-weight: bold;
+	font-size: 0.8rem;
+}
+.menu-top-content-text2{
+	font-size: 0.8rem;
+	color: #7a7a52;
+}
 /*LG 6th*/
 @media (min-width: 991px) {
 
@@ -1209,9 +1192,31 @@ nav ul li a:hover{
 }
 
 
-@media only screen and (max-width:480px){
-	.header-main .logo2 img{
+@media screen and (max-width:1025px){
+	
+}
+@media screen and (max-width:668px){
+	.header-top{
 		display: none;
 	}
+	.logo2{
+		display: none;
+	}
+	#header_non_repon{
+	display: none;}
+	#header_repon{
+		display: block !important;
+	}
+	.banner-main{
+		margin-top: 4rem !important;
+	}
+	.navbar-nav a:hover{
+		background: #f27922 !important;
+	}
+	.menu-top-conten{
+	}
+	.menu-top-conten-element{
+		width: 3rem;
+		font-size: 10px;
+	}
 }
-

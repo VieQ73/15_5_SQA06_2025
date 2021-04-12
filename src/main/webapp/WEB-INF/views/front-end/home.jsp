@@ -20,6 +20,7 @@
 <head>
 	<title>Home</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<jsp:include page="/WEB-INF/views/front-end/common/css.jsp"></jsp:include>
 	<style type="text/css">
 		.sale{
@@ -55,11 +56,10 @@
 		</button>
 	</div>
 	<jsp:include page="/WEB-INF/views/front-end/common/header.jsp"></jsp:include>
-
-	<div class="bg">
-		<div class="content">
+	<div class="content container">
 			<jsp:include page="/WEB-INF/views/front-end/common/banner.jsp"></jsp:include>
 		</div>
+	<div class="bg">
 		<!-- end banner -->
 		<div class="spbc">
 			<div class="spbc-top">SẢN PHẨM BÁN CHẠY</div>

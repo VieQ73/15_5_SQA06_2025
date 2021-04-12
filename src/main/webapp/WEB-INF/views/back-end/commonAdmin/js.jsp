@@ -6,7 +6,7 @@ pageEncoding="UTF-8"%>
 
 	<!-- Metis Menu -->
 	<script src="${pageContext.request.contextPath}/js/metisMenu.min.js"></script>
-	<script src="${pageContext.request.contextPath}/summernote/summernote.min.js"></script>
+	
 	<script src="${pageContext.request.contextPath}/js/SidebarNav.min.js"></script>
 	<script src="${pageContext.request.contextPath}/js/custom.js"></script>
 	<script src="${pageContext.request.contextPath}/js/product.js"></script>

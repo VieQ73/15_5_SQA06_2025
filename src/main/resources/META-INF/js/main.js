@@ -54,11 +54,6 @@ function checkPhone(){
 		
 		dataType: "json", 
 		success: function(jsonResult) { 
-			//alert("Số lượng sản phẩm không đủ"+jsonResult.data.name);
-			$('.namef').css("display", "block");
-			$('.emailf').css("display", "block");
-			$('.addressf').css("display", "block");
-			$('.notef').css("display", "block");
 			$('#name').val(jsonResult.data.name);
 			$('#email').val(jsonResult.data.email);
 			$('#address').val(jsonResult.data.address);

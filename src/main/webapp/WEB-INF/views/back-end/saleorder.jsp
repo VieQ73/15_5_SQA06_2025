@@ -54,9 +54,9 @@
 									<th>Địa chỉ nhận</th>
 									<th>Số điện thoại</th>
 									<th>Tổng giá</th>
-									<th>Ngày đặt</th>
+									<th style="min-width: 2rem;">Ngày đặt</th>
 									<th>Trạng thái</th>
-									<th></th>
+									<th style="max-width: 1rem;"></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -73,16 +73,20 @@
 										
 										<td>
 											<c:if test="${saleorder.status == 0}">
-												<span style="color: red;">${saleorder.createdDate}</span>
+												<span style="color: red; min-width: 5rem;"><fmt:formatDate pattern = "dd-MM-yyyy" 
+         																			value = "${saleorder.createdDate}" /></span>
 											</c:if>
 											<c:if test= "${saleorder.status == 1}">
-												<span style="color: blue;">
-													${saleorder.createdDate}
+												<span style="color: blue; min-width: 5rem;">
+													<fmt:formatDate pattern = "dd-MM-yyyy" 
+         																			value = "${saleorder.createdDate}" />
+													
 												</span>
 											</c:if>
 											<c:if test= "${saleorder.status == 2}">
-												<span style="color: green;">
-												${saleorder.createdDate}
+												<span style="color: green; min-width: 5rem;">
+												<fmt:formatDate pattern = "dd-MM-yyyy" 
+         																			value = "${saleorder.createdDate}" />
 												</span>
 												
 											</c:if>

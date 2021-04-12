@@ -1,5 +1,7 @@
 package com.devpro.controller.admin;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 import com.devpro.entities.SaleOrder;
+import com.devpro.entities.SaleOrderProducts;
 
 
 import com.devpro.repositories.SaleOrderRepo;
@@ -56,6 +59,10 @@ public class AdminSaleOrder {
 		}
 		if(status.equals("3")) {
 			saleOrderInDP.setStatus(3);
+			List<SaleOrderProducts> sop = saleOrderService.searchProduct(id);
+			for (SaleOrderProducts item : sop) {
+				item.getProduct().setAmount(item.getQuality()+item.getProduct().getAmount());
+			}
 		}
 		saleOrderRepo.save(saleOrderInDP);
 		model.addAttribute("saleorders", saleOrderService.searchAdmin(null));

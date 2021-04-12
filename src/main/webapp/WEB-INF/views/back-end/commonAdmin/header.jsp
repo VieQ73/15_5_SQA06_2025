@@ -18,7 +18,7 @@ pageEncoding="UTF-8"%>
 			<div class="header-left">
 				<!--toggle button start-->
 				<!--toggle button end-->
-				<div class="profile_details_left"><!--notifications of menu start -->
+				<%-- <div class="profile_details_left"><!--notifications of menu start -->
 					<ul class="nofitications-dropdown">
 						<li class="dropdown head-dpdn">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
@@ -69,7 +69,7 @@ pageEncoding="UTF-8"%>
 						</li>
 					</ul>
 					<div class="clearfix"> </div>
-				</div>
+				</div> --%>
 				<!--notification menu end -->
 				<div class="clearfix"> </div>
 			</div>

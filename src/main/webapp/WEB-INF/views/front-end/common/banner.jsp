@@ -77,9 +77,6 @@
 			}
 </style>
 <div class="banner">
-
-	
-
 	<div class="banner-main">
 		<div class="container">
 			<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
@@ -108,75 +105,70 @@
 			</div>
 		</div>
 	</div>
-
-
-
-
-
-	<div class="menu-top-content">
-					<ul>
-						<li>
-							<div class="icon">
-								<img
-									src="${pageContext.request.contextPath}/images/ho-tro-247--1.jpg">
-							</div>
-							<div class="menu-top-content-text">
-								<div class="menu-top-content-text1">HỖ TRỢ 24/7</div>
-								<div class="menu-top-content-text2">0911 403 114</div>
-							</div>
-						</li>
-						<li>
-							<div class="icon">
-								<img
-									src="${pageContext.request.contextPath}/images/thong-tin--1.jpg">
-							</div>
-							<div class="menu-top-content-text">
-								<div class="menu-top-content-text1">THÔNG TIN</div>
-								<div class="menu-top-content-text2">
-									Bảo mật tuyệt đối
-									</div>
-							</div>
-						</li>
-						<li>
-							<div class="icon">
-								<img
-									src="${pageContext.request.contextPath}/images/qua-tang--1.jpg">
-							</div>
-							<div class="menu-top-content-text">
-								<div class="menu-top-content-text1">QUÀ TẶNG</div>
-								<div class="menu-top-content-text2">Mua là có quà</div>
-							</div>
-						</li>
-						<li>
-							<div class="icon">
-								<img
-									src="${pageContext.request.contextPath}/images/hoan-tra-tien--1.jpg">
-							</div>
-							<div class="menu-top-content-text">
-								<div class="menu-top-content-text1">HOÀN TRẢ TIỀN</div>
-								<div class="menu-top-content-text2">Trong 7 ngày</div>
-							</div>
-						</li>
-						<li>
-							<div class="icon">
-								<img
-									src="${pageContext.request.contextPath}/images/thanh-toan--1.jpg">
-							</div>
-							<div class="menu-top-content-text">
-								<div class="menu-top-content-text1">THANH TOÁN</div>
-								<div class="menu-top-content-text2">Khi nhận hàng</div>
-							</div>
-						</li>
-						<li>
-							<div class="icon">
-								<img
-									src="${pageContext.request.contextPath}/images/giao-hang--1.jpg">
-							</div>
-							<div class="menu-top-content-text">
-								<div class="menu-top-content-text1">GIAO HÀNG</div>
-								<div class="menu-top-content-text2">Tận nơi toàn quốc</div>
-							</div>
-						</li>
-					</ul>
+	<div class="menu-top-content" >
+		<div class="menu-1200 row">
+			<div class="col-xl-2 col-md-3 col-sm-3 menu-top-conten-element" style="border-right: 1px solid #ffb84d">
+				<div class="icon">
+					<img
+						src="${pageContext.request.contextPath}/images/ho-tro-247--1.jpg">
+				</div>
+				<div class="menu-top-content-text">
+					<div class="menu-top-content-text1">HỖ TRỢ 24/7</div>
+					<div class="menu-top-content-text2">0911 403 114</div>
 				</div>
 			</div>
+			<div class="col-xl-2 col-md-3 col-sm-3 menu-top-conten-element" style="border-right: 1px solid #ffb84d">
+				<div class="icon">
+					<img
+						src="${pageContext.request.contextPath}/images/thong-tin--1.jpg">
+				</div>
+				<div class="menu-top-content-text">
+					<div class="menu-top-content-text1">THÔNG TIN</div>
+					<div class="menu-top-content-text2">
+						Bảo mật tuyệt đối
+						</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-md-3 col-sm-3 menu-top-conten-element" style="border-right: 1px solid #ffb84d">
+				<div class="icon">
+					<img
+						src="${pageContext.request.contextPath}/images/qua-tang--1.jpg">
+				</div>
+				<div class="menu-top-content-text">
+					<div class="menu-top-content-text1">QUÀ TẶNG</div>
+					<div class="menu-top-content-text2">Mua là có quà</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-md-3 col-sm-3 menu-top-conten-element" style="border-right: 1px solid #ffb84d">
+				<div class="icon">
+					<img
+						src="${pageContext.request.contextPath}/images/hoan-tra-tien--1.jpg">
+				</div>
+				<div class="menu-top-content-text">
+					<div class="menu-top-content-text1">HOÀN TRẢ TIỀN</div>
+					<div class="menu-top-content-text2">Trong 7 ngày</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-md-3 col-sm-3 menu-top-conten-element" style="border-right: 1px solid #ffb84d">
+				<div class="icon">
+					<img
+						src="${pageContext.request.contextPath}/images/thanh-toan--1.jpg">
+				</div>
+				<div class="menu-top-content-text">
+					<div class="menu-top-content-text1">THANH TOÁN</div>
+					<div class="menu-top-content-text2">Khi nhận hàng</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-md-3 col-sm-3 menu-top-conten-element">
+				<div class="icon">
+					<img
+						src="${pageContext.request.contextPath}/images/giao-hang--1.jpg">
+				</div>
+				<div class="menu-top-content-text">
+					<div class="menu-top-content-text1">GIAO HÀNG</div>
+					<div class="menu-top-content-text2">Tận nơi toàn quốc</div>
+				</div>
+			</div>
+			</div>
+	</div>
+</div>

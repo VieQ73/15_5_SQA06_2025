@@ -7,19 +7,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<%@page import="org.springframework.security.core.userdetails.UserDetails"%>
-<%@page import="com.devpro.entities.User"%>
-<%@page import="org.springframework.security.core.context.SecurityContextHolder"%>
-<%!
-	public Integer getIdLogined() {
-		Integer id=8;
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-			id = ((User)principal).getId();
-		}
-		return id;
-	}
-%>
 
 <!DOCTYPE html>
 <html>
@@ -44,13 +31,8 @@
 				<div class="row mb-4">
 					<div class="col">
 						<c:choose>
-							<c:when test="${empty GIO_HANG.sanPhamTrongGioHangs}">
-								<div class="alert alert-danger">
-								  <strong>!Không </strong> có sản phẩm trong giỏ hàng
-								</div>
-								
-							</c:when>
-							<c:otherwise>
+							<c:when test="${!empty GIO_HANG.sanPhamTrongGioHangs}">
+							<input class="checkNull" type="hidden" value="1"/>
 								${ messsage }
 								<table class="table table-hover" style="background: #FFEFDB;">
 									<thead>
@@ -98,43 +80,61 @@
 										</tr>
 									</tbody>
 								</table>
+							</c:when>
+							<c:otherwise>
+								<input class="checkNull" type="hidden" value="0"/>
+								<div class="alert alert-danger">
+								  <strong>!Không </strong> có sản phẩm trong giỏ hàng
+								</div>
 							</c:otherwise>
 						</c:choose>
 					</div>
 				</div>
-				<h1 class="my-4">Gửi đơn hàng</h1>
+				
 				<div class="row mb-6">
-					<div class="col col-lg-6">
-						<form action="${pageContext.request.contextPath}/luu_don_hang " method="post">
-							<div class="form-group">
-								<label for="phone">Điện thoại liên hệ:</label>
-								<input type="tel" class="form-control" id="phone" name="phone" onchange="checkPhone()">
-							</div>
-							<div class="form-group namef" style="display: none">
-								<label for="name">Tên khách hàng:</label>
-								<input type="text" class="form-control" id="name" name="name">
-							</div>
-							<div class="form-group addressf" style="display: none">
-								<label for="address">Địa chỉ giao hàng:</label>
-								<input type="text" class="form-control" id="address" name="address">
-							</div>
-							<div class="form-group notef" style="display: none">
-								<label for="note">Ghi chú:</label>
-								<textarea class="form-control" id="note" name="note"></textarea>
-							</div>
-							<button type="submit" class="btn btn-warning">Gửi đơn hàng</button>
-						</form>
-					</div>
-					<div class="col mb-6 col-lg-6" style="margin-top: -5px;">
-						
-						<!-- <div class="input-group">
-						  <input type="text" class="form-control" placeholder="Nhập số điện thoại" id="his-phone">
-						  <div class="input-group-append" style="margin-left: 5%">
-						    <button class="btn btn-success" onclick="search_hisCart()">Tìm kiếm</button>
-						  </div>
-						</div> -->
-						
-						
+					<button id="dathangne" class="btn btn-warning col mb-6 col-lg-6 row-lg-2" data-toggle="modal" data-target="#myModal">
+						<h3>Đặt hàng</h3>
+					</button>
+					<div class="modal fade" id="myModal" role="dialog">
+					    <div class="modal-dialog modal-lg">
+					      <div class="modal-content">
+					        <div class="modal-header">
+					          <h4 class="modal-title">Thông tin gửi hàng</h4>
+					          <button type="button" class="close" data-dismiss="modal">&times;</button>
+					        </div>
+					        <div class="modal-body">
+					          <form action="${pageContext.request.contextPath}/luu_don_hang " method="post" id="form-dathang">
+								<div class="form-group invalid">
+									<label for="phone">Điện thoại liên hệ:</label>
+									<input type="text" class="form-control" placeholder="VD: 0378054786" id="phone" name="phone" onchange="checkPhone()">
+									<span class="form-message alert-danger"></span>
+								</div>
+								<div class="form-group">
+									<label for="name">Tên khách hàng:</label>
+									<input type="text" class="form-control" placeholder="VD: Hoàng Quang Vinh" id="name" name="name">
+									<span class="form-message alert-danger"></span>
+								</div>
+								<div class="form-group">
+									<label for="address">Địa chỉ giao hàng:</label>
+									<input type="text" class="form-control" placeholder="VD: 264, Trương Định, Tương Mai, Hoàng Mai, Hà Nội" id="address" name="address">
+									<span class="form-message alert-danger"></span>
+								</div>
+								<div class="form-group">
+									<label for="note">Ghi chú:</label>
+									<textarea class="form-control" placeholder="VD: Trả tiền trước rồi gửi hàng" id="note" name="note"></textarea>
+									<span class="form-message"></span>
+								</div>
+								 <div class="modal-footer">
+								 	<button type="submit" class="btn btn-warning">Gửi đơn hàng</button>
+						          	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        </div>
+							</form>
+					        </div>
+					       
+					      </div>
+					    </div>
+					  </div>
+					<div id="lichsune" class="col mb-6 col-lg-6" style="margin-top: -5px;">
 						<h4>Lịch sử mua hàng</h4>
 						<form action="${pageContext.request.contextPath}/historyCart" method="post" class="input-group">
 							<input type="text" class="form-control" style="width: 150px;"
@@ -155,14 +155,38 @@
 		<jsp:include page="/WEB-INF/views/front-end/common/footer.jsp"></jsp:include>
 	</div>
 	<jsp:include page="/WEB-INF/views/front-end/common/js.jsp"></jsp:include>
+	 <script 
+    		src="${pageContext.request.contextPath}/js/validator.js"></script>
 	 <script>
+	 $(document).ready(function(){
+			var check = $('.checkNull').val();
+			if(check == '0'){
+				$('#dathangne').css("display", "none");
+				$('#lichsune').removeClass('col-lg-6');
+				$('#lichsune').removeClass('mb-6');
+				$('#lichsune').addClass('col-lg-12');
+			}
+		});
       function quay_lai_trang_truoc(){
           history.back();
       }
-      function search_hisCart(){
-    	  
-      }
   	</script>
-  	
+  	<script type="text/javascript">
+  		Validator({
+  			form: '#form-dathang',
+  			formGroupSelector: '.form-group',
+  			errorSelector: '.form-message',
+  			rules:[
+  				Validator.isRequired('#phone', "Số điện thoại không được để trống!"),
+  				Validator.isPhoneNumber('#phone', "Số điện thoại không hợp lệ!"),
+  				Validator.isRequired('#name', "Họ tên không được để trống!"),
+  				Validator.isRequired('#address', "Địa chỉ không được để trống!"),
+  			],
+  			/* onSubmit: function (data) {
+  				// call API
+  				console.log(data);
+  			} */
+  		});
+  	</script>
 </body>
 </html>

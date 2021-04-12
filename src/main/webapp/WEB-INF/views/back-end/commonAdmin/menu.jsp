@@ -69,17 +69,6 @@ pageEncoding="UTF-8"%>
 							<li class="treeview">
 								<a href="#">
 									<i class="far fa-edit"></i>&nbsp
-									<span>Quản lý tài khoản</span>
-									<i class="fa fa-angle-left pull-right"></i>
-								</a>
-								<ul class="treeview-menu">
-				                  <li><a href="${pageContext.request.contextPath}/admin/listUser"><i class="fa fa-user-edit"></i> Danh sách tài khoản</a></li>
-				                  
-				                </ul>
-							</li>
-							<li class="treeview">
-								<a href="#">
-									<i class="far fa-edit"></i>&nbsp
 									<span>Thống kê</span>
 									<i class="fa fa-angle-left pull-right"></i>
 								</a>
