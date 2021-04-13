@@ -25,9 +25,11 @@
 	<style type="text/css">
 		.sale{
 			position: absolute;
-			top: 0px;
-			right: 0px;
+			top: 0.5rem;
+			right: 1rem;
 			z-index: 2;
+			color: red;
+			font-weight:bold;
 			animation: xoayvong 3s linear 0s infinite;
 		    -webkit-animation: xoayvong 3s linear 0s infinite;
 		    -moz-animation: xoayvong 3s linear 0s infinite;
@@ -56,7 +58,7 @@
 		</button>
 	</div>
 	<jsp:include page="/WEB-INF/views/front-end/common/header.jsp"></jsp:include>
-	<div class="content container">
+	<div class="content">
 			<jsp:include page="/WEB-INF/views/front-end/common/banner.jsp"></jsp:include>
 		</div>
 	<div class="bg">
@@ -111,7 +113,7 @@
 				<c:forEach var = "product" items = "${productSelling }">
 					<div class="spbc-body">
 						<c:if test="${product.discount != 0 }">
-							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
+							<p class="sale">- ${product.discount}%</p>
 						</c:if>
 						<div class="spbc-img ">
 							<a href="${pageContext.request.contextPath}/products/${product.seo }">
@@ -133,7 +135,7 @@
 						</div>
 						<div class="spbc-price">
 							<fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${product.price }" /> đ
+										value="${product.price_sale }" /> đ
 						</div>
 					</div>
 				</c:forEach>
@@ -166,7 +168,7 @@
 							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
 								<div class="card h-100 product-home">
 									<c:if test="${product.discount != 0 }">
-										<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
+										<p class="sale">- ${product.discount}%</p>
 									</c:if>
 									<div class="product-img">
 										<a href="${pageContext.request.contextPath}/products/${product.seo }">
@@ -188,7 +190,7 @@
 											<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
 										</div>
 										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${product.price }" /> đ</div>
+										value="${product.price_sale }" /> đ</div>
 									</div>
 								</div>
 							</div>
@@ -223,9 +225,9 @@
 						<c:forEach var = "product" items = "${products2 }">				
 							<div class="col-xl-3">
 								<div class="card h-100 product-home">
-								<c:if test="${product.discount != 0 }">
-							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
-						</c:if>
+									<c:if test="${product.discount != 0 }">
+										<p class="sale">- ${product.discount}%</p>
+									</c:if>
 									<div class="product-img">
 										<a href="${pageContext.request.contextPath}/products/${product.seo }">
 											<c:choose>
@@ -246,7 +248,7 @@
 											<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
 										</div>
 										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${product.price }" /> đ</div>
+										value="${product.price_sale }" /> đ</div>
 									</div>
 								</div>
 							</div>
@@ -281,8 +283,8 @@
 							<div class="col-xl-3">
 								<div class="card h-100 product-home">
 								<c:if test="${product.discount != 0 }">
-							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
-						</c:if>
+									<p class="sale">- ${product.discount}%</p>
+								</c:if>
 									<div class="product-img">
 										<a href="${pageContext.request.contextPath}/products/${product.seo }">
 											<c:choose>
@@ -303,7 +305,7 @@
 											<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
 										</div>
 										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${product.price }" /> đ</div>
+										value="${product.price_sale }" /> đ</div>
 									</div>
 								</div>
 							</div>
@@ -337,9 +339,9 @@
 						<c:forEach var = "product" items = "${products4 }">				
 							<div class="col-xl-3">
 								<div class="card h-100 product-home">
-								<c:if test="${product.discount != 0 }">
-							<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
-						</c:if>
+									<c:if test="${product.discount != 0 }">
+										<p class="sale">- ${product.discount}%</p>
+									</c:if>
 									<div class="product-img">
 										<a href="${pageContext.request.contextPath}/products/${product.seo }">
 											<c:choose>
@@ -360,7 +362,7 @@
 											<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
 										</div>
 										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${product.price }" /> đ</div>
+										value="${product.price_sale }" /> đ</div>
 									</div>
 								</div>
 							</div>

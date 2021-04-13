@@ -158,7 +158,7 @@ public class CartController extends BaseController{
 			SaleOrder saleOrder = new SaleOrder();
 			Date d = Calendar.getInstance().getTime();
 			saleOrder.setCreatedDate(d);
-			saleOrder.setNote(note);
+			saleOrder.setNote_by_customer(note);
 			saleOrder.setAddress(address);
 			saleOrder.setTotal(gioHang.getTotal(productRepo));
 			
@@ -218,8 +218,18 @@ public class CartController extends BaseController{
 	public String saveProduct( final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
 		String phone = request.getParameter("keyphone");
-		List<SaleOrder> list = saleOrderService.searchUserPhone(phone);
+		List<SaleOrder> list = saleOrderService.searchUserPhone(phone, 0);
 		model.addAttribute("historyCarts", list);
+		List<SaleOrder> list1 = saleOrderService.searchUserPhone(phone, 1);
+		model.addAttribute("historyCarts1", list1);
+		List<SaleOrder> list2 = saleOrderService.searchUserPhone(phone, 2);
+		model.addAttribute("historyCarts2", list2);
+		List<SaleOrder> list3 = saleOrderService.searchUserPhone(phone, 3);
+		model.addAttribute("historyCarts3", list3);
+		model.addAttribute("sl1", list.size());
+		model.addAttribute("sl2", list1.size());
+		model.addAttribute("sl3", list2.size());
+		model.addAttribute("sl4", list3.size());
 //		model.addAttribute("historyCartDetails", saleOrderService.s);
 		return "front-end/historyCart";
 	}
@@ -283,11 +293,11 @@ public class CartController extends BaseController{
 			throws IOException {
 		User u= new User();
 		
-		List<User> ur=userService.searUserByPhone(phone.toString());
+		List<User> ur=userService.searUserByPhone("0"+phone.toString());
+
 		if(ur.size()==0) {
 			return ResponseEntity.ok(new AjaxResponse(200,u ));
 		}
-		System.out.println(ur.size());
 		for (User user : ur) {
 			u.setName(user.getName());
 			u.setAddress(user.getAddress());
@@ -296,4 +306,65 @@ public class CartController extends BaseController{
 		return ResponseEntity.ok(new AjaxResponse(200,u));
 	}
 	
+	@RequestMapping(value = { "/mualannua" }, method = RequestMethod.POST )
+	public ResponseEntity<AjaxResponse> getMuaLanNua( final ModelMap model, @RequestBody SaleOrder saleOrder1, final HttpServletRequest request,
+			final HttpServletResponse response) throws Exception {
+		/* SaleOrder saleOrder = saleOrderRepo.getOne(id); */
+		HttpSession httpSession = request.getSession();
+		
+		Cart gioHang = null;
+		
+		// kiểm tra xem SESSION đã có gio hàng chưa ?
+		// nếu chưa có thì tạo mới 1 giỏ hàng và lưu vào SESSION.
+		if (httpSession.getAttribute("GIO_HANG") != null) {
+			gioHang = (Cart) httpSession.getAttribute("GIO_HANG");
+		} else {
+			gioHang = new Cart();
+			httpSession.setAttribute("GIO_HANG", gioHang);
+		}
+		
+		List<ProductInCart> _sanPhamTrongGioHangs = gioHang.getSanPhamTrongGioHangs();
+		System.out.println(saleOrder1.getId());
+		SaleOrder saleOrder = saleOrderRepo.findById(saleOrder1.getId()).get();
+		boolean sanPhamDaCoTrongGioHangPhaiKhong;
+		for(SaleOrderProducts i : saleOrder.getSaleOrderProducts()) {
+			sanPhamDaCoTrongGioHangPhaiKhong = false;
+			for(ProductInCart item : _sanPhamTrongGioHangs) {
+				if(item.getProductId() == i.getProduct().getId()) {
+					sanPhamDaCoTrongGioHangPhaiKhong = true;
+					item.setSoluong(item.getSoluong() + i.getQuality());
+					item.setTongGia(item.getGiaBan().multiply(new BigDecimal(item.getSoluong())));
+				}
+			}
+				// nếu sản phẩm chưa có trong giỏ hàng.
+				if(!sanPhamDaCoTrongGioHangPhaiKhong) {
+					
+					Product product = productRepo.getOne(i.getProduct().getId());
+					ProductInCart sanPhamTrongGioHang = new ProductInCart();
+					sanPhamTrongGioHang.setTenSP(product.getTitle());
+					sanPhamTrongGioHang.setProductId(product.getId());
+					sanPhamTrongGioHang.setGiaBan(product.getPrice_sale());
+					sanPhamTrongGioHang.setSoluong(i.getQuality());
+					sanPhamTrongGioHang.setTongGia(product.getPrice_sale().multiply(new BigDecimal(sanPhamTrongGioHang.getSoluong())));
+					sanPhamTrongGioHang.setAmount(product.getAmount());
+					sanPhamTrongGioHang.setSeo(product.getSeo());
+					gioHang.getSanPhamTrongGioHangs().add(sanPhamTrongGioHang);
+				}
+				
+			
+		}
+		// trường hợp đã có sản phẩm trong giỏ hàng.
+		
+		BigDecimal sum = BigDecimal.ZERO;
+		
+		for(ProductInCart item : _sanPhamTrongGioHangs) {
+			sum = sum.add(item.getTongGia());
+			
+		}
+		
+		httpSession.setAttribute("tong_gia", sum);
+//		httpSession.setAttribute("SL_SP_GIO_HANG", cart.getCartItems().size());
+		
+		return ResponseEntity.ok(new AjaxResponse(200, String.valueOf(gioHang.getSanPhamTrongGioHangs().size())));
+	}
 }

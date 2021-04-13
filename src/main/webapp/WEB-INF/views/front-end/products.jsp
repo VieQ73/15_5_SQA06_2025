@@ -15,7 +15,8 @@
 	<jsp:include page="/WEB-INF/views/front-end/common/css.jsp"></jsp:include>
 	<style type="text/css">
 		.img-saleicon{
-			
+			color: red;
+			font-weight: bold;
 			animation: xoayvong 3s linear 0s infinite;
 		    -webkit-animation: xoayvong 3s linear 0s infinite;
 		    -moz-animation: xoayvong 3s linear 0s infinite;
@@ -74,7 +75,7 @@
 							<div class="price">
 								<p class="price-text">Giá bán:</p>
 								<c:choose>
-									<c:when test="${product.price_sale == 0 }">
+									<c:when test="${product.discount == 0 }">
 										<p class="price-num">
 											<fmt:formatNumber type="number" maxIntegerDigits="13"
 												value="${product.price }" /> đ
@@ -85,10 +86,10 @@
 											<fmt:formatNumber type="number" maxIntegerDigits="13"
 												value="${product.price }" /> đ
 										</p>
-										<img class="img-saleicon" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg" width="80px" height="40px">
+										<p class="img-saleicon">- ${product.discount} %</p>
 										<p class="price-num">
 											<fmt:formatNumber type="number" maxIntegerDigits="13"
-												value="${totalSale }" /> đ
+												value="${product.price_sale }" /> đ
 										</p>
 									</c:otherwise>
 								</c:choose>

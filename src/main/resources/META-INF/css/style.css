@@ -94,6 +94,7 @@ nav ul li a:hover{
 }
 .content{
 	width: 1200px;
+	margin: auto;
 }
 .banner{
 	background: #ffffff;
@@ -392,7 +393,8 @@ nav ul li a:hover{
 	text-align: center;
 	margin-right: 3px;
 	margin-left: 3px;
-	height: 80px;
+	min-height: 80px;
+	max-height: 80px;
 	margin-top: 10px;
 }
 
@@ -587,6 +589,7 @@ nav ul li a:hover{
 	width: 1200px;
 	margin: auto;
 	display: flex;
+	margin-top: 0.8rem;
 }
 .category{
 	border: 1px solid #d4d2d2;
@@ -1191,11 +1194,7 @@ nav ul li a:hover{
 	z-index: 10;
 }
 
-
-@media screen and (max-width:1025px){
-	
-}
-@media screen and (max-width:668px){
+@media only screen and (max-width: 46.1875em) {
 	.header-top{
 		display: none;
 	}
@@ -1219,4 +1218,12 @@ nav ul li a:hover{
 		width: 3rem;
 		font-size: 10px;
 	}
+}
+
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+
+}
+
+@media only screen and (min-width: 64em) {
+	
 }

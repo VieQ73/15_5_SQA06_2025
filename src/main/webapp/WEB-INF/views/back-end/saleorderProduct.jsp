@@ -83,7 +83,7 @@
 					</tr>
 					<tr>
 						<td>Ghi chú:</td>
-						<td><span>${saleorder.note}</span></td>
+						<td><span>${saleorder.note_by_customer}</span></td>
 					</tr>
 					</table>
 					<h2 class="title-5 m-b-35">Chi tiết đơn hàng:</h2>

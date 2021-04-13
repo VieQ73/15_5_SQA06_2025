@@ -85,7 +85,11 @@
 								<input class="checkNull" type="hidden" value="0"/>
 								<div class="alert alert-danger">
 								  <strong>!Không </strong> có sản phẩm trong giỏ hàng
+									  <a href="${pageContext.request.contextPath}/" class="btn btn-success">
+										Mua ngay
+									  </a>
 								</div>
+								
 							</c:otherwise>
 						</c:choose>
 					</div>

@@ -21,9 +21,12 @@
 	<style type="text/css">
 		.sale{
 			position: absolute;
-			top: 7px;
-			right: 18px;
+			top: 0.5rem;
+			right: 1.5rem;
 			z-index: 1;
+			color: red;
+			font-weight: bold;
+			font-size: 1.5rem;
 			animation: xoayvong 3s linear 0s infinite;
 		    -webkit-animation: xoayvong 3s linear 0s infinite;
 		    -moz-animation: xoayvong 3s linear 0s infinite;
@@ -75,8 +78,9 @@
 											<c:forEach var = "product" items = "${products }">				
 												<div class="col-lg-4 col-md-6 mb-4 product-cate">
 													<div >
-														<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg"} width="80px" height="40px">
 														
+														<p class="sale">- ${product.discount}%</p>
+									
 													</div>						
 													<div class="card h-100">
 														<div class="product-img">
@@ -95,18 +99,18 @@
 														<div class="product-title">
 															<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
 														</div>
-														<div class="price-text" style="display: inline; text-align: center;">
-															<span style=" text-decoration: line-through; font-size: 18px; color: #424242; margin-right: 10px;" >
-																<fmt:formatNumber type="number" maxIntegerDigits="13"
-																	value="${product.price }" /> đ
-															</span>
-															
-															<span class="price-num" style="margin-left: 0px">
-																
+														<div class="product-price" style="display: inline; width: 13rem;">
+															<div style="font-size: 15px; display: flex; height: 2rem; background: #f0f0f0 !important; margin: auto; ">
+																	<p style="margin-left: 0.3rem; text-decoration: line-through; font-size: 0.9rem; color: #424242; margin-right: 1rem; line-height: 2rem;" >
 																		<fmt:formatNumber type="number" maxIntegerDigits="13"
-																			value="${product.price_sale}" /> đ
-																				
-															</span>
+																			value="${product.price }" /> đ
+																	</p>
+																	
+																	<p style="font-size: 1.2rem; color: #ea5209;">
+																		<fmt:formatNumber type="number" maxIntegerDigits="13"
+																			value="${product.price_sale }" /> đ
+																	</p>
+															</div>
 														</div>
 													</div>
 													<div class="card-footer" style="display: flex;">

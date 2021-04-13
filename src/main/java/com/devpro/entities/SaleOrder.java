@@ -35,8 +35,11 @@ public class SaleOrder {
 	private Date createdDate;
 	 
 	
-	@Column(name="note", columnDefinition = "LONGTEXT", nullable = false)
-	private String note;
+	@Column(name="note_by_customer", columnDefinition = "LONGTEXT", nullable = false)
+	private String note_by_customer;
+	
+	@Column(name="note_by_admin", columnDefinition = "LONGTEXT", nullable = false)
+	private String note_by_admin;
 	
 	@Column(name="address", columnDefinition = "LONGTEXT")
 	private String address;
@@ -49,13 +52,6 @@ public class SaleOrder {
 		this.address = address;
 	}
 
-	public String getNote() {
-		return note;
-	}
-
-	public void setNote(String note) {
-		this.note = note;
-	}
 	
 	@Column(name = "status")
 	private Integer status= 0;
@@ -100,6 +96,14 @@ public class SaleOrder {
 		return user;
 	}
 
+	public String getNote_by_customer() {
+		return note_by_customer;
+	}
+
+	public void setNote_by_customer(String note_by_customer) {
+		this.note_by_customer = note_by_customer;
+	}
+
 	public void setUser(User user) {
 		this.user = user;
 	}
@@ -110,6 +114,14 @@ public class SaleOrder {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getNote_by_admin() {
+		return note_by_admin;
+	}
+
+	public void setNote_by_admin(String note_by_admin) {
+		this.note_by_admin = note_by_admin;
 	}
 
 	public Date getCreatedDate() {

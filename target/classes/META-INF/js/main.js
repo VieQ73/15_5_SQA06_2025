@@ -46,6 +46,7 @@ function addP(id, gia, maxSl){
 
 function checkPhone(){
 	var phone = Number($('#phone').val());
+	console.log(phone);
 	$.ajax({
 		url: "/check-phone",
 		type: "post",

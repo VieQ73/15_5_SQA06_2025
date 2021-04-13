@@ -17,7 +17,10 @@
 		.sale{
 			position: absolute;
 			top: 7px;
-			right: 18px;
+			right: 1em;
+			font-size: 1em;
+			font-weight: bold;
+			color: red;
 			z-index: 1;
 			animation: xoayvong 3s linear 0s infinite;
 		    -webkit-animation: xoayvong 3s linear 0s infinite;
@@ -47,7 +50,7 @@
 				<jsp:include page="/WEB-INF/views/front-end/common/banner.jsp"></jsp:include>
 				</div> 
 				<!-- end banner -->
-				<div class="ctgr-content">
+				<div class="ctgr-content container">
 					<div class="ctgr-content-left col-xl-3.5">
 						<div class="category">
 							<div class="category-top">DANH MỤC SẢN PHẨM</div>
@@ -70,8 +73,8 @@
 										<div class="row">
 											<c:forEach var = "product" items = "${products }">				
 												<div class="col-lg-4 col-md-6 mb-4 product-cate">
-													<c:if test="${product.price_sale != 0 }">
-														<img class="sale" alt="" src="${pageContext.request.contextPath}/images/saleicon.jpg"} width="80px" height="40px">
+													<c:if test="${product.discount != 0 }">
+														<p class="sale">- ${product.discount}%</p>
 													</c:if>
 													
 													<div class="card h-100">
@@ -91,8 +94,29 @@
 														<div class="product-title">
 															<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
 														</div>
-														<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
-															value="${product.price }" /> đ</div>
+														<div class="product-price">
+															<c:choose>
+																<c:when test="${product.discount == 0 }">
+																	<p class="price-num">
+																		<fmt:formatNumber type="number" maxIntegerDigits="13"
+																			value="${product.price }" /> đ
+																	</p>
+																</c:when>
+																<c:otherwise>
+																	<div style="font-size: 15px; display: flex; height: 2rem;">
+																	<p style="margin-left: 0.5rem; text-decoration: line-through; font-size: 0.9rem; color: #424242; margin-right: 1rem; line-height: 2rem;" >
+																		<fmt:formatNumber type="number" maxIntegerDigits="13"
+																			value="${product.price }" /> đ
+																	</p>
+																	
+																	<p style="font-size: 1.4rem; color: #ea5209;">
+																		<fmt:formatNumber type="number" maxIntegerDigits="13"
+																			value="${product.price_sale }" /> đ
+																	</p>
+																	</div>
+																</c:otherwise>
+															</c:choose>
+														</div>
 													</div>
 													<div class="card-footer" style="display: flex;">
 														<small class="text-muted">&#9733; &#9733; &#9733;
