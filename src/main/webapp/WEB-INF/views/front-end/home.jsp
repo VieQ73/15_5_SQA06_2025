@@ -110,32 +110,32 @@
 						    </div>
 						</div> --%>
 			
-				<c:forEach var = "product" items = "${productSelling }">
+				<c:forEach var = "productSelling" items = "${productSelling }">
 					<div class="spbc-body">
-						<c:if test="${product.discount != 0 }">
-							<p class="sale">- ${product.discount}%</p>
+						<c:if test="${productSelling.discount != 0 }">
+							<p class="sale">- ${productSelling.discount}%</p>
 						</c:if>
 						<div class="spbc-img ">
 							<a href="${pageContext.request.contextPath}/products/${product.seo }">
 								<c:choose>
-									<c:when test = "${empty product.productImages }">
+									<c:when test = "${empty productSelling.product.productImages }">
 										<img class="card-img-top" src="http://placehold.it/700x400" alt="">
 									</c:when>
 									<c:otherwise>
-										<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${product.productImages.get(0).path }" alt="">
+										<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productSelling.product.productImages.get(0).path }" alt="">
 									</c:otherwise>
 								</c:choose>
 							</a>
 							<div class="spbc-addcart">
-								<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
+								<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${productSelling.product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
 							</div>
 						</div>
 						<div class="spbc-title">
-							<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
+							<a href="${pageContext.request.contextPath}/products/${productSelling.product.seo }">${productSelling.product.title }</a>
 						</div>
 						<div class="spbc-price">
 							<fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${product.price_sale }" /> đ
+										value="${productSelling.price_sale }" /> đ
 						</div>
 					</div>
 				</c:forEach>
@@ -164,33 +164,33 @@
 				</div>
 				<div class=" col-lg-9 col-md-9 col-sm-12 col-xs-12 ">
 					<div class="row">
-						<c:forEach var = "product" items = "${products }">				
+						<c:forEach var = "productCustom1" items = "${productCustom1 }">				
 							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
 								<div class="card h-100 product-home">
-									<c:if test="${product.discount != 0 }">
-										<p class="sale">- ${product.discount}%</p>
+									<c:if test="${productCustom1.discount!= 0 }">
+										<p class="sale">- ${productCustom1.discount}%</p>
 									</c:if>
 									<div class="product-img">
-										<a href="${pageContext.request.contextPath}/products/${product.seo }">
+										<a href="${pageContext.request.contextPath}/products/${productCustom1.product.seo }">
 											<c:choose>
-											<c:when test = "${empty product.productImages }">
+											<c:when test = "${empty productCustom1.product.productImages }">
 												<img class="card-img-top" src="http://placehold.it/700x400" alt="">
 											</c:when>
 											<c:otherwise>
-												<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${product.productImages.get(0).path }" alt="">
+												<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productCustom1.product.productImages.get(0).path }" alt="">
 											</c:otherwise>
 										</c:choose>
 										</a>
 										<div class="product-addcart">
-											<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
+											<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${productCustom1.product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
 										</div>
 									</div>
 									<div class="card-body">
 										<div class="product-title">
-											<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
+											<a href="${pageContext.request.contextPath}/products/${productCustom1.product.seo }">${productCustom1.product.title }</a>
 										</div>
 										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${product.price_sale }" /> đ</div>
+										value="${productCustom1.price_sale }" /> đ</div>
 									</div>
 								</div>
 							</div>
@@ -222,33 +222,33 @@
 				</div>
 				<div class="body-main-product col-xl-9">
 					<div class="row">
-						<c:forEach var = "product" items = "${products2 }">				
+						<c:forEach var = "productCustom2" items = "${productCustom2 }">				
 							<div class="col-xl-3">
 								<div class="card h-100 product-home">
-									<c:if test="${product.discount != 0 }">
-										<p class="sale">- ${product.discount}%</p>
+									<c:if test="${productCustom2.discount != 0 }">
+										<p class="sale">- ${productCustom2.discount}%</p>
 									</c:if>
 									<div class="product-img">
-										<a href="${pageContext.request.contextPath}/products/${product.seo }">
+										<a href="${pageContext.request.contextPath}/products/${productCustom2.product.seo }">
 											<c:choose>
-											<c:when test = "${empty product.productImages }">
+											<c:when test = "${empty productCustom2.product.productImages }">
 												<img class="card-img-top" src="http://placehold.it/700x400" alt="">
 											</c:when>
 											<c:otherwise>
-												<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${product.productImages.get(0).path }" alt="">
+												<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productCustom2.product.productImages.get(0).path }" alt="">
 											</c:otherwise>
 										</c:choose>
 										</a>
 										<div class="product-addcart">
-											<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
+											<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${productCustom2.product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
 										</div>
 									</div>
 									<div class="card-body">
 										<div class="product-title">
-											<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
+											<a href="${pageContext.request.contextPath}/products/${productCustom2.product.seo }">${productCustom2.product.title }</a>
 										</div>
 										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${product.price_sale }" /> đ</div>
+										value="${productCustom2.price_sale }" /> đ</div>
 									</div>
 								</div>
 							</div>
@@ -279,33 +279,33 @@
 				</div>
 				<div class="body-main-product col-xl-9">
 					<div class="row">
-						<c:forEach var = "product" items = "${products3 }">				
+						<c:forEach var = "productCustom3" items = "${productCustom3 }">				
 							<div class="col-xl-3">
 								<div class="card h-100 product-home">
-								<c:if test="${product.discount != 0 }">
-									<p class="sale">- ${product.discount}%</p>
+								<c:if test="${productCustom3.discount != 0 }">
+									<p class="sale">- ${productCustom3.discount}%</p>
 								</c:if>
 									<div class="product-img">
-										<a href="${pageContext.request.contextPath}/products/${product.seo }">
+										<a href="${pageContext.request.contextPath}/products/${productCustom3.product.seo }">
 											<c:choose>
-											<c:when test = "${empty product.productImages }">
+											<c:when test = "${empty productCustom3.product.productImages }">
 												<img class="card-img-top" src="http://placehold.it/700x400" alt="">
 											</c:when>
 											<c:otherwise>
-												<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${product.productImages.get(0).path }" alt="">
+												<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productCustom3.product.productImages.get(0).path }" alt="">
 											</c:otherwise>
 										</c:choose>
 										</a>
 										<div class="product-addcart">
-											<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
+											<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${productCustom3.product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
 										</div>
 									</div>
 									<div class="card-body">
 										<div class="product-title">
-											<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
+											<a href="${pageContext.request.contextPath}/products/${productCustom3.product.seo }">${productCustom3.product.title }</a>
 										</div>
 										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${product.price_sale }" /> đ</div>
+										value="${productCustom3.price_sale }" /> đ</div>
 									</div>
 								</div>
 							</div>
@@ -336,33 +336,33 @@
 				</div>
 				<div class="body-main-product col-xl-9">
 					<div class="row">
-						<c:forEach var = "product" items = "${products4 }">				
+						<c:forEach var = "productCustom4" items = "${productCustom4 }">				
 							<div class="col-xl-3">
 								<div class="card h-100 product-home">
-									<c:if test="${product.discount != 0 }">
-										<p class="sale">- ${product.discount}%</p>
+									<c:if test="${productCustom4.discount != 0 }">
+										<p class="sale">- ${productCustom4.discount}%</p>
 									</c:if>
 									<div class="product-img">
-										<a href="${pageContext.request.contextPath}/products/${product.seo }">
+										<a href="${pageContext.request.contextPath}/products/${productCustom4.product.seo }">
 											<c:choose>
-											<c:when test = "${empty product.productImages }">
+											<c:when test = "${empty productCustom4.product.productImages }">
 												<img class="card-img-top" src="http://placehold.it/700x400" alt="">
 											</c:when>
 											<c:otherwise>
-												<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${product.productImages.get(0).path }" alt="">
+												<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productCustom4.product.productImages.get(0).path }" alt="">
 											</c:otherwise>
 										</c:choose>
 										</a>
 										<div class="product-addcart">
-											<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
+											<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${productCustom4.product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
 										</div>
 									</div>
 									<div class="card-body">
 										<div class="product-title">
-											<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
+											<a href="${pageContext.request.contextPath}/products/${productCustom4.product.seo }">${productCustom4.product.title }</a>
 										</div>
 										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${product.price_sale }" /> đ</div>
+										value="${productCustom4.price_sale }" /> đ</div>
 									</div>
 								</div>
 							</div>

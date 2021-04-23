@@ -28,13 +28,13 @@ import com.devpro.entities.Cart;
 
 import com.devpro.entities.Product;
 import com.devpro.entities.ProductInCart;
-import com.devpro.entities.SaleOrder;
-import com.devpro.entities.SaleOrderProducts;
-import com.devpro.entities.User;
+import com.devpro.entities.Order;
+import com.devpro.entities.OrderProducts;
+import com.devpro.entities.Customer;
 import com.devpro.model.AjaxResponse;
 import com.devpro.model.luutru;
 import com.devpro.repositories.ProductRepo;
-import com.devpro.repositories.SaleOrderRepo;
+import com.devpro.repositories.OrderRepo;
 import com.devpro.repositories.UserRepo;
 import com.devpro.services.SaleOrderService;
 import com.devpro.services.UserService;
@@ -47,7 +47,7 @@ public class CartController extends BaseController{
 	@Autowired ProductRepo productRepo;
 	
 
-	@Autowired SaleOrderRepo saleOrderRepo;
+	@Autowired OrderRepo saleOrderRepo;
 	
 	@Autowired UserRepo userRepo;
 	
@@ -114,9 +114,10 @@ public class CartController extends BaseController{
 			
 			Product product = productRepo.getOne(sanPhamTrongGioHang.getProductId());
 			sanPhamTrongGioHang.setTenSP(product.getTitle());
-			
-			sanPhamTrongGioHang.setGiaBan(product.getPrice_sale());
-			sanPhamTrongGioHang.setTongGia(product.getPrice_sale().multiply(new BigDecimal(sanPhamTrongGioHang.getSoluong())));
+			Integer discount = saleOrderService.getDiscountByIdProduct(product.getId());
+			BigDecimal t = product.getPrice().subtract(product.getPrice().multiply(new BigDecimal(discount).divide(new BigDecimal(100))));
+			sanPhamTrongGioHang.setGiaBan(t);
+			sanPhamTrongGioHang.setTongGia(t.multiply(new BigDecimal(sanPhamTrongGioHang.getSoluong())));
 			gioHang.getSanPhamTrongGioHangs().add(sanPhamTrongGioHang);
 			sanPhamTrongGioHang.setAmount(product.getAmount());
 			sanPhamTrongGioHang.setSeo(product.getSeo());
@@ -155,32 +156,33 @@ public class CartController extends BaseController{
 			String address = request.getParameter("address");
 			String note = request.getParameter("note");
 			
-			SaleOrder saleOrder = new SaleOrder();
+			Order saleOrder = new Order();
 			Date d = Calendar.getInstance().getTime();
 			saleOrder.setCreatedDate(d);
 			saleOrder.setNote_by_customer(note);
 			saleOrder.setAddress(address);
 			saleOrder.setTotal(gioHang.getTotal(productRepo));
 			
-			List<User> u = userService.searUserByPhone(phone);
+			List<Customer> u = userService.searCustomerByPhone(phone);
 			if(u.size()==0) {
-				User user = new User();
+				Customer user = new Customer();
 				user.setAddress(address);
 				user.setName(name);
 				user.setPhone(phone);
 				userRepo.save(user);
 			}
-			List<User> u2 = userService.searUserByPhone(phone);
-			for (User user : u2) {
+			List<Customer> u2 = userService.searCustomerByPhone(phone);
+			for (Customer user : u2) {
 				user.setAddress(address);
 				userRepo.save(user);
 				saleOrder.setUser(user);
 			}
 			for(ProductInCart sanPhamTrongGioHang : gioHang.getSanPhamTrongGioHangs()) {
 				Product prInDB = productRepo.getOne(sanPhamTrongGioHang.getProductId());
-				SaleOrderProducts saleOrderProducts = new SaleOrderProducts();
+				OrderProducts saleOrderProducts = new OrderProducts();
 				saleOrderProducts.setProduct(productRepo.getOne(sanPhamTrongGioHang.getProductId()));
 				saleOrderProducts.setQuality(sanPhamTrongGioHang.getSoluong());
+				saleOrderProducts.setPrice(sanPhamTrongGioHang.getGiaBan());
 				prInDB.setAmount(prInDB.getAmount()-sanPhamTrongGioHang.getSoluong());
 				productRepo.save(prInDB);
 				saleOrder.addSaleOrderProducts(saleOrderProducts);
@@ -218,13 +220,13 @@ public class CartController extends BaseController{
 	public String saveProduct( final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
 		String phone = request.getParameter("keyphone");
-		List<SaleOrder> list = saleOrderService.searchUserPhone(phone, 0);
+		List<Order> list = saleOrderService.searchCustomerPhone(phone, 0);
 		model.addAttribute("historyCarts", list);
-		List<SaleOrder> list1 = saleOrderService.searchUserPhone(phone, 1);
+		List<Order> list1 = saleOrderService.searchCustomerPhone(phone, 1);
 		model.addAttribute("historyCarts1", list1);
-		List<SaleOrder> list2 = saleOrderService.searchUserPhone(phone, 2);
+		List<Order> list2 = saleOrderService.searchCustomerPhone(phone, 2);
 		model.addAttribute("historyCarts2", list2);
-		List<SaleOrder> list3 = saleOrderService.searchUserPhone(phone, 3);
+		List<Order> list3 = saleOrderService.searchCustomerPhone(phone, 3);
 		model.addAttribute("historyCarts3", list3);
 		model.addAttribute("sl1", list.size());
 		model.addAttribute("sl2", list1.size());
@@ -291,14 +293,14 @@ public class CartController extends BaseController{
 	public ResponseEntity<AjaxResponse> checkPhone(@RequestBody Integer phone,
 			final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
 			throws IOException {
-		User u= new User();
+		Customer u= new Customer();
 		
-		List<User> ur=userService.searUserByPhone("0"+phone.toString());
+		List<Customer> ur=userService.searCustomerByPhone("0"+phone.toString());
 
 		if(ur.size()==0) {
 			return ResponseEntity.ok(new AjaxResponse(200,u ));
 		}
-		for (User user : ur) {
+		for (Customer user : ur) {
 			u.setName(user.getName());
 			u.setAddress(user.getAddress());
 		}
@@ -307,7 +309,7 @@ public class CartController extends BaseController{
 	}
 	
 	@RequestMapping(value = { "/mualannua" }, method = RequestMethod.POST )
-	public ResponseEntity<AjaxResponse> getMuaLanNua( final ModelMap model, @RequestBody SaleOrder saleOrder1, final HttpServletRequest request,
+	public ResponseEntity<AjaxResponse> getMuaLanNua( final ModelMap model, @RequestBody Order saleOrder1, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
 		/* SaleOrder saleOrder = saleOrderRepo.getOne(id); */
 		HttpSession httpSession = request.getSession();
@@ -324,10 +326,10 @@ public class CartController extends BaseController{
 		}
 		
 		List<ProductInCart> _sanPhamTrongGioHangs = gioHang.getSanPhamTrongGioHangs();
-		System.out.println(saleOrder1.getId());
-		SaleOrder saleOrder = saleOrderRepo.findById(saleOrder1.getId()).get();
+		Order saleOrder = saleOrderRepo.findById(saleOrder1.getId()).get();
+		
 		boolean sanPhamDaCoTrongGioHangPhaiKhong;
-		for(SaleOrderProducts i : saleOrder.getSaleOrderProducts()) {
+		for(OrderProducts i : saleOrder.getSaleOrderProducts()) {
 			sanPhamDaCoTrongGioHangPhaiKhong = false;
 			for(ProductInCart item : _sanPhamTrongGioHangs) {
 				if(item.getProductId() == i.getProduct().getId()) {
@@ -343,9 +345,9 @@ public class CartController extends BaseController{
 					ProductInCart sanPhamTrongGioHang = new ProductInCart();
 					sanPhamTrongGioHang.setTenSP(product.getTitle());
 					sanPhamTrongGioHang.setProductId(product.getId());
-					sanPhamTrongGioHang.setGiaBan(product.getPrice_sale());
+					sanPhamTrongGioHang.setGiaBan(product.getPrice());
 					sanPhamTrongGioHang.setSoluong(i.getQuality());
-					sanPhamTrongGioHang.setTongGia(product.getPrice_sale().multiply(new BigDecimal(sanPhamTrongGioHang.getSoluong())));
+					sanPhamTrongGioHang.setTongGia(product.getPrice().multiply(new BigDecimal(sanPhamTrongGioHang.getSoluong())));
 					sanPhamTrongGioHang.setAmount(product.getAmount());
 					sanPhamTrongGioHang.setSeo(product.getSeo());
 					gioHang.getSanPhamTrongGioHangs().add(sanPhamTrongGioHang);
@@ -366,5 +368,15 @@ public class CartController extends BaseController{
 //		httpSession.setAttribute("SL_SP_GIO_HANG", cart.getCartItems().size());
 		
 		return ResponseEntity.ok(new AjaxResponse(200, String.valueOf(gioHang.getSanPhamTrongGioHangs().size())));
+	}
+	
+	
+	@RequestMapping(value = { "/huydonhang" }, method = RequestMethod.POST )
+	public ResponseEntity<AjaxResponse> huy( final ModelMap model, @RequestBody Order saleOrder1, final HttpServletRequest request,
+			final HttpServletResponse response) throws Exception {
+		Order saleOrder = saleOrderRepo.findById(saleOrder1.getId()).get();
+		saleOrder.setStatus(3);
+		saleOrderRepo.save(saleOrder);
+		return ResponseEntity.ok(new AjaxResponse(200, "a"));
 	}
 }

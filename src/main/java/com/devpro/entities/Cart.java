@@ -22,7 +22,7 @@ public class Cart {
 		BigDecimal decimal = BigDecimal.ZERO;
 		for(ProductInCart phamTrongGioHang : sanPhamTrongGioHangs) {
 			Product product = productRepo.getOne(phamTrongGioHang.getProductId());
-				decimal = decimal.add(product.getPrice_sale());
+				decimal = decimal.add(product.getPrice());
 		}
 		return decimal;
 	}

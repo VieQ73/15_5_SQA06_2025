@@ -16,8 +16,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Columns;
+
 @Entity
-@Table(name = "tbl_products")
+@Table(name = "tbl_product")
 public class Product extends BaseEntity{
 	@Column(name = "title", length = 500, nullable = false)
 	private String title;
@@ -41,20 +43,6 @@ public class Product extends BaseEntity{
 	
 	@Column(name = "selling")
 	private int selling;
-	
-	@Column(name="price_sale", nullable = false)
-	private BigDecimal price_sale = price;
-	
-	@Column(name = "discount")
-	private int discount =0;
-	
-	public int getDiscount() {
-		return discount;
-	}
-
-	public void setDiscount(int discount) {
-		this.discount = discount;
-	}
 
 	public int getAmount() {
 		return amount;
@@ -180,14 +168,6 @@ public class Product extends BaseEntity{
 
 	public void setProductImages(List<Images> productImages) {
 		this.productImages = productImages;
-	}
-
-	public BigDecimal getPrice_sale() {
-		return price_sale;
-	}
-
-	public void setPrice_sale(BigDecimal price_sale) {
-		this.price_sale = price_sale;
 	}
 
 }

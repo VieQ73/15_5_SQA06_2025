@@ -126,18 +126,8 @@
 																style="width: 8.125rem; overflow-wrap: break-word; -webkit-box-flex: 0; flex: 0 0 auto; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; -webkit-box-align: end; align-items: flex-end; -webkit-box-pack: center; justify-content: center; padding-left: 0.625rem; border-right: 0px !important;">
 																<div class="order-content__item__price-text"
 																	style="display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; font-size: 20px; margin-right: 2rem;">
-																	<c:choose>
-																		<c:when test="${historyCartDetail.product.discount != 0}">
-																			<div class="shopee-price--original"
-																				style="color: rgba(0, 0, 0, 0.26); text-decoration-line: line-through;"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.product.price}" />đ</div>
-																			<div class="shopee-price--primary"
-																				style="color: rgb(238, 77, 45); margin-top: 0.5rem;"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.product.price_sale}" />đ</div>
-																		</c:when>
-																		<c:otherwise>
-																			<div class="shopee-price--primary"
-																				style="color: rgb(238, 77, 45);"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.product.price}" />đ</div>
-																		</c:otherwise>
-																	</c:choose>
+																	<div class="shopee-price--primary"
+																				style="color: rgb(238, 77, 45);"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.price}" />đ</div>
 																</div>
 															</div>
 														</div>
@@ -184,9 +174,29 @@
 												<c:if test="${historyCart.status == 0}">
 												<div class="purchase-card-buttons__show-button-wrapper"
 													style="min-width: 10rem; height: 2.5rem; margin-left: 0.625rem; background: rgb(255, 255, 255); display: flex;">
-													<button class="btn btn-danger">
+													<button class="btn btn-danger" data-toggle="modal" data-target="#huy">
 														Hủy Đơn Hàng
 													</button>
+													<!-- Modal -->
+													<div class="modal fade" id="huy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+													  <div class="modal-dialog" role="document">
+													    <div class="modal-content">
+													      <div class="modal-header">
+													        <h5 class="modal-title" id="exampleModalLabel">Xác nhận hủy đơn hàng</h5>
+													        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													          <span aria-hidden="true">&times;</span>
+													        </button>
+													      </div>
+													      <div class="modal-body">
+													        Bạn muốn hủy đơn hàng này?
+													      </div>
+													      <div class="modal-footer">
+													        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+													        <button type="button" class="btn btn-danger" onclick="Shop.huy_don_hang(${historyCart.id});">Hủy đơn hàng</button>
+													      </div>
+													    </div>
+													  </div>
+													</div>
 												</div></c:if>
 											</div>
 											
@@ -276,18 +286,8 @@
 																style="width: 8.125rem; overflow-wrap: break-word; -webkit-box-flex: 0; flex: 0 0 auto; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; -webkit-box-align: end; align-items: flex-end; -webkit-box-pack: center; justify-content: center; padding-left: 0.625rem; border-right: 0px !important;">
 																<div class="order-content__item__price-text"
 																	style="display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; font-size: 20px; margin-right: 2rem;">
-																	<c:choose>
-																		<c:when test="${historyCartDetail.product.discount != 0}">
-																			<div class="shopee-price--original"
-																				style="color: rgba(0, 0, 0, 0.26); text-decoration-line: line-through;"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.product.price}" />đ</div>
-																			<div class="shopee-price--primary"
-																				style="color: rgb(238, 77, 45); margin-top: 0.5rem;"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.product.price_sale}" />đ</div>
-																		</c:when>
-																		<c:otherwise>
-																			<div class="shopee-price--primary"
-																				style="color: rgb(238, 77, 45);"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.product.price}" />đ</div>
-																		</c:otherwise>
-																	</c:choose>
+																	<div class="shopee-price--primary"
+																				style="color: rgb(238, 77, 45);"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.price}" />đ</div>
 																</div>
 															</div>
 														</div>
@@ -334,9 +334,29 @@
 												<c:if test="${historyCart.status == 0}">
 												<div class="purchase-card-buttons__show-button-wrapper"
 													style="min-width: 10rem; height: 2.5rem; margin-left: 0.625rem; background: rgb(255, 255, 255); display: flex;">
-													<button class="btn btn-danger">
+													<button class="btn btn-danger" data-toggle="modal" data-target="#huy">
 														Hủy Đơn Hàng
 													</button>
+													<!-- Modal -->
+													<div class="modal fade" id="huy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+													  <div class="modal-dialog" role="document">
+													    <div class="modal-content">
+													      <div class="modal-header">
+													        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+													        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													          <span aria-hidden="true">&times;</span>
+													        </button>
+													      </div>
+													      <div class="modal-body">
+													        ...
+													      </div>
+													      <div class="modal-footer">
+													        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+													        <button type="button" class="btn btn-primary" onclick="huy_don_hang(${historyCart.id});">Hủy đơn hàng</button>
+													      </div>
+													    </div>
+													  </div>
+													</div>
 												</div></c:if>
 											</div>
 											
@@ -425,18 +445,8 @@
 																style="width: 8.125rem; overflow-wrap: break-word; -webkit-box-flex: 0; flex: 0 0 auto; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; -webkit-box-align: end; align-items: flex-end; -webkit-box-pack: center; justify-content: center; padding-left: 0.625rem; border-right: 0px !important;">
 																<div class="order-content__item__price-text"
 																	style="display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; font-size: 20px; margin-right: 2rem;">
-																	<c:choose>
-																		<c:when test="${historyCartDetail.product.discount != 0}">
-																			<div class="shopee-price--original"
-																				style="color: rgba(0, 0, 0, 0.26); text-decoration-line: line-through;"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.product.price}" />đ</div>
-																			<div class="shopee-price--primary"
-																				style="color: rgb(238, 77, 45); margin-top: 0.5rem;"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.product.price_sale}" />đ</div>
-																		</c:when>
-																		<c:otherwise>
-																			<div class="shopee-price--primary"
-																				style="color: rgb(238, 77, 45);"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.product.price}" />đ</div>
-																		</c:otherwise>
-																	</c:choose>
+																	<div class="shopee-price--primary"
+																				style="color: rgb(238, 77, 45);"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.price}" />đ</div>
 																</div>
 															</div>
 														</div>
@@ -574,18 +584,8 @@
 																style="width: 8.125rem; overflow-wrap: break-word; -webkit-box-flex: 0; flex: 0 0 auto; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; -webkit-box-align: end; align-items: flex-end; -webkit-box-pack: center; justify-content: center; padding-left: 0.625rem; border-right: 0px !important;">
 																<div class="order-content__item__price-text"
 																	style="display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; font-size: 20px; margin-right: 2rem;">
-																	<c:choose>
-																		<c:when test="${historyCartDetail.product.discount != 0}">
-																			<div class="shopee-price--original"
-																				style="color: rgba(0, 0, 0, 0.26); text-decoration-line: line-through;"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.product.price}" />đ</div>
-																			<div class="shopee-price--primary"
-																				style="color: rgb(238, 77, 45); margin-top: 0.5rem;"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.product.price_sale}" />đ</div>
-																		</c:when>
-																		<c:otherwise>
-																			<div class="shopee-price--primary"
-																				style="color: rgb(238, 77, 45);"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.product.price}" />đ</div>
-																		</c:otherwise>
-																	</c:choose>
+																	<div class="shopee-price--primary"
+																				style="color: rgb(238, 77, 45);"><fmt:formatNumber type="number" maxIntegerDigits="13" value="${historyCartDetail.price}" />đ</div>
 																</div>
 															</div>
 														</div>

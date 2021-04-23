@@ -53,52 +53,55 @@
 						<div class="pro-img">
 							<div id="big-img">
 								<c:choose>
-									<c:when test = "${empty product.productImages }">
+									<c:when test = "${empty productCustom.product.productImages }">
 										<img  class="card-img-top" src="http://placehold.it/700x400" alt="">
 									</c:when>
 									<c:otherwise>
-										<img  class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${product.productImages.get(0).path }" alt="">
+										<img  class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productCustom.product.productImages.get(0).path }" alt="">
 									</c:otherwise>
 								</c:choose>
 							</div>
 							<div id="sub-img" class="container" style="margin-top: 15px;">
-								<c:forEach var="img" items= "${product.productImages}">
+								<c:forEach var="img" items= "${productCustom.product.productImages}">
 									<img src="${pageContext.request.contextPath}/file/upload/${img.getPath()}">
 								</c:forEach>
 							</div>
 						</div>
 						<div class="pro-infor">
-							<p class="pro-infor-title">${product.title }</p>
+							<p class="pro-infor-title">${productCustom.product.title }</p>
 							<ul class="description">
-								${product.shortDes}
+								${productCustom.product.shortDes}
 							</ul>
 							<div class="price">
 								<p class="price-text">Giá bán:</p>
 								<c:choose>
-									<c:when test="${product.discount == 0 }">
+									<c:when test="${productCustom.discount == 0 }">
 										<p class="price-num">
 											<fmt:formatNumber type="number" maxIntegerDigits="13"
-												value="${product.price }" /> đ
+												value="${productCustom.product.price }" /> đ
 										</p>
 									</c:when>
 									<c:otherwise>
+										
 										<p style="margin-left: 10px; text-decoration: line-through; font-size: 18px; color: #424242; margin-right: 20px;" >
 											<fmt:formatNumber type="number" maxIntegerDigits="13"
-												value="${product.price }" /> đ
+												value="${productCustom.product.price }" /> đ
 										</p>
-										<p class="img-saleicon">- ${product.discount} %</p>
+										
+										<p class="img-saleicon">- ${productCustom.discount} %</p>
+										
 										<p class="price-num">
 											<fmt:formatNumber type="number" maxIntegerDigits="13"
-												value="${product.price_sale }" /> đ
+												value="${productCustom.price_sale }" /> đ
 										</p>
 									</c:otherwise>
 								</c:choose>
 								
 							</div>
-							<div class="discount">
-								<p class="discount-text">Số lượng mặt hàng:</p>
-								<p class="discount-code">${product.amount }</p>
-							</div>
+							<!-- <div class="discount">
+								<p class="discount-text">Trạng thái:</p>
+								<p class="discount-code">Còn hàng</p>
+							</div> -->
 							<ul class="note">
 								<li><i class="fas fa-check-circle"></i>Nhập Khẩu Chính Hãng Mỹ.</li>
 								<li><i class="fas fa-check-circle"></i>Đổi trả miễn phí trong 7 ngày.</li>
@@ -106,11 +109,11 @@
 							</ul>
 							<div class="dathang">
 								<c:choose>
-									<c:when test="${product.amount > 0 }">
+									<c:when test="${productCustom.product.amount > 0 }">
 										<button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) result.value--;return false;" class="btn btn-info" type="button"><i class="fas fa-minus"></i></button>     
-			                          	<input onchange="maxNum(${product.amount })" type="text" class="input-text qty"  title="Qty" value="1" maxlength="12" id="qty"  name="qty">
-			                          	<button onClick="var result = document.getElementById('qty'); var qty = result.value; if(qty &lt; ${product.amount}) result.value++; return false;" class="btn btn-info" type="button"><i class="fas fa-plus"></i></button>
-		                          		<button type="button" class="btn btn-warning addhi" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, parseInt($('#qty').val()));"><i class="fas fa-cart-plus"></i>Thêm Vào Giỏ Hàng</button>
+			                          	<input onchange="maxNum(${productCustom.product.amount })" type="text" class="input-text qty"  title="Qty" value="1" maxlength="12" id="qty"  name="qty">
+			                          	<button onClick="var result = document.getElementById('qty'); var qty = result.value; if(qty &lt; ${productCustom.product.amount}) result.value++; return false;" class="btn btn-info" type="button"><i class="fas fa-plus"></i></button>
+		                          		<button type="button" class="btn btn-warning addhi" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${productCustom.product.id}, parseInt($('#qty').val()));"><i class="fas fa-cart-plus"></i>Thêm Vào Giỏ Hàng</button>
 									</c:when>
 									<c:otherwise>
 										<img src="${pageContext.request.contextPath}/images/hethang.jpg" width="120px" height="70px">
@@ -138,7 +141,7 @@
 							THÔNG TIN SẢN PHẨM
 						</div>
 						<div class="pro-info-main">
-							${product.shortDetails }
+							${productCustom.product.shortDetails }
 						</div>
 					</div>
 					<div class="pro-info">

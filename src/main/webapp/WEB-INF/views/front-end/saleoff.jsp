@@ -7,11 +7,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!-- Paging -->
 <%@ taglib prefix="tag" uri="/WEB-INF/taglib/pagingTagLibs.tld"%>
-<%!
-	public BigDecimal discount(BigDecimal gia, int giam) {
-		 return gia.subtract(gia.multiply(new BigDecimal(giam).divide(new BigDecimal(100))));
-	}
-%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,40 +71,40 @@
 								<div class="body-main-product">
 									<div class="product1">
 										<div class="row">
-											<c:forEach var = "product" items = "${products }">				
+											<c:forEach var = "productCustom" items = "${productCustom }">				
 												<div class="col-lg-4 col-md-6 mb-4 product-cate">
 													<div >
 														
-														<p class="sale">- ${product.discount}%</p>
+														<p class="sale">- ${productCustom.discount}%</p>
 									
 													</div>						
 													<div class="card h-100">
 														<div class="product-img">
-															<a href="${pageContext.request.contextPath}/products/${product.seo }">
+															<a href="${pageContext.request.contextPath}/products/${productCustom.product.seo }">
 																<c:choose>
-																	<c:when test = "${empty product.productImages }">
+																	<c:when test = "${empty productCustom.product.productImages }">
 																		<img class="card-img-top" src="http://placehold.it/700x400" alt="">
 																	</c:when>
 																	<c:otherwise>
-																		<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${product.productImages.get(0).path }" alt="">
+																		<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productCustom.product.productImages.get(0).path }" alt="">
 																	</c:otherwise>
 																</c:choose>
 															</a>
 														</div>
 													<div class="card-body">
 														<div class="product-title">
-															<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
+															<a href="${pageContext.request.contextPath}/products/${productCustom.product.seo }">${productCustom.product.title }</a>
 														</div>
 														<div class="product-price" style="display: inline; width: 13rem;">
 															<div style="font-size: 15px; display: flex; height: 2rem; background: #f0f0f0 !important; margin: auto; ">
 																	<p style="margin-left: 0.3rem; text-decoration: line-through; font-size: 0.9rem; color: #424242; margin-right: 1rem; line-height: 2rem;" >
 																		<fmt:formatNumber type="number" maxIntegerDigits="13"
-																			value="${product.price }" /> đ
+																			value="${productCustom.product.price }" /> đ
 																	</p>
 																	
 																	<p style="font-size: 1.2rem; color: #ea5209;">
 																		<fmt:formatNumber type="number" maxIntegerDigits="13"
-																			value="${product.price_sale }" /> đ
+																			value="${productCustom.price_sale }" /> đ
 																	</p>
 															</div>
 														</div>
@@ -116,7 +112,7 @@
 													<div class="card-footer" style="display: flex;">
 														<small class="text-muted">&#9733; &#9733; &#9733;
 															&#9733; &#9734;</small>
-															<button class="btn btn-danger" type="button" style="margin-left: 30px;" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, 1);">Mua hàng</button>
+															<button class="btn btn-danger" type="button" style="margin-left: 30px;" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${productCustom.product.id}, 1);">Mua hàng</button>
 													</div>
 												</div>
 											</div>

@@ -1,3 +1,4 @@
+
 package com.devpro.entities;
 
 import java.util.ArrayList;
@@ -18,9 +19,6 @@ public class Sale extends BaseEntity{
 	
 	@Column(name = "sale_name",length = 4500, nullable = false)
 	private String sale_name ;
-	
-	@Column(name = "discount", nullable = false)
-	private int discount = 0;
 	
 	@Column(name = "start_date", nullable = false)
 	private Date start_date ;
@@ -47,14 +45,6 @@ public class Sale extends BaseEntity{
 		this.sale_name = sale_name;
 	}
 
-	public int getDiscount() {
-		return discount;
-	}
-
-	public void setDiscount(int discount) {
-		this.discount = discount;
-	}
-
 	public Date getStart_date() {
 		return start_date;
 	}
@@ -70,6 +60,5 @@ public class Sale extends BaseEntity{
 	public void setEnd_date(Date end_date) {
 		this.end_date = end_date;
 	}
-	
 	
 }

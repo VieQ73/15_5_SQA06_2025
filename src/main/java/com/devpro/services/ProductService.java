@@ -2,7 +2,8 @@ package com.devpro.services;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -14,11 +15,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.devpro.entities.Product;
+import com.devpro.entities.ProductCustom;
+import com.devpro.entities.ProductSale;
 import com.devpro.entities.Sale;
 import com.devpro.entities.Images;
 import com.devpro.model.ProductSearch;
 import com.devpro.repositories.ProductRepo;
 import com.taglib.PaginationTaglib;
+
 
 
 @Service // -> Bean
@@ -27,7 +31,8 @@ public class ProductService {
 	@PersistenceContext protected EntityManager entityManager;
 	@Autowired
 	private ProductRepo productRepo;
-	
+	@Autowired
+	private SaleOrderService saleOrderService;
 	private boolean isEmptyUploadFile(MultipartFile[] images) {
 		if(images == null || images.length <= 0) return true; 
 		if(images.length == 1 && images[0].getOriginalFilename().isEmpty()) return true;
@@ -97,7 +102,7 @@ public class ProductService {
 	
 	public List<Product> listAll(String keyword) {
         if (keyword != null) {
-        	String sql = "SELECT * FROM tbl_products WHERE title LIKE '%"+keyword+"%' order by rand()";
+        	String sql = "SELECT * FROM tbl_product WHERE title LIKE '%"+keyword+"%' order by rand()";
     		Query query = entityManager.createNativeQuery(sql, Product.class);
     		return query.getResultList();
         }
@@ -107,7 +112,7 @@ public class ProductService {
 	
 	public List<Product> searchProductWithCate8(int idCate) {
 
-		String sql = "select * from tbl_products where status = 1 and category_id="+idCate+" order by rand() limit 0,8;";
+		String sql = "select * from tbl_product where status = 1 and category_id="+idCate+" order by rand() limit 0,8;";
 		
 		
 		
@@ -118,25 +123,25 @@ public class ProductService {
 //		String jpql = "Select caijcungduoc from Product caijcungduoc";
 //		Query query = entityManager.createQuery(jpql, Product.class);
 
-		String sql = "select * from tbl_products where status = 1 and category_id in (select id from tbl_category where seo='"+seo+"')";
+		String sql = "select * from tbl_product where status = 1 and category_id in (select id from tbl_category where seo='"+seo+"')";
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		return query.getResultList();
 	}
 	
 	public List<Product> getProductSale(final ProductSearch productSreach) {
-		String sql = "SELECT distinct a.* FROM tbl_products a, tbl_product_sale b, tbl_sale c where a.status = 1 and a.id = b.product_id and b.sale_id = c.id and curdate() >= c.start_date and curdate() <= c.end_date;";
+		String sql = "SELECT distinct a.* FROM tbl_product a, tbl_product_sale b, tbl_sale c where a.status = 1 and a.id = b.product_id and b.sale_id = c.id and curdate() >= c.start_date and curdate() <= c.end_date;";
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		return query.getResultList();
 	}
 	
-	public Sale getDiscount(int id) {
-		String sql ="SELECT c.* FROM tbl_products a, tbl_product_sale b, tbl_sale c where a.id="+id+" and a.status = 1 and a.id = b.product_id and b.sale_id = c.id and curdate() >= c.start_date and curdate() <= c.end_date order by datediff(curdate(), c.start_date) asc limit 1;";
-		Query query = entityManager.createNativeQuery(sql, Sale.class);
-		return (Sale) query.getSingleResult();
-	}
+//	public Sale getDiscount(int id) {
+//		String sql ="SELECT c.* FROM tbl_products a, tbl_product_sale b, tbl_sale c where a.id="+id+" and a.status = 1 and a.id = b.product_id and b.sale_id = c.id and curdate() >= c.start_date and curdate() <= c.end_date order by datediff(curdate(), c.start_date) asc limit 1;";
+//		Query query = entityManager.createNativeQuery(sql, Sale.class);
+//		return (Sale) query.getSingleResult();
+//	}
 	
 	public List<Product> getAllProduct(){
-		String sql = "select * from tbl_products where status=true";
+		String sql = "select * from tbl_product where status=true";
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		return query.getResultList();
 	}
@@ -145,7 +150,7 @@ public class ProductService {
 //		String jpql = "Select caijcungduoc from Product caijcungduoc";
 //		Query query = entityManager.createQuery(jpql, Product.class);
 
-		String sql = "select * from tbl_products where status=true";
+		String sql = "select * from tbl_product where status=true";
 
 		if(productSearch != null && productSearch.getCategoryId() != null) {
 			sql = sql + " and category_id=" + productSearch.getCategoryId();
@@ -170,38 +175,19 @@ public class ProductService {
 		return query.getResultList();
 	}
 	
-	
-	public List<Product> searchPrSelling(final ProductSearch productSearch) {
-
-		String sql = "select * from tbl_products where status=true and selling = true";
-
-		Query query = entityManager.createNativeQuery(sql, Product.class);
-		return query.getResultList();
-	}
 	public List<Product> searchPrSelling2(final ProductSearch productSearch) {
 
-		String sql = "select * from tbl_products where status=true order by selling DESC limit 0,6;";
+		String sql = "select * from tbl_product where status=true order by selling DESC limit 0,6;";
 
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		return query.getResultList();
 	}
 	
-	public List<Product> searchSaleOff(final ProductSearch productSearch){
-		String sql="SELECT distinct b.* FROM shop_beauty.tbl_saleorder_products a left join tbl_products b on a.product_id=b.id where b.status <> 0 order by rand() limit 0,8;";
-		Query query = entityManager.createNativeQuery(sql, Product.class);
-		//page
-		/*
-		 * if(productSearch.getOffset() != null) {
-		 * productSearch.setCount(query.getResultList().size());
-		 * query.setFirstResult(productSearch.getOffset());
-		 * query.setMaxResults(PaginationTaglib.MAX); }
-		 */
-		return query.getResultList();
-	}
+	
 	public List<Product> searchAdmin(final ProductSearch productSearch) {
 
 
-		String sql = "select * from tbl_products where 1=1";
+		String sql = "select * from tbl_product where 1=1";
 
 		if(productSearch != null && productSearch.getCategoryId() != null) {
 			sql = sql + " and category_id=" + productSearch.getCategoryId();
@@ -219,5 +205,19 @@ public class ProductService {
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		
 		return query.getResultList();
+	}
+	
+	
+	public List<ProductCustom> getProductCustom(){
+		List<ProductCustom> listPc = new ArrayList<>();
+		List<Product> listP = searchAdmin(null);
+		for (Product item : listP) {
+			ProductCustom p = new ProductCustom();
+			p.setProduct(item);
+			p.setDiscount(saleOrderService.getDiscountByIdProduct(item.getId()));
+			p.setPrice_sale(item.getPrice().subtract(item.getPrice().multiply(new BigDecimal(p.getDiscount())).divide(new BigDecimal(100))));
+			listPc.add(p);
+		}
+		return listPc;
 	}
 }

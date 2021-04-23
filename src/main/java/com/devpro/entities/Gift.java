@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.math.BigDecimal;
 @Entity
-@Table(name = "tbl_gifts")
+@Table(name = "tbl_gift")
 public class Gift extends BaseEntity{
 	@Column(name = "title", nullable = true)
 	private String title;

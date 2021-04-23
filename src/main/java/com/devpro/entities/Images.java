@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "tbl_images")
+@Table(name = "tbl_image")
 public class Images {
 	@Id // xác định đây là khoá chính.
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment.

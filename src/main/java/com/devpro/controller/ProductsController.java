@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.devpro.entities.Product;
+import com.devpro.entities.ProductCustom;
 import com.devpro.model.ProductSearch;
 import com.devpro.repositories.ProductRepo;
 import com.devpro.services.ProductService;
+import com.devpro.services.SaleOrderService;
 
 
 @Controller
@@ -24,7 +26,9 @@ public class ProductsController extends BaseController{
 	@Autowired
 	private ProductRepo productRepo;
 	@Autowired
-	ProductService productService;
+	private ProductService productService;
+	@Autowired
+	private SaleOrderService saleOrderService;
 	
 	@RequestMapping(value = { "/products/{seo}" }, method = RequestMethod.GET)
 	public String index(@PathVariable("seo") String seo,
@@ -37,7 +41,12 @@ public class ProductsController extends BaseController{
 		for (Product product2 : products) {
 			id= product2.getId();
 		}
-		model.addAttribute("product", productRepo.getOne(id));
+		Product p = productRepo.getOne(id);
+		ProductCustom pc = new ProductCustom();
+		pc.setProduct(p);
+		pc.setDiscount(saleOrderService.getDiscountByIdProduct(p.getId()));
+		pc.setPrice_sale(p.getPrice().subtract(p.getPrice().multiply(new BigDecimal(pc.getDiscount()).divide(new BigDecimal(100)))));
+		model.addAttribute("productCustom", pc);
 		return "front-end/products";
 	}
 	

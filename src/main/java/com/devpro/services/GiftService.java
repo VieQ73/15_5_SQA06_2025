@@ -79,7 +79,7 @@ public class GiftService {
 		giftRepo.save(gift);
 	}
 	public List<Gift> searchGift(final GiftSearch giftSearch) {
-		String sql = "select * from tbl_gifts where 1=1";
+		String sql = "select * from tbl_gift where 1=1";
 
 		sql = sql + " order by updated_date desc;";
 		Query query = entityManager.createNativeQuery(sql, Gift.class);

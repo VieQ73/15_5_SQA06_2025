@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-import com.devpro.entities.User;
+import com.devpro.entities.Customer;
 import com.devpro.repositories.UserRepo;
 
 @Controller // -> tạo ra 1 bean tên webConf và được spring-container quản lí.
