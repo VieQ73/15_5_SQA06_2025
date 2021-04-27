@@ -18,11 +18,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.devpro.entities.Category;
 import com.devpro.entities.Product;
 import com.devpro.entities.ProductCustom;
+import com.devpro.entities.ProductSale;
 import com.devpro.entities.Sale;
 import com.devpro.repositories.ProductRepo;
 import com.devpro.services.CategoryService;
 import com.devpro.services.ProductService;
-import com.devpro.services.SaleOrderService;
+import com.devpro.services.OrderProductService;
+import com.devpro.services.ProductSaleService;
 
 /**
  * 
@@ -38,7 +40,9 @@ public class IndexController {
 	@Autowired
 	private CategoryService categoryService;
 	@Autowired
-	private SaleOrderService saleOrderService;
+	private OrderProductService saleOrderService;
+	@Autowired
+	private ProductSaleService productSaleService;
 	/**
 	 * 
 	 * @param model: trung gian trao đổi thông tin giữa Controller và View(Jsp)
@@ -63,7 +67,7 @@ public class IndexController {
 		 * BigDecimal(item.getDiscount())).divide(new BigDecimal(100)))); else
 		 * item.setPrice_sale(item.getPrice()); productRepo.save(item); }
 		 */
-		saleOrderService.setDiscountActive();
+		productSaleService.setDiscountActive();
 		
 		List<Category> categories = categoryService.search(null);
 		model.addAttribute("categories", categories);
@@ -73,7 +77,7 @@ public class IndexController {
 		for (Product item : products) {
 			ProductCustom p = new ProductCustom();
 			p.setProduct(item);
-			p.setDiscount(saleOrderService.getDiscountByIdProduct(item.getId()));
+			p.setDiscount(productSaleService.getDiscountByIdProduct(item.getId()));
 			p.setPrice_sale(item.getPrice().subtract(item.getPrice().multiply(new BigDecimal(p.getDiscount()).divide(new BigDecimal(100)))));
 			productCustom1.add(p);
 		}
@@ -84,7 +88,7 @@ public class IndexController {
 		for (Product item : products1) {
 			ProductCustom p = new ProductCustom();
 			p.setProduct(item);
-			p.setDiscount(saleOrderService.getDiscountByIdProduct(item.getId()));
+			p.setDiscount(productSaleService.getDiscountByIdProduct(item.getId()));
 			p.setPrice_sale(item.getPrice().subtract(item.getPrice().multiply(new BigDecimal(p.getDiscount()).divide(new BigDecimal(100)))));
 			productCustom2.add(p);
 		}
@@ -95,7 +99,7 @@ public class IndexController {
 		for (Product item : products2) {
 			ProductCustom p = new ProductCustom();
 			p.setProduct(item);
-			p.setDiscount(saleOrderService.getDiscountByIdProduct(item.getId()));
+			p.setDiscount(productSaleService.getDiscountByIdProduct(item.getId()));
 			p.setPrice_sale(item.getPrice().subtract(item.getPrice().multiply(new BigDecimal(p.getDiscount()).divide(new BigDecimal(100)))));
 			productCustom3.add(p);
 		}
@@ -106,7 +110,7 @@ public class IndexController {
 		for (Product item : products3) {
 			ProductCustom p = new ProductCustom();
 			p.setProduct(item);
-			p.setDiscount(saleOrderService.getDiscountByIdProduct(item.getId()));
+			p.setDiscount(productSaleService.getDiscountByIdProduct(item.getId()));
 			p.setPrice_sale(item.getPrice().subtract(item.getPrice().multiply(new BigDecimal(p.getDiscount()).divide(new BigDecimal(100)))));
 			productCustom4.add(p);
 		}
@@ -117,7 +121,7 @@ public class IndexController {
 		for (Product item : productSelling) {
 			ProductCustom p = new ProductCustom();
 			p.setProduct(item);
-			p.setDiscount(saleOrderService.getDiscountByIdProduct(item.getId()));
+			p.setDiscount(productSaleService.getDiscountByIdProduct(item.getId()));
 			p.setPrice_sale(item.getPrice().subtract(item.getPrice().multiply(new BigDecimal(p.getDiscount()).divide(new BigDecimal(100)))));
 			productCustom5.add(p);
 		}

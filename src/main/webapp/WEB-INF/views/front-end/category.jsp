@@ -50,8 +50,8 @@
 				<jsp:include page="/WEB-INF/views/front-end/common/banner.jsp"></jsp:include>
 				</div> 
 				<!-- end banner -->
-				<div class="ctgr-content container">
-					<div class="ctgr-content-left col-xl-3.5">
+				<div class="ctgr-content">
+					<div class="ctgr-content-left col-xl-3">
 						<div class="category">
 							<div class="category-top">DANH MỤC SẢN PHẨM</div>
 							<ul class="drop-menu">
@@ -104,12 +104,12 @@
 																</c:when>
 																<c:otherwise>
 																	<div style="font-size: 15px; display: flex; height: 2rem;">
-																	<p style="margin-left: 0.5rem; text-decoration: line-through; font-size: 0.9rem; color: #424242; margin-right: 1rem; line-height: 2rem;" >
+																	<p style="margin: auto; text-decoration: line-through; font-size: 0.9rem; color: #424242; line-height: 2rem;" >
 																		<fmt:formatNumber type="number" maxIntegerDigits="13"
 																			value="${productCustom.product.price }" /> đ
 																	</p>
 																	
-																	<p style="font-size: 1.4rem; color: #ea5209;">
+																	<p style=" margin: auto;font-size: 1.4rem; color: #ea5209;">
 																		<fmt:formatNumber type="number" maxIntegerDigits="13"
 																			value="${productCustom.price_sale }" /> đ
 																	</p>

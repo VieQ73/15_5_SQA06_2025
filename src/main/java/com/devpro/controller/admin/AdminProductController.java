@@ -77,14 +77,13 @@ public class AdminProductController extends BaseController {
 	@RequestMapping(value = { "/delete-product-with-ajax" }, method = RequestMethod.POST)
 	public ResponseEntity<AjaxResponse> deleteProduct(final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response, @RequestBody Product product) {
-		
 		Product productInDB = productRepo.getOne(product.getId());
 		if(productInDB.getStatus())
 			productInDB.setStatus(false);
 		else
 			productInDB.setStatus(true);
 		productRepo.save(productInDB);
-		return ResponseEntity.ok(new AjaxResponse(200, "Xóa thành công"));
+		return ResponseEntity.ok(new AjaxResponse(200, productInDB.getId()));
 	}
 	
 }

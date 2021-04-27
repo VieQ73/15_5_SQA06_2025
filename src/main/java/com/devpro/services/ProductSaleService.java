@@ -1,9 +1,5 @@
 package com.devpro.services;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -15,17 +11,13 @@ import javax.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-import com.devpro.entities.Order;
 import com.devpro.entities.ProductSale;
 import com.devpro.entities.Sale;
-import com.devpro.entities.OrderProducts;
 import com.devpro.repositories.ProductSaleRepo;
 import com.devpro.repositories.SaleRepo;
 
-
 @Service
-public class SaleOrderService {
+public class ProductSaleService {
 	@PersistenceContext protected EntityManager entityManager;
 	
 	@Autowired
@@ -33,43 +25,29 @@ public class SaleOrderService {
 	
 	@Autowired
 	private ProductSaleRepo productSaleRepo;
-	public List<Order> searchAdmin(final Order saleOrder) {
-
-
-		String sql = "select * from tbl_order where 1=1 and status <> 3 order by created_date desc";
-		Query query = entityManager.createNativeQuery(sql, Order.class);
-		
-		return query.getResultList();
+	
+	public void saveProductSale(ProductSale productSale) {
+		if(productSale.getId() != null) {
+			productSaleRepo.delete(productSale);
+		}
+		productSaleRepo.save(productSale);
 	}
-	public List<Order> searchCustomer(Integer id) {
-
-
-		String sql = "select * from tbl_order where created_by="+id;
-		Query query = entityManager.createNativeQuery(sql, Order.class);
-		
+	
+	public void saveSale(Sale sale) {
+		if(sale.getId() != null) {
+			
+		}
+		saleRepo.save(sale);
+	}
+	
+	public List<Sale> getSale(){
+		String sql ="select * from tbl_sale where status = true";
+		Query query = entityManager.createNativeQuery(sql, Sale.class);
 		return query.getResultList();
 	}
 	
-	public List<Order> searchCustomerPhone(String phone, int status) {
-		String sql = "select * from tbl_order where status = "+status+" and created_by=(select id from tbl_customer where phone = '"+phone+"') order by created_date desc";
-		
-		Query query = entityManager.createNativeQuery(sql, Order.class);
-		
-		return query.getResultList();
-	}
-	public List<OrderProducts> searchProduct(int id) {
-
-
-		String sql = "select * from tbl_order_product where order_id='"+id+"'";
-
-		
-		Query query = entityManager.createNativeQuery(sql, OrderProducts.class);
-		
-		return query.getResultList();
-	}
-
-	public List<Sale> getSale(){
-		String sql ="select * from tbl_sale where status = true";
+	public List<Sale> getSaleAdmin(){
+		String sql ="select * from tbl_sale";
 		Query query = entityManager.createNativeQuery(sql, Sale.class);
 		return query.getResultList();
 	}
@@ -134,5 +112,11 @@ public class SaleOrderService {
 	
 	public Sale getSaleByID(Integer id) {
 		return saleRepo.getOne(id);
+	}
+	
+	public List<ProductSale> getProductSaleByIdSale(Integer id){
+		String sql ="select * from tbl_product_sale where sale_id="+id;
+		Query query = entityManager.createNativeQuery(sql, ProductSale.class);
+		return query.getResultList();
 	}
 }

@@ -18,7 +18,8 @@ import com.devpro.entities.ProductCustom;
 import com.devpro.model.ProductSearch;
 import com.devpro.repositories.ProductRepo;
 import com.devpro.services.ProductService;
-import com.devpro.services.SaleOrderService;
+import com.devpro.services.OrderProductService;
+import com.devpro.services.ProductSaleService;
 
 
 @Controller
@@ -28,7 +29,7 @@ public class ProductsController extends BaseController{
 	@Autowired
 	private ProductService productService;
 	@Autowired
-	private SaleOrderService saleOrderService;
+	private ProductSaleService productSaleService;
 	
 	@RequestMapping(value = { "/products/{seo}" }, method = RequestMethod.GET)
 	public String index(@PathVariable("seo") String seo,
@@ -44,7 +45,7 @@ public class ProductsController extends BaseController{
 		Product p = productRepo.getOne(id);
 		ProductCustom pc = new ProductCustom();
 		pc.setProduct(p);
-		pc.setDiscount(saleOrderService.getDiscountByIdProduct(p.getId()));
+		pc.setDiscount(productSaleService.getDiscountByIdProduct(p.getId()));
 		pc.setPrice_sale(p.getPrice().subtract(p.getPrice().multiply(new BigDecimal(pc.getDiscount()).divide(new BigDecimal(100)))));
 		model.addAttribute("productCustom", pc);
 		return "front-end/products";

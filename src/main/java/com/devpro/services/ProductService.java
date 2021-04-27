@@ -32,7 +32,7 @@ public class ProductService {
 	@Autowired
 	private ProductRepo productRepo;
 	@Autowired
-	private SaleOrderService saleOrderService;
+	private ProductSaleService productSaleService;
 	private boolean isEmptyUploadFile(MultipartFile[] images) {
 		if(images == null || images.length <= 0) return true; 
 		if(images.length == 1 && images[0].getOriginalFilename().isEmpty()) return true;
@@ -214,7 +214,7 @@ public class ProductService {
 		for (Product item : listP) {
 			ProductCustom p = new ProductCustom();
 			p.setProduct(item);
-			p.setDiscount(saleOrderService.getDiscountByIdProduct(item.getId()));
+			p.setDiscount(productSaleService.getDiscountByIdProduct(item.getId()));
 			p.setPrice_sale(item.getPrice().subtract(item.getPrice().multiply(new BigDecimal(p.getDiscount())).divide(new BigDecimal(100))));
 			listPc.add(p);
 		}

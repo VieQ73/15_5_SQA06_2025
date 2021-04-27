@@ -21,6 +21,10 @@
 	div.dataTables_wrapper {
         margin-bottom: 3em;
     }
+    .table-responsive{
+    	overflow-y: overlay;
+		overflow-x: auto;
+    }
 </style>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
 </head>
@@ -77,12 +81,13 @@
 										value="${product.price}" /> đ
 										</td>
 										<td>
+											<input type="hidden" id="status${product.id }" value="${product.status}">
 											<c:choose>
 												<c:when test="${product.status}">
-													<span class="badge" style="background: green;"><i class="fas fa-check" ></i></span>
+													<span class="badge" style="background: green;" id="TStatus${product.id }"><i id="TiStatus${product.id }" class="fas fa-check" ></i></span>
 												</c:when>
 												<c:otherwise>
-													<span class="badge" style="background: red;"><i class="fas fa-times"></i></span>
+													<span class="badge" style="background: red;" id="TStatus${product.id }"><i id="TiStatus${product.id }" class="fas fa-times"></i></span>
 												</c:otherwise>
 											</c:choose>
 										</td>
@@ -97,23 +102,23 @@
 													</button>
 												</a>
 												<a href="#" data-target="#deleteAjax" data-toggle="modal">
-													 <button type="button" class="item"  data-toggle="modal" data-target="#myModal" onclick="Productjs.deleteProduct(${product.id});">
+													 <button type="button" class="item"  data-toggle="modal" data-target="#myModal${product.id}" >
 													 	<i class="far fa-trash-alt"></i>
 													 </button></a>
-													<div class="modal fade" id="myModal" role="dialog">
+													<div class="modal fade" id="myModal${product.id}" role="dialog">
 													    <div class="modal-dialog">
 													      <!-- Modal content-->
 													      <div class="modal-content">
 													        <div class="modal-header">
 													          <button type="button" class="close" data-dismiss="modal">&times;</button>
-													          <h4 class="modal-title">Xác nhận</h4>
+													          <h4 class="modal-title">Xác nhận thay đổi trạng thái sản phẩm</h4>
 													        </div>
 													        <div class="modal-body">
-													          <p>Bạn muốn xóa sản phẩm này?</p>
+													          <p><span style="font-size: 18px; color: red;">${product.title}</span> ?</p>
 													        </div>
 													        <div class="modal-footer">
-													          <button type="button" class="btn btn-danger" >Yes</button>
-													          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+													          <button type="button" class="btn btn-danger" onclick="Productjs.deleteProduct(${product.id});" data-dismiss="modal">Đồng ý</button>
+													          <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
 													          
 													        </div>
 													      </div>
@@ -138,7 +143,9 @@
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
-	    $('table.display').DataTable();
+	    $('table.display').DataTable({
+	    	"scrollX": true
+	    });
 	} );
 	</script>
 </body>

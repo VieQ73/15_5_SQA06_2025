@@ -12,6 +12,8 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "tbl_sale")
 public class Sale extends BaseEntity{
@@ -20,9 +22,11 @@ public class Sale extends BaseEntity{
 	@Column(name = "sale_name",length = 4500, nullable = false)
 	private String sale_name ;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "start_date", nullable = false)
 	private Date start_date ;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "end_date", nullable = false)
 	private Date end_date ;
 

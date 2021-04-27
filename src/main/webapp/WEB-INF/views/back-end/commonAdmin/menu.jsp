@@ -46,7 +46,7 @@ pageEncoding="UTF-8"%>
 							</li>
 							<li class="treeview">
 								<a href="#">
-									<i class="far fa-edit"></i>&nbsp
+									<i class="fas fa-gift"></i>&nbsp
 									<span>Quản lý quà tặng</span>
 									<i class="fa fa-angle-left pull-right"></i>
 								</a>
@@ -57,7 +57,18 @@ pageEncoding="UTF-8"%>
 							</li>
 							<li class="treeview">
 								<a href="#">
-									<i class="far fa-edit"></i>&nbsp
+									<i class="fas fa-percent"></i>&nbsp
+									<span>Quản lý giảm giá</span>
+									<i class="fa fa-angle-left pull-right"></i>
+								</a>
+								<ul class="treeview-menu">
+				                  <li><a href="${pageContext.request.contextPath}/admin/listSale"><i class="fa fa-angle-right"></i> Danh sách đợt khuyến mại</a></li>
+				                  <li><a href="${pageContext.request.contextPath}/admin/addSale"><i class="fa fa-angle-right"></i> Thêm khuyến mại</a></li>
+				                </ul>
+							</li>
+							<li class="treeview">
+								<a href="#">
+									<i class="fas fa-shopping-cart"></i>&nbsp
 									<span>Quản lý đơn hàng</span>
 									<i class="fa fa-angle-left pull-right"></i>
 								</a>

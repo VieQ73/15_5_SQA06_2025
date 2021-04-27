@@ -21,11 +21,11 @@ import com.devpro.entities.OrderProducts;
 
 
 import com.devpro.repositories.OrderRepo;
-import com.devpro.services.SaleOrderService;
+import com.devpro.services.OrderProductService;
 @Controller
 public class AdminOrder {
 	@Autowired
-	private SaleOrderService saleOrderService;
+	private OrderProductService saleOrderService;
 	@Autowired
 	private OrderRepo saleOrderRepo;
 	@Autowired

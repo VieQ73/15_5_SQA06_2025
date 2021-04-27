@@ -19,7 +19,8 @@ import com.devpro.entities.ProductCustom;
 import com.devpro.model.ProductSearch;
 import com.devpro.repositories.CategoryRepo;
 import com.devpro.services.ProductService;
-import com.devpro.services.SaleOrderService;
+import com.devpro.services.OrderProductService;
+import com.devpro.services.ProductSaleService;
 
 @Controller
 public class CategoryController extends BaseController {
@@ -28,7 +29,7 @@ public class CategoryController extends BaseController {
 	@Autowired
 	private CategoryRepo categoryRepo;
 	@Autowired
-	private SaleOrderService saleOrderService;
+	private ProductSaleService productSaleService;
 	 
 	@RequestMapping(value = { "/category/{seo}" }, method = RequestMethod.GET)
 	public String index(@PathVariable("seo") String seo, final ModelMap model, final HttpServletRequest request,
@@ -49,7 +50,7 @@ public class CategoryController extends BaseController {
 		for (Product item : products) {
 			ProductCustom p = new ProductCustom();
 			p.setProduct(item);
-			p.setDiscount(saleOrderService.getDiscountByIdProduct(item.getId()));
+			p.setDiscount(productSaleService.getDiscountByIdProduct(item.getId()));
 			p.setPrice_sale(item.getPrice().subtract(item.getPrice().multiply(new BigDecimal(p.getDiscount()).divide(new BigDecimal(100)))));
 			productCustom.add(p);
 		}

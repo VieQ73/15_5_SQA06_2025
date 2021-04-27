@@ -18,7 +18,8 @@ import com.devpro.entities.Product;
 import com.devpro.entities.ProductCustom;
 import com.devpro.services.CategoryService;
 import com.devpro.services.ProductService;
-import com.devpro.services.SaleOrderService;
+import com.devpro.services.OrderProductService;
+import com.devpro.services.ProductSaleService;
 
 
 @Controller
@@ -29,7 +30,7 @@ public class SaleOffContrller {
 	@Autowired
 	private ProductService productService;
 	@Autowired
-	private SaleOrderService saleOrderService;
+	private ProductSaleService productSaleService;
 
 	@RequestMapping(value = { "/saleoff" }, method = RequestMethod.GET)
 	public String hdmh(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
@@ -42,7 +43,7 @@ public class SaleOffContrller {
 		for (Product item : products) {
 			ProductCustom p = new ProductCustom();
 			p.setProduct(item);
-			p.setDiscount(saleOrderService.getDiscountByIdProduct(item.getId()));
+			p.setDiscount(productSaleService.getDiscountByIdProduct(item.getId()));
 			p.setPrice_sale(item.getPrice().subtract(item.getPrice().multiply(new BigDecimal(p.getDiscount()).divide(new BigDecimal(100)))));
 			productCustom.add(p);
 		}

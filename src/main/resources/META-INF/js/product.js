@@ -18,7 +18,18 @@ var Productjs = {
 				dataType: "json", // dữ liệu từ web-service trả về là json.
 				success: function(jsonResult) { // được gọi khi web-service trả về dữ liệu.
 					if(jsonResult.status == 200) {
-						location.reload();
+						var sta = $('#status'+idP).val();
+						console.log(sta);
+						if(sta == "true"){
+							$('#TStatus'+idP).css('background','red');
+							$('#TiStatus'+idP).removeClass("fa-check").addClass("fa-times");
+							$('#status'+idP).val("false");
+						}
+						else{
+							$('#TStatus'+idP).css('background','green');
+							$('#TiStatus'+idP).removeClass("fa-times").addClass("fa-check");
+							$('#status'+idP).val("true");
+						}
 						
 					} else {
 						alert('Xóa không thành công!');

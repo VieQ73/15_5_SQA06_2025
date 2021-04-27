@@ -23,6 +23,9 @@
 	div.dataTables_wrapper {
         margin-bottom: 3em;
     }
+    #table1 th, td{
+    	white-space: nowrap;
+    }
 </style>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
 </head>
@@ -44,9 +47,9 @@
 					<!-- DATA TABLE -->
 					<h3 class="title-5 m-b-35">Danh sách đơn hàng</h3>
 
-					<div class="table-responsive table-responsive-data2">
+					<div class="table-responsive table-responsive-data2" style="">
 						
-						<table class="table table-data2 display" id="">
+						<table class="table table-data2 display" id="table1" style="max-width: 1900px ;width: 100%;">
 							<thead>
 								<tr>
 									<th>#</th>
@@ -56,12 +59,12 @@
 									<th>Tổng giá</th>
 									<th style="min-width: 2rem;">Ngày đặt</th>
 									<th>Trạng thái</th>
-									<th style="max-width: 1rem;"></th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="saleorder" items="${saleorders }" varStatus="loop">
-									<tr class="tr-shadow">
+									
+									<tr class="tr-shadow" onclick="show(${saleorder.id})">
 										<th scope="row">${loop.index + 1}</th>
 										<td>${saleorder.user.name}</td>
 										<td>${saleorder.user.address}</td>
@@ -102,16 +105,8 @@
 												<span class="badge" style="background: green;">Nhận hàng</span>
 											</c:if>
 										</td>
-										<td>							
-											<a href="${pageContext.request.contextPath}/admin/saleorder/${saleorder.id}">
-												<button
-													class="item" data-toggle="tooltip" data-placement="top"
-													title="Edit">
-													<span class="badge">Xem chi tết</span>
-												</button>
-											</a>
-										</td>
 									</tr>
+									
 								</c:forEach>
 							</tbody>
 						</table>
@@ -127,8 +122,13 @@
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
-	    $('table.display').DataTable();
-	} );
+	    $('table.display').DataTable({
+	    	"scrollX": true
+	    });
+	});
+	function show(id){
+		window.location = "${pageContext.request.contextPath}/admin/saleorder/"+id;
+	}
 	</script>
 </body>
 </html>

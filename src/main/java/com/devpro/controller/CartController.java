@@ -36,7 +36,8 @@ import com.devpro.model.luutru;
 import com.devpro.repositories.ProductRepo;
 import com.devpro.repositories.OrderRepo;
 import com.devpro.repositories.UserRepo;
-import com.devpro.services.SaleOrderService;
+import com.devpro.services.OrderProductService;
+import com.devpro.services.ProductSaleService;
 import com.devpro.services.UserService;
 import com.ibm.icu.util.Calendar;
 
@@ -52,8 +53,10 @@ public class CartController extends BaseController{
 	@Autowired UserRepo userRepo;
 	
 	@Autowired
-	private SaleOrderService saleOrderService;
+	private ProductSaleService productSaleService;
 	
+	@Autowired
+	private OrderProductService orderProductService;
 	@Autowired
 	private UserService userService;
 	@RequestMapping(value = { "/cart" }, method = RequestMethod.GET)
@@ -114,7 +117,7 @@ public class CartController extends BaseController{
 			
 			Product product = productRepo.getOne(sanPhamTrongGioHang.getProductId());
 			sanPhamTrongGioHang.setTenSP(product.getTitle());
-			Integer discount = saleOrderService.getDiscountByIdProduct(product.getId());
+			Integer discount = productSaleService.getDiscountByIdProduct(product.getId());
 			BigDecimal t = product.getPrice().subtract(product.getPrice().multiply(new BigDecimal(discount).divide(new BigDecimal(100))));
 			sanPhamTrongGioHang.setGiaBan(t);
 			sanPhamTrongGioHang.setTongGia(t.multiply(new BigDecimal(sanPhamTrongGioHang.getSoluong())));
@@ -220,13 +223,13 @@ public class CartController extends BaseController{
 	public String saveProduct( final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
 		String phone = request.getParameter("keyphone");
-		List<Order> list = saleOrderService.searchCustomerPhone(phone, 0);
+		List<Order> list = orderProductService.searchCustomerPhone(phone, 0);
 		model.addAttribute("historyCarts", list);
-		List<Order> list1 = saleOrderService.searchCustomerPhone(phone, 1);
+		List<Order> list1 = orderProductService.searchCustomerPhone(phone, 1);
 		model.addAttribute("historyCarts1", list1);
-		List<Order> list2 = saleOrderService.searchCustomerPhone(phone, 2);
+		List<Order> list2 = orderProductService.searchCustomerPhone(phone, 2);
 		model.addAttribute("historyCarts2", list2);
-		List<Order> list3 = saleOrderService.searchCustomerPhone(phone, 3);
+		List<Order> list3 = orderProductService.searchCustomerPhone(phone, 3);
 		model.addAttribute("historyCarts3", list3);
 		model.addAttribute("sl1", list.size());
 		model.addAttribute("sl2", list1.size());
@@ -345,9 +348,11 @@ public class CartController extends BaseController{
 					ProductInCart sanPhamTrongGioHang = new ProductInCart();
 					sanPhamTrongGioHang.setTenSP(product.getTitle());
 					sanPhamTrongGioHang.setProductId(product.getId());
-					sanPhamTrongGioHang.setGiaBan(product.getPrice());
+					Integer discount = productSaleService.getDiscountByIdProduct(product.getId());
+					BigDecimal t = product.getPrice().subtract(product.getPrice().multiply(new BigDecimal(discount).divide(new BigDecimal(100))));
+					sanPhamTrongGioHang.setGiaBan(t);
 					sanPhamTrongGioHang.setSoluong(i.getQuality());
-					sanPhamTrongGioHang.setTongGia(product.getPrice().multiply(new BigDecimal(sanPhamTrongGioHang.getSoluong())));
+					sanPhamTrongGioHang.setTongGia(t.multiply(new BigDecimal(sanPhamTrongGioHang.getSoluong())));
 					sanPhamTrongGioHang.setAmount(product.getAmount());
 					sanPhamTrongGioHang.setSeo(product.getSeo());
 					gioHang.getSanPhamTrongGioHangs().add(sanPhamTrongGioHang);
