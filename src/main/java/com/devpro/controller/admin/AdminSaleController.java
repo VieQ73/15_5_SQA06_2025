@@ -66,6 +66,7 @@ public class AdminSaleController{
 					+ "  <strong>Success!</strong> Cập nhật thành công." + "</div>");
 		}
 		model.addAttribute("sale", productSaleService.getSaleAdmin());
+		productSaleService.setDiscountActive();
 		return "back-end/listSale";
 	}
 	@RequestMapping(value = {"/admin/addSale"}, method = RequestMethod.POST)
@@ -91,6 +92,7 @@ public class AdminSaleController{
 		sale.setStart_date(datengaybd);
 		sale.setEnd_date(datengaykt);
 		saleRepo.save(sale);
+		productSaleService.setDiscountActive();
 		return "redirect:/admin/listSale/?add=success";
 	}
 	
@@ -102,7 +104,8 @@ public class AdminSaleController{
 		 model.addAttribute("start_date", startD);
 		 String endD = sale.getEnd_date().toString().substring(0, 10);
 		 model.addAttribute("end_date", endD);
-		 model.addAttribute("sale", sale); 
+		 model.addAttribute("sale", sale);
+		 productSaleService.setDiscountActive();
 		 return "back-end/addSale"; 
 	 }
 	
@@ -120,6 +123,7 @@ public class AdminSaleController{
 		 model.addAttribute("sale", saleRepo.findAll());
 		 model.addAttribute("saleid", id);
 		 model.addAttribute("product", productService.getAllProduct());
+		 productSaleService.setDiscountActive();
 		 return "back-end/listProductSale"; 
 	 }
 	
@@ -143,6 +147,7 @@ public class AdminSaleController{
 		}
 		productSaleService.saveProductSale(productSale);
 		productSaleService.setDiscountActiveByProductId(productId);
+		productSaleService.setDiscountActive();
 		return "redirect:/admin/listProductSale/"+saleId+"?add=success";
 	}
 	
@@ -151,6 +156,7 @@ public class AdminSaleController{
 			final HttpServletResponse response, @RequestBody ProductSale productSale) {
 		ProductSale prSaleInDB = productSaleRepo.getOne(productSale.getId());
 		productSaleRepo.delete(prSaleInDB);
+		productSaleService.setDiscountActive();
 		return ResponseEntity.ok(new AjaxResponse(200, "Xoa thanh cong"));
 	}
 }

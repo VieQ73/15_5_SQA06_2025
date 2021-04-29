@@ -72,15 +72,18 @@ public class Product extends BaseEntity{
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "gift_id")
-	private Category gift;
+	private Gift gift;
 
-	public Category getGift() {
+	
+
+	public Gift getGift() {
 		return gift;
 	}
 
-	public void setGift(Category gift) {
+	public void setGift(Gift gift) {
 		this.gift = gift;
 	}
+
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_id")

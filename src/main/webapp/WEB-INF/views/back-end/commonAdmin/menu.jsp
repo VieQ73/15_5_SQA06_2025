@@ -57,6 +57,17 @@ pageEncoding="UTF-8"%>
 							</li>
 							<li class="treeview">
 								<a href="#">
+									<i class="fas fa-newspaper"></i>&nbsp
+									<span>Quản lý tin tức</span>
+									<i class="fa fa-angle-left pull-right"></i>
+								</a>
+								<ul class="treeview-menu">
+				                  <li><a href="${pageContext.request.contextPath}/admin/listNews"><i class="fa fa-angle-right"></i> Danh sách tin tức</a></li>
+				                  <li><a href="${pageContext.request.contextPath}/admin/addNews"><i class="fa fa-angle-right"></i> Thêm tin tức</a></li>
+				                </ul>
+							</li>
+							<li class="treeview">
+								<a href="#">
 									<i class="fas fa-percent"></i>&nbsp
 									<span>Quản lý giảm giá</span>
 									<i class="fa fa-angle-left pull-right"></i>
@@ -78,12 +89,11 @@ pageEncoding="UTF-8"%>
 				                </ul>
 							</li>
 							<li class="treeview">
-								<a href="#">
+								<a href="${pageContext.request.contextPath}/admin/thongke">
 									<i class="far fa-edit"></i>&nbsp
 									<span>Thống kê</span>
 									<i class="fa fa-angle-left pull-right"></i>
 								</a>
-								
 							</li>
 						</ul>
 					</div>

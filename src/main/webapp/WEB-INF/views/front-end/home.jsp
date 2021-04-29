@@ -116,7 +116,7 @@
 							<p class="sale">- ${productSelling.discount}%</p>
 						</c:if>
 						<div class="spbc-img ">
-							<a href="${pageContext.request.contextPath}/products/${product.seo }">
+							<a href="${pageContext.request.contextPath}/products/${productSelling.product.seo }">
 								<c:choose>
 									<c:when test = "${empty productSelling.product.productImages }">
 										<img class="card-img-top" src="http://placehold.it/700x400" alt="">

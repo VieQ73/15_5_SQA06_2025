@@ -1,5 +1,6 @@
 package com.devpro.controller.admin;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,7 @@ import com.devpro.entities.OrderProducts;
 
 import com.devpro.repositories.OrderRepo;
 import com.devpro.services.OrderProductService;
+import com.ibm.icu.util.Calendar;
 @Controller
 public class AdminOrder {
 	@Autowired
@@ -64,6 +66,8 @@ public class AdminOrder {
 				item.getProduct().setAmount(item.getQuality()+item.getProduct().getAmount());
 			}
 		}
+		Date d = Calendar.getInstance().getTime();
+		saleOrderInDP.setUpdated_date(d);
 		saleOrderRepo.save(saleOrderInDP);
 		model.addAttribute("saleorders", saleOrderService.searchAdmin(null));
 		

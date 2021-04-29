@@ -75,9 +75,9 @@ public class ProductSaleService {
 			
 			long n = end.getTime() - cal.getTimeInMillis();
 			long m = cal.getTimeInMillis() - start.getTime();
-			if(n >= 0 && m >= 0 && n < min)
+			if(n >= 0 && m >= 0 && m < min)
 			{
-				min = n;
+				min = m;
 				idActive = item.getId();
 			}
 		}

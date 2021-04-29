@@ -243,6 +243,7 @@
 				if(jsonResult.status == 200) {
 					
 					$('#row'+id).remove();
+					alert('Xóa thành công!');
 				} else {
 					alert('Xóa không thành công!');
 				}

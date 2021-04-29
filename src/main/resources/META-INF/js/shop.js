@@ -72,7 +72,7 @@ var Shop = {
 						//alert(jsonResult.data);
 						
 						$("#so_luong_sp").html(jsonResult.data);
-						alert('Hủy đơn hàng thành công');
+						alert('Chuyển trạng thái đơn hàng thành công');
 						location.reload();
 					} else {
 						alert('loi');
@@ -83,6 +83,7 @@ var Shop = {
 			    }
 			});
 		},
+		
 		/*Xóa sản phẩm trong giỏ hàng*/
 		xoa_sp_trong_gio_hang: function(productId) {
 			var data = {};

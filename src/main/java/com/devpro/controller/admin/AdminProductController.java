@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.devpro.controller.BaseController;
 import com.devpro.entities.Product;
 import com.devpro.model.AjaxResponse;
+import com.devpro.repositories.GiftRepo;
 import com.devpro.repositories.ProductRepo;
 import com.devpro.services.ProductService;
 import com.github.slugify.Slugify;
@@ -32,6 +33,7 @@ public class AdminProductController extends BaseController {
 	private ProductService productService;
 	@Autowired
 	private ProductRepo productRepo;
+	
 
 	@RequestMapping(value = { "/admin/addProduct" }, method = RequestMethod.GET)
 	public String saveProduct(final ModelMap model, final HttpServletRequest request,

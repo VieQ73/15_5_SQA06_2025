@@ -162,6 +162,7 @@ public class CartController extends BaseController{
 			Order saleOrder = new Order();
 			Date d = Calendar.getInstance().getTime();
 			saleOrder.setCreatedDate(d);
+			saleOrder.setUpdated_date(d);
 			saleOrder.setNote_by_customer(note);
 			saleOrder.setAddress(address);
 			saleOrder.setTotal(gioHang.getTotal(productRepo));
@@ -380,7 +381,10 @@ public class CartController extends BaseController{
 	public ResponseEntity<AjaxResponse> huy( final ModelMap model, @RequestBody Order saleOrder1, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
 		Order saleOrder = saleOrderRepo.findById(saleOrder1.getId()).get();
-		saleOrder.setStatus(3);
+		if(saleOrder.getStatus()==0)
+			saleOrder.setStatus(3);
+		if(saleOrder.getStatus()==1)
+			saleOrder.setStatus(2);
 		saleOrderRepo.save(saleOrder);
 		return ResponseEntity.ok(new AjaxResponse(200, "a"));
 	}

@@ -60,6 +60,7 @@
 								</c:forEach>
 							</ul>
 						</div>
+						
 					</div>
 					<div class="ctgr-content-right col-xl-9">
 						<div class="ctgr-product">

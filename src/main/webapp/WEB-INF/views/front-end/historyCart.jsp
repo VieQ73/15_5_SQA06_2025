@@ -191,8 +191,8 @@
 													        Bạn muốn hủy đơn hàng này?
 													      </div>
 													      <div class="modal-footer">
-													        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 													        <button type="button" class="btn btn-danger" onclick="Shop.huy_don_hang(${historyCart.id});">Hủy đơn hàng</button>
+													      	 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 													      </div>
 													    </div>
 													  </div>
@@ -331,28 +331,28 @@
 											
 											<div class="purchase-card-buttons__container"
 												style="display: flex; flex-wrap: nowrap; -webkit-box-pack: end; place-content: center flex-end; padding-top: 1.125rem; padding-bottom: 1.25rem;">
-												<c:if test="${historyCart.status == 0}">
+												<c:if test="${historyCart.status == 1}">
 												<div class="purchase-card-buttons__show-button-wrapper"
 													style="min-width: 10rem; height: 2.5rem; margin-left: 0.625rem; background: rgb(255, 255, 255); display: flex;">
-													<button class="btn btn-danger" data-toggle="modal" data-target="#huy">
-														Hủy Đơn Hàng
+													<button class="btn btn-primary" data-toggle="modal" data-target="#huy">
+														Nhận hàng
 													</button>
 													<!-- Modal -->
 													<div class="modal fade" id="huy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 													  <div class="modal-dialog" role="document">
 													    <div class="modal-content">
 													      <div class="modal-header">
-													        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+													        <h5 class="modal-title" id="exampleModalLabel">Xác nhận nhận hàng</h5>
 													        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 													          <span aria-hidden="true">&times;</span>
 													        </button>
 													      </div>
 													      <div class="modal-body">
-													        ...
+													        Bạn đã nhận đơn hàng của mình?
 													      </div>
 													      <div class="modal-footer">
-													        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-													        <button type="button" class="btn btn-primary" onclick="huy_don_hang(${historyCart.id});">Hủy đơn hàng</button>
+													        <button type="button" class="btn btn-primary" onclick="Shop.huy_don_hang(${historyCart.id});">Đồng ý</button>
+													        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
 													      </div>
 													    </div>
 													  </div>

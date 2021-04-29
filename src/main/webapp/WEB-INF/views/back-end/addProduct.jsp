@@ -58,11 +58,11 @@
 										</div>
 										<div class="form-group">
 											<label>Price</label>
-											<form:input type="text" class="form-control" path="price"></form:input>
+											<form:input type="number" class="form-control" path="price"></form:input>
 										</div>
 										<div class="form-group">
 											<label>Số lượng</label>
-											<form:input type="text" class="form-control" path="amount"></form:input>
+											<form:input type="number" class="form-control" path="amount"></form:input>
 										</div>
 										<div class="form-group">
 											<label>Short Descrition</label>
@@ -73,6 +73,7 @@
 											<label>Images</label>
 											<input type="file" name="product_image" class="form-control" multiple="multiple">
 										</div>
+	
 										<div class="form-group">
 											<label>Details</label>
 											<form:textarea id="txtDetailDescription" class="form-control" path="shortDetails"

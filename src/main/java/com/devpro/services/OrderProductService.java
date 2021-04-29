@@ -32,37 +32,33 @@ public class OrderProductService {
 	private SaleRepo saleRepo;
 	
 	public List<Order> searchAdmin(final Order saleOrder) {
-		String sql = "select * from tbl_order where 1=1 and status <> 3 order by created_date desc";
+		String sql = "select * from tbl_order where 1=1 and status <> 3 order by updated_date desc";
 		Query query = entityManager.createNativeQuery(sql, Order.class);
-		
 		return query.getResultList();
 	}
+	
 	public List<Order> searchCustomer(Integer id) {
-
-
 		String sql = "select * from tbl_order where created_by="+id;
 		Query query = entityManager.createNativeQuery(sql, Order.class);
-		
 		return query.getResultList();
 	}
 	
 	public List<Order> searchCustomerPhone(String phone, int status) {
 		String sql = "select * from tbl_order where status = "+status+" and created_by=(select id from tbl_customer where phone = '"+phone+"') order by created_date desc";
-		
 		Query query = entityManager.createNativeQuery(sql, Order.class);
-		
 		return query.getResultList();
 	}
+	
 	public List<OrderProducts> searchProduct(int id) {
-
-
 		String sql = "select * from tbl_order_product where order_id='"+id+"'";
-
-		
 		Query query = entityManager.createNativeQuery(sql, OrderProducts.class);
-		
 		return query.getResultList();
 	}
-
+	
+	public List<Order> findOrderByStatus(Integer status){
+		String sql = "select * from tbl_order where status='"+status+"'";
+		Query query = entityManager.createNativeQuery(sql, Order.class);
+		return query.getResultList();
+	}
 	
 }

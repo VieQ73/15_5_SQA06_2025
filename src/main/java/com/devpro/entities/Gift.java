@@ -10,6 +10,12 @@ import javax.persistence.FetchType;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.FetchMode;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import java.math.BigDecimal;
 @Entity
 @Table(name = "tbl_gift")
@@ -19,14 +25,33 @@ public class Gift extends BaseEntity{
 
 	@Column(name = "price", precision = 13, scale = 2, nullable = false)
 	private BigDecimal price;
-
-
+	
 	@Lob
 	@Column(name = "description",columnDefinition = "LONGTEXT", nullable = true)
 	private String description;
 
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "gift", orphanRemoval = true)
+	@LazyCollection(LazyCollectionOption.FALSE)
+	private List<Product> product = new ArrayList<Product>();
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "gift", fetch = FetchType.EAGER, orphanRemoval = true)
+	public void addProduct(Product _product) {
+		_product.setGift(this);
+		product.add(_product);
+	}
+	
+	public void removeProduct(Product _product) {
+		_product.setGift(null);
+		product.remove(_product);
+	}
+
+	public void removePrduct() {
+		for(Product _product : product) {
+			removeProduct(_product);
+		}
+	}
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "giftI", orphanRemoval = true)
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<Images> giftImages = new ArrayList<Images>();
 	
 	public void addGiftImages(Images _giftImages) {

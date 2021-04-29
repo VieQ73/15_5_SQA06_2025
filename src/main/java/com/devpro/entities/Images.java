@@ -30,11 +30,16 @@ public class Images {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "product_id") // tên field khoá ngoại
 	private Product product;
+	
 	@JsonIgnore
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "gift_id") // tên field khoá ngoại
-	private Gift gift;
+	private Gift giftI;
 	
+	@JsonIgnore
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "news_id") // tên field khoá ngoại
+	private News news;
 	
 	public Integer getId() {
 		return id;
@@ -61,10 +66,16 @@ public class Images {
 		this.product = product;
 	}
 	public Gift getGift() {
-		return gift;
+		return giftI;
 	}
 	public void setGift(Gift gift) {
-		this.gift = gift;
+		this.giftI = gift;
+	}
+	public News getNews() {
+		return news;
+	}
+	public void setNews(News news) {
+		this.news = news;
 	}
 	
 	

@@ -65,7 +65,7 @@ public class ProductService {
 				
 				// xoá ảnh cũ trên vật lí(host)
 				for(Images _images : oldProductImages) {
-					new File("E:\\java\\template\\BeautyShop\\upload\\" + _images.getPath()).delete();
+					new File("C:\\Users\\PV\\OneDrive\\Máy tính\\DoAnTotNghiepHaUI\\upload\\" + _images.getPath()).delete();
 				}
 				
 				// xoá ảnh trên database
@@ -81,7 +81,7 @@ public class ProductService {
 			for(MultipartFile productImage : productImages) {
 				
 				// lưu vật lí
-				productImage.transferTo(new File("E:\\java\\template\\BeautyShop\\upload\\" + productImage.getOriginalFilename()));
+				productImage.transferTo(new File("C:\\Users\\PV\\OneDrive\\Máy tính\\DoAnTotNghiepHaUI\\upload\\" + productImage.getOriginalFilename()));
 				
 				Images _productImages = new Images();
 				_productImages.setPath(productImage.getOriginalFilename());
