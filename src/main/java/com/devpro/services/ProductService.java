@@ -111,11 +111,8 @@ public class ProductService {
 	
 	
 	public List<Product> searchProductWithCate8(int idCate) {
-
 		String sql = "select * from tbl_product where status = 1 and category_id="+idCate+" order by rand() limit 0,8;";
-		
-		
-		
+
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		return query.getResultList();
 	}

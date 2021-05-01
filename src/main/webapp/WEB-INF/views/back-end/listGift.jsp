@@ -56,7 +56,7 @@
 							</thead>
 							<tbody>
 								<c:forEach var="gift" items="${gift }" varStatus="loop">
-									<tr class="tr-shadow" >
+									<tr class="tr-shadow" onclick="showDetail(${gift.id})">
 										<th scope="row">${loop.index + 1}</th>
 										<td style="font-size: 16px;">${gift.title}</td>
 										<td>
@@ -141,6 +141,9 @@
 	    	"scrollX": true
 	    });
 	});
+	function showDetail(id){
+		window.location = "${pageContext.request.contextPath}/admin/listProductGift/"+id;
+	}
 	function deleteGift(idP){
 		var data = {};
 		data["id"] = idP;

@@ -49,6 +49,7 @@
 		}
 
 	</style>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css">
 </head>
 <body>
 
@@ -67,51 +68,9 @@
 			<div class="spbc-top">SẢN PHẨM BÁN CHẠY</div>
 			<div class="spbc-main">
 			
-				<%-- <div class="container-fluid" >
-						    <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="900000">
-						        <div class="carousel-inner row w-100 mx-auto" role="listbox">
-						            <c:forEach var = "product" items = "${productSelling }">
-						            <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-2 active">
-										
-											<div class="spbc-img ">
-												<a href="${pageContext.request.contextPath}/products/${product.seo }">
-													<c:choose>
-														<c:when test = "${empty product.productImages }">
-															<img class="card-img-top" src="http://placehold.it/700x400" alt="">
-														</c:when>
-														<c:otherwise>
-															<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${product.productImages.get(0).path }" alt="">
-														</c:otherwise>
-													</c:choose>
-												</a>
-												<div class="spbc-addcart">
-													<button class="btn btn-warning" onclick="Shop.chon_san_pham_dua_vao_gio_hang(${product.id}, 1);"><i class="fas fa-cart-plus"></i>Thêm giỏ hàng</button>
-												</div>
-											</div>
-											<div class="spbc-title">
-												<a href="${pageContext.request.contextPath}/products/${product.seo }">${product.title }</a>
-											</div>
-											<div class="spbc-price">
-												<fmt:formatNumber type="number" maxIntegerDigits="13"
-															value="${product.price }" /> đ
-											</div>
-										
-										</div>
-									</c:forEach>
-						        </div>
-						        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-						            <i class="fa fa-chevron-left fa-lg text-muted"></i>
-						            <span class="sr-only">Previous</span>
-						        </a>
-						        <a class="carousel-control-next text-faded" href="#carouselExample" role="button" data-slide="next">
-						            <i class="fa fa-chevron-right fa-lg text-muted"></i>
-						            <span class="sr-only">Next</span>
-						        </a>
-						    </div>
-						</div> --%>
-			
 				<c:forEach var = "productSelling" items = "${productSelling }">
-					<div class="spbc-body">
+					 
+	                  <div class="spbc-body">
 						<c:if test="${productSelling.discount != 0 }">
 							<p class="sale">- ${productSelling.discount}%</p>
 						</c:if>
@@ -138,6 +97,7 @@
 										value="${productSelling.price_sale }" /> đ
 						</div>
 					</div>
+		                  
 				</c:forEach>
 			</div>
 		</div>
@@ -379,56 +339,26 @@
 			<div class="news-top">TIN NỔI BẬT</div>
 			<div class="news-main">
 				<ul>
-					<li>
-						<div class="news-img">
-							<a href="#"> <img
-								src="${pageContext.request.contextPath}/images/Cach-tri-seo-lom-thuy-dau-tu-thien-nhien-an-toan-hieu-qua-.jpg">
-							</a>
-						</div>
-						<div class="news-body">
-							<a href="#"> Cách trị sẹo lõm thủy đậu từ thiên nhiên an
-								toàn, hiệu quả </a>
-							<p>Chúng ta đều biết thủy đậu nếu như không điều trị kịp thời
-								đúng cách thì sẽ gây viêm nhiễm và dễ để lại sẹo lõm. Vậy đâu
-								mới là cách trị sẹo lõm an toàn và hiệu quả</p>
-						</div>
-					</li>
-					<li>
-						<div class="news-img">
-							<a href="#"> <img
-								src="${pageContext.request.contextPath}/images/BI-QUYET-TRI-RUNG-TOC-HIEU-QUA-TAI-NHA-.jpg">
-							</a>
-						</div>
-						<div class="news-body">
-							<a href="#"> Bí quyết trị rụng tóc hiệu quả tại nhà </a>
-							<p>Trị rụng tóc sẽ đơn giản hơn khi bạn tìm được cho mình được nguyên nhân gây 
-							rụng tóc cũng như biết kết hợp giữa các biện pháp chữa rụng tóc và bổ sung thực phẩm, 
-							chất dinh dưỡng cho tóc.</p>
-						</div>
-					</li>
-					<li>
-						<div class="news-img">
-							<a href="#"> <img
-								src="${pageContext.request.contextPath}/images/CACH-CHUA-RUNG-TOC-DAN-GIAN-DON-GIAN-HIEU-QUA-.png">
-							</a>
-						</div>
-						<div class="news-body">
-							<a href="#"> Cách chữ rụng tóc dân gian, hiệu quả </a>
-							<p>Khi tình trạng rụng tóc chưa trầm trọng, bạn hãy áp dụng những cách chữa rụng tóc dân gian cùng những mẹo 
-							vặt sau đây để cải thiện tình trạng của mình nhé.</p>
-						</div>
-					</li>
-					<li>
-						<div class="news-img">
-							<a href="#"> <img
-								src="${pageContext.request.contextPath}/images/BI-QUYET-CHUA-TOC-RUNG-NHIEU-TU-THIEN-NHIEN-.jpg">
-							</a>
-						</div>
-						<div class="news-body">
-							<a href="#"> Bí quyết chữa rụng tóc nhiều từ thiên nhiên </a>
-							<p>Nếu như bạn đang tìm cho mình cách chữa rụng tóc nhiều thì không nên bỏ qua bài viết này nhé!</p>
-						</div>
-					</li>
+					<c:forEach items="${news}" var="news">
+						<li >
+							<div class="news-img">
+								<a href="${pageContext.request.contextPath}/newsDetail/${news.id }">
+									<c:choose>
+										<c:when test = "${empty news.newsImages }">
+											<img src="http://placehold.it/700x400" alt="">
+										</c:when>
+										<c:otherwise>
+											<img src="${pageContext.request.contextPath}/file/upload/${news.newsImages.get(0).path }" alt="">
+										</c:otherwise>
+									</c:choose>
+								</a>
+							</div>
+							<div class="news-body" style="max-height: 10rem; overflow: hidden;">
+								<a href="${pageContext.request.contextPath}/newsDetail/${news.id }">${news.title } </a>
+								<p>${news.short_news }</p>
+							</div>
+						</li>
+					</c:forEach>
 				</ul>
 			</div>
 		</div>
@@ -438,6 +368,48 @@
 	</div>
 	<jsp:include page="/WEB-INF/views/front-end/common/js.jsp"></jsp:include>
 	<script type="text/javascript" src="https://sites.google.com/site/iristipsblogger/file/hoamai-hoadao.js"></script>
-	
+	<script type="text/javascript">
+	$('#carouselExample').on('slide.bs.carousel', function (e) {
+
+		  
+	    var $e = $(e.relatedTarget);
+	    var idx = $e.index();
+	    var itemsPerSlide = 4;
+	    var totalItems = $('.carousel-item').length;
+	    
+	    if (idx >= totalItems-(itemsPerSlide-1)) {
+	        var it = itemsPerSlide - (totalItems - idx);
+	        for (var i=0; i<it; i++) {
+	            // append slides to end
+	            if (e.direction=="left") {
+	                $('.carousel-item').eq(i).appendTo('.carousel-inner');
+	            }
+	            else {
+	                $('.carousel-item').eq(0).appendTo('.carousel-inner');
+	            }
+	        }
+	    }
+	});
+
+
+	  $('#carouselExample').carousel({ 
+	                interval: 2000
+	        });
+
+
+	  $(document).ready(function() {
+	/* show lightbox when clicking a thumbnail */
+	    $('a.thumb').click(function(event){
+	      event.preventDefault();
+	      var content = $('.modal-body');
+	      content.empty();
+	        var title = $(this).attr("title");
+	        $('.modal-title').html(title);        
+	        content.html($(this).html());
+	        $(".modal-profile").modal({show:true});
+	    });
+
+	  });
+	</script>
 </body>
 </html>

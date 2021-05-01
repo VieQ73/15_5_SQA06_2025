@@ -67,4 +67,10 @@ public class NewsService {
 		Query query = entityManager.createNativeQuery(sql, News.class);
 		return query.getResultList();
 	}
+	
+	public List<News> getNewsIndex(){
+		String sql ="select * from tbl_news where status = true order by rand() limit 0,4;";
+		Query query = entityManager.createNativeQuery(sql, News.class);
+		return query.getResultList();
+	}
 }

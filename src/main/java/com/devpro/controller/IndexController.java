@@ -16,12 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.devpro.entities.Category;
+import com.devpro.entities.News;
 import com.devpro.entities.Product;
 import com.devpro.entities.ProductCustom;
-import com.devpro.entities.ProductSale;
-import com.devpro.entities.Sale;
-import com.devpro.repositories.ProductRepo;
 import com.devpro.services.CategoryService;
+import com.devpro.services.NewsService;
 import com.devpro.services.ProductService;
 import com.devpro.services.OrderProductService;
 import com.devpro.services.ProductSaleService;
@@ -40,9 +39,9 @@ public class IndexController {
 	@Autowired
 	private CategoryService categoryService;
 	@Autowired
-	private OrderProductService saleOrderService;
-	@Autowired
 	private ProductSaleService productSaleService;
+	@Autowired
+	private NewsService newsService;
 	/**
 	 * 
 	 * @param model: trung gian trao đổi thông tin giữa Controller và View(Jsp)
@@ -126,7 +125,8 @@ public class IndexController {
 			productCustom5.add(p);
 		}
 		model.addAttribute("productSelling", productCustom5);
-		
+		List<News> news = newsService.getNewsIndex();
+		model.addAttribute("news", news);
 		return "front-end/home";
 	}
 	

@@ -48,6 +48,7 @@ public class ProductsController extends BaseController{
 		pc.setDiscount(productSaleService.getDiscountByIdProduct(p.getId()));
 		pc.setPrice_sale(p.getPrice().subtract(p.getPrice().multiply(new BigDecimal(pc.getDiscount()).divide(new BigDecimal(100)))));
 		model.addAttribute("productCustom", pc);
+		
 		return "front-end/products";
 	}
 	

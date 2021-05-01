@@ -17,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.devpro.entities.Gift;
 
 import com.devpro.entities.Images;
-
+import com.devpro.entities.Product;
 import com.devpro.model.GiftSearch;
 
 import com.devpro.repositories.GiftRepo;
@@ -85,4 +85,13 @@ public class GiftService {
 		
 		return query.getResultList();
 	}
+	
+	public List<Product> searchProductGift(Integer id) {
+		String sql = "select * from tbl_product where status = true and gift_id = "+id;
+		Query query = entityManager.createNativeQuery(sql, Product.class);
+		
+		return query.getResultList();
+	}
+	
+	
 }

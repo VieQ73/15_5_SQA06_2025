@@ -42,97 +42,54 @@
 			${ messsage }
 			<div class="row">
 				<div class="col-md-12">
-					<div class="form-body" style="margin-left: 15rem;">
+					<div class="form-body" style="margin-left: 10rem;">
 						<div class="form-group">
-							<label>Tên đợt khuyến mại:</label>
-							<select style="margin-left: 1rem; height: 2rem; max-width: 15rem;" id="myselect" onchange="select();">
-								<c:forEach items="${sale }" var="sale">
-									<option value="${sale.id}">${sale.sale_name}</option>
+							<label>Tên quà tặng:</label>
+							<select style="margin-left: 1rem; height: 2rem; max-width: 19rem;" id="myselect" onchange="select();">
+								<c:forEach items="${gift }" var="gift">
+									<option value="${gift.id}">${gift.title}</option>
 								</c:forEach>
 							</select>
 						</div>
+						<div class="form-group">
+							<label style="padding-left: 2rem;">Hình ảnh:</label>
+							<img style="margin-left: 5rem; border: solid 1px black;" width="200rem" height="200rem" src="${pageContext.request.contextPath}/file/upload/${giftI.giftImages.get(0).path }">
+						</div>
 					</div>
-					<input type="hidden" id="saleid" value="${saleid}">
+					<input type="hidden" id="giftid" value="${id}">
 					<!-- DATA TABLE -->
-					<h4 class="title-5 m-b-35" style="margin-top: 5rem;">Danh sách sản phẩm khuyến mại</h4>
+					<h3 class="title-5 m-b-35" style="margin-top: 2rem;">Danh sách sản tặng quà</h3>
 					<div class="table-responsive table-responsive-data2">
 						<table class="table table-data2 display" id="">
 							<thead>
 								<tr>
 									<th style="font-size: 18px;">STT</th>
 									<th style="font-size: 18px;">Tên sản phẩm</th>
-									<th style="font-size: 18px;">Phần trăm giảm giá</th>
+									<th style="font-size: 18px;">Hình ảnh</th>	
 									<th ></th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="productSale" items="${productSale }" varStatus="loop">
-									<tr class="tr-shadow" id="row${productSale.id }">
+								<c:forEach var="productGift" items="${productGift }" varStatus="loop">
+									<tr class="tr-shadow" id="row${productGift.id }">
 										<th scope="row">${loop.index + 1}</th>
-										<td style="font-size: 18px;">${productSale.product.title}</td>
-										<td style="font-size: 18px;">${productSale.discount} %</td>
+										<td style="font-size: 18px;">${productGift.title}</td>
+										<td>
+											<c:choose>
+												<c:when test = "${empty productGift.productImages }">
+													<img style="width: 70px; height: 90px;" class="card-img-top" src="http://placehold.it/700x400" alt="">
+												</c:when>
+												<c:otherwise>
+													<img style="width: 70px; height: 90px;" class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productGift.productImages.get(0).path }" alt="">
+												</c:otherwise>
+											</c:choose>
+										</td>
 										<td>
 											<div class="table-data-feature">
-												<button class="item" data-toggle="modal" data-toggle="modal" data-target="#updateProductSale${productSale.id }"
-													title="Edit" >
-													<i class="far fa-edit"></i>
-												</button>
-												<div class="modal fade" id="updateProductSale${productSale.id }" tabindex="-1" role="dialog" aria-labelledby="updateProductSale" aria-hidden="true">
-												  <div class="modal-dialog" role="document">
-												    <div class="modal-content">
-												      <div class="modal-header">
-												        <h4 class="modal-title" id="exampleModalLabel">Sửa sản phẩm khuyến mại</h4>
-												        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												          <span aria-hidden="true">&times;</span>
-												        </button>
-												      </div>
-												      <div class="modal-body">
-														<form action="${pageContext.request.contextPath}/admin/addProductSale " method="post">
-															<table class="table">
-																<tbody>
-																<tr>
-																	<td style="max-width: 16rem;">
-																		<label style="margin-left: -5rem; width: 15rem;">Tên đợt khuyến mại:</label>
-																	</td>
-																	<td>
-																		<label style="font-size: 18px;">${productSale.sale.sale_name}</label>
-																	</td>
-																</tr>
-																<tr>
-																<td>
-																		<label style="margin-left: -5rem; width: 15rem;">Tên sản phẩm:</label>
-																	</td>
-																	<td>
-																		<label style="font-size: 18px;">${productSale.product.title}</label>
-																	</td>
-																</tr>
-																<tr>
-																	<td>
-																		<label style="margin-left: -5rem; width: 15rem;">Phần trăm giảm giá:</label>
-																	</td>
-																	<td>
-																		<input style="max-width: 15rem; height: 2rem; margin-left: 1rem;" type="number" name="discountU" class="form-control">
-																	</td>
-																</tr>
-																</tbody>
-															</table>
-															<input type="hidden" name="productId" value="${productSale.product.id }">
-															<input type="hidden" name="saleId" value="${productSale.sale.id }">
-															<input type="hidden" name="productSaleId" value="${productSale.id }">
-															<div class="modal-footer">
-															 	<button type="submit" class="btn btn-warning">Lưu</button>
-													          	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-													        </div>
-														</form>
-												      </div>
-												    </div>
-												  </div>
-												</div>
-												
-												 <button type="button" class="item"  data-toggle="modal" data-target="#deleteProductSale${productSale.id }">
+												 <button type="button" class="item"  data-toggle="modal" data-target="#deleteProductGift${productGift.id }">
 												 	<i class="far fa-trash-alt"></i>
 												 </button>
-												<div class="modal fade" id="deleteProductSale${productSale.id }" role="dialog">
+												<div class="modal fade" id="deleteProductGift${productGift.id }" role="dialog">
 												    <div class="modal-dialog">
 												      <!-- Modal content-->
 												      <div class="modal-content">
@@ -141,10 +98,10 @@
 												          <h4 class="modal-title">Xác nhận xóa sản phẩm</h4>
 												        </div>
 												        <div class="modal-body">
-												          <p><span style="font-size: 18px; color: red;"> ${productSale.product.title } </span></p>
+												          <p><span style="font-size: 18px; color: red;"> ${productGift.title } </span></p>
 												        </div>
 												        <div class="modal-footer">
-												          <button type="button" class="btn btn-danger" onclick="xoaSP(${productSale.id });">Đồng ý</button>
+												          <button type="button" class="btn btn-danger" onclick="xoaSP(${productGift.id})">Đồng ý</button>
 												          <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
 												        </div>
 												      </div>
@@ -169,7 +126,7 @@
 										        </button>
 										      </div>
 										      <div class="modal-body">
-												<form action="${pageContext.request.contextPath}/admin/addProductSale " method="post">
+												<form action="${pageContext.request.contextPath}/admin/addProductGift " method="post">
 													<div class="form-group">
 														<label>Tên sản phẩm</label>
 														<select id="productIDsale" style="max-width: 15rem; height: 2rem; margin-left: 1rem; font-size: 18px;" onchange="getProductId();">
@@ -181,12 +138,7 @@
 														<span class="form-message alert-danger"></span>
 													</div>
 													<input type="hidden" id="productId" name="productId">
-													<input type="hidden" id="saleId" name="saleId">
-													<div class="form-group" style="display: flex;">
-														<label style="margin-left: 1rem;">Phần trăm giảm giá:</label>
-														<input style="max-width: 15rem; height: 2rem; margin-left: 1rem;" type="number" class="form-control" id="discount" name="discount">
-														<span class="form-message alert-danger"></span>
-													</div>
+													<input type="hidden" id="giftID" name="giftID">
 													<div class="modal-footer">
 													 	<button type="submit" class="btn btn-warning">Lưu</button>
 											          	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -196,10 +148,9 @@
 										    </div>
 										  </div>
 										</div>
+										
 									</td>
-									<td>
-										<button type="button" class="btn btn-warning" onclick="history.back();">Quay lại</button>
-									</td>
+									<td><button style="margin-left: 2rem;" type="button" class="btn btn-warning" onclick="Gback();">Quay lại</button></td>
 								</tr>
 							</tbody>
 						</table>
@@ -215,13 +166,16 @@
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
-	    var id = $("#saleid").val();
+	    var id = $("#giftid").val();
 	    $('#myselect option[value='+id+']').attr('selected','selected');
-	    $("#saleId").val(id);
+	    $('#giftID').val(id);
 	});
 	function select(){
 		var id = $("#myselect option:selected").val();
-		window.location = "${pageContext.request.contextPath}/admin/listProductSale/"+id;
+		window.location = "${pageContext.request.contextPath}/admin/listProductGift/"+id;
+	}
+	function Gback(){
+		window.location = "${pageContext.request.contextPath}/admin/listGift";
 	}
 	function getProductId(){
 		var id= $("#productIDsale option:selected").val();
@@ -233,7 +187,7 @@
 		
 		
 		$.ajax({
-			url: "/admin/deleteProductSale",
+			url: "/admin/deleteProductGift",
 			type: "post",
 			contentType: "application/json", // dữ liệu gửi lên web-service có dạng là json.
 			data: JSON.stringify(data), // object json -> string json

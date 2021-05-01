@@ -120,20 +120,23 @@
 									</c:otherwise>
 								</c:choose>
 							</div>
+							<c:if test="${productCustom.product.gift != null }">
 							<div class="bonus">
 								<p class="bonus-top">Quà tặng khi mua sản phầm</p>
 								<div class="bonus-products">
-									<img src="${pageContext.request.contextPath}/images/Mat-na-mat-Crystal-Collagen-Gold-Duong-mat-va-tri-tham-quang-mat-.jpg">
+									<img src="${pageContext.request.contextPath}/file/upload/${productCustom.product.gift.giftImages.get(0).path }">
 									<div class="bonus-info">
-										<a href="#">Mặt nạ mắt Collagen - Dưỡng mắt và trị thâm mắt</a>
+										<a href="#">${productCustom.product.gift.title }</a>
 										<div class="bonus-price">
 											<p class="bonus-price-text">Trị giá:</p>
-											<p class="bonus-price-num">120.000 đ</p>
+											<p class="bonus-price-num"><fmt:formatNumber type="number" maxIntegerDigits="13"
+												value="${productCustom.product.gift.price }" /> đ</p>
 										</div>
 										<a href="#"><div class="bonus-them"> Xem ngay quà tặng</div></a>
 									</div>
 								</div>
 							</div>
+							</c:if>
 						</div>
 					</div>
 					<div class="pro-info">
