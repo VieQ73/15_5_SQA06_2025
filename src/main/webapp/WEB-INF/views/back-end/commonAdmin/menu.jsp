@@ -84,16 +84,17 @@ pageEncoding="UTF-8"%>
 									<i class="fa fa-angle-left pull-right"></i>
 								</a>
 								<ul class="treeview-menu">
-				                  <li><a href="${pageContext.request.contextPath}/admin/saleorder"><i class="fa fa-angle-right"></i> Danh sách đơn hàng</a></li>
+				                  <li><a href="${pageContext.request.contextPath}/admin/order"><i class="fa fa-angle-right"></i> Danh sách đơn hàng</a></li>
 				                  
 				                </ul>
 							</li>
 							<li class="treeview">
-								<a href="${pageContext.request.contextPath}/admin/thongke">
+								<a href="${pageContext.request.contextPath}/back-end/thongke">
 									<i class="far fa-edit"></i>&nbsp
 									<span>Thống kê</span>
 									<i class="fa fa-angle-left pull-right"></i>
 								</a>
+					
 							</li>
 						</ul>
 					</div>

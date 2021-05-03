@@ -42,18 +42,20 @@
 								<div class="form-body">
 									<form:form
 										action="${pageContext.request.contextPath}/admin/addGift"
-										method="post" modelAttribute="gift" enctype="multipart/form-data">
+										method="post" modelAttribute="gift" enctype="multipart/form-data" id="form-addGift">
 										
 										<form:hidden path="id"/>
 										
 										<div class="form-group">
 											<label>Tên quà tặng</label>
 											<form:input type="text" class="form-control" path="title"
-												placeholder="Tên quà tặng"></form:input>
+												placeholder="Tên quà tặng" id="title"></form:input>
+											<span class="form-message alert-danger"></span>
 										</div>
 										<div class="form-group">
 											<label>Price</label>
-											<form:input type="number" class="form-control" path="price"></form:input>
+											<form:input type="number" class="form-control" path="price" id="price"></form:input>
+											<span class="form-message alert-danger"></span>
 										</div>
 										
 										<div class="form-group">
@@ -64,6 +66,7 @@
 											<label>Details</label>
 											<form:textarea id="description" class="form-control" path="description"
 												placeholder="Mô tả"></form:textarea>
+											<span class="form-message alert-danger"></span>
 										</div>
 										
 										<div class="container-contact2-form-btn">
@@ -87,11 +90,28 @@
 	<jsp:include page="/WEB-INF/views/back-end/commonAdmin/js.jsp"></jsp:include>
 	<script src="${pageContext.request.contextPath}/summernote/summernote.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+	<script src="${pageContext.request.contextPath}/js/validator.js"></script>
 	<script type="text/javascript">
-        	$( document ).ready(function() {
-        		$('#description').summernote(
-        		);
-        	});        
-        </script>
+     	$( document ).ready(function() {
+     		$('#description').summernote(
+     		);
+     	});        
+     </script>
+     <script type="text/javascript">
+  		Validator({
+  			form: '#form-addGift',
+  			formGroupSelector: '.form-group',
+  			errorSelector: '.form-message',
+  			rules:[
+  				Validator.isRequired('#title', "Tên quà tặng không được để trống!"),
+  				Validator.isRequired('#price', "Giá quà tặng không được để trống!"),
+  				Validator.isRequired('#description', "Mô tả không được để trống!"),
+  			],
+  			/* onSubmit: function (data) {
+  				// call API
+  				console.log(data);
+  			} */
+  		});
+  	</script>
 </body>
 </html>

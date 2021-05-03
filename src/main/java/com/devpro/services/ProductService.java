@@ -15,10 +15,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.devpro.entities.Product;
-import com.devpro.entities.ProductCustom;
 import com.devpro.entities.ProductSale;
 import com.devpro.entities.Sale;
 import com.devpro.entities.Images;
+import com.devpro.model.ProductCustom;
 import com.devpro.model.ProductSearch;
 import com.devpro.repositories.ProductRepo;
 import com.taglib.PaginationTaglib;

@@ -17,8 +17,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.devpro.entities.Sale;
 import com.devpro.model.AjaxResponse;
@@ -29,7 +27,7 @@ import com.devpro.repositories.ProductSaleRepo;
 import com.devpro.repositories.SaleRepo;
 import com.devpro.services.ProductSaleService;
 import com.devpro.services.ProductService;
-import com.github.slugify.Slugify;
+
 
 @Controller
 public class AdminSaleController{
@@ -122,7 +120,12 @@ public class AdminSaleController{
 		 model.addAttribute("productSale", productSale);
 		 model.addAttribute("sale", saleRepo.findAll());
 		 model.addAttribute("saleid", id);
-		 model.addAttribute("product", productService.getAllProduct());
+		 model.addAttribute("saleI", saleRepo.getOne(id));
+		 List<Product> p = productService.getAllProduct();
+		 for (ProductSale item : productSale) {
+			p.remove(item.getProduct());
+		}
+		 model.addAttribute("product", p);
 		 productSaleService.setDiscountActive();
 		 return "back-end/listProductSale"; 
 	 }

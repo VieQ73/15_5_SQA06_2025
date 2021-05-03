@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.devpro.entities.MyConstants;
 import com.devpro.model.AjaxResponse;
+import com.devpro.model.MyConstants;
 
 @Controller
 public class EmailContactController {

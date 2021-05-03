@@ -1,6 +1,8 @@
-package com.devpro.entities;
+package com.devpro.model;
 
 import java.math.BigDecimal;
+
+import com.devpro.entities.Product;
 
 public class ProductCustom {
 	private Product product;

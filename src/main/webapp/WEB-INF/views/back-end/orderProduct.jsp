@@ -40,50 +40,50 @@
 						<tr>
 							<td>Trạng thái:</td>
 							<td>	
-								<c:if test="${saleorder.status == 0}">
+								<c:if test="${order.status == 0}">
 									<span class="badge" style="background: red;"><h4>Đặt hàng</h4></span>
 								</c:if>
-								<c:if test= "${saleorder.status == 1}">
+								<c:if test= "${order.status == 1}">
 									<span class="badge" style="background: blue;"><h4>Giao hàng</h4></span>
 								</c:if>
-								<c:if test= "${saleorder.status == 2}">
+								<c:if test= "${order.status == 2}">
 									<span class="badge" style="background: green;"><h4>Nhận hàng</h4></span>
 								</c:if>
 							</td>
 						</tr>
 						<tr>
 							<td>Tên khách hàng:</td>
-							<td><span>${saleorder.user.name}</span></td>
+							<td><span>${order.user.name}</span></td>
 						</tr>
 						<tr>
 							<td>Địa chỉ: </td>
-							<td><span>${saleorder.user.address}</span></td>
+							<td><span>${order.user.address}</span></td>
 						</tr>
 					<tr>
 						<td>Số điện thoại:</td>
-						<td><span>${saleorder.user.phone}</span></td>
+						<td><span>${order.user.phone}</span></td>
 					</tr>
 					
 					<tr>
 						<td>Ngày:</td>
 						<td>
-							<c:if test="${saleorder.status == 0}">
+							<c:if test="${order.status == 0}">
 								<span  style="color: red;"><fmt:formatDate pattern = "dd-MM-yyyy" 
-         																			value = "${saleorder.createdDate}" /></span>
+         																			value = "${order.createdDate}" /></span>
 							</c:if>
-							<c:if test= "${saleorder.status == 1}">
+							<c:if test= "${order.status == 1}">
 								<span style="color: blue;"><fmt:formatDate pattern = "dd-MM-yyyy" 
-         																			value = "${saleorder.createdDate}" /></span>
+         																			value = "${order.createdDate}" /></span>
 							</c:if>
-							<c:if test= "${saleorder.status == 2}">
+							<c:if test= "${order.status == 2}">
 								<span  style="color: green;"><fmt:formatDate pattern = "dd-MM-yyyy" 
-         																			value = "${saleorder.createdDate}" /></span>
+         																			value = "${order.createdDate}" /></span>
 							</c:if>
 						</td>
 					</tr>
 					<tr>
 						<td>Ghi chú:</td>
-						<td><span>${saleorder.note_by_customer}</span></td>
+						<td><span>${order.note_by_customer}</span></td>
 					</tr>
 					</table>
 					<h2 class="title-5 m-b-35">Chi tiết đơn hàng:</h2>
@@ -99,23 +99,23 @@
 								</tr>
 							</thead>
 							<tbody >
-								<c:forEach var="saleorderproduct" items="${saleorderproducts }" varStatus="loop">
+								<c:forEach var="orderproduct" items="${orderproducts }" varStatus="loop">
 									<tr class="tr-shadow" >
 										<th scope="row">${loop.index + 1}</th>
 										<td style="font-size: 18px;">
-											<a href="${pageContext.request.contextPath}/products/${saleorderproduct.product.seo}" >${saleorderproduct.product.title}</a>
+											<a href="${pageContext.request.contextPath}/products/${orderproduct.product.seo}" >${orderproduct.product.title}</a>
 										</td>
 										<td>
 											<c:choose>
-											<c:when test = "${empty saleorderproduct.product.productImages }">
+											<c:when test = "${empty orderproduct.product.productImages }">
 												<img style="width: 70px; height: 90px;" src="http://placehold.it/700x400" alt="">
 											</c:when>
 											<c:otherwise>
-												<img style="width: 70px; height: 90px;" src="${pageContext.request.contextPath}/file/upload/${saleorderproduct.product.productImages.get(0).path }" alt="">
+												<img style="width: 70px; height: 90px;" src="${pageContext.request.contextPath}/file/upload/${orderproduct.product.productImages.get(0).path }" alt="">
 											</c:otherwise>
 											</c:choose>
 										</td>
-										<td style="font-size: 18px;">${saleorderproduct.quality}</td>
+										<td style="font-size: 18px;">${orderproduct.quality}</td>
 									</tr>
 								</c:forEach>
 								<tr class="tr-shadow">
@@ -124,7 +124,7 @@
 									<td style="text-align: right; font-weight: bold; font-size: 18px;">Tổng tiền:</td>
 									<td style="font-size: 18px; font-weight: bold;">
 										<span class="badge" style="font-size: 18px; font-weight: bold; margin-right: 10px;"><fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${saleorder.total}" /></span>VNĐ
+										value="${order.total}" /></span>VNĐ
 									
 									</td>
 								</tr>
@@ -134,15 +134,15 @@
 									<td></td>
 									<td>
 										
-										<c:if test="${saleorder.status == 0}">
+										<c:if test="${order.status == 0}">
 											<a style="margin-right: 30px;" class="btn btn-danger"
-											href="${pageContext.request.contextPath}/admin/confirm_saleProduct/${saleorder.id}?status=3">Hủy</a>
+											href="${pageContext.request.contextPath}/admin/confirm_saleProduct/${order.id}?status=3">Hủy</a>
 											<a class="btn btn-primary" 
-											href="${pageContext.request.contextPath}/admin/confirm_saleProduct/${saleorder.id}?status=1">Xác nhận</a>
+											href="${pageContext.request.contextPath}/admin/confirm_saleProduct/${order.id}?status=1">Xác nhận</a>
 										</c:if>
-										<c:if test="${saleorder.status == 1}">
+										<c:if test="${order.status == 1}">
 											<a class="btn btn-primary" 
-											href="${pageContext.request.contextPath}/admin/confirm_saleProduct/${saleorder.id}?status=2">Nhận hàng</a>
+											href="${pageContext.request.contextPath}/admin/confirm_saleProduct/${order.id}?status=2">Nhận hàng</a>
 										</c:if>
 									</td>
 								</tr>

@@ -159,8 +159,7 @@
 		<jsp:include page="/WEB-INF/views/front-end/common/footer.jsp"></jsp:include>
 	</div>
 	<jsp:include page="/WEB-INF/views/front-end/common/js.jsp"></jsp:include>
-	 <script 
-    		src="${pageContext.request.contextPath}/js/validator.js"></script>
+	 <script src="${pageContext.request.contextPath}/js/validator.js"></script>
 	 <script>
 	 $(document).ready(function(){
 			var check = $('.checkNull').val();

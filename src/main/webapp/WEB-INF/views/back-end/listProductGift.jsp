@@ -42,7 +42,7 @@
 			${ messsage }
 			<div class="row">
 				<div class="col-md-12">
-					<div class="form-body" style="margin-left: 10rem;">
+					<div class="form-body" style="margin-left: 10rem; border: solid 1px black; padding:1rem 5rem; width: 45rem; border-radius: 15px;">
 						<div class="form-group">
 							<label>Tên quà tặng:</label>
 							<select style="margin-left: 1rem; height: 2rem; max-width: 19rem;" id="myselect" onchange="select();">
@@ -55,6 +55,44 @@
 							<label style="padding-left: 2rem;">Hình ảnh:</label>
 							<img style="margin-left: 5rem; border: solid 1px black;" width="200rem" height="200rem" src="${pageContext.request.contextPath}/file/upload/${giftI.giftImages.get(0).path }">
 						</div>
+						<div style="margin-left: 30rem;">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProductSale">Thêm sản phẩm</button>
+							
+							<div class="modal fade" id="addProductSale" tabindex="-1" role="dialog" aria-labelledby="addProductSale" aria-hidden="true">
+							  <div class="modal-dialog" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <h4 class="modal-title" id="exampleModalLabel">Thêm sản phẩm khuyến mại</h4>
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							          <span aria-hidden="true">&times;</span>
+							        </button>
+							      </div>
+							      <div class="modal-body">
+									<form action="${pageContext.request.contextPath}/admin/addProductGift " method="post">
+										<div class="form-group">
+											<label>Tên sản phẩm</label>
+											<select id="productIDsale" style="max-width: 15rem; height: 2rem; margin-left: 1rem; font-size: 18px;" onchange="getProductId();">
+												<option value="">-- Chọn tên sản phẩm --</option>
+												<c:forEach items="${product }" var="product">
+													<option value="${product.id }">${product.title}</option>
+												</c:forEach>
+												<span class="form-message alert-danger"></span>
+											</select>
+											<span class="form-message alert-danger"></span>
+										</div>
+										<input type="hidden" id="productId" name="productId">
+										<input type="hidden" id="giftID" name="giftID">
+										<div class="modal-footer">
+										 	<button type="submit" class="btn btn-warning">Lưu</button>
+								          	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								        </div>
+									</form>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+						</div>
+						
 					</div>
 					<input type="hidden" id="giftid" value="${id}">
 					<!-- DATA TABLE -->
@@ -115,39 +153,7 @@
 									<th></th>
 									<td></td>
 									<td>
-										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProductSale">Thêm sản phẩm</button>
-										<div class="modal fade" id="addProductSale" tabindex="-1" role="dialog" aria-labelledby="addProductSale" aria-hidden="true">
-										  <div class="modal-dialog" role="document">
-										    <div class="modal-content">
-										      <div class="modal-header">
-										        <h4 class="modal-title" id="exampleModalLabel">Thêm sản phẩm khuyến mại</h4>
-										        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										          <span aria-hidden="true">&times;</span>
-										        </button>
-										      </div>
-										      <div class="modal-body">
-												<form action="${pageContext.request.contextPath}/admin/addProductGift " method="post">
-													<div class="form-group">
-														<label>Tên sản phẩm</label>
-														<select id="productIDsale" style="max-width: 15rem; height: 2rem; margin-left: 1rem; font-size: 18px;" onchange="getProductId();">
-															<option value="">-- Chọn tên sản phẩm --</option>
-															<c:forEach items="${product }" var="product">
-																<option value="${product.id }">${product.title}</option>
-															</c:forEach>
-														</select>
-														<span class="form-message alert-danger"></span>
-													</div>
-													<input type="hidden" id="productId" name="productId">
-													<input type="hidden" id="giftID" name="giftID">
-													<div class="modal-footer">
-													 	<button type="submit" class="btn btn-warning">Lưu</button>
-											          	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-											        </div>
-												</form>
-										      </div>
-										    </div>
-										  </div>
-										</div>
+										
 										
 									</td>
 									<td><button style="margin-left: 2rem;" type="button" class="btn btn-warning" onclick="Gback();">Quay lại</button></td>

@@ -16,7 +16,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Admin saleorder</title>
+<title>Admin order</title>
 <meta charset="utf-8">
 <jsp:include page="/WEB-INF/views/back-end/commonAdmin/css.jsp"></jsp:include>
 <style type="text/css">
@@ -62,46 +62,26 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="saleorder" items="${saleorders }" varStatus="loop">
-									
-									<tr class="tr-shadow" onclick="show(${saleorder.id})">
+								<c:forEach var="order" items="${order }" varStatus="loop">
+									<input type="hidden" value="${order.status}" id="tr${order.id }">
+									<tr class="tr-shadow" onclick="show(${order.id})">
 										<th scope="row">${loop.index + 1}</th>
-										<td>${saleorder.user.name}</td>
-										<td>${saleorder.user.address}</td>
-										<td>${saleorder.user.phone}</td>
+										<td>${order.user.name}</td>
+										<td>${order.user.address}</td>
+										<td>${order.user.phone}</td>
 										<td>
-											<fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${saleorder.total}" /> 
-										đ</td>
-										
+											<fmt:formatNumber type="number" maxIntegerDigits="13" value="${order.total}" /> đ</td>
 										<td>
-											<c:if test="${saleorder.status == 0}">
-												<span style="color: red; min-width: 5rem;"><fmt:formatDate pattern = "dd-MM-yyyy" 
-         																			value = "${saleorder.createdDate}" /></span>
-											</c:if>
-											<c:if test= "${saleorder.status == 1}">
-												<span style="color: blue; min-width: 5rem;">
-													<fmt:formatDate pattern = "dd-MM-yyyy" 
-         																			value = "${saleorder.createdDate}" />
-													
-												</span>
-											</c:if>
-											<c:if test= "${saleorder.status == 2}">
-												<span style="color: green; min-width: 5rem;">
-												<fmt:formatDate pattern = "dd-MM-yyyy" 
-         																			value = "${saleorder.createdDate}" />
-												</span>
-												
-											</c:if>
+											<fmt:formatDate pattern = "dd-MM-yyyy" value = "${order.createdDate}" />
 										</td>
 										<td>
-											<c:if test="${saleorder.status == 0}">
+											<c:if test="${order.status == 0}">
 												<span class="badge" style="background: red;">Đặt hàng</span>
 											</c:if>
-											<c:if test= "${saleorder.status == 1}">
+											<c:if test= "${order.status == 1}">
 												<span class="badge" style="background: blue;">Giao hàng</span>
 											</c:if>
-											<c:if test= "${saleorder.status == 2}">
+											<c:if test= "${order.status == 2}">
 												<span class="badge" style="background: green;">Nhận hàng</span>
 											</c:if>
 										</td>
@@ -127,7 +107,7 @@
 	    });
 	});
 	function show(id){
-		window.location = "${pageContext.request.contextPath}/admin/saleorder/"+id;
+		window.location = "${pageContext.request.contextPath}/admin/order/"+id;
 	}
 	</script>
 </body>

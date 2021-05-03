@@ -42,14 +42,62 @@
 			${ messsage }
 			<div class="row">
 				<div class="col-md-12">
-					<div class="form-body" style="margin-left: 15rem;">
+					<div class="form-body" style="margin-left: 15rem; border: solid 1px black; border-radius: 15px; padding: 1rem 5rem; width: 35rem;">
 						<div class="form-group">
-							<label>Tên đợt khuyến mại:</label>
+							<label style="margin-left: -1rem;">Tên đợt khuyến mại:</label>
 							<select style="margin-left: 1rem; height: 2rem; max-width: 15rem;" id="myselect" onchange="select();">
 								<c:forEach items="${sale }" var="sale">
 									<option value="${sale.id}">${sale.sale_name}</option>
 								</c:forEach>
 							</select>
+						</div>
+						<div class="form-group">
+							<label style="margin-left: -2rem;">Thời gian áp dụng</label>
+							<label style="margin-left: 1rem;">Từ:</label>
+							<label style="font-size: 25px; color: red;"> <fmt:formatDate pattern = "dd-MM-yyyy" value = "${saleI.start_date}" /></label>
+							<label>đến: </label>
+							<label style="font-size: 25px; color: red;"><fmt:formatDate pattern = "dd-MM-yyyy" value = "${saleI.end_date}" /></label>
+						</div>
+						<div style="margin-left: 20rem;">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProductSale">Thêm sản phẩm</button>
+							<div class="modal fade" id="addProductSale" tabindex="-1" role="dialog" aria-labelledby="addProductSale" aria-hidden="true">
+							  <div class="modal-dialog" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <h4 class="modal-title" id="exampleModalLabel">Thêm sản phẩm khuyến mại</h4>
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							          <span aria-hidden="true">&times;</span>
+							        </button>
+							      </div>
+							      <div class="modal-body">
+									<form action="${pageContext.request.contextPath}/admin/addProductSale " method="post" id="form_add">
+										<div class="form-group" style="margin-left: 3.5rem;">
+											<label>Tên sản phẩm</label>
+											<select id="productIDsale" style="max-width: 15rem; height: 2rem; margin-left: 1rem; font-size: 18px;" onchange="getProductId();">
+												<option value="">-- Chọn tên sản phẩm --</option>
+												<c:forEach items="${product }" var="product">
+													<option value="${product.id }">${product.title}</option>
+												</c:forEach>
+											</select>
+											
+											<span class="form-message alert-danger"></span>
+										</div>
+										<input type="hidden" id="productId" name="productId">
+										<input type="hidden" id="saleId" name="saleId">
+										<div class="form-group" style="display: flex;">
+											<label style="margin-left: 1rem;">Phần trăm giảm giá:</label>
+											<input style="max-width: 15rem; height: 2rem; margin-left: 1rem;" type="number" class="form-control" id="discount" name="discount" min="1" max="100">
+											<span class="form-message alert-danger"></span>
+										</div>
+										<div class="modal-footer">
+										 	<button type="submit" class="btn btn-warning">Lưu</button>
+								          	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								        </div>
+									</form>
+							      </div>
+							    </div>
+							  </div>
+							</div>
 						</div>
 					</div>
 					<input type="hidden" id="saleid" value="${saleid}">
@@ -59,9 +107,10 @@
 						<table class="table table-data2 display" id="">
 							<thead>
 								<tr>
-									<th style="font-size: 18px;">STT</th>
-									<th style="font-size: 18px;">Tên sản phẩm</th>
-									<th style="font-size: 18px;">Phần trăm giảm giá</th>
+									<th style="font-size: 16px;">STT</th>
+									<th style="font-size: 16px;">Tên sản phẩm</th>
+									<th style="font-size: 16px;">Hình ảnh</th>
+									<th style="font-size: 16px;">Phần trăm giảm giá</th>
 									<th ></th>
 								</tr>
 							</thead>
@@ -70,6 +119,16 @@
 									<tr class="tr-shadow" id="row${productSale.id }">
 										<th scope="row">${loop.index + 1}</th>
 										<td style="font-size: 18px;">${productSale.product.title}</td>
+										<td>
+											<c:choose>
+												<c:when test = "${empty productSale.product.productImages }">
+													<img style="width: 70px; height: 90px;" class="card-img-top" src="http://placehold.it/700x400" alt="">
+												</c:when>
+												<c:otherwise>
+													<img style="width: 70px; height: 90px; border: solid 1px black;" class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productSale.product.productImages.get(0).path }" alt="">
+												</c:otherwise>
+											</c:choose>
+										</td>
 										<td style="font-size: 18px;">${productSale.discount} %</td>
 										<td>
 											<div class="table-data-feature">
@@ -110,8 +169,9 @@
 																	<td>
 																		<label style="margin-left: -5rem; width: 15rem;">Phần trăm giảm giá:</label>
 																	</td>
-																	<td>
-																		<input style="max-width: 15rem; height: 2rem; margin-left: 1rem;" type="number" name="discountU" class="form-control">
+																	<td class="form-group">
+																		<input style="max-width: 15rem; height: 2rem; margin-left: 1rem;" type="number" name="discountU" class="form-control"  min="1" max="100" >
+																		<span class="form-message alert-danger"></span>
 																	</td>
 																</tr>
 																</tbody>
@@ -157,48 +217,10 @@
 								<tr>
 									<th></th>
 									<td></td>
+									<td></td>
+									<td></td>
 									<td>
-										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProductSale">Thêm sản phẩm</button>
-										<div class="modal fade" id="addProductSale" tabindex="-1" role="dialog" aria-labelledby="addProductSale" aria-hidden="true">
-										  <div class="modal-dialog" role="document">
-										    <div class="modal-content">
-										      <div class="modal-header">
-										        <h4 class="modal-title" id="exampleModalLabel">Thêm sản phẩm khuyến mại</h4>
-										        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										          <span aria-hidden="true">&times;</span>
-										        </button>
-										      </div>
-										      <div class="modal-body">
-												<form action="${pageContext.request.contextPath}/admin/addProductSale " method="post">
-													<div class="form-group">
-														<label>Tên sản phẩm</label>
-														<select id="productIDsale" style="max-width: 15rem; height: 2rem; margin-left: 1rem; font-size: 18px;" onchange="getProductId();">
-															<option value="">-- Chọn tên sản phẩm --</option>
-															<c:forEach items="${product }" var="product">
-																<option value="${product.id }">${product.title}</option>
-															</c:forEach>
-														</select>
-														<span class="form-message alert-danger"></span>
-													</div>
-													<input type="hidden" id="productId" name="productId">
-													<input type="hidden" id="saleId" name="saleId">
-													<div class="form-group" style="display: flex;">
-														<label style="margin-left: 1rem;">Phần trăm giảm giá:</label>
-														<input style="max-width: 15rem; height: 2rem; margin-left: 1rem;" type="number" class="form-control" id="discount" name="discount">
-														<span class="form-message alert-danger"></span>
-													</div>
-													<div class="modal-footer">
-													 	<button type="submit" class="btn btn-warning">Lưu</button>
-											          	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-											        </div>
-												</form>
-										      </div>
-										    </div>
-										  </div>
-										</div>
-									</td>
-									<td>
-										<button type="button" class="btn btn-warning" onclick="history.back();">Quay lại</button>
+										<button type="button" class="btn btn-warning" onclick="Sback();">Quay lại</button>
 									</td>
 								</tr>
 							</tbody>
@@ -223,10 +245,15 @@
 		var id = $("#myselect option:selected").val();
 		window.location = "${pageContext.request.contextPath}/admin/listProductSale/"+id;
 	}
+	function Sback(){
+		window.location = "${pageContext.request.contextPath}/admin/listSale";
+	}
 	function getProductId(){
 		var id= $("#productIDsale option:selected").val();
 		$("#productId").val(id);
 	}
+	
+	
 	function xoaSP(id){
 		var data = {};
 		data["id"] = id;
@@ -252,5 +279,20 @@
 		});
 	}
 	</script>
+	<script src="${pageContext.request.contextPath}/js/validator.js"></script>
+	<script type="text/javascript">
+  		Validator({
+  			form: '#form_add',
+  			formGroupSelector: '.form-group',
+  			errorSelector: '.form-message',
+  			rules:[
+  				
+  			],
+  			/* onSubmit: function (data) {
+  				// call API
+  				console.log(data);
+  			} */
+  		});
+  	</script>
 </body>
 </html>

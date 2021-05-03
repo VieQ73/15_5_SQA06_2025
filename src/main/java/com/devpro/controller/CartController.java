@@ -27,11 +27,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.devpro.entities.Cart;
 
 import com.devpro.entities.Product;
-import com.devpro.entities.ProductInCart;
 import com.devpro.entities.Order;
 import com.devpro.entities.OrderProducts;
 import com.devpro.entities.Customer;
 import com.devpro.model.AjaxResponse;
+import com.devpro.model.ProductInCart;
 import com.devpro.model.luutru;
 import com.devpro.repositories.ProductRepo;
 import com.devpro.repositories.OrderRepo;

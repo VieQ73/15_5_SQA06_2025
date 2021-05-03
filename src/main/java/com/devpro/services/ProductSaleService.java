@@ -119,4 +119,12 @@ public class ProductSaleService {
 		Query query = entityManager.createNativeQuery(sql, ProductSale.class);
 		return query.getResultList();
 	}
+	public boolean checkP(Integer idP, Integer idS) {
+		List<ProductSale> ps = productSaleRepo.findAll();
+		for (ProductSale item : ps) {
+			if(item.getProduct().getId() == idP && item.getSale().getId() == idS)
+				return true;
+		}
+		return false;
+	}
 }

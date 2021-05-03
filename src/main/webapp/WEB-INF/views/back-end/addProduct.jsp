@@ -42,7 +42,7 @@
 								<div class="form-body">
 									<form:form
 										action="${pageContext.request.contextPath}/admin/addProduct"
-										method="post" modelAttribute="product" enctype="multipart/form-data">
+										method="post" modelAttribute="product" enctype="multipart/form-data" id="form-addProduct">
 										
 										<form:hidden path="id"/>
 										<div class="form-group">
@@ -53,31 +53,37 @@
 										</div>
 										<div class="form-group">
 											<label>Tên sản phẩm</label>
-											<form:input type="text" class="form-control" path="title"
+											<form:input type="text" class="form-control" path="title" id="title"
 												placeholder="Tên sản phẩm"></form:input>
+											<span class="form-message alert-danger"></span>
 										</div>
 										<div class="form-group">
 											<label>Price</label>
-											<form:input type="number" class="form-control" path="price"></form:input>
+											<form:input type="number" class="form-control" path="price" id="price"></form:input>
+											<span class="form-message alert-danger"></span>
 										</div>
 										<div class="form-group">
 											<label>Số lượng</label>
-											<form:input type="number" class="form-control" path="amount"></form:input>
+											<form:input type="number" class="form-control" path="amount" id="amount"></form:input>
+											<span class="form-message alert-danger"></span>
 										</div>
 										<div class="form-group">
-											<label>Short Descrition</label>
+											<label>Vắn tắt</label>
 											<form:textarea id="txtShortlDescription" class="form-control" path="shortDes"
 												placeholder="Thông tin sản phẩm"></form:textarea>
+											<span class="form-message alert-danger"></span>
 										</div>
 										<div class="form-group">
-											<label>Images</label>
+											<label>Hình ảnh sản phẩm</label>
 											<input type="file" name="product_image" class="form-control" multiple="multiple">
+											<span class="form-message alert-danger"></span>
 										</div>
 	
 										<div class="form-group">
-											<label>Details</label>
+											<label>Mô tả</label>
 											<form:textarea id="txtDetailDescription" class="form-control" path="shortDetails"
 												placeholder="Mô tả"></form:textarea>
+											<span class="form-message alert-danger"></span>
 										</div>
 										
 										<div class="container-contact2-form-btn">
@@ -101,13 +107,32 @@
 	<jsp:include page="/WEB-INF/views/back-end/commonAdmin/js.jsp"></jsp:include>
 	<script src="${pageContext.request.contextPath}/summernote/summernote.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+	<script src="${pageContext.request.contextPath}/js/validator.js"></script>
 	<script type="text/javascript">
-        	$( document ).ready(function() {
-        		$('#txtDetailDescription').summernote(
-        		);
-        		$('#txtShortlDescription').summernote(
-        		);
-        	});        
-        </script>
+     	$( document ).ready(function() {
+     		$('#txtDetailDescription').summernote(
+     		);
+     		$('#txtShortlDescription').summernote(
+     		);
+     	});        
+     </script>
+      <script type="text/javascript">
+  		Validator({
+  			form: '#form-addProduct',
+  			formGroupSelector: '.form-group',
+  			errorSelector: '.form-message',
+  			rules:[
+  				Validator.isRequired('#title', "Tên sản phẩm không được để trống!"),
+  				Validator.isRequired('#price', "Tên sản phẩm không được để trống!"),
+  				Validator.isRequired('#amount', "Tên sản phẩm không được để trống!"),
+  				Validator.isRequired('#txtDetailDescription', "Vắn tắt không được để trống!"),
+  				Validator.isRequired('#txtShortlDescription', "Mô tả sản phẩm không được để trống!"),
+  			],
+  			/* onSubmit: function (data) {
+  				// call API
+  				console.log(data);
+  			} */
+  		});
+  	</script>
 </body>
 </html>

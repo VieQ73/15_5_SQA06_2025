@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import java.util.List;
 
+import com.devpro.model.ProductInCart;
 import com.devpro.repositories.ProductRepo;
 
 public class Cart {

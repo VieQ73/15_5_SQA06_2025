@@ -35,6 +35,7 @@
 				style="background-image: url('${pageContext.request.contextPath}/images/bg-01.jpg');">
 				<div class="container-contact2">
 					<div class="wrap-contact2">
+						
 						<div class="forms">
 							<h2 class="title1">Thêm quà tặng</h2>
 							<div class="form-grids row widget-shadow"
@@ -42,14 +43,15 @@
 								<div class="form-body">
 									<form:form
 										action="${pageContext.request.contextPath}/admin/addSale"
-										method="post" modelAttribute="sale">
+										method="post" modelAttribute="sale" id="form-addSale">
 										
 										<form:hidden path="id"/>
 										
 										<div class="form-group">
 											<label>Tên đợt khuyến mãi</label>
 											<form:input type="text" class="form-control" path="sale_name"
-												placeholder="Tên đợt khuyến mãi"></form:input>
+												placeholder="Tên đợt khuyến mãi" id="sale_name"></form:input>
+											<span class="form-message alert-danger"></span>
 										</div>
 										<div class="form-group">
 										  <label>Ngày bắt đầu</label>
@@ -79,10 +81,27 @@
 	<!-- js-->
 	<jsp:include page="/WEB-INF/views/back-end/commonAdmin/js.jsp"></jsp:include>
 	<script type="text/javascript">
-        	$(document).ready(function() {
-        		var startD = $("#start_date").val();
-        		console.log(startD);
-        	});        
-        </script>
+      	$(document).ready(function() {
+      		var startD = $("#start_date").val();
+      		console.log(startD);
+      	});        
+    </script>
+    <script 
+    		src="${pageContext.request.contextPath}/js/validator.js"></script>
+	 
+    <script type="text/javascript">
+  		Validator({
+  			form: '#form-addSale',
+  			formGroupSelector: '.form-group',
+  			errorSelector: '.form-message',
+  			rules:[
+  				Validator.isRequired('#sale_name', "Tên đợt khuyến mại không được để trống!"),
+  			],
+  			/* onSubmit: function (data) {
+  				// call API
+  				console.log(data);
+  			} */
+  		});
+  	</script>
 </body>
 </html>

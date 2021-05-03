@@ -14,50 +14,19 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Admin list sale</title>
+<title>Admin list category</title>
 <meta charset="utf-8">
 <jsp:include page="/WEB-INF/views/back-end/commonAdmin/css.jsp"></jsp:include>
 <style type="text/css">
 	div.dataTables_wrapper {
         margin-bottom: 3em;
     }
+    .table-responsive{
+    	overflow-y: overlay;
+		overflow-x: auto;
+    }
 </style>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Tháng', 'Doanh thu'],
-          ['Tháng 1', 1000],
-          ['Tháng 2', 1170],
-          ['Tháng 3', 724],
-          ['Tháng 4', 399],
-          ['Tháng 5', 955],
-          ['Tháng 6', 478],
-          ['Tháng 7', 966],
-          ['Tháng 8', 646],
-          ['Tháng 9', 956],
-          ['Tháng 10', 1500],
-          ['Tháng 11', 543],
-          ['Tháng 12', 473]
-        ]);
-
-        var options = {
-          chart: {
-            title: 'Doanh thu theo tháng',
-            subtitle: 'Năm 2000',
-          }
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
 </head>
 <body class="cbp-spmenu-push">
 
@@ -71,26 +40,83 @@
 		<!-- //header-ends -->
 		<!-- main content start-->
 		<div class="content-main">
-			<div class="container">
-			  <div id="columnchart_material" style="width: 1000px; height: 500px;"></div>
+			<div class="wrap-contact2 container" style="margin-top:-1rem;border: solid 1px black;">
+				<div class="form" style="margin-top:-2rem;">
+					<h2 class="title">Chọn khoảng thời gian</h2>
+					<div class="form-grids row widget-shadow" style="margin-top:2rem;"
+						data-example-id="basic-forms">
+						<div class="form-body" style="">
+							<form:form action="${pageContext.request.contextPath}/admin/thongke/search">
+								<input type="hidden" name="action" value="" id="action">
+								<div class="form-group">
+									<label>Từ ngày: </label> <input type="date" name="ngayBD"
+										class="form-control" id="ngayBD">
+								</div>
+								<div class="form-group">
+									<label> Đến ngày: </label> <input type="date" name="ngayKT"
+										class="form-control" id="ngayKT">
+								</div>
+								<div class="container-contact2-form-btn">
+									<div class="wrap-contact2-form-btn">
+										<div class="contact2-form-bgbtn"></div>
+										<button class="contact2-form-btn" type="submit" onclick="isThongke();"
+										data-toggle="collapse" data-target="#thongkeList" aria-expanded="false" aria-controls="thongkeList">Thống kê</button>
+									</div>
+								</div>
+							</form:form>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div>
-				<iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FTOYOTA.Global%2Fvideos%2F293161795667355%2F&show_text=false&width=476" width="476" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+			<div id="thongkeList">
+				<table class="table table-striped table-dark">
+				  <thead>
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">First</th>
+				      <th scope="col">Last</th>
+				      <th scope="col">Handle</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Mark</td>
+				      <td>Otto</td>
+				      <td>@mdo</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">2</th>
+				      <td>Jacob</td>
+				      <td>Thornton</td>
+				      <td>@fat</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">3</th>
+				      <td>Larry</td>
+				      <td>the Bird</td>
+				      <td>@twitter</td>
+				    </tr>
+				  </tbody>
+				</table>
 			</div>
 		</div>
 	</div>
 	<jsp:include page="/WEB-INF/views/back-end/commonAdmin/footer.jsp"></jsp:include>
 	<!-- js-->
 	<jsp:include page="/WEB-INF/views/back-end/commonAdmin/js.jsp"></jsp:include>
-	<script type="text/javascript" src="https://code.highcharts.com"></script>
-	
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
-	    
-	});
-	$(function () {
-	    
-	});
+	    $('table.display').DataTable({
+	    	"scrollX": true
+	    });
+	    /* $('#thongkeList').hide(); */
+	} );
+	function isThongke(){
+		$('#action').val("thongke");
+		$('#thongkeList').show();
+	}
 	</script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.devpro.entities;
+package com.devpro.model;
 
 public class MyConstants {
 	 // Replace with your email here:  

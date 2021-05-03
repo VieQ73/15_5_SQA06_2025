@@ -25,9 +25,11 @@
 			<img src="${pageContext.request.contextPath}/images/mua-la-co-qua-ok.jpg"></a>
 		</div>
 		<div class="search-cart">
-			<form action="${pageContext.request.contextPath}/search" method="post">
+			<form action="${pageContext.request.contextPath}/search" method="post" id="form-search">
+				
 				<input type="text" class="form-control" style="width: 300px;"
 					placeholder="tìm kiếm sản phẩm..." name="keyword" id="keyword">
+				
 				<button style="margin-left: 10px; width:60px; margin-top:2px;" type="submit" id="btnClear" onclick="clearSearch()">
 					<i class="fas fa-search"></i>
 				</button>
@@ -72,6 +74,7 @@
 			<form action="${pageContext.request.contextPath}/search" method="post" style="display: flex">
 					<input type="text" class="form-control" style="width: 150px;"
 						placeholder="Search..." name="keyword" id="keyword">
+						
 					<button class="btn" style="margin-left: 5px; width:60px; border: white solid 1px;" type="submit" id="btnClear" onclick="clearSearch()">
 						<i class="fas fa-search"></i>
 					</button>
@@ -110,4 +113,6 @@
     function clearSearch() {
         window.location = "[[@{/search}]]";
     }
+    
 </script>
+

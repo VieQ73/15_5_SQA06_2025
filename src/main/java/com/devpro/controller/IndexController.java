@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.devpro.entities.Category;
 import com.devpro.entities.News;
 import com.devpro.entities.Product;
-import com.devpro.entities.ProductCustom;
+import com.devpro.model.ProductCustom;
 import com.devpro.services.CategoryService;
 import com.devpro.services.NewsService;
 import com.devpro.services.ProductService;

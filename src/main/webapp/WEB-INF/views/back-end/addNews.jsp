@@ -42,19 +42,21 @@
 								<div class="form-body">
 									<form:form
 										action="${pageContext.request.contextPath}/admin/addNews"
-										method="post" modelAttribute="news" enctype="multipart/form-data">
+										method="post" modelAttribute="news" enctype="multipart/form-data" id="form-addnews">
 										
 										<form:hidden path="id"/>
 										
 										<div class="form-group">
 											<label>Tên bản tin</label>
 											<form:input type="text" class="form-control" path="title"
-												placeholder="Tên bản tin"></form:input>
+												placeholder="Tên bản tin" id="title"></form:input>
+											<span class="form-message alert-danger"></span>
 										</div>
 										<div class="form-group">
 											<label>Vắn tắt</label>
 											<form:textarea class="form-control" path="short_news"
-												placeholder="Vắn tắt"></form:textarea>
+												placeholder="Vắn tắt" id="short_news"></form:textarea>
+											<span class="form-message alert-danger"></span>
 										</div>
 										<div class="form-group">
 											<label>Hình ảnh</label>
@@ -64,6 +66,7 @@
 											<label>Nội dung tin tức</label>
 											<form:textarea id="description" class="form-control" path="news_detail"
 												placeholder="Nội dung tin tức"></form:textarea>
+											<span class="form-message alert-danger"></span>
 										</div>
 										
 										<div class="container-contact2-form-btn">
@@ -87,10 +90,27 @@
 	<jsp:include page="/WEB-INF/views/back-end/commonAdmin/js.jsp"></jsp:include>
 	<script src="${pageContext.request.contextPath}/summernote/summernote.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+	<script src="${pageContext.request.contextPath}/js/validator.js"></script>
 	<script type="text/javascript">
-        	$( document ).ready(function() {
-        		$('#description').summernote();
-        	});        
-        </script>
+    	$( document ).ready(function() {
+    		$('#description').summernote();
+    	});        
+    </script>
+    <script type="text/javascript">
+  		Validator({
+  			form: '#form-addnews',
+  			formGroupSelector: '.form-group',
+  			errorSelector: '.form-message',
+  			rules:[
+  				Validator.isRequired('#title', "Tên bản tin không được để trống!"),
+  				Validator.isRequired('#short_news', "Vắn tắt không được để trống!"),
+  				Validator.isRequired('#description', "Nội dung tin không được để trống!"),
+  			],
+  			/* onSubmit: function (data) {
+  				// call API
+  				console.log(data);
+  			} */
+  		});
+  	</script>
 </body>
 </html>

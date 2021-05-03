@@ -27,32 +27,32 @@ import com.ibm.icu.util.Calendar;
 @Controller
 public class AdminOrder {
 	@Autowired
-	private OrderProductService saleOrderService;
+	private OrderProductService orderService;
 	@Autowired
-	private OrderRepo saleOrderRepo;
+	private OrderRepo orderRepo;
 	@Autowired
 	public JavaMailSender javaMailSender;
 	
 	
-	@RequestMapping(value = { "/admin/saleorder" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/admin/order" }, method = RequestMethod.GET)
 	public String saveProduct(final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
-		model.addAttribute("saleorders", saleOrderService.searchAdmin(null));
+		model.addAttribute("order", orderService.searchAdmin(null));
 		return "back-end/order";
 	}
-	@RequestMapping(value = { "/admin/saleorder/{id}" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/admin/order/{id}" }, method = RequestMethod.GET)
 	public String saveProduct(@PathVariable("id") Integer id, final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
-		Order saleOrder = saleOrderRepo.getOne(id);
-		model.addAttribute("saleorder", saleOrder);
-		model.addAttribute("saleorderproducts", saleOrderService.searchProduct(id));
+		Order order = orderRepo.getOne(id);
+		model.addAttribute("order", order);
+		model.addAttribute("orderproducts", orderService.searchProduct(id));
 		return "back-end/orderProduct";
 	}
 	@RequestMapping(value = { "/admin/confirm_saleProduct/{id}" }, method = RequestMethod.GET)
 	public String confirm_sale(@PathVariable("id") Integer id, final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
 		String status = request.getParameter("status");
-		Order saleOrderInDP = saleOrderRepo.getOne(id);
+		Order saleOrderInDP = orderRepo.getOne(id);
 		if(status.equals("1")) {
 			saleOrderInDP.setStatus(1);
 		}
@@ -61,15 +61,15 @@ public class AdminOrder {
 		}
 		if(status.equals("3")) {
 			saleOrderInDP.setStatus(3);
-			List<OrderProducts> sop = saleOrderService.searchProduct(id);
+			List<OrderProducts> sop = orderService.searchProduct(id);
 			for (OrderProducts item : sop) {
 				item.getProduct().setAmount(item.getQuality()+item.getProduct().getAmount());
 			}
 		}
 		Date d = Calendar.getInstance().getTime();
 		saleOrderInDP.setUpdated_date(d);
-		saleOrderRepo.save(saleOrderInDP);
-		model.addAttribute("saleorders", saleOrderService.searchAdmin(null));
+		orderRepo.save(saleOrderInDP);
+		model.addAttribute("saleorders", orderService.searchAdmin(null));
 		
 		
 //		String email = saleOrderInDP.getEmail();
