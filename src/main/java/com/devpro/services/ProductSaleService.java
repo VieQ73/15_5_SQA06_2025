@@ -105,6 +105,7 @@ public class ProductSaleService {
 		for (ProductSale item : ps) {
 			if(item.getProduct().getId() == id) {
 				discount = item.getDiscount();
+				return discount;
 			}
 		}
 		return discount;

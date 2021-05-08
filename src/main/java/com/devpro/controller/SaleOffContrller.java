@@ -13,20 +13,15 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.devpro.entities.Category;
 import com.devpro.entities.Product;
 import com.devpro.model.ProductCustom;
-import com.devpro.services.CategoryService;
 import com.devpro.services.ProductService;
-import com.devpro.services.OrderProductService;
 import com.devpro.services.ProductSaleService;
 
 
 @Controller
-public class SaleOffContrller {
+public class SaleOffContrller extends BaseController{
 
-	@Autowired
-	private CategoryService categoryService;
 	@Autowired
 	private ProductService productService;
 	@Autowired
@@ -35,8 +30,6 @@ public class SaleOffContrller {
 	@RequestMapping(value = { "/saleoff" }, method = RequestMethod.GET)
 	public String hdmh(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
 			throws Exception {
-		List<Category> categories = categoryService.search(null);
-		model.addAttribute("categories", categories);
 		
 		List<Product> products = productService.getProductSale(null);
 		List<ProductCustom> productCustom = new ArrayList<ProductCustom>();

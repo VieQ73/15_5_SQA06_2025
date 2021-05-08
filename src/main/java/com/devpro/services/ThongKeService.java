@@ -28,21 +28,7 @@ public class ThongKeService {
 		}
 		return false;
 	}
-	public List<ThongKe> thongKeTheoTime(String startD, String endD) throws ParseException{
-		String nam = startD.substring(0, 4);
-		String thang = startD.substring(5, 7);
-		String ngay = startD.substring(8, 10);
-		startD = ngay + "/" + thang + "/" + nam;
-		
-		String nam1 = endD.substring(0, 4);
-		String thang1 = endD.substring(5, 7);
-		String ngay1 = endD.substring(8, 10);
-		endD = ngay1 + "/" + thang1 + "/" + nam1;
-		
-		Date datengaybd = new SimpleDateFormat("dd/MM/yyyy").parse(startD);
-		Date datengaykt = new SimpleDateFormat("dd/MM/yyyy").parse(endD);
-		Long ngayBD = datengaybd.getTime();
-		Long ngayKT = datengaykt.getTime();
+	public List<ThongKe> thongKeTheoTime(Long ngayBD, Long ngayKT) throws ParseException{
 		
 		List<ThongKe> listThongKe = new ArrayList<>();
 		List<OrderProducts> listPS = orderProductRepo.findAll();

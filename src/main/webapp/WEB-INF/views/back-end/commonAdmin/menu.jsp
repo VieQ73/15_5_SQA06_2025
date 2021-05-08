@@ -89,7 +89,7 @@ pageEncoding="UTF-8"%>
 				                </ul>
 							</li>
 							<li class="treeview">
-								<a href="${pageContext.request.contextPath}/back-end/thongke">
+								<a href="${pageContext.request.contextPath}/admin/thongke">
 									<i class="far fa-edit"></i>&nbsp
 									<span>Thống kê</span>
 									<i class="fa fa-angle-left pull-right"></i>

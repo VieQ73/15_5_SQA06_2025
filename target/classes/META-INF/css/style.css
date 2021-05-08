@@ -1195,29 +1195,7 @@ nav ul li a:hover{
 }
 
 @media only screen and (max-width: 46.1875em) {
-	.header-top{
-		display: none;
-	}
-	.logo2{
-		display: none;
-	}
-	#header_non_repon{
-	display: none;}
-	#header_repon{
-		display: block !important;
-	}
-	.banner-main{
-		margin-top: 4rem !important;
-	}
-	.navbar-nav a:hover{
-		background: #f27922 !important;
-	}
-	.menu-top-conten{
-	}
-	.menu-top-conten-element{
-		width: 3rem;
-		font-size: 10px;
-	}
+	
 }
 
 @media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {

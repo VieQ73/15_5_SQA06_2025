@@ -65,7 +65,7 @@
 	<div class="bg">
 		<!-- end banner -->
 		<div class="spbc">
-			<div class="spbc-top">SẢN PHẨM BÁN CHẠY</div>
+			<div class="spbc-top">SẢN PHẨM NỔI BẬT</div>
 			<div class="spbc-main">
 			
 				<c:forEach var = "productSelling" items = "${productSelling }">
@@ -93,8 +93,26 @@
 							<a href="${pageContext.request.contextPath}/products/${productSelling.product.seo }">${productSelling.product.title }</a>
 						</div>
 						<div class="spbc-price">
-							<fmt:formatNumber type="number" maxIntegerDigits="13"
+							<c:choose>
+								<c:when test="${productSelling.discount == 0 }">
+									<div class="product-price" style="line-height: 2rem;">
+										<fmt:formatNumber type="number" maxIntegerDigits="13"
 										value="${productSelling.price_sale }" /> đ
+									</div>
+								</c:when>
+								<c:otherwise>
+									<div class="product-price" style="display: flex;">
+										<p style="margin: auto; text-decoration: line-through; font-size: 0.7rem; color: #999999 ; line-height: 2rem;" >
+										<fmt:formatNumber type="number" maxIntegerDigits="13"
+											value="${productSelling.product.price }" /> đ
+									</p>
+									<p style=" margin: auto;font-size: 1.2rem; color: #ea5209;">
+										<fmt:formatNumber type="number" maxIntegerDigits="13"
+											value="${productSelling.price_sale }" /> đ
+									</p>
+									</div>
+								</c:otherwise>
+							</c:choose>
 						</div>
 					</div>
 		                  
@@ -149,8 +167,30 @@
 										<div class="product-title">
 											<a href="${pageContext.request.contextPath}/products/${productCustom1.product.seo }">${productCustom1.product.title }</a>
 										</div>
-										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${productCustom1.price_sale }" /> đ</div>
+										
+										<c:choose>
+											<c:when test="${productCustom1.discount == 0 }">
+												<div class="product-price">
+													<fmt:formatNumber type="number" maxIntegerDigits="13"
+													value="${productCustom1.price_sale }" /> đ
+												</div>
+											</c:when>
+											<c:otherwise>
+											
+												<div class="product-price" style="display: flex;">
+													<p style="margin: auto; text-decoration: line-through; font-size: 0.5rem; color: #999999 ; line-height: 2rem;" >
+													<fmt:formatNumber type="number" maxIntegerDigits="13"
+														value="${productCustom1.product.price }" /> đ
+												</p>
+												
+												<p style=" margin: auto;font-size: 1rem; color: #ea5209;">
+													<fmt:formatNumber type="number" maxIntegerDigits="13"
+														value="${productCustom1.price_sale }" /> đ
+												</p>
+												</div>
+											</c:otherwise>
+										</c:choose>
+										
 									</div>
 								</div>
 							</div>
@@ -207,8 +247,28 @@
 										<div class="product-title">
 											<a href="${pageContext.request.contextPath}/products/${productCustom2.product.seo }">${productCustom2.product.title }</a>
 										</div>
-										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${productCustom2.price_sale }" /> đ</div>
+										<c:choose>
+											<c:when test="${productCustom2.discount == 0 }">
+												<div class="product-price">
+													<fmt:formatNumber type="number" maxIntegerDigits="13"
+													value="${productCustom2.price_sale }" /> đ
+												</div>
+											</c:when>
+											<c:otherwise>
+											
+												<div class="product-price" style="display: flex;">
+													<p style="margin: auto; text-decoration: line-through; font-size: 0.5rem; color: #999999 ; line-height: 2rem;" >
+													<fmt:formatNumber type="number" maxIntegerDigits="13"
+														value="${productCustom2.product.price }" /> đ
+												</p>
+												
+												<p style=" margin: auto;font-size: 1rem; color: #ea5209;">
+													<fmt:formatNumber type="number" maxIntegerDigits="13"
+														value="${productCustom2.price_sale }" /> đ
+												</p>
+												</div>
+											</c:otherwise>
+										</c:choose>
 									</div>
 								</div>
 							</div>
@@ -264,8 +324,28 @@
 										<div class="product-title">
 											<a href="${pageContext.request.contextPath}/products/${productCustom3.product.seo }">${productCustom3.product.title }</a>
 										</div>
-										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${productCustom3.price_sale }" /> đ</div>
+										<c:choose>
+											<c:when test="${productCustom3.discount == 0 }">
+												<div class="product-price">
+													<fmt:formatNumber type="number" maxIntegerDigits="13"
+													value="${productCustom3.price_sale }" /> đ
+												</div>
+											</c:when>
+											<c:otherwise>
+											
+												<div class="product-price" style="display: flex;">
+													<p style="margin: auto; text-decoration: line-through; font-size: 0.5rem; color: #999999 ; line-height: 2rem;" >
+													<fmt:formatNumber type="number" maxIntegerDigits="13"
+														value="${productCustom3.product.price }" /> đ
+												</p>
+												
+												<p style=" margin: auto;font-size: 1rem; color: #ea5209;">
+													<fmt:formatNumber type="number" maxIntegerDigits="13"
+														value="${productCustom3.price_sale }" /> đ
+												</p>
+												</div>
+											</c:otherwise>
+										</c:choose>
 									</div>
 								</div>
 							</div>
@@ -321,8 +401,28 @@
 										<div class="product-title">
 											<a href="${pageContext.request.contextPath}/products/${productCustom4.product.seo }">${productCustom4.product.title }</a>
 										</div>
-										<div class="product-price"><fmt:formatNumber type="number" maxIntegerDigits="13"
-										value="${productCustom4.price_sale }" /> đ</div>
+										<c:choose>
+											<c:when test="${productCustom4.discount == 0 }">
+												<div class="product-price">
+													<fmt:formatNumber type="number" maxIntegerDigits="13"
+													value="${productCustom4.price_sale }" /> đ
+												</div>
+											</c:when>
+											<c:otherwise>
+											
+												<div class="product-price" style="display: flex;">
+													<p style="margin: auto; text-decoration: line-through; font-size: 0.5rem; color: #999999 ; line-height: 2rem;" >
+													<fmt:formatNumber type="number" maxIntegerDigits="13"
+														value="${productCustom4.product.price }" /> đ
+												</p>
+												
+												<p style=" margin: auto;font-size: 1rem; color: #ea5209;">
+													<fmt:formatNumber type="number" maxIntegerDigits="13"
+														value="${productCustom4.price_sale }" /> đ
+												</p>
+												</div>
+											</c:otherwise>
+										</c:choose>
 									</div>
 								</div>
 							</div>

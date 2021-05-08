@@ -130,11 +130,5 @@ public class IndexController {
 		return "front-end/home";
 	}
 	
-	@RequestMapping(value = { "/huongdanmuahang" }, method = RequestMethod.GET)
-	public String hdmh(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
-			throws Exception {
-		List<Category> categories = categoryService.search(null);
-		model.addAttribute("categories", categories);
-		return "front-end/huongdanmuahang";
-	}
+	
 }

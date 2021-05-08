@@ -1,5 +1,7 @@
 package com.devpro.controller.admin;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -19,11 +21,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.devpro.entities.Order;
 import com.devpro.entities.OrderProducts;
-
-
+import com.devpro.model.OrderProductCustom;
 import com.devpro.repositories.OrderRepo;
 import com.devpro.services.OrderProductService;
+
 import com.ibm.icu.util.Calendar;
+
 @Controller
 public class AdminOrder {
 	@Autowired
@@ -45,7 +48,16 @@ public class AdminOrder {
 			final HttpServletResponse response) throws Exception {
 		Order order = orderRepo.getOne(id);
 		model.addAttribute("order", order);
-		model.addAttribute("orderproducts", orderService.searchProduct(id));
+		
+		List<OrderProductCustom> listOPC = new ArrayList<>();
+		List<OrderProducts> listOP = orderService.searchProduct(id);
+		for (OrderProducts item : listOP) {
+			OrderProductCustom p = new OrderProductCustom();
+			p.setOrderProduct(item);
+			p.setThanhTien(item.getPrice().multiply(new BigDecimal(item.getQuality())));
+			listOPC.add(p);
+		}
+		model.addAttribute("orderproducts", listOPC);
 		return "back-end/orderProduct";
 	}
 	@RequestMapping(value = { "/admin/confirm_saleProduct/{id}" }, method = RequestMethod.GET)
@@ -69,21 +81,9 @@ public class AdminOrder {
 		Date d = Calendar.getInstance().getTime();
 		saleOrderInDP.setUpdated_date(d);
 		orderRepo.save(saleOrderInDP);
-		model.addAttribute("saleorders", orderService.searchAdmin(null));
-		
-		
-//		String email = saleOrderInDP.getEmail();
-//		MyConstants myConstants = new MyConstants();
-//		myConstants.setFRIEND_EMAIL(email);
-//		SimpleMailMessage mess = new SimpleMailMessage();
-//		mess.setTo(myConstants.getFRIEND_EMAIL());
-//		mess.setSubject("Xác nhận đơn hàng");
-//		mess.setText("Xin chào! Đơn hàng của bạn đã được gửi. Vui lòng giữ liên lạc để nhận hàng. Cảm ơn bạn đã mua"
-//				+ "hàng của chúng tôi");
-// 
-//        // Send Message!
-//        this.javaMailSender.send(mess);
+		model.addAttribute("order", orderService.searchAdmin(null));
 
 		return "back-end/order";
 	}
+	
 }

@@ -87,6 +87,12 @@ public class GiftService {
 	}
 	
 	public List<Product> searchProductGift(Integer id) {
+		String sql = "select * from tbl_product where status = true and gift_id = "+id+" limit 0,3;";
+		Query query = entityManager.createNativeQuery(sql, Product.class);
+		
+		return query.getResultList();
+	}
+	public List<Product> searchProductGiftAdmin(Integer id) {
 		String sql = "select * from tbl_product where status = true and gift_id = "+id;
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		

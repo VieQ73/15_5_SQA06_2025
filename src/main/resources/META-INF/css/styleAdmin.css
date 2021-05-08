@@ -38,6 +38,7 @@ body a:hover{
 }
 .main-content {
     min-height: 670px;
+    margin-left: 12rem;
 }
 .sidebar-left .navbar-brand {
     height: 61px;
@@ -431,6 +432,7 @@ ul.dropdown-menu{
 .profile_details_left {
     float: left;
     padding-left: 5px;
+    
 }
 .dropdown-menu {
     box-shadow: 2px 3px 4px rgba(0, 0, 0, .175);
@@ -875,7 +877,6 @@ ul.dropdown-menu.drp-mnu li {
     margin-top: .3em;
 }
 .content-main{
-  margin-left: 15%;
   margin-top: 70px;
   padding: 2%;
 }

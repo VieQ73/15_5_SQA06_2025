@@ -14,7 +14,7 @@
 						<p>Website thuộc quyền</p>
 						<div class="f-text">CÔNG TY TNHH HV NET
 							ĐKKD Số: 0313411135
-							Do Sở KH&ĐT Tp. HCM
+							Do Sở KH&ĐT Tp.Hà Nội
 							Cấp ngày 24/08/2015
 						</div>
 						<div class="f-img1">

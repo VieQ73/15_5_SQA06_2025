@@ -86,7 +86,6 @@
 											</c:if>
 										</td>
 									</tr>
-									
 								</c:forEach>
 							</tbody>
 						</table>
@@ -105,6 +104,7 @@
 	    $('table.display').DataTable({
 	    	"scrollX": true
 	    });
+	    
 	});
 	function show(id){
 		window.location = "${pageContext.request.contextPath}/admin/order/"+id;

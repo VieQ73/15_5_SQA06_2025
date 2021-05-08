@@ -179,7 +179,13 @@ public class ProductService {
 		Query query = entityManager.createNativeQuery(sql, Product.class);
 		return query.getResultList();
 	}
-	
+	public List<Product> searchPrSelling4(final ProductSearch productSearch) {
+
+		String sql = "select * from tbl_product where status=true order by selling DESC limit 0,4;";
+
+		Query query = entityManager.createNativeQuery(sql, Product.class);
+		return query.getResultList();
+	}
 	
 	public List<Product> searchAdmin(final ProductSearch productSearch) {
 

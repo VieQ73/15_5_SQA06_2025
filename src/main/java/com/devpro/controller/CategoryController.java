@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.devpro.entities.Category;
 import com.devpro.entities.Product;
 import com.devpro.model.ProductCustom;
 import com.devpro.model.ProductSearch;
@@ -58,5 +59,10 @@ public class CategoryController extends BaseController {
 		
 		return "front-end/category";
 	}
-
+	@RequestMapping(value = { "/huongdanmuahang" }, method = RequestMethod.GET)
+	public String hdmh(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
+			throws Exception {
+		
+		return "front-end/huongdanmuahang";
+	}
 }

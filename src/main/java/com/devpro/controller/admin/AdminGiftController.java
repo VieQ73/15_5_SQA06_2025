@@ -100,7 +100,7 @@ public class AdminGiftController {
 			model.addAttribute("messsage", "<div class=\"alert alert-success\">"
 					+ "  <strong>Success!</strong> Cập nhật thành công." + "</div>");
 		 } 
-		 List<Product> productGift = giftService.searchProductGift(id);
+		 List<Product> productGift = giftService.searchProductGiftAdmin(id);
 		 model.addAttribute("productGift", productGift);
 		 model.addAttribute("id", id);
 		 model.addAttribute("giftI", giftRepo.getOne(id));

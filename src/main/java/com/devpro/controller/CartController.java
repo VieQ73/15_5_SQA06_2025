@@ -165,7 +165,7 @@ public class CartController extends BaseController{
 			saleOrder.setUpdated_date(d);
 			saleOrder.setNote_by_customer(note);
 			saleOrder.setAddress(address);
-			saleOrder.setTotal(gioHang.getTotal(productRepo));
+			saleOrder.setTotal(gioHang.getTotal(productRepo, productSaleService));
 			
 			List<Customer> u = userService.searCustomerByPhone(phone);
 			if(u.size()==0) {
@@ -333,7 +333,7 @@ public class CartController extends BaseController{
 		Order saleOrder = saleOrderRepo.findById(saleOrder1.getId()).get();
 		
 		boolean sanPhamDaCoTrongGioHangPhaiKhong;
-		for(OrderProducts i : saleOrder.getSaleOrderProducts()) {
+		for(OrderProducts i : saleOrder.getOrderProducts()) {
 			sanPhamDaCoTrongGioHangPhaiKhong = false;
 			for(ProductInCart item : _sanPhamTrongGioHangs) {
 				if(item.getProductId() == i.getProduct().getId()) {

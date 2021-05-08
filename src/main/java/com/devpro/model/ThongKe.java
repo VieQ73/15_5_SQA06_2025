@@ -26,5 +26,9 @@ public class ThongKe {
 	public void setTongGia(BigDecimal tongGia) {
 		this.tongGia = tongGia;
 	}
+	@Override
+	public String toString() {
+		return "ThongKe [product=" + product + ", tongSoLuong=" + tongSoLuong + ", tongGia=" + tongGia + "]";
+	}
 	
 }

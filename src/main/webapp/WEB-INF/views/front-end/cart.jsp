@@ -110,12 +110,12 @@
 					          <form action="${pageContext.request.contextPath}/luu_don_hang " method="post" id="form-dathang">
 								<div class="form-group invalid">
 									<label for="phone">Điện thoại liên hệ:</label>
-									<input type="text" class="form-control" placeholder="VD: 0378054786" id="phone" name="phone" onchange="checkPhone()">
+									<input type="text" class="form-control" placeholder="VD: 0378054xxx" id="phone" name="phone" onchange="checkPhone()">
 									<span class="form-message alert-danger"></span>
 								</div>
 								<div class="form-group">
 									<label for="name">Tên khách hàng:</label>
-									<input type="text" class="form-control" placeholder="VD: Hoàng Quang Vinh" id="name" name="name">
+									<input type="text" class="form-control" placeholder="VD: Nguyễn Văn A" id="name" name="name">
 									<span class="form-message alert-danger"></span>
 								</div>
 								<div class="form-group">
@@ -125,7 +125,7 @@
 								</div>
 								<div class="form-group">
 									<label for="note">Ghi chú:</label>
-									<textarea class="form-control" placeholder="VD: Trả tiền trước rồi gửi hàng" id="note" name="note"></textarea>
+									<textarea class="form-control" placeholder="VD: Lời nhắn giao hàng" id="note" name="note"></textarea>
 									<span class="form-message"></span>
 								</div>
 								 <div class="modal-footer">
@@ -181,7 +181,7 @@
   			errorSelector: '.form-message',
   			rules:[
   				Validator.isRequired('#phone', "Số điện thoại không được để trống!"),
-  				Validator.isPhoneNumber('#phone', "Số điện thoại không hợp lệ!"),
+  				/* Validator.isPhoneNumber('#phone', "Số điện thoại không hợp lệ!"), */
   				Validator.isRequired('#name', "Họ tên không được để trống!"),
   				Validator.isRequired('#address', "Địa chỉ không được để trống!"),
   			],

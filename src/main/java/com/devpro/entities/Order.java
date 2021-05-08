@@ -59,11 +59,11 @@ public class Order {
 	private Integer status= 0;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "order", fetch = FetchType.LAZY)
-	private List<OrderProducts> saleOrderProducts = new ArrayList<OrderProducts>();
+	private List<OrderProducts> orderProducts = new ArrayList<OrderProducts>();
 	
 	public void addSaleOrderProducts(OrderProducts _saleOrderProducts) {
 		_saleOrderProducts.setOrder(this);
-		saleOrderProducts.add(_saleOrderProducts);
+		orderProducts.add(_saleOrderProducts);
 	} 	 
 
 	public BigDecimal getTotal() {
@@ -74,12 +74,12 @@ public class Order {
 		this.total = total;
 	}
 
-	public List<OrderProducts> getSaleOrderProducts() {
-		return saleOrderProducts;
+	public List<OrderProducts> getOrderProducts() {
+		return orderProducts;
 	}
 
-	public void setSaleOrderProducts(List<OrderProducts> saleOrderProducts) {
-		this.saleOrderProducts = saleOrderProducts;
+	public void setOrderProducts(List<OrderProducts> orderProducts) {
+		this.orderProducts = orderProducts;
 	}
 
 	public Integer getStatus() {

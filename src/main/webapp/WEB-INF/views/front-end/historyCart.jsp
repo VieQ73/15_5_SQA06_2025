@@ -77,7 +77,7 @@
 												</div>
 												<div class="order-content__item-list"
 													style="border-top: 1px solid rgba(0, 0, 0, 0.09); font-size: 0.875rem; line-height: 1.1875rem;">
-													<c:forEach var="historyCartDetail" items="${historyCart.saleOrderProducts}">
+													<c:forEach var="historyCartDetail" items="${historyCart.orderProducts}">
 													<a class="order-content__item-wrapper a-hover"
 														href="${pageContext.request.contextPath}/products/${historyCartDetail.product.seo }"
 														style="color: rgba(0, 0, 0, 0.8); outline: 0px; text-decoration: none;">
@@ -237,7 +237,7 @@
 												</div>
 												<div class="order-content__item-list"
 													style="border-top: 1px solid rgba(0, 0, 0, 0.09); font-size: 0.875rem; line-height: 1.1875rem;">
-													<c:forEach var="historyCartDetail" items="${historyCart.saleOrderProducts}">
+													<c:forEach var="historyCartDetail" items="${historyCart.orderProducts}">
 													<a class="order-content__item-wrapper a-hover"
 														href="${pageContext.request.contextPath}/products/${historyCartDetail.product.seo }"
 														style="color: rgba(0, 0, 0, 0.8); outline: 0px; text-decoration: none;">
@@ -334,25 +334,25 @@
 												<c:if test="${historyCart.status == 1}">
 												<div class="purchase-card-buttons__show-button-wrapper"
 													style="min-width: 10rem; height: 2.5rem; margin-left: 0.625rem; background: rgb(255, 255, 255); display: flex;">
-													<button class="btn btn-primary" data-toggle="modal" data-target="#huy">
+													<button class="btn btn-danger" data-toggle="modal" data-target="#nhanhang">
 														Nhận hàng
 													</button>
 													<!-- Modal -->
-													<div class="modal fade" id="huy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+													<div class="modal fade" id="nhanhang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 													  <div class="modal-dialog" role="document">
 													    <div class="modal-content">
 													      <div class="modal-header">
-													        <h5 class="modal-title" id="exampleModalLabel">Xác nhận nhận hàng</h5>
+													        <h5 class="modal-title" id="exampleModalLabel">Xác nhận hủy đơn hàng</h5>
 													        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 													          <span aria-hidden="true">&times;</span>
 													        </button>
 													      </div>
 													      <div class="modal-body">
-													        Bạn đã nhận đơn hàng của mình?
+													        Bạn đã nhận được đơn hàng?
 													      </div>
 													      <div class="modal-footer">
-													        <button type="button" class="btn btn-primary" onclick="Shop.huy_don_hang(${historyCart.id});">Đồng ý</button>
-													        <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+													        <button type="button" class="btn btn-danger" onclick="Shop.huy_don_hang(${historyCart.id});">Nhận hàng</button>
+													      	 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 													      </div>
 													    </div>
 													  </div>
@@ -396,7 +396,7 @@
 												</div>
 												<div class="order-content__item-list"
 													style="border-top: 1px solid rgba(0, 0, 0, 0.09); font-size: 0.875rem; line-height: 1.1875rem;">
-													<c:forEach var="historyCartDetail" items="${historyCart.saleOrderProducts}">
+													<c:forEach var="historyCartDetail" items="${historyCart.orderProducts}">
 													<a class="order-content__item-wrapper a-hover"
 														href="${pageContext.request.contextPath}/products/${historyCartDetail.product.seo }"
 														style="color: rgba(0, 0, 0, 0.8); outline: 0px; text-decoration: none;">
@@ -535,7 +535,7 @@
 												</div>
 												<div class="order-content__item-list"
 													style="border-top: 1px solid rgba(0, 0, 0, 0.09); font-size: 0.875rem; line-height: 1.1875rem;">
-													<c:forEach var="historyCartDetail" items="${historyCart.saleOrderProducts}">
+													<c:forEach var="historyCartDetail" items="${historyCart.orderProducts}">
 													<a class="order-content__item-wrapper a-hover"
 														href="${pageContext.request.contextPath}/products/${historyCartDetail.product.seo }"
 														style="color: rgba(0, 0, 0, 0.8); outline: 0px; text-decoration: none;">

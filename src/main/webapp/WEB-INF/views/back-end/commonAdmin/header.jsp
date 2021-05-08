@@ -16,60 +16,7 @@ pageEncoding="UTF-8"%>
 
 <div class="sticky-header header-section ">
 			<div class="header-left">
-				<!--toggle button start-->
-				<!--toggle button end-->
-				<%-- <div class="profile_details_left"><!--notifications of menu start -->
-					<ul class="nofitications-dropdown">
-						<li class="dropdown head-dpdn">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
-							<ul class="dropdown-menu">
-								<li>
-									<div class="notification_header">
-										<h3>You have 3 new messages</h3>
-									</div>
-								</li>
-								<li><a href="#">
-									<div class="user_img"><img src="${pageContext.request.contextPath}/images/ad1.jpg" alt=""></div>
-									<div class="notification_desc">
-										<p>Lorem ipsum dolor amet</p>
-										<p><span>1 hour ago</span></p>
-									</div>
-									<div class="clearfix"></div>	
-								</a></li>
-								<li class="odd"><a href="#">
-									<div class="user_img"><img src="${pageContext.request.contextPath}/images/ad4.jpg" alt=""></div>
-									<div class="notification_desc">
-										<p>Lorem ipsum dolor amet </p>
-										<p><span>1 hour ago</span></p>
-									</div>
-									<div class="clearfix"></div>	
-								</a></li>
-								<li><a href="#">
-									<div class="user_img"><img src="${pageContext.request.contextPath}/images/ad3.jpg" alt=""></div>
-									<div class="notification_desc">
-										<p>Lorem ipsum dolor amet </p>
-										<p><span>1 hour ago</span></p>
-									</div>
-									<div class="clearfix"></div>	
-								</a></li>
-								<li><a href="#">
-									<div class="user_img"><img src="${pageContext.request.contextPath}/images/ad2.jpg" alt=""></div>
-									<div class="notification_desc">
-										<p>Lorem ipsum dolor amet </p>
-										<p><span>1 hour ago</span></p>
-									</div>
-									<div class="clearfix"></div>	
-								</a></li>
-								<li>
-									<div class="notification_bottom">
-										<a href="#">See all messages</a>
-									</div> 
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<div class="clearfix"> </div>
-				</div> --%>
+				<button id="showLeftPush" onclick="showHide();"><i class="fa fa-bars"></i></button>
 				<!--notification menu end -->
 				<div class="clearfix"> </div>
 			</div>

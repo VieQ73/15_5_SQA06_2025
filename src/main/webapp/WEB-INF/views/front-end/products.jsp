@@ -40,7 +40,7 @@
 </head>
 <body>
 	<div id="fb-root"></div>
-	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0" nonce="nrKNkviN"></script>
+	
 	<div class="wapper">
 		<div class="go-to-top"> <button id="go-to-top"><i class="fas fa-chevron-up"></i></button></div>
 		
@@ -203,6 +203,7 @@
 	</div>
 	</div>
 	<jsp:include page="/WEB-INF/views/front-end/common/js.jsp"></jsp:include>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0" nonce="nrKNkviN"></script>
 	<script type="text/javascript">
 	$(document).ready(function(){
 		var pos1 = $('#khung').position();
@@ -224,8 +225,6 @@
 				bigImg.innerHTML = "<img src ="+ imgSrc+">";
 			});
 		}
-		
-
 	});
 	</script>
 	
