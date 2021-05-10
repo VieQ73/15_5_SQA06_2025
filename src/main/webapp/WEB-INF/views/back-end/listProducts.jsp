@@ -52,11 +52,12 @@
 							<thead>
 								<tr>
 									<th>#</th>
-									<th>title</th>
+									<th>Tên sản phẩm</th>
 									<th style="witdh:90px; min-height:100px;">Hình ảnh</th>
-									<th>category</th>
-									<th>price</th>
-									<th>Status</th>
+									<th>Danh mục</th>
+									<th>Giá</th>
+									<th>Số lượng còn</th>
+									<th>Trạng thái</th>
 									<th></th>
 								</tr>
 							</thead>
@@ -80,6 +81,7 @@
 											<fmt:formatNumber type="number" maxIntegerDigits="13"
 										value="${product.price}" /> đ
 										</td>
+										<td>${product.amount}</td>
 										<td>
 											<input type="hidden" id="status${product.id }" value="${product.status}">
 											<c:choose>
@@ -91,6 +93,7 @@
 												</c:otherwise>
 											</c:choose>
 										</td>
+										
 										<td>
 											<div class="table-data-feature">
 

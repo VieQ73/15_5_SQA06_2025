@@ -53,7 +53,7 @@
 				</li>
 				<li><a class="nav-link" href="${pageContext.request.contextPath}/huongdanmuahang">HƯỚNG DẪN MUA HÀNG</a></li>
 				<li><a class="nav-link" href="${pageContext.request.contextPath}/news">TIN NỔI BẬT</a></li>
-				<li><a class="nav-link" href="${pageContext.request.contextPath}/saleoff">SẢN PHẨM SALE OFF</a></li>
+				<li><a class="nav-link" href="${pageContext.request.contextPath}/saleoff">SẢN PHẨM GIẢM GIÁ</a></li>
 				<li><a class="nav-link" href="${pageContext.request.contextPath}/gift">KHO QUÀ TẶNG</a></li>
 				<li><a class="nav-link" href="https://www.facebook.com/BeautyShop-110318264452364/">LIÊN HỆ</a>
 				</li>

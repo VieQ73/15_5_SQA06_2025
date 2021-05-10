@@ -83,11 +83,11 @@
 							</c:when>
 							<c:otherwise>
 								<input class="checkNull" type="hidden" value="0"/>
-								<div class="alert alert-danger">
-								  <strong>!Không </strong> có sản phẩm trong giỏ hàng
-									  <a href="${pageContext.request.contextPath}/" class="btn btn-success">
-										Mua ngay
-									  </a>
+								<div class="alert alert-danger" style="padding-left: 8rem; font-size: 25px;">
+								  <a href="${pageContext.request.contextPath}/">
+									<img alt="" src="${pageContext.request.contextPath}/images/mascot@2x.png">
+									<strong>!Không </strong> có sản phẩm trong giỏ hàng
+								  </a>
 								</div>
 								
 							</c:otherwise>

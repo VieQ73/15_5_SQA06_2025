@@ -85,5 +85,21 @@ public class AdminOrder {
 
 		return "back-end/order";
 	}
-	
+	@RequestMapping(value = { "/admin/print/{id}" }, method = RequestMethod.GET)
+	public String printf(@PathVariable("id") Integer id, final ModelMap model, final HttpServletRequest request,
+			final HttpServletResponse response) throws Exception {
+		Order order = orderRepo.getOne(id);
+		model.addAttribute("order", order);
+		
+		List<OrderProductCustom> listOPC = new ArrayList<>();
+		List<OrderProducts> listOP = orderService.searchProduct(id);
+		for (OrderProducts item : listOP) {
+			OrderProductCustom p = new OrderProductCustom();
+			p.setOrderProduct(item);
+			p.setThanhTien(item.getPrice().multiply(new BigDecimal(item.getQuality())));
+			listOPC.add(p);
+		}
+		model.addAttribute("orderproducts", listOPC);
+		return "back-end/invoice";
+	}
 }

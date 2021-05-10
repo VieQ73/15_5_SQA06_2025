@@ -61,7 +61,7 @@
 							</ul>
 						</div>
 						<div style="margin-top: 2rem;">
-							<div class="category-top">SẢN PHẨM BÁN CHẠY</div>
+							<div class="category-top">SẢN PHẨM NỔI BẬT</div>
 							<div style="border: 1px solid #d4d2d2; border-radius: 5px; background: #ffffff;">
 								<c:forEach var = "spbc" items = "${spbc}">
 									<div style="padding-top: 1rem; margin-left: 1rem;outline: 0px; border-bottom: 1px solid rgb(229, 229, 229); display: table; margin-bottom: 20px; padding-bottom: 20px; width: 236px; color: rgb(51, 51, 51); font-family: helvatica, &quot;Open Sans&quot;, sans-serif; font-size: 14px;">
@@ -106,7 +106,7 @@
 					<div class="ctgr-content-right col-xl-9">
 						<div class="ctgr-product">
 							<div class="ctgr-product-top">
-								<i class="fas fa-th"></i><h5 style="font-weight: bold; margin-top: 5px;">Sản phẩm sale off</h5>
+								<i class="fas fa-th"></i><h5 style="font-weight: bold; margin-top: 5px;">Sản phẩm giảm giá</h5>
 							</div>
 							<div class="ctgr-product-main">
 								<div class="body-main-product">

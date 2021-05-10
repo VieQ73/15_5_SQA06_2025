@@ -109,6 +109,23 @@ public class ProductService {
         return productRepo.findAll();
     }
 	
+	public List<Product> listAllDesc(String keyword) {
+        if (keyword != null) {
+        	String sql = "SELECT * FROM tbl_product WHERE title LIKE '%"+keyword+"%' order by price desc";
+    		Query query = entityManager.createNativeQuery(sql, Product.class);
+    		return query.getResultList();
+        }
+        return productRepo.findAll();
+    }
+	
+	public List<Product> listAllAsc(String keyword) {
+        if (keyword != null) {
+        	String sql = "SELECT * FROM tbl_product WHERE title LIKE '%"+keyword+"%' order by price asc";
+    		Query query = entityManager.createNativeQuery(sql, Product.class);
+    		return query.getResultList();
+        }
+        return productRepo.findAll();
+    }
 	
 	public List<Product> searchProductWithCate8(int idCate) {
 		String sql = "select * from tbl_product where status = 1 and category_id="+idCate+" order by rand() limit 0,8;";

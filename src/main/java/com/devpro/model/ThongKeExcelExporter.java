@@ -6,9 +6,11 @@ import java.util.List;
  
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
- 
+
+import org.apache.poi.ss.formula.functions.Column;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -29,13 +31,12 @@ public class ThongKeExcelExporter {
         sheet = workbook.createSheet("ThongKe");
          
         Row row = sheet.createRow(0);
-         
         CellStyle style = workbook.createCellStyle();
         XSSFFont font = workbook.createFont();
         font.setBold(true);
         font.setFontHeight(16);
         style.setFont(font);
-         
+        style.setAlignment(HorizontalAlignment.CENTER_SELECTION);
         createCell(row, 0, "STT", style);      
         createCell(row, 1, "Tên sản phẩm", style);       
         createCell(row, 2, "Số lượng", style);    
@@ -66,22 +67,35 @@ public class ThongKeExcelExporter {
         Integer stt = 0;
         Integer tongSL = 0;
         BigDecimal tongGia = BigDecimal.ZERO;
+        XSSFFont font2 = workbook.createFont();
+        font2.setFontHeight(14);
+        CellStyle style2 = workbook.createCellStyle();
+        style2.setAlignment(HorizontalAlignment.RIGHT);
+        style2.setFont(font2);
         for (ThongKe item : listThongKe) {
         	stt++;
             Row row = sheet.createRow(rowCount++);
             int columnCount = 0;
-             
+            String t = String.format("%,.0f", item.getTongGia());
             createCell(row, columnCount++, stt, style);
             createCell(row, columnCount++, item.getProduct().getTitle(), style);
             createCell(row, columnCount++, item.getTongSoLuong(), style);
-            createCell(row, columnCount++, item.getTongGia().toString()+" đ", style);
+            createCell(row, columnCount++, t+" đ", style2);
             tongSL += item.getTongSoLuong();
             tongGia = tongGia.add(item.getTongGia());
         }
-        createCell(sheet.createRow(listThongKe.size()+1), 0, "", style);
-        createCell(sheet.createRow(listThongKe.size()+1), 1, "Tổng:", style);
-        createCell(sheet.createRow(listThongKe.size()+1), 2, tongSL.toString(), style);
-        createCell(sheet.createRow(listThongKe.size()+1), 3, tongGia.toString()+" đ", style);
+        CellStyle style1 = workbook.createCellStyle();
+        XSSFFont font1 = workbook.createFont();
+        font1.setBold(true);
+        font1.setFontHeight(15);
+        style1.setAlignment(HorizontalAlignment.RIGHT);
+        style1.setFont(font1);
+        String t = String.format("%,.0f", tongGia);
+        Row row = sheet.createRow(rowCount+1);
+        createCell(row, 0, "", style1);
+        createCell(row, 1, "Tổng:", style1);
+        createCell(row, 2, tongSL.toString(), style1);
+        createCell(row, 3, t+" đ", style1);
     }
      
     public void export(HttpServletResponse response) throws IOException {
