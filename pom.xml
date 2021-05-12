@@ -94,12 +94,7 @@
 			<artifactId>spring-security-taglibs</artifactId>
 		</dependency>
 		
-		<!-- SPRING EMAIL -->
-		<dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-mail</artifactId>
-		</dependency>
-		
+		<!-- export -->
 		<dependency>
 		    <groupId>org.apache.poi</groupId>
 		    <artifactId>poi-ooxml</artifactId>

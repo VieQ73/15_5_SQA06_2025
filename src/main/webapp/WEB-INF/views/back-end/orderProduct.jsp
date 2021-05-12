@@ -142,16 +142,17 @@
 								<tr>
 									<td></td>
 									<td></td>
-									<td></td>
-									<td></td>
-									<td>
-									<button class="btn btn-success" id="cmd">Xuất hóa đơn</button>
-											 <button class="btn btn-primary" id="print" onclick="print(${order.id})">In hóa đơn</button></td>
+									<td><button class="btn btn-success" id="cmd">Xuất hóa đơn</button></td>
+									<td><button class="btn btn-primary" id="print" onclick="print(${order.id})">In hóa đơn</button></td>
+									<td><c:if test="${order.status == 0}">
+											<a style="margin-right: 30px;" class="btn btn-danger"
+											href="${pageContext.request.contextPath}/admin/confirm_saleProduct/${order.id}?status=3">Hủy</a>
+											
+										</c:if></td>
 									<td>
 										
 										<c:if test="${order.status == 0}">
-											<a style="margin-right: 30px;" class="btn btn-danger"
-											href="${pageContext.request.contextPath}/admin/confirm_saleProduct/${order.id}?status=3">Hủy</a>
+											
 											<a class="btn btn-primary" 
 											href="${pageContext.request.contextPath}/admin/confirm_saleProduct/${order.id}?status=1">Xác nhận</a>
 										</c:if>

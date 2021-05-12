@@ -719,6 +719,7 @@ nav ul li a:hover{
 #big-img{
 	width: 400px;
 	position: relative;
+	margin-top: 1rem;
 }
 #big-img img{
 	width: 300px;
