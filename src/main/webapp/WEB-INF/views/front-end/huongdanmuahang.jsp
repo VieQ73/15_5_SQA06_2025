@@ -15,12 +15,14 @@
 </head>
 <body>
 <div class="wapper">
-	<div class="go-to-top"> <button id="go-to-top"><i class="fas fa-chevron-up"></i></button></div>
+	<div class="go-to-top btn btn-secondary" id="go-to-top" >
+		<i class="fas fa-angle-up"></i>
+	</div>
 		<jsp:include page="/WEB-INF/views/front-end/common/header.jsp"></jsp:include>
 		<div class="bg">
 			<div class="content">
 				
-				</div> 
+				
 				<!-- end banner -->
 				<div class="ctgr-content">
 					<div class="ctgr-content-left col-xl-3.5">
@@ -92,11 +94,14 @@
 										<p
 											style="outline: 0px; margin-bottom: 10px; color: rgb(51, 51, 51); font-family: helvatica,&amp; quot; Open Sans&amp;quot; , sans-serif; font-size: 18px;">
 											<br style="outline: 0px;">
-											<span style="outline: 0px; color: rgb(0, 0, 255);"><span
-												style="outline: 0px;"><span
-													style="outline: 0px; font-weight: 700;"><u
-														style="outline: 0px;">Bước 1</u>: Click chuột vào nút "Đặt
-														Hàng Ngay"</span></span></span><br style="outline: 0px;">
+											<span style="outline: 0px; color: rgb(0, 0, 255);">
+												<span style="outline: 0px;">
+													<span style="outline: 0px; font-weight: 700;">
+														<u style="outline: 0px;">Bước 1</u>: Click chuột vào nút "Đặt Hàng Ngay"
+													</span>
+												</span>
+											</span>
+											<br style="outline: 0px;">
 											<br style="outline: 0px;">Sau khi Click vào nút "Đặt Hàng
 											Ngay" bạn sẽ được chuyển đến 1 trang điền thông tin nhận hàng.<br
 												style="outline: 0px;">&nbsp;
@@ -113,8 +118,8 @@
 											<br style="outline: 0px;">
 											<span style="outline: 0px; color: rgb(0, 0, 255);"><span
 												style="outline: 0px;"><span
-													style="outline: 0px; font-weight: 700;"><u
-														style="outline: 0px;">Bước 2</u>: Điền đầy đủ và chính xác
+													style="outline: 0px; font-weight: 700;">
+													<u style="outline: 0px;">Bước 2</u>: Điền đầy đủ và chính xác
 														thông tin</span></span></span><br style="outline: 0px;">
 											<br style="outline: 0px;">Ở bước này bạn cần lưu ý&nbsp;<span
 												style="outline: 0px; font-weight: 700;">điền đầy đủ
@@ -177,6 +182,7 @@
 					</div>
 				</div>
 			</div>
+			</div> 
 				<!-- end content -->
 			<jsp:include page="/WEB-INF/views/front-end/common/footer.jsp"></jsp:include>
 		</div>

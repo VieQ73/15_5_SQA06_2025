@@ -41,14 +41,16 @@
 </head>
 <body>
 <div class="wapper">
-	<div class="go-to-top"> <button id="go-to-top"><i class="fas fa-chevron-up"></i></button></div>
+	<div class="go-to-top btn btn-secondary" id="go-to-top" >
+		<i class="fas fa-angle-up"></i>
+	</div>
 		<jsp:include page="/WEB-INF/views/front-end/common/header.jsp"></jsp:include>
-		<div class="bg">
-			<div class="content">
+		<div class="bg grid1 wide1">
+			<div class="content ">
 				
 				</div> 
 				<!-- end banner -->
-				<div class="ctgr-content">
+				<div class="ctgr-content row1">
 					<div class="ctgr-content-left col-xl-3.5">
 						<%-- <div class="category">
 							<div class="category-top">DANH MỤC SẢN PHẨM</div>
@@ -59,13 +61,13 @@
 							</ul>
 						</div> --%>
 					</div>
-					<div class="ctgr-content-right col-xl-12">
+					<div class="ctgr-content-right col1 l-12">
 						<div class="ctgr-product">
 							<div class="ctgr-product-top" style="border-bottom: 2px solid #ff80aa;">
-								<div style="font-weight: bold; margin-left: 10rem;">
-								<label style="font-size: 25px;">Sắp xếp theo: </label>
-								<label style="margin-left: 10rem;">Giá: </label>
-									<select style="margin-left: 2rem;" id="sortSelect" onchange="sortS();">
+								<div class="search-top">
+									<label style="font-size: 25px;">Sắp xếp theo: </label>
+									<label >Giá: </label>
+									<select id="sortSelect" onchange="sortS();">
 										<option value="">----Chọn----</option>
 										<option value="1">Giảm dần</option>
 										<option value="2">Tăng dần</option>
@@ -74,12 +76,12 @@
 								<input type="hidden" value="${key }" id="key">
 								<input type="hidden" value="${selectS }" id="selectS">
 							</div>
-							<div class="ctgr-product-main" style="padding-top: 1rem;">
+							<div class="ctgr-product-main grid1 wide1" style="padding-top: 1rem;">
 								<div class="body-main-product">
 									<div class="product1">
-										<div class="row">
+										<div class="row1">
 											<c:forEach var = "productCustom" items = "${productCustom }">				
-												<div class="col-lg-3 col-md-6 mb-4 product-cate">
+												<div class="col1 l-3 m1-4 product-cate">
 													<c:if test="${productCustom.discount != 0 }">
 														<p class="sale">- ${productCustom.discount}%</p>
 													</c:if>

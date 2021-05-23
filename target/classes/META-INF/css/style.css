@@ -28,14 +28,14 @@ body{
 .header-main{
 	display: flex;
 	height: 93px;
-	width: 1200px;
+	width: 100%;
 	margin: auto;
 	position: relative;
 }
 
 .logo2 img{
 	position: absolute;
-	left: 300px;
+	left: 30.333%;
 	bottom: 0px;
 }
 .header-main form, .btn-cart{
@@ -76,9 +76,9 @@ body{
 
 nav{
 	background: #ed68c1;
+	width: 100%;
 }
 nav ul{
-	width: 1200px;
 	margin: auto;
 }
 nav ul li{
@@ -101,6 +101,10 @@ nav ul li a:hover{
 }
 .menu-top-content{
 	margin-top: 1rem;
+	padding: 1rem;
+}
+.menu-banner-repon{
+	display: none;
 }
 .menu-top-content-text{
 	margin-left: 0.6rem;
@@ -117,22 +121,16 @@ nav ul li a:hover{
 	font-weight: bold;
 	font-size: 14px;
 }
+.fotten ul{
+	list-style: none;
+}
 .fotten a{
 	text-decoration: none;
 }
-.support{
-	margin-left: 160px;
-	width: 200px;
-}
-.support ul{
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
-}
-.support ul li a{
+.fotten ul li a{
 	color: black;
 }
-.support ul li a:hover{
+.fotten ul li a:hover{
 	color: #f27922;
 }
 .form-control{
@@ -195,9 +193,10 @@ nav ul li a:hover{
 	
 }
 .spbc-body{
-	width: 20%;
+	
 	border: 2px solid #eaeaea;
-	margin: 5px;position: relative;
+	
+	position: relative;
 }
 .spbc-body:hover{
 	box-shadow: 2px 2px 20px #a7a7a6 inset;
@@ -502,6 +501,7 @@ nav ul li a:hover{
 	margin:auto;
 	margin-top: 45px;
 }
+
 .news-top{
 	border-top: 2px solid #f27922;
 	text-align: center;
@@ -523,8 +523,7 @@ nav ul li a:hover{
 	margin: 15px;
 }
 .news-body{
-	padding: 10px;
-	margin-top: 15px;
+	margin: 15px;
 }
 .news-body a{
 	text-decoration: none;
@@ -681,20 +680,22 @@ nav ul li a:hover{
 /*=======go to top==========*/
 .go-to-top{
 	display: none;
-}
-
-
-#go-to-top i{
 	position: fixed;
 	right: 20px;
 	bottom: 70px;
+	z-index: 10003;
+	width: 3rem;
+	height: 3rem;
+	border: 1px solid #d4d2d2;
+	border-radius: 100%;
+}
+
+.go-to-top i{
 	font-size: 40px;
 	color: #f27922;
-	padding: 5px;
-	border: 1px solid #d4d2d2;
-	border-radius: 30%;
+	
 }
-#go-to-top i:hover{
+.go-to-top i:hover{
 	color: black;
 }
 /*====end go to top=========*/
@@ -1086,12 +1087,9 @@ nav ul li a:hover{
     }
 
 }
-.menu-1200{
-	width: 1200px;
-	padding-bottom: 0.5rem;
-}
+
 .menu-top-conten-element{
-	display: flex;
+	border-right: 1px solid #ffb84d;
 }
 .menu-top-content-text1{
 	font-weight: bold;
@@ -1195,14 +1193,146 @@ nav ul li a:hover{
 	z-index: 10;
 }
 
-@media only screen and (max-width: 46.1875em) {
+#nav-repon{
+	display: none;
+}
+header{
+	width: 100%;
+}
+.nav_repon{
+	position: fixed;
+	z-index: 10001;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 50%;
+	max-width: 100%;
+	background: #ed68c1;
+	transform: translateX(-100%);
+	opacity: 0;
+	transition: transform linear 0.1s, opacity linear 0.1s;
+}
+.navbar-mobile-nav{
+	margin-top: 24px;
+	list-style: none;
+}
+.nav-mobile-link{
+	text-decoration: none;
+	color: white;
+	display: block;
+	padding: 8px 0px;
+	font-size: 1.4rem;
+	border-bottom: 1px solid white; 
+}
+.nav-repon-top{
+	min-height: 100px;
+	position: relative;
+	border-bottom: 1px solid white;
+}
+.nav-repon-top img{
+	margin: 10px;
+
+}
+.nav_repon-close{
+	color: #666;
+	font-size: 3rem;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
+
+.over__lay{
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 10000;
+	display: none;
+	animation: fadeIn linear 0.3s;
+}
+
+.nav_input:checked ~ .over__lay{
+	display: block;
+}
+
+.nav_input:checked ~ .nav_repon{
+	transform: translateX(0%);
+	opacity: 1;
+}
+
+@keyframes fadeIn{
+	from {
+		opacity 0;
+	}
+	to {
+		opacity 1;
+	}
+}
+.search-top{
+	font-weight: bold;
+}
+.search-top label{
+	margin-left: 10rem;
+}
+.search-top select{
+	margin-left: 2rem;
+}
+.menu-banner-repon img{
+	width: 100%;
+}
+.news-col{
+	border: 1px solid #f27922;
+}
+@media only screen and (max-width: 63.9375em) { /* not pc */
+	#nav-non-repon{
+		display: none;
+	}
+	.header-topp{
+		display: none;
+	}
+	#nav-repon{
+		display: block;
+	}
+	
+	.menu-top-conten-element{
+		margin-top: 10px;
+	}
+	.menu-banner-repon{
+		display: block;
+	}
+	.body-top-mid{
+		display: none;
+	}
+	.body-top-left{
+		display: none;
+	}
+	.body-main-banner{
+		display: none;
+	}
+	.map{
+		display: none;
+	}
+	.pro-right{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 46.1875em) { /* phone */
 	
 }
 
-@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
-
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) { /* ipad */
+	#search-cart{
+		display: none;
+	}
+	.pro-left{
+		margin-left: 5rem;
+	}
+	
 }
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 64em) { /* laptop */
 	
 }

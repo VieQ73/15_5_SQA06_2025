@@ -6,15 +6,11 @@ pageEncoding="UTF-8"%>
 			<aside class="sidebar-left">
 				<nav class="navbar navbar-inverse">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".collapse" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<h1><a class="navbar-brand" href="${pageContext.request.contextPath}/"><span class="fa fa-area-chart"></span>Imua.com.vn<span class="dashboard_text">Design dashboard</span></a></h1>
+							<a class="navbar-brand" href="${pageContext.request.contextPath}/">
+								<img src="${pageContext.request.contextPath}/images/logo_beauty.jpg" width="100%">
+							</a>
 					</div>
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-top: 3rem;">
 						<ul class="sidebar-menu">
 							<li>
 								<a href="${pageContext.request.contextPath}/admin">

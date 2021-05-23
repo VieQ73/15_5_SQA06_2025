@@ -44,8 +44,13 @@ public class SearchController extends BaseController{
 	@RequestMapping(value = { "/search/desc/{keyword}" })
 	public String searchT(ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response, @PathVariable("keyword") String keyword) throws Exception {
-        
-		List<Product> products = productService.listAllDesc(keyword);
+		List<Product> products = new ArrayList<>();
+		if(keyword != "") {
+        	products = productService.listAllDesc(keyword);
+        }
+        else {
+        	products = productService.search(null);
+        }
         List<ProductCustom> productCustom = new ArrayList<ProductCustom>();
 		for (Product item : products) {
 			ProductCustom p = new ProductCustom();
@@ -64,7 +69,13 @@ public class SearchController extends BaseController{
 	public String searchG(ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response, @PathVariable("keyword") String keyword) throws Exception {
         
-		List<Product> products = productService.listAllAsc(keyword);
+		List<Product> products = new ArrayList<>();
+		if(keyword != "") {
+        	products = productService.listAllDesc(keyword);
+        }
+        else {
+        	products = productService.search(null);
+        }
         List<ProductCustom> productCustom = new ArrayList<ProductCustom>();
 		for (Product item : products) {
 			ProductCustom p = new ProductCustom();

@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reponsive.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/all.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/grid.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/font-awesome.min.css">

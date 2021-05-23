@@ -77,8 +77,8 @@
 			}
 </style>
 <div class="banner">
-	<div class="banner-main">
-		<div class="container">
+	<div class="banner-main ">
+		<div class="container ">
 			<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
 			  <div class="carousel-inner">
 			    <div class="carousel-item active">
@@ -93,6 +93,10 @@
 			      <img class="d-block w-100" src="${pageContext.request.contextPath}/images/bg21.jpg"
 			        alt="Third slide">
 			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="${pageContext.request.contextPath}/images/mua-xuan-2020-0.jpg"
+			        alt="Third slide">
+			    </div>
 			  </div>
 			  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
 			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -105,19 +109,81 @@
 			</div>
 		</div>
 	</div>
-	<div class="menu-top-content" >
-		<div class="menu-1200 row">
-			<div class="col-xl-2 col-md-3 col-sm-3 menu-top-conten-element" style="border-right: 1px solid #ffb84d">
-				<div class="icon">
-					<img
-						src="${pageContext.request.contextPath}/images/ho-tro-247--1.jpg">
-				</div>
-				<div class="menu-top-content-text">
-					<div class="menu-top-content-text1">HỖ TRỢ 24/7</div>
-					<div class="menu-top-content-text2">0911 403 114</div>
+	<div class="menu-top-content grid1 wide1 container" >
+		<div class="row1">
+			<div class="col1 l-2 m1-4 c-6 grid1 wide1 container menu-top-conten-element">
+				<div class="row1">
+					<div class="col1 l-3">
+						<img
+							src="${pageContext.request.contextPath}/images/ho-tro-247--1.jpg">
+					</div>
+					<div class="col1 l-9">
+						<div class="menu-top-content-text1">HỖ TRỢ 24/7</div>
+						<div class="menu-top-content-text2">0911 403 114</div>
+					</div>
 				</div>
 			</div>
-			<div class="col-xl-2 col-md-3 col-sm-3 menu-top-conten-element" style="border-right: 1px solid #ffb84d">
+			<div class="col1 l-2 m1-4 c-6 grid1 wide1 container menu-top-conten-element">
+				<div class="row1">
+					<div class="col1 l-3">
+						<img
+							src="${pageContext.request.contextPath}/images/thong-tin--1.jpg">
+					</div>
+					<div class="col1 l-9">
+						<div class="menu-top-content-text1">THÔNG TIN</div>
+						<div class="menu-top-content-text2">Bảo mật</div>
+					</div>
+				</div>
+			</div>
+			<div class="col1 l-2 m1-4 c-6 grid1 wide1 container menu-top-conten-element">
+				<div class="row1">
+					<div class="col1 l-3">
+						<img
+							src="${pageContext.request.contextPath}/images/qua-tang--1.jpg">
+					</div>
+					<div class="col1 l-9">
+						<div class="menu-top-content-text1">QUÀ TẶNG</div>
+						<div class="menu-top-content-text2">Mua là có</div>
+					</div>
+				</div>
+			</div>
+			<div class="col1 l-2 m1-4 c-6 grid1 wide1 container menu-top-conten-element">
+				<div class="row1">
+					<div class="col1 l-3">
+						<img
+							src="${pageContext.request.contextPath}/images/hoan-tra-tien--1.jpg">
+					</div>
+					<div class="col1 l-9">
+						<div class="menu-top-content-text1">HOÀN TRẢ TIỀN</div>
+						<div class="menu-top-content-text2">Trong 7 ngày</div>
+					</div>
+				</div>
+			</div>
+			<div class="col1 l-2 m1-4 c-6 grid1 wide1 container menu-top-conten-element">
+				<div class="row1">
+					<div class="col1 l-3">
+						<img
+							src="${pageContext.request.contextPath}/images/thanh-toan--1.jpg">
+					</div>
+					<div class="col1 l-9">
+						<div class="menu-top-content-text1">THANH TOÁN</div>
+						<div class="menu-top-content-text2">Khi nhận hàng</div>
+					</div>
+				</div>
+			</div>
+			<div class="col1 l-2 m1-4 c-6 grid1 wide1 container menu-top-conten-element">
+				<div class="row1">
+					<div class="col1 l-3">
+						<img
+							src="${pageContext.request.contextPath}/images/giao-hang--1.jpg">
+					</div>
+					<div class="col1 l-9">
+						<div class="menu-top-content-text1">GIAO HÀNG</div>
+						<div class="menu-top-content-text2">Tận nơi</div>
+					</div>
+				</div>
+			</div>
+			<%-- <div class="col1 l-2 m1-4 c-6 menu-top-conten-element">
 				<div class="icon">
 					<img
 						src="${pageContext.request.contextPath}/images/thong-tin--1.jpg">
@@ -129,7 +195,7 @@
 						</div>
 				</div>
 			</div>
-			<div class="col-xl-2 col-md-3 col-sm-3 menu-top-conten-element" style="border-right: 1px solid #ffb84d">
+			<div class="col1 l-2 m1-4 c-6 menu-top-conten-element">
 				<div class="icon">
 					<img
 						src="${pageContext.request.contextPath}/images/qua-tang--1.jpg">
@@ -139,7 +205,7 @@
 					<div class="menu-top-content-text2">Mua là có quà</div>
 				</div>
 			</div>
-			<div class="col-xl-2 col-md-3 col-sm-3 menu-top-conten-element" style="border-right: 1px solid #ffb84d">
+			<div class="col1 l-2 m1-4 c-6 menu-top-conten-element">
 				<div class="icon">
 					<img
 						src="${pageContext.request.contextPath}/images/hoan-tra-tien--1.jpg">
@@ -149,7 +215,7 @@
 					<div class="menu-top-content-text2">Trong 7 ngày</div>
 				</div>
 			</div>
-			<div class="col-xl-2 col-md-3 col-sm-3 menu-top-conten-element" style="border-right: 1px solid #ffb84d">
+			<div class="col1 l-2 m1-4 c-6 menu-top-conten-element">
 				<div class="icon">
 					<img
 						src="${pageContext.request.contextPath}/images/thanh-toan--1.jpg">
@@ -159,7 +225,7 @@
 					<div class="menu-top-content-text2">Khi nhận hàng</div>
 				</div>
 			</div>
-			<div class="col-xl-2 col-md-3 col-sm-3 menu-top-conten-element">
+			<div class="col1 l-2 m1-4 c-6 menu-top-conten-element">
 				<div class="icon">
 					<img
 						src="${pageContext.request.contextPath}/images/giao-hang--1.jpg">
@@ -168,7 +234,7 @@
 					<div class="menu-top-content-text1">GIAO HÀNG</div>
 					<div class="menu-top-content-text2">Tận nơi toàn quốc</div>
 				</div>
-			</div>
-			</div>
+			</div> --%>
+		</div>
 	</div>
 </div>

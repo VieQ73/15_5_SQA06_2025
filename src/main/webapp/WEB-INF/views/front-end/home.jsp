@@ -53,24 +53,22 @@
 </head>
 <body>
 
-	<div class="go-to-top">
-		<button id="go-to-top">
-			<i class="fas fa-angle-up"></i>
-		</button>
+	<div class="go-to-top btn btn-secondary" id="go-to-top" >
+		<i class="fas fa-angle-up"></i>
 	</div>
 	<jsp:include page="/WEB-INF/views/front-end/common/header.jsp"></jsp:include>
-	<div class="content">
-			<jsp:include page="/WEB-INF/views/front-end/common/banner.jsp"></jsp:include>
-		</div>
+	<div class="content grid1 wide1">
+		<jsp:include page="/WEB-INF/views/front-end/common/banner.jsp"></jsp:include>
+	</div>
 	<div class="bg">
 		<!-- end banner -->
-		<div class="spbc">
+		<div class="spbc grid1 wide1">
 			<div class="spbc-top">SẢN PHẨM NỔI BẬT</div>
-			<div class="spbc-main">
+			<div class="spbc-main row1">
 			
 				<c:forEach var = "productSelling" items = "${productSelling }">
 					 
-	                  <div class="spbc-body">
+	                  <div class="spbc-body l-2 m1-4 c-6">
 						<c:if test="${productSelling.discount != 0 }">
 							<p class="sale">- ${productSelling.discount}%</p>
 						</c:if>
@@ -121,7 +119,7 @@
 		</div>
 		<!-- end spbc -->
 		
-		<div class="body">
+		<div class="body grid1 wide1">
 			<div class="body-top">
 				<div class="body-top-right">
 					<a href="#">MỸ PHẨM TRANG ĐIỂM</a>
@@ -134,16 +132,19 @@
 					<a href="#" class="btn">Xem thêm</a>
 				</div>
 			</div>
-			<div class="body-main row">
-				<div class="body-main-banner col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+			<div class="menu-banner-repon">
+				<img src="${pageContext.request.contextPath}/images/my-pham-trang-diem-menu-banner.jpg">
+			</div>
+			<div class="body-main row1">
+				<div class="body-main-banner">
 					<a href="#"> 
 						<img src="${pageContext.request.contextPath}/images/my-pham-trang-diem-menu-left.jpg">
 					</a>
 				</div>
-				<div class=" col-lg-9 col-md-9 col-sm-12 col-xs-12 ">
-					<div class="row">
+				<div class="col1 l-9 m1-12 c-12 grid1 wide1">
+					<div class="row1">
 						<c:forEach var = "productCustom1" items = "${productCustom1 }">				
-							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+							<div class="col1 l-3 m1-4 c-6">
 								<div class="card h-100 product-home">
 									<c:if test="${productCustom1.discount!= 0 }">
 										<p class="sale">- ${productCustom1.discount}%</p>
@@ -200,30 +201,33 @@
 			</div>
 		</div>
 		
-		<div class="body">
+		<div class="body grid1 wide1">
 			<div class="body-top">
 				<div class="body-top-right">
 					<a href="#">HỖ TRỢ ĐIỀU TRỊ</a>
 				</div>
 				<div class="body-top-mid">
-					<a href="#" class="btn">Hỗ Trợ Điều Trị Mụn</a> <a href="#"
-						class="btn">Giảm Cân Tan Mỡ Bụng</a> <a href="#" class="btn">Hỗ
-						Trợ Điều Trị Rụng Tóc</a>
+					<a href="#" class="btn">Hỗ Trợ Điều Trị Mụn</a>
+					<a href="#" class="btn">Giảm Cân Tan Mỡ Bụng</a>
+					<a href="#" class="btn">Hỗ Trợ Điều Trị Rụng Tóc</a>
 				</div>
 				<div class="body-top-left">
 					<a href="#" class="btn">Xem thêm</a>
 				</div>
 			</div>
-			<div class="body-main row">
+			<div class="menu-banner-repon">
+				<img src="${pageContext.request.contextPath}/images/ho-tro-dieu-tri-menu-banner.jpg">
+			</div>
+			<div class="body-main row1">
 				<div class="body-main-banner">
-					<a href="#"> <img
-						src="${pageContext.request.contextPath}/images/ho-tro-dieu-tri-menu-left.jpg">
+					<a href="#">
+					<img src="${pageContext.request.contextPath}/images/ho-tro-dieu-tri-menu-left.jpg">
 					</a>
 				</div>
-				<div class="body-main-product col-xl-9">
-					<div class="row">
+				<div class="col1 l-9 m1-12 c-12 grid1 wide1">
+					<div class="row1">
 						<c:forEach var = "productCustom2" items = "${productCustom2 }">				
-							<div class="col-xl-3">
+							<div class="col1 l-3 m1-4 c-6">
 								<div class="card h-100 product-home">
 									<c:if test="${productCustom2.discount != 0 }">
 										<p class="sale">- ${productCustom2.discount}%</p>
@@ -277,7 +281,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="body">
+		<div class="body grid1 wide1">
 			<div class="body-top">
 				<div class="body-top-right">
 					<a href="#">CHĂM SÓC DA MẶT</a>
@@ -291,16 +295,19 @@
 					<a href="#" class="btn">Xem thêm</a>
 				</div>
 			</div>
-			<div class="body-main row">
+			<div class="menu-banner-repon">
+				<img src="${pageContext.request.contextPath}/images/cham-soc-da-mat-menu-banner.jpg">
+			</div>
+			<div class="body-main row1">
 				<div class="body-main-banner">
 					<a href="#"> <img
 						src="${pageContext.request.contextPath}/images/cham-soc-da-mat-menu-left.jpg">
 					</a>
 				</div>
-				<div class="body-main-product col-xl-9">
-					<div class="row">
+				<div class="col1 l-9 m1-12 c-12 grid1 wide1">
+					<div class="row1">
 						<c:forEach var = "productCustom3" items = "${productCustom3 }">				
-							<div class="col-xl-3">
+							<div class="col1 l-3 m1-4 c-6">
 								<div class="card h-100 product-home">
 								<c:if test="${productCustom3.discount != 0 }">
 									<p class="sale">- ${productCustom3.discount}%</p>
@@ -354,7 +361,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="body">
+		<div class="body grid1 wide1">
 			<div class="body-top">
 				<div class="body-top-right">
 					<a href="#">CHĂM SÓC TOÀN THÂN</a>
@@ -368,16 +375,19 @@
 					<a href="#" class="btn">Xem thêm</a>
 				</div>
 			</div>
-			<div class="body-main">
+			<div class="menu-banner-repon">
+				<img src="${pageContext.request.contextPath}/images/cham-soc-toan-than-menu-banner.jpg">
+			</div>
+			<div class="body-main row1">
 				<div class="body-main-banner">
 					<a href="#"> <img
 						src="${pageContext.request.contextPath}/images/cham-soc-toan-than-menu-left.jpg">
 					</a>
 				</div>
-				<div class="body-main-product col-xl-9">
-					<div class="row">
+				<div class="col1 l-9 m1-12 c-12 grid1 wide1">
+					<div class="row1">
 						<c:forEach var = "productCustom4" items = "${productCustom4 }">				
-							<div class="col-xl-3">
+							<div class="col1 l-3 m1-4 c-6">
 								<div class="card h-100 product-home">
 									<c:if test="${productCustom4.discount != 0 }">
 										<p class="sale">- ${productCustom4.discount}%</p>
@@ -432,34 +442,32 @@
 			</div>
 		</div>
 		<!-- end body product -->
-		<div class="banner-up">
+		<div class="banner-up grid1 wide1">
 			<img src="images/2new.jpg">
 		</div>
-		<div class="news">
+		<div class="news grid1 wide1">
 			<div class="news-top">TIN NỔI BẬT</div>
-			<div class="news-main">
-				<ul>
-					<c:forEach items="${news}" var="news">
-						<li >
-							<div class="news-img">
-								<a href="${pageContext.request.contextPath}/newsDetail/${news.id }">
-									<c:choose>
-										<c:when test = "${empty news.newsImages }">
-											<img src="http://placehold.it/700x400" alt="">
-										</c:when>
-										<c:otherwise>
-											<img src="${pageContext.request.contextPath}/file/upload/${news.newsImages.get(0).path }" alt="">
-										</c:otherwise>
-									</c:choose>
-								</a>
-							</div>
-							<div class="news-body" style="max-height: 10rem; overflow: hidden;">
-								<a href="${pageContext.request.contextPath}/newsDetail/${news.id }">${news.title } </a>
-								<p>${news.short_news }</p>
-							</div>
-						</li>
-					</c:forEach>
-				</ul>
+			<div class="news-main row1">
+				<c:forEach items="${news}" var="news">
+					<div class=" col1 l-3 m1-6 c-12 news-col">
+						<div class="news-img">
+							<a href="${pageContext.request.contextPath}/newsDetail/${news.id }">
+								<c:choose>
+									<c:when test = "${empty news.newsImages }">
+										<img src="http://placehold.it/700x400" alt="">
+									</c:when>
+									<c:otherwise>
+										<img src="${pageContext.request.contextPath}/file/upload/${news.newsImages.get(0).path }" alt="">
+									</c:otherwise>
+								</c:choose>
+							</a>
+						</div>
+						<div class="news-body" style="max-height: 10rem; overflow: hidden;">
+							<a href="${pageContext.request.contextPath}/newsDetail/${news.id }">${news.title } </a>
+							<p>${news.short_news }</p>
+						</div>
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 		<!-- end content -->

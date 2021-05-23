@@ -22,7 +22,9 @@
 </head>
 <body>
 <div class="wapper">
-	<div class="go-to-top"> <button id="go-to-top"><i class="fas fa-chevron-up"></i></button></div>
+	<div class="go-to-top btn btn-secondary" id="go-to-top" >
+		<i class="fas fa-angle-up"></i>
+	</div>
 	<jsp:include page="/WEB-INF/views/front-end/common/header.jsp"></jsp:include>
 		<div class="bg">
 			<div class="content">
