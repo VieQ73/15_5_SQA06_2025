@@ -52,8 +52,9 @@
 				<jsp:include page="/WEB-INF/views/front-end/common/banner.jsp"></jsp:include>
 				</div> 
 				<!-- end banner -->
-				<div class="ctgr-content">
-					<div class="ctgr-content-left col-xl-3">
+				<div class="grid1 wide1">
+				<div class="ctgr-content row1">
+					<div class="ctgr-content-left col1 l-3">
 						<div class="category">
 							<div class="category-top">DANH MỤC SẢN PHẨM</div>
 							<ul class="drop-menu">
@@ -105,7 +106,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="ctgr-content-right col-xl-9">
+					<div class="ctgr-content-right col1 l-9">
 						<div class="ctgr-product">
 							<div class="ctgr-product-top">
 								<a href="${pageContext.request.contextPath}/category/${category.seo}"><i class="fas fa-th"></i>${category.name}
@@ -181,6 +182,7 @@
 						
 					</div>
 				</div>
+			</div>
 			</div>
 				<!-- end content -->
 			<jsp:include page="/WEB-INF/views/front-end/common/footer.jsp"></jsp:include>

@@ -83,30 +83,32 @@
 					<a href="${pageContext.request.contextPath}/">
 					<img src="${pageContext.request.contextPath}/images/mua-la-co-qua-ok.jpg"></a>
 				</div>
+				
 			</div>
-			
+			<div class="logo_mb contaimer">
+				<a href="${pageContext.request.contextPath}/">
+				<img src="${pageContext.request.contextPath}/images/logo_mb.jpg"></a>
+			</div>
 			<div class="nav1">
-				<nav class="navbar navbar-expand-sm navbar-dark">
-					<ul class="navbar-nav">
-						<li>
-							<label for="nav-mobile-input" class="btn btn-secondary ">
+				<nav class="navbar navbar-expand-sm navbar-expand navbar-dark">
+					<ul class="navbar-nav row1 container">
+						<li class="col1 m1-2 c-2 btn-mb">
+							<label for="nav-mobile-input" class="btn btn-secondary">
 								<i class="fas fa-bars"></i>
 							</label>
 						</li>
-						<li>
+						<li class="col1 m1-5 c-8">
 							<div class="search-cart">
 								<form action="${pageContext.request.contextPath}/search" method="post" id="form-search" style="display: flex;">
-									<input type="text" class="form-control" style="width: 450px;"
+									<input type="text" class="form-control"
 										placeholder="tìm kiếm sản phẩm..." name="keyword" id="keyword">
-									<button style="margin-left: 10px; width: 60px; margin-top: 2px; height: 39px; color: #ed68c1; font-size: 20px; border: 1px solid #bbbbbb; background: #fff; border-radius: 5px;"
-										type="submit" id="btnClear" onclick="clearSearch()">
+									<button type="submit" id="btnClear" onclick="clearSearch()">
 										<i class="fas fa-search"></i>
 									</button>
 								</form>
 							</div>
 						</li>
-						
-						<li>
+						<li class="col1 m1-2 c-2">
 							<a class="btn btn-success" href="${pageContext.request.contextPath}/cart"><i class="fas fa-shopping-cart"></i><span id="so_luong_sp" class="badge"></span></a>
 						</li>
 					</ul>
@@ -124,7 +126,7 @@
 					</div>
 					<ul class="navbar-mobile-nav">
 						<li >
-							<div class="dropdown dropright btn btn-warning" style="color: white; font-size: 1.4rem; border-bottom: 1px solid white; font-weight: bold;">
+							<div class="dropdown dropright btn btn-warning btndmsp_repon">
 							    <div class=" dropdown-toggle" data-toggle="dropdown">
 							      DANH MỤC SẢN PHẨM
 							    </div>

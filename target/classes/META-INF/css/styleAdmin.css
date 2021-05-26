@@ -110,6 +110,7 @@ button#showLeftPush {
     height: 40px;
     width: 40px;
     margin-top: 11px;
+    margin-left: 1rem;
 }
 button#showLeftPush:hover {
     color: #eee;

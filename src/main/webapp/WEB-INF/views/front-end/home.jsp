@@ -442,14 +442,14 @@
 			</div>
 		</div>
 		<!-- end body product -->
-		<div class="banner-up grid1 wide1">
+		<div class="banner-up grid1 wide1" style="margin-top: 40px;">
 			<img src="images/2new.jpg">
 		</div>
-		<div class="news grid1 wide1">
+		<div class="news grid1 wide1" style="margin-top: 40px;">
 			<div class="news-top">TIN NỔI BẬT</div>
-			<div class="news-main row1">
+			<div class="news-main row1 ">
 				<c:forEach items="${news}" var="news">
-					<div class=" col1 l-3 m1-6 c-12 news-col">
+					<div class=" col1 l-3 m1-6 c-12 news-col container">
 						<div class="news-img">
 							<a href="${pageContext.request.contextPath}/newsDetail/${news.id }">
 								<c:choose>

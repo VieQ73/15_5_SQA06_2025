@@ -69,8 +69,8 @@ pageEncoding="UTF-8"%>
 									<i class="fa fa-angle-left pull-right"></i>
 								</a>
 								<ul class="treeview-menu">
-				                  <li><a href="${pageContext.request.contextPath}/admin/listSale"><i class="fa fa-angle-right"></i> Danh sách đợt khuyến mại</a></li>
-				                  <li><a href="${pageContext.request.contextPath}/admin/addSale"><i class="fa fa-angle-right"></i> Thêm khuyến mại</a></li>
+				                  <li><a href="${pageContext.request.contextPath}/admin/listSale"><i class="fa fa-angle-right"></i> Danh sách đợt khuyến mãi</a></li>
+				                  <li><a href="${pageContext.request.contextPath}/admin/addSale"><i class="fa fa-angle-right"></i> Thêm khuyến mãi</a></li>
 				                </ul>
 							</li>
 							<li class="treeview">

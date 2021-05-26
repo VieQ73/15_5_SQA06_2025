@@ -38,17 +38,17 @@
 		<!-- main content start-->
 		<div class="content-main">
 			${ messsage }
-			<div class="row">
-				<div class="col-md-12">
+			<div class="">
+				<div class="">
 					<!-- DATA TABLE -->
 					<h3 class="title-5 m-b-35">Danh sách quà tặng</h3>
-					<div class="table-responsive table-responsive-data2" style="margin-left: 5rem;">
+					<div class="table-responsive table-responsive-data2" style="margin-left: 1rem;">
 						<table class="table table-hover table-data2 display " style="font-size: 20px; margin-left: 0rem;" id="">
 							<thead >
 								<tr>
 									<th>#</th>
 									<th>Bản tin</th>
-									<th style="witdh:90px; min-height:100px;">Hình ảnh</th>
+									<th style="min-witdh:100px; min-height:100px;">Hình ảnh</th>
 									<th>Vắn tắt</th>
 									<th>Trạng thái hiển thị</th>
 									<th></th>

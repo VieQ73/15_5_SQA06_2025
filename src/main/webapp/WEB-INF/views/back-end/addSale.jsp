@@ -95,7 +95,7 @@
   			formGroupSelector: '.form-group',
   			errorSelector: '.form-message',
   			rules:[
-  				Validator.isRequired('#sale_name', "Tên đợt khuyến mại không được để trống!"),
+  				Validator.isRequired('#sale_name', "Tên đợt khuyến mãi không được để trống!"),
   			],
   			/* onSubmit: function (data) {
   				// call API

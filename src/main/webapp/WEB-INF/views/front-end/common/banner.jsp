@@ -154,7 +154,7 @@
 							src="${pageContext.request.contextPath}/images/hoan-tra-tien--1.jpg">
 					</div>
 					<div class="col1 l-9">
-						<div class="menu-top-content-text1">HOÀN TRẢ TIỀN</div>
+						<div class="menu-top-content-text1">HOÀN TIỀN</div>
 						<div class="menu-top-content-text2">Trong 7 ngày</div>
 					</div>
 				</div>

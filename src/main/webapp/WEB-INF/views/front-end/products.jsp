@@ -49,8 +49,8 @@
 		<jsp:include page="/WEB-INF/views/front-end/common/header.jsp"></jsp:include>
 		<div class="bg">
 		
-			<div class="pro-content">
-				<div class="pro-left">
+			<div class="pro-content row1 container">
+				<div class="pro-left col1 l-9 m1-12">
 					<div class="pro-left-top">
 						<div class="pro-img">
 							<div id="big-img">
@@ -85,7 +85,7 @@
 									</c:when>
 									<c:otherwise>
 										
-										<p style="margin-left: 10px; text-decoration: line-through; font-size: 18px; color: #424242; margin-right: 20px;" >
+										<p class="price-num-goc">
 											<fmt:formatNumber type="number" maxIntegerDigits="13"
 												value="${productCustom.product.price }" /> đ
 										</p>
@@ -158,7 +158,7 @@
 						</div>
 					</div>
 			</div>
-			<div class="pro-right">
+			<div class="pro-right col1 l-3">
 				<div id="khung">
 					<div class="pro-right-top">
 						<p class="pro-right-top1">CHÍNH SÁCH BÁN HÀNG</p>

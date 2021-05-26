@@ -40,7 +40,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<!-- DATA TABLE -->
-					<h3 class="title-5 m-b-35">Danh sách khuyến mại</h3>
+					<h3 class="title-5 m-b-35">Danh sách khuyến mãi</h3>
 
 					<div class="table-responsive table-responsive-data2">
 						
@@ -48,7 +48,7 @@
 							<thead>
 								<tr>
 									<th>#</th>
-									<th>Tên đợt khuyến mại</th>
+									<th>Tên đợt khuyến mãi</th>
 									<th>Ngày bắt đầu</th>
 									<th>Ngày kết thúc</th>
 									<th>Trạng thái</th>
