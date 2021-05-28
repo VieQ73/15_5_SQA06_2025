@@ -183,7 +183,7 @@
   			errorSelector: '.form-message',
   			rules:[
   				Validator.isRequired('#phone', "Số điện thoại không được để trống!"),
-  				/* Validator.isPhoneNumber('#phone', "Số điện thoại không hợp lệ!"), */
+  				Validator.isPhoneNumber('#phone', "Số điện thoại không hợp lệ!"),
   				Validator.isRequired('#name', "Họ tên không được để trống!"),
   				Validator.isRequired('#address', "Địa chỉ không được để trống!"),
   			],

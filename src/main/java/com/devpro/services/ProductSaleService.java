@@ -103,7 +103,7 @@ public class ProductSaleService {
 		Integer discount = 0;
 		List<ProductSale> ps = getProductSale();
 		for (ProductSale item : ps) {
-			if(item.getProduct().getId() == id) {
+			if(item.getProduct().getId() == id && item.getActive() == true) {
 				discount = item.getDiscount();
 				return discount;
 			}

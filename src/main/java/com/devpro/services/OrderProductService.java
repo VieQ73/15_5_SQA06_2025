@@ -44,7 +44,7 @@ public class OrderProductService {
 	}
 	
 	public List<Order> searchCustomerPhone(String phone, int status) {
-		String sql = "select * from tbl_order where status = "+status+" and created_by=(select id from tbl_customer where phone = '"+phone+"') order by created_date desc";
+		String sql = "select * from tbl_order where status = "+status+" and created_by=(select id from tbl_customer where phone = '"+phone+"') order by updated_date desc";
 		Query query = entityManager.createNativeQuery(sql, Order.class);
 		return query.getResultList();
 	}

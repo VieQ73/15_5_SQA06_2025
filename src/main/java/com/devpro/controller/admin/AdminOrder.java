@@ -58,6 +58,24 @@ public class AdminOrder {
 		model.addAttribute("orderproducts", listOPC);
 		return "back-end/orderProduct";
 	}
+	@RequestMapping(value = { "/admin/confirm_saleProduct/{id}/{s}" }, method = RequestMethod.GET)
+	public String confirm_order(@PathVariable("id") Integer id,@PathVariable("s") String s, final ModelMap model, final HttpServletRequest request,
+			final HttpServletResponse response) throws Exception {
+		
+		Order saleOrderInDP = orderRepo.getOne(id);
+		saleOrderInDP.setStatus(3);
+		List<OrderProducts> sop = orderService.searchProduct(id);
+		for (OrderProducts item : sop) {
+			item.getProduct().setAmount(item.getQuality()+item.getProduct().getAmount());
+		}
+		saleOrderInDP.setNote_by_admin(s);
+		Date d = Calendar.getInstance().getTime();
+		saleOrderInDP.setUpdated_date(d);
+		orderRepo.save(saleOrderInDP);
+		model.addAttribute("order", orderService.searchAdmin(null));
+
+		return "back-end/order";
+	}
 	@RequestMapping(value = { "/admin/confirm_saleProduct/{id}" }, method = RequestMethod.GET)
 	public String confirm_sale(@PathVariable("id") Integer id, final ModelMap model, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {

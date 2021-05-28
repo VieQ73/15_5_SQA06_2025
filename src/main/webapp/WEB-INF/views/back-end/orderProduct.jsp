@@ -145,8 +145,29 @@
 									<td><button class="btn btn-success" id="cmd">Xuất hóa đơn</button></td>
 									<td><button class="btn btn-primary" id="print" onclick="print(${order.id})">In hóa đơn</button></td>
 									<td><c:if test="${order.status == 0}">
-											<a style="margin-right: 30px;" class="btn btn-danger"
-											href="${pageContext.request.contextPath}/admin/confirm_saleProduct/${order.id}?status=3">Hủy</a>
+											
+										<button type="button" class="item btn btn-danger"  data-toggle="modal" data-target="#myModal${product.id}" >
+											 	Hủy
+											 </button>
+											<div class="modal fade" id="myModal${product.id}" role="dialog">
+											    <div class="modal-dialog">
+											      <!-- Modal content-->
+											      <div class="modal-content">
+											        <div class="modal-header">
+											          <button type="button" class="close" data-dismiss="modal">&times;</button>
+											          <h4 class="modal-title">Lý do hủy đơn hàng</h4>
+											        </div>
+											        <div class="modal-body">
+											          <input type="text" id="status_byAD" style="border: 1px solid black; width: 300px;">
+											        </div>
+											        <div class="modal-footer">
+											          <button type="button" class="btn btn-danger"" data-dismiss="modal" onclick="lydo(${order.id})">Đồng ý</button>
+											          <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+											          
+											        </div>
+											      </div>
+											    </div>
+											</div>
 											
 										</c:if></td>
 									<td>
@@ -301,7 +322,12 @@
 	            html2pdf(invoice).from(invoice).set(opt).save();
 	            
 	        })
-	};
+		};
+		
+		function lydo(id){
+			lydo = $('#status_byAD').val();
+			location.replace("${pageContext.request.contextPath}/admin/confirm_saleProduct/"+id+"/"+lydo);
+		}
 	
 	</script>
 	<script type="text/javascript">

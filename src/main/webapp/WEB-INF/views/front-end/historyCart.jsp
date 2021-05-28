@@ -112,7 +112,7 @@
 																	<div class="order-content__item__detail-content"
 																		style="display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; -webkit-box-align: start; align-items: flex-start; -webkit-box-flex: 1; flex-grow: 1; position: relative; min-width: 0px; overflow-wrap: break-word; pointer-events: none; margin-left: 1rem;">
 																		<div class="order-content__item__name"
-																			style="width: 694.875px; overflow: hidden; display: -webkit-box; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 2; margin-bottom: 0.3125rem; font-size: 25px; line-height: 2rem; max-height: 3rem;">
+																			style="width: 694.875px; display: -webkit-box; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 2; margin-bottom: 0.3125rem; font-size: 25px; line-height: 2rem; max-height: 3rem;">
 																			${historyCartDetail.product.title}
 																		</div>
 								
@@ -272,7 +272,7 @@
 																	<div class="order-content__item__detail-content"
 																		style="display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; -webkit-box-align: start; align-items: flex-start; -webkit-box-flex: 1; flex-grow: 1; position: relative; min-width: 0px; overflow-wrap: break-word; pointer-events: none; margin-left: 1rem;">
 																		<div class="order-content__item__name"
-																			style="width: 694.875px; overflow: hidden; display: -webkit-box; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 2; margin-bottom: 0.3125rem; font-size: 25px; line-height: 2rem; max-height: 3rem;">
+																			style="width: 694.875px; display: -webkit-box; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 2; margin-bottom: 0.3125rem; font-size: 25px; line-height: 2rem; max-height: 3rem;">
 																			${historyCartDetail.product.title}
 																		</div>
 								
@@ -317,6 +317,9 @@
 													<p class="purchase-text-info">
 														Ghi chú: ${historyCart.note_by_customer}
 													</p>
+													<p class="purchase-text-info" style="color: red;">
+														Cửa hàng: ${historyCart.note_by_admin}
+													</p>
 												</div>
 												<div class="purchase-card-buttons__total-payment col-4"
 													style="padding-top: 2.5rem; display: flex; -webkit-box-pack: end; justify-content: flex-end; -webkit-box-align: end; align-items: flex-end; margin-left: 65%;">
@@ -344,7 +347,7 @@
 													  <div class="modal-dialog" role="document">
 													    <div class="modal-content">
 													      <div class="modal-header">
-													        <h5 class="modal-title" id="exampleModalLabel">Xác nhận hủy đơn hàng</h5>
+													        <h5 class="modal-title" id="exampleModalLabel">Xác nhận nhận hàng</h5>
 													        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 													          <span aria-hidden="true">&times;</span>
 													        </button>
@@ -431,7 +434,7 @@
 																	<div class="order-content__item__detail-content"
 																		style="display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; -webkit-box-align: start; align-items: flex-start; -webkit-box-flex: 1; flex-grow: 1; position: relative; min-width: 0px; overflow-wrap: break-word; pointer-events: none; margin-left: 1rem;">
 																		<div class="order-content__item__name"
-																			style="width: 694.875px; overflow: hidden; display: -webkit-box; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 2; margin-bottom: 0.3125rem; font-size: 25px; line-height: 2rem; max-height: 3rem;">
+																			style="width: 694.875px; display: -webkit-box; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 2; margin-bottom: 0.3125rem; font-size: 25px; line-height: 3rem; max-height: 3rem;">
 																			${historyCartDetail.product.title}
 																		</div>
 								
@@ -475,6 +478,9 @@
 													</p>
 													<p class="purchase-text-info">
 														Ghi chú: ${historyCart.note_by_customer}
+													</p>
+													<p class="purchase-text-info" style="color: red;">
+														Cửa hàng: ${historyCart.note_by_admin}
 													</p>
 												</div>
 												<div class="purchase-card-buttons__total-payment col-4"
@@ -570,7 +576,7 @@
 																	<div class="order-content__item__detail-content"
 																		style="display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; flex-direction: column; -webkit-box-align: start; align-items: flex-start; -webkit-box-flex: 1; flex-grow: 1; position: relative; min-width: 0px; overflow-wrap: break-word; pointer-events: none; margin-left: 1rem;">
 																		<div class="order-content__item__name"
-																			style="width: 694.875px; overflow: hidden; display: -webkit-box; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 2; margin-bottom: 0.3125rem; font-size: 25px; line-height: 2rem; max-height: 3rem;">
+																			style="width: 694.875px; display: -webkit-box; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 2; margin-bottom: 0.3125rem; font-size: 25px; line-height: 2rem; max-height: 3rem;">
 																			${historyCartDetail.product.title}
 																		</div>
 								
@@ -614,6 +620,9 @@
 													</p>
 													<p class="purchase-text-info">
 														Ghi chú: ${historyCart.note_by_customer}
+													</p>
+													<p class="purchase-text-info" style="color: red;">
+														Cửa hàng: ${historyCart.note_by_admin}
 													</p>
 												</div>
 												<div class="purchase-card-buttons__total-payment col-4"

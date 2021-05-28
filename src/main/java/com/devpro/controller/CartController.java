@@ -5,6 +5,7 @@ import java.security.Principal;
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -381,8 +382,15 @@ public class CartController extends BaseController{
 	public ResponseEntity<AjaxResponse> huy( final ModelMap model, @RequestBody Order saleOrder1, final HttpServletRequest request,
 			final HttpServletResponse response) throws Exception {
 		Order saleOrder = saleOrderRepo.findById(saleOrder1.getId()).get();
-		if(saleOrder.getStatus()==0)
+		if(saleOrder.getStatus()==0) {
 			saleOrder.setStatus(3);
+			for (OrderProducts item : saleOrder.getOrderProducts()) {
+				Product p = item.getProduct();
+				p.setAmount(p.getAmount()+item.getQuality());
+				productRepo.save(p);
+			}
+		}
+			
 		if(saleOrder.getStatus()==1)
 			saleOrder.setStatus(2);
 		saleOrderRepo.save(saleOrder);
