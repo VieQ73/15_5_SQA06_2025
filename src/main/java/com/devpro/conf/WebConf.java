@@ -39,6 +39,6 @@ public class WebConf implements WebMvcConfigurer {
 		registry.addResourceHandler("/vendor/**").addResourceLocations("classpath:/META-INF/vendor/");
 		registry.addResourceHandler("/summernote/**").addResourceLocations("classpath:/META-INF/summernote/");
 		
-		registry.addResourceHandler("file/upload/**").addResourceLocations("file:C:\\Users\\PV\\OneDrive\\Máy tính\\DoAnTotNghiepHaUI\\upload\\");
+		registry.addResourceHandler("file/upload/**").addResourceLocations("file:/C:/Users/ASUS/IdeaProjects/DoAnTotNghiepHaUI/upload/");
 	}
 }

@@ -24,7 +24,7 @@ public class MySQLConf {
         dataSourceConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSourceConfig.setJdbcUrl("jdbc:mysql://127.0.0.1:3306/shop_beauty?useUnicode=yes&characterEncoding=UTF-8");
         dataSourceConfig.setUsername("root");
-        dataSourceConfig.setPassword("hvinh069a");
+        dataSourceConfig.setPassword("1234");
         return new HikariDataSource(dataSourceConfig);
     }
 	

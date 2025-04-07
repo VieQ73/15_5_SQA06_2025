@@ -53,7 +53,7 @@ public class GiftService {
 			if(!isEmptyUploadFile(giftImages)) { 
 				List<Images> oldGiftImages = giftInDb.getGiftImages();
 				for(Images _images : oldGiftImages) {
-					new File("C:\\Users\\PV\\OneDrive\\Máy tính\\DoAnTotNghiepHaUI\\upload\\" + _images.getPath()).delete();
+					new File("C:\\Users\\ASUS\\IdeaProjects\\DoAnTotNghiepHaUI\\upload\\" + _images.getPath()).delete();
 				}
 				gift.removeGiftImages();
 				
@@ -67,7 +67,7 @@ public class GiftService {
 			for(MultipartFile giftImage : giftImages) {
 				
 				// lưu vật lí
-				giftImage.transferTo(new File("C:\\Users\\PV\\OneDrive\\Máy tính\\DoAnTotNghiepHaUI\\upload\\" + giftImage.getOriginalFilename()));
+				giftImage.transferTo(new File("C:\\Users\\ASUS\\IdeaProjects\\DoAnTotNghiepHaUI\\upload\\" + giftImage.getOriginalFilename()));
 				
 				Images _giftImages = new Images();
 				_giftImages.setPath(giftImage.getOriginalFilename());

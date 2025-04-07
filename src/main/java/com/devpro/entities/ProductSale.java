@@ -73,7 +73,4 @@ public class ProductSale {
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
-
-	
-	
 }
