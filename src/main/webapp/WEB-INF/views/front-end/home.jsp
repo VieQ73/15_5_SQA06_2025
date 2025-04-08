@@ -79,7 +79,7 @@
 										<img class="card-img-top" src="http://placehold.it/700x400" alt="">
 									</c:when>
 									<c:otherwise>
-										<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productSelling.product.productImages.get(0).path }" alt="">
+										<img class="card-img-top" src="${pageContext.request.contextPath}/images/upload/${productSelling.product.productImages.get(0).path }" alt="">
 									</c:otherwise>
 								</c:choose>
 							</a>
@@ -156,7 +156,7 @@
 												<img class="card-img-top" src="http://placehold.it/700x400" alt="">
 											</c:when>
 											<c:otherwise>
-												<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productCustom1.product.productImages.get(0).path }" alt="">
+												<img class="card-img-top" src="${pageContext.request.contextPath}/images/upload/${productCustom1.product.productImages.get(0).path }" alt="">
 											</c:otherwise>
 										</c:choose>
 										</a>
@@ -239,7 +239,7 @@
 												<img class="card-img-top" src="http://placehold.it/700x400" alt="">
 											</c:when>
 											<c:otherwise>
-												<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productCustom2.product.productImages.get(0).path }" alt="">
+												<img class="card-img-top" src="${pageContext.request.contextPath}/images/upload/${productCustom2.product.productImages.get(0).path }" alt="">
 											</c:otherwise>
 										</c:choose>
 										</a>
@@ -319,7 +319,7 @@
 												<img class="card-img-top" src="http://placehold.it/700x400" alt="">
 											</c:when>
 											<c:otherwise>
-												<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productCustom3.product.productImages.get(0).path }" alt="">
+												<img class="card-img-top" src="${pageContext.request.contextPath}/images/upload/${productCustom3.product.productImages.get(0).path }" alt="">
 											</c:otherwise>
 										</c:choose>
 										</a>
@@ -399,7 +399,7 @@
 												<img class="card-img-top" src="http://placehold.it/700x400" alt="">
 											</c:when>
 											<c:otherwise>
-												<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productCustom4.product.productImages.get(0).path }" alt="">
+												<img class="card-img-top" src="${pageContext.request.contextPath}/images/upload/${productCustom4.product.productImages.get(0).path }" alt="">
 											</c:otherwise>
 										</c:choose>
 										</a>
@@ -457,7 +457,7 @@
 										<img src="http://placehold.it/700x400" alt="">
 									</c:when>
 									<c:otherwise>
-										<img src="${pageContext.request.contextPath}/file/upload/${news.newsImages.get(0).path }" alt="">
+										<img src="${pageContext.request.contextPath}/images/upload/${news.newsImages.get(0).path }" alt="">
 									</c:otherwise>
 								</c:choose>
 							</a>

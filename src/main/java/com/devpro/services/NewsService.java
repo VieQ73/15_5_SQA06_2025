@@ -4,10 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import javax.persistence.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,7 +20,9 @@ import com.devpro.repositories.NewsRepo;
 public class NewsService {
 	@Autowired 
 	private NewsRepo newsRepo;
-	@PersistenceContext protected EntityManager entityManager;
+	@PersistenceContext
+	protected EntityManager entityManager;
+
 	private boolean isEmptyUploadFile(MultipartFile[] images) {
 		if(images == null || images.length <= 0) return true; 
 		if(images.length == 1 && images[0].getOriginalFilename().isEmpty()) return true;
@@ -36,7 +37,7 @@ public class NewsService {
 			if(!isEmptyUploadFile(newsImages)) { 
 				List<Images> oldNewsImages = newsInDb.getNewsImages();
 				for(Images _images : oldNewsImages) {
-					new File("C:\\Users\\PV\\OneDrive\\Máy tính\\DoAnTotNghiepHaUI\\upload\\" + _images.getPath()).delete();
+					new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\test\\resources\\" + _images.getPath()).delete();
 				}
 				news.removeNewsImages();
 				
@@ -50,7 +51,7 @@ public class NewsService {
 			for(MultipartFile newsImage : newsImages) {
 				
 				// lưu vật lí
-				newsImage.transferTo(new File("C:\\Users\\PV\\OneDrive\\Máy tính\\DoAnTotNghiepHaUI\\upload\\" + newsImage.getOriginalFilename()));
+				newsImage.transferTo(new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\test\\resources\\" + newsImage.getOriginalFilename()));
 				
 				Images _newsImages = new Images();
 				_newsImages.setPath(newsImage.getOriginalFilename());

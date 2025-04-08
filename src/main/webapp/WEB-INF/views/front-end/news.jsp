@@ -45,7 +45,7 @@
 									<div style="padding-top: 1rem; margin-left: 1rem;outline: 0px; border-bottom: 1px solid rgb(229, 229, 229); display: table; margin-bottom: 20px; padding-bottom: 20px; width: 236px; color: rgb(51, 51, 51); font-family: helvatica, &quot;Open Sans&quot;, sans-serif; font-size: 14px;">
 										<div style="outline: 0px; overflow: hidden; position: relative; display: table-cell; width: 90px;">
 											<a href="${pageContext.request.contextPath}/products/${spbc.product.seo }" class="product-thumb-link" style="outline: 0px; color: rgb(242, 121, 34); display: block; overflow: hidden; position: relative; width: 90px;">
-												<img src="${pageContext.request.contextPath}/file/upload/${spbc.product.productImages.get(0).path }" alt="" class="H100" style="border: 1px solid black;outline: 0px; max-width: 160px; height: 108px; width: 90px; max-height: 192px;">
+												<img src="${pageContext.request.contextPath}/images/upload/${spbc.product.productImages.get(0).path }" alt="" class="H100" style="border: 1px solid black;outline: 0px; max-width: 160px; height: 108px; width: 90px; max-height: 192px;">
 											</a>
 										</div>
 										<div style="outline: 0px; display: table-cell; padding-left: 20px; vertical-align: top;">
@@ -98,7 +98,7 @@
 											style="font-size: 15px; outline: 0px; list-style: none; display: inline-block; margin-bottom: 30px;">
 											<a href="${pageContext.request.contextPath}/newsDetail/${news.id }"
 											title="${news.title }" style="outline: 0px; color: rgb(51, 51, 51);">
-											<img src="${pageContext.request.contextPath}/file/upload/${news.newsImages.get(0).path }"
+											<img src="${pageContext.request.contextPath}/images/upload/${news.newsImages.get(0).path }"
 												align="left"
 												alt="${news.title }"
 												title="${news.title }"

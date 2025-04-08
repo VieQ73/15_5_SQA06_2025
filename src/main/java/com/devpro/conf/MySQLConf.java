@@ -2,8 +2,10 @@ package com.devpro.conf;
 
 import java.util.Properties;
 
+
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,9 +24,9 @@ public class MySQLConf {
 	@Bean(destroyMethod = "close") protected DataSource dataSource() {
         HikariConfig dataSourceConfig = new HikariConfig();
         dataSourceConfig.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSourceConfig.setJdbcUrl("jdbc:mysql://127.0.0.1:3306/shop_beauty?useUnicode=yes&characterEncoding=UTF-8");
+        dataSourceConfig.setJdbcUrl("jdbc:mysql://localhost:3306/shop_beauty?useUnicode=yes&characterEncoding=UTF-8");
         dataSourceConfig.setUsername("root");
-        dataSourceConfig.setPassword("hvinh069a");
+        dataSourceConfig.setPassword("root");
         return new HikariDataSource(dataSourceConfig);
     }
 	

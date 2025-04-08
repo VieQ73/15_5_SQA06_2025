@@ -1,2 +1,3 @@
 com\devpro\shop\GeneratePassword.class
+com\devpro\services\CategoryServiceSaveTest.class
 com\devpro\shop\Utilities.class

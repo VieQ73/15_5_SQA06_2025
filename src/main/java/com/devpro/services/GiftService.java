@@ -6,9 +6,7 @@ import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,11 +21,17 @@ import com.devpro.model.GiftSearch;
 import com.devpro.repositories.GiftRepo;
 import com.ibm.icu.util.Calendar;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 @Service
 public class GiftService {
 	@Autowired 
 	private GiftRepo giftRepo;
-	@PersistenceContext protected EntityManager entityManager;
+	@PersistenceContext
+	protected EntityManager entityManager;
+
 	private boolean isEmptyUploadFile(MultipartFile[] images) {
 		if(images == null || images.length <= 0) return true; 
 		if(images.length == 1 && images[0].getOriginalFilename().isEmpty()) return true;
@@ -67,7 +71,7 @@ public class GiftService {
 			for(MultipartFile giftImage : giftImages) {
 				
 				// lưu vật lí
-				giftImage.transferTo(new File("C:\\Users\\PV\\OneDrive\\Máy tính\\DoAnTotNghiepHaUI\\upload\\" + giftImage.getOriginalFilename()));
+				giftImage.transferTo(new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\main\\resources\\META-INF\\images\\upload" + giftImage.getOriginalFilename()));
 				
 				Images _giftImages = new Images();
 				_giftImages.setPath(giftImage.getOriginalFilename());
@@ -79,7 +83,13 @@ public class GiftService {
 		giftRepo.save(gift);
 	}
 	public List<Gift> searchGift(final GiftSearch giftSearch) {
-		String sql = "select * from tbl_gift where 1=1";
+		String sql = "select g.* from tbl_gift as g left join tbl_product p on g.id = p.gift_id where 1=1";
+		if (giftSearch.getTitle() != null && !giftSearch.getTitle().isEmpty()) {
+			sql += " AND g.title LIKE '%" + giftSearch.getTitle() + "%'";
+		}
+		if (giftSearch.getGiftSeo() != null && !giftSearch.getGiftSeo().isEmpty()) {
+			sql += " AND p.seo LIKE '%" + giftSearch.getGiftSeo() + "%'";
+		}
 		sql = sql + " order by updated_date desc;";
 		Query query = entityManager.createNativeQuery(sql, Gift.class);
 		

@@ -15,9 +15,12 @@ import com.devpro.repositories.CategoryRepo;
 
 @Service
 public class CategoryService {
-	@PersistenceContext protected EntityManager entityManager;
+	@PersistenceContext
+	protected EntityManager entityManager;
+
 	@Autowired
 	private CategoryRepo categoryRepo;
+
 	public void save(Category category) {
 		if(category.getId() != null)
 		{
@@ -29,16 +32,36 @@ public class CategoryService {
 	public List<Category> searchAdmin(final CategorySearch categorySearch) {
 
 
-		String sql = "select * from tbl_category where 1=1";
+		String sql = "SELECT * FROM tbl_category WHERE 1=1";
+
+		if (categorySearch.getName() != null && !categorySearch.getName().isEmpty()) {
+			sql += " AND name LIKE '%" + categorySearch.getName() + "%'";
+		}
+		if (categorySearch.getDescrition() != null && !categorySearch.getDescrition().isEmpty()) {
+			sql += " AND description LIKE '%" + categorySearch.getDescrition() + "%'";
+		}
+		if (categorySearch.getSeo() != null && !categorySearch.getSeo().isEmpty()) {
+			sql += " AND seo LIKE '%" + categorySearch.getSeo() + "%'";
+		}
+
 
 		Query query = entityManager.createNativeQuery(sql, Category.class);
 		
 		return query.getResultList();
 	}
+
 	public List<Category> search(final CategorySearch categorySearch) {
 
-
-		String sql = "select * from tbl_category where status=1";
+		String sql = "select * from tbl_category where status = 1";
+		if (categorySearch.getName() != null && !categorySearch.getName().isEmpty()) {
+			sql += " AND name LIKE '%" + categorySearch.getName() + "%'";
+		}
+		if (categorySearch.getDescrition() != null && !categorySearch.getDescrition().isEmpty()) {
+			sql += " AND descrption LIKE '%" + categorySearch.getDescrition() + "%'";
+		}
+		if (categorySearch.getSeo() != null && !categorySearch.getSeo().isEmpty()) {
+			sql += " AND seo LIKE '%" + categorySearch.getSeo() + "%'";
+		}
 
 		Query query = entityManager.createNativeQuery(sql, Category.class);
 		

@@ -41,7 +41,7 @@
 									<div style="padding-top: 1rem; margin-left: 1rem;outline: 0px; border-bottom: 1px solid rgb(229, 229, 229); display: table; margin-bottom: 20px; padding-bottom: 20px; width: 236px; color: rgb(51, 51, 51); font-family: helvatica, &quot;Open Sans&quot;, sans-serif; font-size: 14px;">
 										<div style="outline: 0px; overflow: hidden; position: relative; display: table-cell; width: 90px;">
 											<a href="${pageContext.request.contextPath}/products/${spbc.product.seo }" class="product-thumb-link" style="outline: 0px; color: rgb(242, 121, 34); display: block; overflow: hidden; position: relative; width: 90px;">
-												<img src="${pageContext.request.contextPath}/file/upload/${spbc.product.productImages.get(0).path }" alt="" class="H100" style="border: 1px solid black;outline: 0px; max-width: 160px; height: 108px; width: 90px; max-height: 192px;">
+												<img src="${pageContext.request.contextPath}/images/upload/${spbc.product.productImages.get(0).path }" alt="" class="H100" style="border: 1px solid black;outline: 0px; max-width: 160px; height: 108px; width: 90px; max-height: 192px;">
 											</a>
 										</div>
 										<div style="outline: 0px; display: table-cell; padding-left: 20px; vertical-align: top;">
@@ -101,7 +101,7 @@
 														</c:when>
 														<c:otherwise>
 															<img class="img" align="left"
-																style="outline: 0px; border-width: 1px; border-style: solid; border-color: gray; max-width: 100%; border-radius: 5px; padding: 5px; margin-right: 15px; width: 280px;" src="${pageContext.request.contextPath}/file/upload/${gifts.gift.giftImages.get(0).path }" alt="">
+																style="outline: 0px; border-width: 1px; border-style: solid; border-color: gray; max-width: 100%; border-radius: 5px; padding: 5px; margin-right: 15px; width: 280px;" src="${pageContext.request.contextPath}/images/upload/${gifts.gift.giftImages.get(0).path }" alt="">
 														</c:otherwise>
 													</c:choose>
 												</a>
@@ -137,7 +137,7 @@
 														<li style="outline: 0px; float: left; text-align: center;">
 															<a href="${pageContext.request.contextPath}/products/${product.seo }"
 																style="outline: 0px; color: red; font-weight: 700;">
-																<img src="${pageContext.request.contextPath}/file/upload/${product.productImages.get(0).path }"
+																<img src="${pageContext.request.contextPath}/images/upload/${product.productImages.get(0).path }"
 																alt=""
 																class="img2" style="outline: 0px; border-width: 1px; border-style: solid; border-color: rgb(221, 221, 221); max-width: 100%; width: 128px; margin: 5px; border-radius: 5px;">
 																<br style="outline: 0px;"><fmt:formatNumber type="number" maxIntegerDigits="13"

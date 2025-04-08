@@ -94,7 +94,7 @@
 																		<img class="card-img-top" src="http://placehold.it/700x400" alt="">
 																	</c:when>
 																	<c:otherwise>
-																		<img class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productCustom.product.productImages.get(0).path }" alt="">
+																		<img class="card-img-top" src="${pageContext.request.contextPath}/images/upload/${productCustom.product.productImages.get(0).path }" alt="">
 																	</c:otherwise>
 																</c:choose>
 															</a>
