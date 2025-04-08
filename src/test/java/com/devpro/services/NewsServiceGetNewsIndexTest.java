@@ -10,17 +10,19 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.mock.web.MockMultipartFile;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Lớp kiểm thử đơn vị cho phương thức getNewsIndex của NewsService.
+ */
 @SpringBootTest
 @Transactional
 @Rollback// Đảm bảo rollback sau mỗi lần test
-class NewsServiceTestGetNewsIndex {
+class NewsServiceGetNewsIndexTest {
 
     @Autowired
     private NewsService newsService;
@@ -29,7 +31,7 @@ class NewsServiceTestGetNewsIndex {
     private NewsRepo newsRepo;
 
     /**
-     * Test phương thức getNewsIndex() khi có dữ liệu tin tức
+     * TC_NS_01: Test phương thức getNewsIndex() khi có dữ liệu tin tức
      * Kiểm tra phương thức trả về đúng số lượng tin tức (4 tin) và tất cả có trạng thái active (status = true)
      */
     @Test
@@ -85,7 +87,7 @@ class NewsServiceTestGetNewsIndex {
     }
 
     /**
-     * Test phương thức getNewsIndex() khi không có tin tức active nào
+     * TC_NS_02: Test phương thức getNewsIndex() khi không có tin tức active nào
      * Kiểm tra phương thức trả về danh sách rỗng khi không có tin tức active
      */
     @Test
@@ -116,7 +118,7 @@ class NewsServiceTestGetNewsIndex {
     }
 
     /**
-     * Test tính ngẫu nhiên của phương thức getNewsIndex()
+     * TC_NS_03: Test tính ngẫu nhiên của phương thức getNewsIndex()
      * Kiểm tra xem kết quả của nhiều lần gọi có khác nhau không do ORDER BY RAND()
      */
     @Test
@@ -174,7 +176,7 @@ class NewsServiceTestGetNewsIndex {
     }
 
     /**
-     * Test phương thức getNewsIndex() khi số lượng tin tức active ít hơn giới hạn 4
+     * TC_NS_04: Test phương thức getNewsIndex() khi số lượng tin tức active ít hơn giới hạn 4
      * Kiểm tra phương thức trả về tất cả tin tức active có sẵn
      */
     @Test

@@ -9,10 +9,15 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+/**
+ * Lớp kiểm thử đơn vị cho phương thức isEmptyUploadFileMethod của GiftService.
+ */
 @SpringBootTest
-class GiftServiceTestIsEmptyUploadFile {
+class GiftServiceIsEmptyUploadFileTest {
 
     @Autowired
     private GiftService giftService;
@@ -31,14 +36,13 @@ class GiftServiceTestIsEmptyUploadFile {
     }
 
     /**
-     * Kiểm tra với mảng images là null.
+     * TC_GS_01: Kiểm tra với mảng images là null.
      * Dự kiến trả về true vì mảng không tồn tại.
      */
     @Test
+    @Transactional
+    @Rollback
     void testIsEmptyUploadFileWithNullArray() throws Exception {
-        // Chuẩn bị
-        MultipartFile[] images = null;
-
         // Thực thi
         boolean result = (boolean) isEmptyUploadFileMethod.invoke(giftService, (Object) null);
 
@@ -47,10 +51,12 @@ class GiftServiceTestIsEmptyUploadFile {
     }
 
     /**
-     * Kiểm tra với mảng images rỗng.
+     * TC_GS_02: Kiểm tra với mảng images rỗng.
      * Dự kiến trả về true vì không có phần tử nào trong mảng.
      */
     @Test
+    @Transactional
+    @Rollback
     void testIsEmptyUploadFileWithEmptyArray() throws Exception {
         // Chuẩn bị
         MultipartFile[] images = new MultipartFile[0];
@@ -63,10 +69,12 @@ class GiftServiceTestIsEmptyUploadFile {
     }
 
     /**
-     * Kiểm tra với mảng chứa một file có tên rỗng.
+     * TC_GS_03: Kiểm tra với mảng chứa một file có tên rỗng.
      * Dự kiến trả về true vì file không hợp lệ.
      */
     @Test
+    @Transactional
+    @Rollback
     void testIsEmptyUploadFileWithSingleEmptyFile() throws Exception {
         // Chuẩn bị
         MultipartFile emptyFile = new MockMultipartFile("file", "", "text/plain", new byte[0]);
@@ -80,10 +88,12 @@ class GiftServiceTestIsEmptyUploadFile {
     }
 
     /**
-     * Kiểm tra với mảng chứa một file hợp lệ.
+     * TC_GS_04: Kiểm tra với mảng chứa một file hợp lệ.
      * Dự kiến trả về false vì file có tên hợp lệ.
      */
     @Test
+    @Transactional
+    @Rollback
     void testIsEmptyUploadFileWithSingleValidFile() throws Exception {
         // Chuẩn bị
         MultipartFile validFile = new MockMultipartFile("file", "test.txt", "text/plain", "content".getBytes());
@@ -97,10 +107,12 @@ class GiftServiceTestIsEmptyUploadFile {
     }
 
     /**
-     * Kiểm tra với mảng chứa nhiều file hợp lệ.
+     * TC_GS_05: Kiểm tra với mảng chứa nhiều file hợp lệ.
      * Dự kiến trả về false vì có ít nhất một file hợp lệ.
      */
     @Test
+    @Transactional
+    @Rollback
     void testIsEmptyUploadFileWithMultipleValidFiles() throws Exception {
         // Chuẩn bị
         MultipartFile file1 = new MockMultipartFile("file1", "test1.txt", "text/plain", "content1".getBytes());
@@ -115,10 +127,12 @@ class GiftServiceTestIsEmptyUploadFile {
     }
 
     /**
-     * Kiểm tra với mảng chứa file hợp lệ và file rỗng.
+     * TC_GS_06: Kiểm tra với mảng chứa file hợp lệ và file rỗng.
      * Dự kiến trả về false vì có ít nhất một file hợp lệ.
      */
     @Test
+    @Transactional
+    @Rollback
     void testIsEmptyUploadFileWithMixedFiles() throws Exception {
         // Chuẩn bị
         MultipartFile emptyFile = new MockMultipartFile("file", "", "text/plain", new byte[0]);

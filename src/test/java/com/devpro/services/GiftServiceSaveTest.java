@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.devpro.entities.Gift;
@@ -20,8 +22,11 @@ import com.devpro.entities.Product;
 import com.devpro.repositories.GiftRepo;
 import com.devpro.repositories.ProductRepo;
 
+/**
+ * Lớp kiểm thử đơn vị cho phương thức save của GiftService.
+ */
 @SpringBootTest
-class GiftServiceTestSave {
+class GiftServiceSaveTest {
 
     @Autowired
     private GiftService giftService;
@@ -37,7 +42,7 @@ class GiftServiceTestSave {
     private File testImageFile;
 
     @BeforeEach
-    void setUp() throws IOException {
+    void setUp() {
         // Tạo tệp hình ảnh kiểm thử
         testImageFile = new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\test\\resources\\22.jpg");
 
@@ -70,10 +75,12 @@ class GiftServiceTestSave {
     }
 
     /**
-     * Kiểm thử lưu một món quà mới mà không có hình ảnh.
+     * TC_GS_07: Kiểm thử lưu một món quà mới mà không có hình ảnh.
      * Đảm bảo món quà được lưu đúng cách và không có hình ảnh liên kết với nó.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSaveNewGiftWithoutImages() throws IOException {
         // Chuẩn bị
         Gift newGift = new Gift();
@@ -93,10 +100,12 @@ class GiftServiceTestSave {
     }
 
     /**
-     * Kiểm thử lưu một món quà mới với mảng hình ảnh rỗng.
+     * TC_GS_08: Kiểm thử lưu một món quà mới với mảng hình ảnh rỗng.
      * Đảm bảo món quà được lưu đúng cách và không có hình ảnh nào được thêm vào.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSaveNewGiftWithEmptyImageArray() throws IOException {
         // Chuẩn bị
         Gift newGift = new Gift();
@@ -117,10 +126,12 @@ class GiftServiceTestSave {
     }
 
     /**
-     * Kiểm thử lưu một món quà mới với một tệp hình ảnh rỗng.
+     * TC_GS_09: Kiểm thử lưu một món quà mới với một tệp hình ảnh rỗng.
      * Đảm bảo rằng không có hình ảnh nào được liên kết với món quà khi tệp hình ảnh rỗng được cung cấp.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSaveNewGiftWithOneEmptyImage() throws IOException {
         // Chuẩn bị
         Gift newGift = new Gift();
@@ -141,10 +152,12 @@ class GiftServiceTestSave {
     }
 
     /**
-     * Kiểm thử lưu một món quà mới với hình ảnh hợp lệ.
+     * TC_GS_10: Kiểm thử lưu một món quà mới với hình ảnh hợp lệ.
      * Đảm bảo món quà được lưu đúng cách và hình ảnh được liên kết với nó.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSaveNewGiftWithImages() throws IOException {
         // Chuẩn bị
         Gift newGift = new Gift();
@@ -176,10 +189,12 @@ class GiftServiceTestSave {
     }
 
     /**
-     * Kiểm thử cập nhật một món quà hiện tại mà không thay đổi hình ảnh của nó.
+     * TC_GS_11: Kiểm thử cập nhật một món quà hiện tại mà không thay đổi hình ảnh của nó.
      * Đảm bảo món quà được cập nhật đúng cách mà không thay đổi hình ảnh của nó.
      */
     @Test
+    @Transactional
+    @Rollback
     void testUpdateGiftWithoutImages() throws IOException {
         // Chuẩn bị
         Gift existingGift = testGift;
@@ -201,10 +216,12 @@ class GiftServiceTestSave {
     }
 
     /**
-     * Kiểm thử cập nhật một món quà hiện tại và thay thế hình ảnh cũ bằng hình ảnh mới.
+     * TC_GS_12: Kiểm thử cập nhật một món quà hiện tại và thay thế hình ảnh cũ bằng hình ảnh mới.
      * Đảm bảo rằng hình ảnh cũ được thay thế bằng hình ảnh mới khi cập nhật món quà.
      */
     @Test
+    @Transactional
+    @Rollback
     void testUpdateGiftWithNewImages() throws IOException {
         // Chuẩn bị
         Gift existingGift = testGift;
@@ -239,10 +256,12 @@ class GiftServiceTestSave {
     }
 
     /**
-     * Kiểm thử cập nhật một món quà hiện tại với hình ảnh rỗng, đảm bảo rằng hình ảnh cũ được giữ lại.
+     * TC_GS_13:Kiểm thử cập nhật một món quà hiện tại với hình ảnh rỗng, đảm bảo rằng hình ảnh cũ được giữ lại.
      * Đảm bảo rằng nếu hình ảnh rỗng được tải lên, hình ảnh trước đó sẽ không bị thay đổi.
      */
     @Test
+    @Transactional
+    @Rollback
     void testUpdateGiftWithOneEmptyImageToKeepOld() throws IOException {
         // Chuẩn bị
         Gift existingGift = testGift;
@@ -267,10 +286,12 @@ class GiftServiceTestSave {
     }
 
     /**
-     * Kiểm thử lưu một món quà mới với cả hình ảnh hợp lệ và hình ảnh rỗng.
+     * TC_GS_14: Kiểm thử lưu một món quà mới với cả hình ảnh hợp lệ và hình ảnh rỗng.
      * Đảm bảo chỉ những hình ảnh hợp lệ được liên kết với món quà, và hình ảnh rỗng sẽ bị bỏ qua.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSaveGiftWithMixedValidAndEmptyImages() throws IOException {
         // Chuẩn bị
         Gift newGift = new Gift();
@@ -305,10 +326,12 @@ class GiftServiceTestSave {
     }
 
     /**
-     * Kiểm thử lưu một món quà với mảng hình ảnh null.
+     * TC_GS_15: Kiểm thử lưu một món quà với mảng hình ảnh null.
      * Đảm bảo rằng không có hình ảnh nào được liên kết với món quà nếu mảng hình ảnh là null.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSaveGiftWithNullImageArray() throws IOException {
         // Chuẩn bị
         Gift newGift = new Gift();

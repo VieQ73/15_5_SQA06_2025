@@ -12,8 +12,11 @@ import java.lang.reflect.Method;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Lớp kiểm thử đơn vị cho phương thức isEmptyUploadFile của NewsService.
+ */
 @SpringBootTest
-class NewsServiceTestIsEmptyUploadFile {
+class NewsServiceIsEmptyUploadFileTest {
 
     @Autowired
     private NewsService newsService;
@@ -40,7 +43,7 @@ class NewsServiceTestIsEmptyUploadFile {
     }
 
     /**
-     * Kiểm tra với mảng images là null.
+     * TC_NS_05: Kiểm tra với mảng images là null.
      * Dự kiến trả về true vì mảng không tồn tại.
      */
     @Test
@@ -49,7 +52,7 @@ class NewsServiceTestIsEmptyUploadFile {
     }
 
     /**
-     * Kiểm tra với mảng images có độ dài bằng 0.
+     * TC_NS_06: Kiểm tra với mảng images có độ dài bằng 0.
      * Dự kiến trả về true vì không có file nào được upload.
      */
     @Test
@@ -59,7 +62,7 @@ class NewsServiceTestIsEmptyUploadFile {
     }
 
     /**
-     * Kiểm tra với một file duy nhất có tên file rỗng.
+     * TC_NS_07: Kiểm tra với một file duy nhất có tên file rỗng.
      * Dự kiến trả về true vì file không hợp lệ.
      */
     @Test
@@ -71,7 +74,7 @@ class NewsServiceTestIsEmptyUploadFile {
     }
 
     /**
-     * Kiểm tra với một file duy nhất có tên file hợp lệ.
+     * TC_NS_08: Kiểm tra với một file duy nhất có tên file hợp lệ.
      * Dự kiến trả về false vì có file hợp lệ được upload.
      */
     @Test
@@ -83,7 +86,7 @@ class NewsServiceTestIsEmptyUploadFile {
     }
 
     /**
-     * Kiểm tra với nhiều file (lớn hơn 1).
+     * TC_NS_09: Kiểm tra với nhiều file (lớn hơn 1).
      * Dự kiến trả về false vì có nhiều file được upload.
      */
     @Test

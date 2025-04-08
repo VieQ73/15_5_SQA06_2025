@@ -2,26 +2,22 @@ package com.devpro.services;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.math.BigDecimal;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.annotation.Rollback;
 
-import com.devpro.entities.Gift;
 import com.devpro.entities.Product;
-import com.devpro.repositories.GiftRepo;
 import com.devpro.repositories.ProductRepo;
+import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Lớp kiểm thử đơn vị cho phương thức searchProductGiftAdmin của GiftService.
+ */
 @SpringBootTest
-class GiftServiceTestSearchProductGiftAdmin {
+class GiftServiceSearchProductGiftAdminTest {
 
     @Autowired
     private GiftService giftService;
@@ -31,10 +27,12 @@ class GiftServiceTestSearchProductGiftAdmin {
 
 
     /**
-     * Kiểm tra tìm kiếm sản phẩm với gift_id hợp lệ.
+     * TC_GS_25: Kiểm tra tìm kiếm sản phẩm với gift_id hợp lệ.
      * Dự kiến trả về tất cả sản phẩm có trạng thái true liên kết với gift_id.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchProductGiftAdminWithValidId() {
         // Chuẩn bị
         Integer giftId = 15;
@@ -49,10 +47,12 @@ class GiftServiceTestSearchProductGiftAdmin {
     }
 
     /**
-     * Kiểm tra tìm kiếm sản phẩm với gift_id không tồn tại.
+     * TC_GS_26: Kiểm tra tìm kiếm sản phẩm với gift_id không tồn tại.
      * Dự kiến trả về danh sách rỗng.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchProductGiftAdminWithNonExistentId() {
         // Chuẩn bị
         Integer nonExistentId = 9999;
@@ -66,10 +66,12 @@ class GiftServiceTestSearchProductGiftAdmin {
     }
 
     /**
-     * Kiểm tra tìm kiếm sản phẩm với gift_id là null.
+     * TC_GS_27: Kiểm tra tìm kiếm sản phẩm với gift_id là null.
      * Dự kiến ném ngoại lệ do id không hợp lệ.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchProductGiftAdminWithNullId() {
         // Kiểm tra ngoại lệ khi truyền null
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {

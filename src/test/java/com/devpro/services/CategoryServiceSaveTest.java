@@ -1,7 +1,6 @@
 package com.devpro.services;
 
 import com.devpro.entities.Category;
-import com.devpro.model.CategorySearch;
 import com.devpro.repositories.CategoryRepo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,16 +8,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.Date;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Lớp kiểm thử đơn vị cho phương thức save của CategoryService.
+ */
 @SpringBootTest
-//@Transactional
 class CategoryServiceSaveTest {
 
     private static final Logger log = LoggerFactory.getLogger(CategoryServiceSaveTest.class);
@@ -44,9 +46,11 @@ class CategoryServiceSaveTest {
     }
 
     /**
-     * Trường hợp: Lưu Category mới (id = null) → lưu vào DB
+     * TC_CS_01: Lưu Category mới (id = null) → lưu vào DB
      */
     @Test
+    @Transactional
+    @Rollback
     void testSaveCategory() {
         Category newCategory = new Category();
         newCategory.setName("New Category");
@@ -65,9 +69,11 @@ class CategoryServiceSaveTest {
     }
 
     /**
-     * Trường hợp: Lưu Category đã có ID (id không null tồn tại trong csdl), không thay đổi dữ liệu
+     * TC_CS_02: Lưu Category đã có ID (id không null tồn tại trong csdl), không thay đổi dữ liệu
      */
     @Test
+    @Transactional
+    @Rollback
     void testSaveCategoryWithExistingId() {
         category.setId(45);
         category.setName("Updated Category");
@@ -79,9 +85,11 @@ class CategoryServiceSaveTest {
     }
 
     /**
-     * Trường hợp: Lưu Category đã có ID (id không null) id chưa tồn tại trong csdl, thay đổi dữ liệu
+     * TC_CS_03: Lưu Category đã có ID (id không null) id chưa tồn tại trong csdl, thay đổi dữ liệu
      */
     @Test
+    @Transactional
+    @Rollback
     void testSaveCategoryWithExistingIdIs() {
         category.setId(55);
         category.setName("Updating Category");
@@ -94,9 +102,11 @@ class CategoryServiceSaveTest {
     }
 
     /**
-     * Trường hợp: Lưu Category với thông tin thiếu (ví dụ: thiếu tên)
+     * TC_CS_04: Lưu Category với thông tin thiếu (ví dụ: thiếu tên)
      */
     @Test
+    @Transactional
+    @Rollback
     void testSaveCategoryWithMissingName() {
         Category newCategory = new Category();
         newCategory.setDescription("Description without name");

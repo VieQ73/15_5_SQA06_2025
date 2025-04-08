@@ -3,7 +3,6 @@ package com.devpro.services;
 import com.devpro.entities.Category;
 import com.devpro.model.CategorySearch;
 import com.devpro.repositories.CategoryRepo;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,18 +11,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Transient;
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Lớp kiểm thử đơn vị cho phương thức searchAdmin của CategoryService.
+ */
 @SpringBootTest
 class CategoryServiceSearchAdminTest {
 
-    private static final Logger log = LoggerFactory.getLogger(CategoryServiceSearchAdminTest.class);
     @Autowired
     private CategoryService categoryService;
 
@@ -32,9 +29,11 @@ class CategoryServiceSearchAdminTest {
 
 
     /**
-     * Trường hợp: Tìm kiếm với tất cả trường rỗng/null → trả về null.
+     * TC_CS_05: Tìm kiếm với tất cả trường rỗng/null → trả về null.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchAdmin_AllNull() {
         CategorySearch search = new CategorySearch();
         List<Category> result = categoryService.searchAdmin(search);
@@ -42,9 +41,11 @@ class CategoryServiceSearchAdminTest {
     }
 
     /**
-     * Trường hợp: Tìm kiếm với chỉ trường name → lọc theo name chứa "Test".
+     * TC_CS_06: Tìm kiếm với chỉ trường name → lọc theo name chứa "Test".
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchAdmin_NameOnly() {
         CategorySearch search = new CategorySearch();
         search.setName("Test");
@@ -54,9 +55,11 @@ class CategoryServiceSearchAdminTest {
     }
 
     /**
-     * Trường hợp: Tìm kiếm với chỉ trường descrition → lọc theo mô tả chứa "desc".
+     * TC_CS_07: Tìm kiếm với chỉ trường descrition → lọc theo mô tả chứa "desc".
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchAdmin_DescriptionOnly() {
         CategorySearch search = new CategorySearch();
         search.setDescrition("tion");
@@ -66,9 +69,11 @@ class CategoryServiceSearchAdminTest {
     }
 
     /**
-     * Trường hợp: Tìm kiếm với chỉ trường seo → lọc theo SEO chứa "seo".
+     * TC_CS_08: Tìm kiếm với chỉ trường seo → lọc theo SEO chứa "seo".
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchAdmin_SeoOnly() {
         CategorySearch search = new CategorySearch();
         search.setSeo("seo");
@@ -79,9 +84,11 @@ class CategoryServiceSearchAdminTest {
     }
 
     /**
-     * Trường hợp: Tìm kiếm với cả name và descrition → lọc theo cả 2 điều kiện.
+     * TC_CS_09: Tìm kiếm với cả name và descrition → lọc theo cả 2 điều kiện.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchAdmin_NameAndDescription() {
         CategorySearch search = new CategorySearch();
         search.setName("Test");
@@ -95,9 +102,11 @@ class CategoryServiceSearchAdminTest {
     }
 
     /**
-     * Trường hợp: Tìm kiếm với cả name và seo → lọc theo cả 2 điều kiện.
+     * TC_CS_10: Tìm kiếm với cả name và seo → lọc theo cả 2 điều kiện.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchAdmin_NameAndSeo() {
         CategorySearch search = new CategorySearch();
         search.setName("Test");
@@ -111,9 +120,11 @@ class CategoryServiceSearchAdminTest {
     }
 
     /**
-     * Trường hợp: Tìm kiếm với cả descrition và seo → lọc theo cả 2 điều kiện.
+     * TC_CS_11: Tìm kiếm với cả descrition và seo → lọc theo cả 2 điều kiện.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchAdmin_DescriptionAndSeo() {
         CategorySearch search = new CategorySearch();
         search.setDescrition("desc");
@@ -127,9 +138,11 @@ class CategoryServiceSearchAdminTest {
     }
 
     /**
-     * Trường hợp: Tìm kiếm với đầy đủ name, descrition và seo → lọc chính xác cả 3 điều kiện.
+     * TC_CS_12: Tìm kiếm với đầy đủ name, descrition và seo → lọc chính xác cả 3 điều kiện.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchAdmin_AllFieldsFilled() {
         CategorySearch search = new CategorySearch();
         search.setName("Test");
@@ -144,11 +157,9 @@ class CategoryServiceSearchAdminTest {
         });
     }
 
+
     /**
-     * Trường hợp: Tìm kiếm với name chứa ký tự SQL đặc biệt → hệ thống vẫn xử lý an toàn.
-     */
-    /**
-     * Trường hợp: Tìm kiếm với name chứa ký tự SQL đặc biệt → hệ thống vẫn xử lý an toàn.
+     * TC_CS_13: Tìm kiếm với name chứa ký tự SQL đặc biệt → hệ thống vẫn xử lý an toàn.
      * Dữ liệu chỉ được lưu tạm và sẽ rollback sau test.
      */
     @Test
@@ -172,5 +183,4 @@ class CategoryServiceSearchAdminTest {
         assertFalse(result.isEmpty());  // Phải có kết quả trả về
         assertTrue(result.get(0).getName().contains("DROP TABLE"));
     }
-
 }

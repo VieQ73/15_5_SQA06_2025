@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
-import com.devpro.entities.Product;
 import com.devpro.model.GiftSearch;
 import com.devpro.repositories.GiftRepo;
 import com.devpro.repositories.ProductRepo;
@@ -13,11 +12,15 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import com.devpro.entities.Gift;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Lớp kiểm thử đơn vị cho phương thức searchGift của GiftService.
+ */
 @SpringBootTest
 @Transactional
-class GiftServiceTestSearchGift {
+class GiftServiceSearchGiftTest {
 
     @Autowired
     private GiftService giftService;
@@ -27,7 +30,7 @@ class GiftServiceTestSearchGift {
     private GiftRepo giftRepo;
 
     /**
-     * Kiểm tra tìm kiếm quà tặng với đối tượng GiftSearch rỗng.
+     * TC_GS_16:Kiểm tra tìm kiếm quà tặng với đối tượng GiftSearch rỗng.
      * Dự kiến trả về null
      */
     @Test
@@ -44,10 +47,12 @@ class GiftServiceTestSearchGift {
     }
 
     /**
-     * Kiểm tra tìm kiếm quà tặng chỉ với giftSeo (tên) được cung cấp.
+     * TC_GS_17: Kiểm tra tìm kiếm quà tặng chỉ với giftSeo (tên) được cung cấp.
      * Dự kiến trả về các quà tặng có tên chứa chuỗi tìm kiếm.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchGiftWithGiftSeo() {
         // Chuẩn bị
         GiftSearch giftSearch = new GiftSearch();
@@ -61,10 +66,12 @@ class GiftServiceTestSearchGift {
     }
 
     /**
-     * Kiểm tra tìm kiếm quà tặng chỉ với title (mô tả) được cung cấp.
+     * TC_GS_18: Kiểm tra tìm kiếm quà tặng chỉ với title (mô tả) được cung cấp.
      * Dự kiến trả về các quà tặng có mô tả chứa chuỗi tìm kiếm.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchGiftWithTitle() {
         // Chuẩn bị
         GiftSearch giftSearch = new GiftSearch();
@@ -79,10 +86,12 @@ class GiftServiceTestSearchGift {
     }
 
     /**
-     * Kiểm tra tìm kiếm quà tặng với cả giftSeo và title được cung cấp.
+     * TC_GS_19: Kiểm tra tìm kiếm quà tặng với cả giftSeo và title được cung cấp.
      * Dự kiến trả về quà tặng thỏa mãn cả hai điều kiện.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchGiftWithGiftSeoAndTitle() {
         // Chuẩn bị
         GiftSearch giftSearch = new GiftSearch();
@@ -97,10 +106,12 @@ class GiftServiceTestSearchGift {
     }
 
     /**
-     * Kiểm tra tìm kiếm quà tặng với đối tượng GiftSearch là null.
+     * TC_GS_20: Kiểm tra tìm kiếm quà tặng với đối tượng GiftSearch là null.
      * Dự kiến trả về null.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchGiftWithNullSearch() {
         // Thực thi
         List<Gift> result = giftService.searchGift(null);
@@ -109,10 +120,12 @@ class GiftServiceTestSearchGift {
     }
 
     /**
-     * Kiểm tra tìm kiếm quà tặng với chuỗi rỗng cho giftSeo và title.
+     * TC_GS_21: Kiểm tra tìm kiếm quà tặng với chuỗi rỗng cho giftSeo và title.
      * Dự kiến trả về tất cả quà tặng vì không có điều kiện nào được áp dụng.
      */
     @Test
+    @Transactional
+    @Rollback
     void testSearchGiftWithEmptyStrings() {
         // Chuẩn bị
         GiftSearch giftSearch = new GiftSearch();

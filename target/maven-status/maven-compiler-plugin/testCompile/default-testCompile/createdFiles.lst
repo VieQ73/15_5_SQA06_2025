@@ -1,3 +1,12 @@
-com\devpro\shop\GeneratePassword.class
+com\devpro\services\GiftServiceSearchGiftTest.class
+com\devpro\services\GiftServiceIsEmptyUploadFileTest.class
+com\devpro\services\GiftServiceSearchProductGiftTest.class
+com\devpro\services\GiftServiceSearchProductGiftAdminTest.class
+com\devpro\services\NewsServiceIsEmptyUploadFileTest.class
+com\devpro\services\NewsServiceGetNewsIndexTest.class
+com\devpro\services\GiftServiceSaveTest.class
 com\devpro\services\CategoryServiceSaveTest.class
-com\devpro\shop\Utilities.class
+com\devpro\services\NewsServiceSaveTest.class
+com\devpro\services\CategoryServiceSearchTest.class
+com\devpro\services\NewsServiceGetNewsActiveTest.class
+com\devpro\services\CategoryServiceSearchAdminTest.class

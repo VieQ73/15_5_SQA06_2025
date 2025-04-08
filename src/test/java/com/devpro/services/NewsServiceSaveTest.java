@@ -3,12 +3,11 @@ package com.devpro.services;
 import com.devpro.entities.Images;
 import com.devpro.entities.News;
 import com.devpro.repositories.NewsRepo;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -20,9 +19,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Lớp kiểm thử đơn vị cho phương thức save của NewsService.
+ */
 @SpringBootTest
 @Transactional // Đảm bảo rollback sau mỗi lần test
-class NewsServiceTestSave {
+class NewsServiceSaveTest {
 
     @Autowired
     private NewsService newsService;
@@ -30,44 +32,16 @@ class NewsServiceTestSave {
     @Autowired
     private NewsRepo newsRepo;
 
-    private final String IMAGE_PATH = "D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\test\\resources\\";
+    private static final String IMAGE_PATH = "D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\test\\resources\\";
 
     /**
-     * Chuẩn bị dữ liệu trước mỗi bài test
-     */
-    @BeforeEach
-    public void setup() {
-        // Xóa tất cả các file ảnh tạm trong thư mục test trước mỗi bài test
-        File testDir = new File(IMAGE_PATH);
-        File[] testFiles = testDir.listFiles((dir, name) -> name.startsWith("test_"));
-        if (testFiles != null) {
-            for (File file : testFiles) {
-                file.delete();
-            }
-        }
-    }
-
-    /**
-     * Dọn dẹp sau mỗi bài test
-     */
-    @AfterEach
-    public void cleanup() {
-        // Xóa tất cả các file ảnh tạm trong thư mục test sau mỗi bài test
-        File testDir = new File(IMAGE_PATH);
-        File[] testFiles = testDir.listFiles((dir, name) -> name.startsWith("test_"));
-        if (testFiles != null) {
-            for (File file : testFiles) {
-                file.delete();
-            }
-        }
-    }
-
-    /**
-     * Test chức năng thêm mới một tin tức với ảnh
+     * TC_NS_10: Test chức năng thêm mới một tin tức với ảnh
      * Kiểm tra việc tạo mới tin tức và lưu ảnh vào thư mục
      */
     @Test
-    public void testLuuTinTucMoiCoAnh() throws IOException {
+    @Transactional
+    @Rollback
+    void testLuuTinTucMoiCoAnh() throws IOException {
         // Tạo một đối tượng tin tức mới
         News news = new News();
         news.setTitle("Tin tức test");
@@ -102,11 +76,13 @@ class NewsServiceTestSave {
     }
 
     /**
-     * Test chức năng cập nhật tin tức đã tồn tại với ảnh mới
+     * TC_NS_11: Test chức năng cập nhật tin tức đã tồn tại với ảnh mới
      * Kiểm tra việc xóa ảnh cũ và thêm ảnh mới
      */
     @Test
-    public void testCapNhatTinTucVoiAnhMoi() throws IOException, InterruptedException {
+    @Transactional
+    @Rollback
+    void testCapNhatTinTucVoiAnhMoi() throws IOException, InterruptedException {
         // Tạo một đối tượng tin tức mới để test
         News news = new News();
         news.setTitle("Tin tức ban đầu");
@@ -181,11 +157,11 @@ class NewsServiceTestSave {
     }
 
     /**
-     * Test chức năng cập nhật tin tức đã tồn tại nhưng giữ nguyên ảnh cũ
+     * TC_NS_12: Test chức năng cập nhật tin tức đã tồn tại nhưng giữ nguyên ảnh cũ
      * Kiểm tra việc giữ nguyên ảnh cũ khi không có ảnh mới được tải lên
      */
     @Test
-    public void testCapNhatTinTucGiuNguyenAnh() throws IOException {
+    void testCapNhatTinTucGiuNguyenAnh() throws IOException {
         // Tạo một đối tượng tin tức mới để test
         News news = new News();
         news.setTitle("Tin tức ban đầu - giữ ảnh");
@@ -257,11 +233,11 @@ class NewsServiceTestSave {
     }
 
     /**
-     * Test chức năng lưu tin tức với mảng ảnh null
+     * TC_NS_13: Test chức năng lưu tin tức với mảng ảnh null
      * Kiểm tra xử lý khi không có ảnh được cung cấp
      */
     @Test
-    public void testLuuTinTucVoiAnhNull() throws IOException {
+    void testLuuTinTucVoiAnhNull() throws IOException {
         // Tạo một đối tượng tin tức mới
         News news = new News();
         news.setTitle("Tin tức không có ảnh");
@@ -286,11 +262,11 @@ class NewsServiceTestSave {
     }
 
     /**
-     * Test chức năng lưu tin tức với ảnh có tên trống
+     * TC_NS_14: Test chức năng lưu tin tức với ảnh có tên trống
      * Kiểm tra xử lý với file ảnh không hợp lệ
      */
     @Test
-    public void testLuuTinTucVoiAnhTenTrong() throws IOException {
+    void testLuuTinTucVoiAnhTenTrong() throws IOException {
         // Tạo một đối tượng tin tức mới
         News news = new News();
         news.setTitle("Tin tức với ảnh tên trống");
@@ -320,11 +296,11 @@ class NewsServiceTestSave {
     }
 
     /**
-     * Test phương thức isEmptyUploadFile với mảng null
+     * TC_NS_15: Test phương thức isEmptyUploadFile với mảng null
      * Kiểm tra xử lý với tham số null
      */
     @Test
-    public void testKiemTraAnhRongVoiMangNull() {
+    void testKiemTraAnhRongVoiMangNull() {
         // Gọi phương thức private thông qua reflection
         java.lang.reflect.Method method;
         try {
@@ -338,11 +314,11 @@ class NewsServiceTestSave {
     }
 
     /**
-     * Test phương thức isEmptyUploadFile với mảng rỗng
+     * TC_NS_16: Test phương thức isEmptyUploadFile với mảng rỗng
      * Kiểm tra xử lý với mảng không có phần tử
      */
     @Test
-    public void testKiemTraAnhRongVoiMangRong() {
+    void testKiemTraAnhRongVoiMangRong() {
         // Gọi phương thức private thông qua reflection
         java.lang.reflect.Method method;
         try {
@@ -356,11 +332,11 @@ class NewsServiceTestSave {
     }
 
     /**
-     * Test phương thức isEmptyUploadFile với mảng chứa file tên rỗng
+     * TC_NS_17: Test phương thức isEmptyUploadFile với mảng chứa file tên rỗng
      * Kiểm tra xử lý với file không hợp lệ
      */
     @Test
-    public void testKiemTraAnhRongVoiTenFileRong() {
+    void testKiemTraAnhRongVoiTenFileRong() {
         // Tạo file ảnh với tên trống
         MockMultipartFile emptyImage = new MockMultipartFile(
                 "image", "", "image/jpeg", "test image content".getBytes()
@@ -380,11 +356,11 @@ class NewsServiceTestSave {
     }
 
     /**
-     * Test phương thức isEmptyUploadFile với file hợp lệ
+     * TC_NS_18: Test phương thức isEmptyUploadFile với file hợp lệ
      * Kiểm tra xử lý với file hợp lệ
      */
     @Test
-    public void testKiemTraAnhRongVoiFileHopLe() {
+    void testKiemTraAnhRongVoiFileHopLe() {
         // Tạo file ảnh hợp lệ
         MockMultipartFile validImage = new MockMultipartFile(
                 "image", "test_valid.jpg", "image/jpeg", "test image content".getBytes()

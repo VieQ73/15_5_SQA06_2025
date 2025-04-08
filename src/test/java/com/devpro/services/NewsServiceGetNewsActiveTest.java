@@ -15,10 +15,13 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Lớp kiểm thử đơn vị cho phương thức getNewsActive của NewsService.
+ */
 @SpringBootTest
 @Transactional // Đảm bảo rollback sau mỗi lần test
 @Rollback
-class NewsServiceTestGetNewsActive {
+class NewsServiceGetNewsActiveTest {
 
     @Autowired
     private NewsService newsService;
@@ -27,7 +30,7 @@ class NewsServiceTestGetNewsActive {
     private NewsRepo newsRepo;
 
     /**
-     * Test phương thức getNewsActive() khi có dữ liệu tin tức active
+     * TC_NS_01: Test phương thức getNewsActive() khi có dữ liệu tin tức active
      * Kiểm tra phương thức trả về đúng danh sách tin tức có trạng thái active (status = true)
      */
     @Test
@@ -98,7 +101,7 @@ class NewsServiceTestGetNewsActive {
     }
 
     /**
-     * Test phương thức getNewsActive() khi không có tin tức active nào
+     * TC_NS_02: Test phương thức getNewsActive() khi không có tin tức active nào
      * Kiểm tra phương thức trả về danh sách rỗng khi không có tin tức active
      */
     @Test
@@ -127,9 +130,8 @@ class NewsServiceTestGetNewsActive {
     }
 
     /**
-     * Test phương thức getNewsActive() có sắp xếp theo ngày tạo mới nhất (nếu có sắp xếp)
+     * TC_NS_03: Test phương thức getNewsActive() có sắp xếp theo ngày tạo mới nhất (nếu có sắp xếp)
      * Kiểm tra thứ tự các tin tức trong kết quả trả về
-     * Lưu ý: Test này giả định rằng kết quả được sắp xếp theo ngày tạo. Nếu không có sắp xếp, có thể bỏ test này.
      */
     @Test
     @Transactional
@@ -147,9 +149,6 @@ class NewsServiceTestGetNewsActive {
         // Lưu tin tức 1
         MockMultipartFile[] emptyImages = new MockMultipartFile[0];
         newsService.save(emptyImages, news1);
-
-        // Đợi một chút để đảm bảo thời gian tạo khác nhau
-        Thread.sleep(100);
 
         // Tin tức 2: active, tạo sau
         News news2 = new News();
