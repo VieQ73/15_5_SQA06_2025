@@ -60,10 +60,10 @@ public class ProductServiceIsEmptyUploadFileTest {
         logger.info("Hoàn tác dữ liệu kiểm thử hoàn tất.");
     }
 
-    // TC_isEmptyUploadFile_01: Mảng images là null
+    // TC_P_01 - testIsEmptyUploadFile_WithNullArray: Mảng images là null
     @Test
     public void testIsEmptyUploadFile_WithNullArray() {
-        logger.info("Bắt đầu TC_isEmptyUploadFile_01: Kiểm tra mảng images là null.");
+        logger.info("Bắt đầu TC_P_01 - testIsEmptyUploadFile_WithNullArray: Kiểm tra mảng images là null.");
         // Chuẩn bị: Mảng images là null
         MultipartFile[] images = null;
         logger.info("Dữ liệu chuẩn bị: images = null");
@@ -73,13 +73,13 @@ public class ProductServiceIsEmptyUploadFileTest {
 
         // Kiểm tra và log
         assertTrue(result, "Phải trả về true vì mảng images là null");
-        logger.info("Kết quả TC_isEmptyUploadFile_01: Trả về true như mong đợi.");
+        logger.info("Kết quả TC_P_01 - testIsEmptyUploadFile_WithNullArray: Kết thúc test case.");
     }
 
-    // TC_isEmptyUploadFile_02: Mảng images rỗng
+    // TC_P_02 - testIsEmptyUploadFile_WithEmptyArray: Mảng images rỗng
     @Test
     public void testIsEmptyUploadFile_WithEmptyArray() {
-        logger.info("Bắt đầu TC_isEmptyUploadFile_02: Kiểm tra mảng images rỗng.");
+        logger.info("Bắt đầu TC_P_02 - testIsEmptyUploadFile_WithEmptyArray: Kiểm tra mảng images rỗng.");
         // Chuẩn bị: Mảng images rỗng
         MultipartFile[] images = new MultipartFile[]{};
         logger.info("Dữ liệu chuẩn bị: images = {}");
@@ -89,13 +89,13 @@ public class ProductServiceIsEmptyUploadFileTest {
 
         // Kiểm tra và log
         assertTrue(result, "Phải trả về true vì mảng images rỗng");
-        logger.info("Kết quả TC_isEmptyUploadFile_02: Trả về true như mong đợi.");
+        logger.info("Kết quả TC_P_02 - testIsEmptyUploadFile_WithEmptyArray: Kết thúc test case.");
     }
 
-    // TC_isEmptyUploadFile_03: Mảng chứa 1 file rỗng
+    // TC_P_03 - testIsEmptyUploadFile_WithSingleEmptyFile: Mảng chứa 1 file rỗng
     @Test
     public void testIsEmptyUploadFile_WithSingleEmptyFile() {
-        logger.info("Bắt đầu TC_isEmptyUploadFile_03: Kiểm tra mảng chứa 1 file rỗng.");
+        logger.info("Bắt đầu TC_P_03 - testIsEmptyUploadFile_WithSingleEmptyFile: Kiểm tra mảng chứa 1 file rỗng.");
         // Chuẩn bị: Mảng chứa 1 file với originalFilename rỗng
         when(mockFile.getOriginalFilename()).thenReturn("");
         MultipartFile[] images = new MultipartFile[]{mockFile};
@@ -107,13 +107,13 @@ public class ProductServiceIsEmptyUploadFileTest {
         // Kiểm tra và log
         assertTrue(result, "Phải trả về true vì mảng chỉ chứa 1 file rỗng");
         verify(mockFile, times(1)).getOriginalFilename();
-        logger.info("Kết quả TC_isEmptyUploadFile_03: Trả về true như mong đợi.");
+        logger.info("Kết quả TC_P_03 - testIsEmptyUploadFile_WithSingleEmptyFile: Kết thúc test case.");
     }
 
-    // TC_isEmptyUploadFile_04: Mảng chứa 1 file không rỗng
+    // TC_P_04 - testIsEmptyUploadFile_WithSingleNonEmptyFile: Mảng chứa 1 file không rỗng
     @Test
     public void testIsEmptyUploadFile_WithSingleNonEmptyFile() {
-        logger.info("Bắt đầu TC_isEmptyUploadFile_04: Kiểm tra mảng chứa 1 file không rỗng.");
+        logger.info("Bắt đầu TC_P_04 - testIsEmptyUploadFile_WithSingleNonEmptyFile: Kiểm tra mảng chứa 1 file không rỗng.");
         // Chuẩn bị: Mảng chứa 1 file với originalFilename không rỗng
         when(mockFile.getOriginalFilename()).thenReturn("image.jpg");
         MultipartFile[] images = new MultipartFile[]{mockFile};
@@ -125,13 +125,13 @@ public class ProductServiceIsEmptyUploadFileTest {
         // Kiểm tra và log
         assertFalse(result, "Phải trả về false vì mảng chứa 1 file không rỗng");
         verify(mockFile, times(1)).getOriginalFilename();
-        logger.info("Kết quả TC_isEmptyUploadFile_04: Trả về false như mong đợi.");
+        logger.info("Kết quả TC_P_04 - testIsEmptyUploadFile_WithSingleNonEmptyFile: Kết thúc test case.");
     }
 
-    // TC_isEmptyUploadFile_05: Mảng chứa nhiều file
+    // TC_P_05 - testIsEmptyUploadFile_WithMultipleFilesAllEmpty: Mảng chứa nhiều file đều rỗng
     @Test
     public void testIsEmptyUploadFile_WithMultipleFilesAllEmpty() {
-        logger.info("Bắt đầu TC_isEmptyUploadFile_05: Kiểm tra mảng chứa nhiều file.");
+        logger.info("Bắt đầu TC_P_05 - testIsEmptyUploadFile_WithMultipleFilesAllEmpty: Kiểm tra mảng chứa nhiều file đều rỗng.");
         // Chuẩn bị: Mảng chứa 2 file với originalFilename rỗng
         MultipartFile mockFile1 = mock(MultipartFile.class);
         MultipartFile mockFile2 = mock(MultipartFile.class);
@@ -145,14 +145,13 @@ public class ProductServiceIsEmptyUploadFileTest {
 
         // Kiểm tra và log
         assertFalse(result, "Phải trả về false vì mảng chứa nhiều file");
-        // Không verify getOriginalFilename() vì phương thức không gọi nó khi images.length > 1
-        logger.info("Kết quả TC_isEmptyUploadFile_05: Trả về false như mong đợi.");
+        logger.info("Kết quả TC_P_05 - testIsEmptyUploadFile_WithMultipleFilesAllEmpty: Kết thúc test case.");
     }
 
-    // TC_isEmptyUploadFile_06: Mảng chứa nhiều file
+    // TC_P_06 - testIsEmptyUploadFile_WithMultipleFilesSomeEmpty: Mảng chứa nhiều file, một số rỗng
     @Test
     public void testIsEmptyUploadFile_WithMultipleFilesSomeEmpty() {
-        logger.info("Bắt đầu TC_isEmptyUploadFile_06: Kiểm tra mảng chứa nhiều file.");
+        logger.info("Bắt đầu TC_P_06 - testIsEmptyUploadFile_WithMultipleFilesSomeEmpty: Kiểm tra mảng chứa nhiều file, một số rỗng.");
         // Chuẩn bị: Mảng chứa 2 file, 1 file rỗng và 1 file không rỗng
         MultipartFile mockFile1 = mock(MultipartFile.class);
         MultipartFile mockFile2 = mock(MultipartFile.class);
@@ -166,14 +165,13 @@ public class ProductServiceIsEmptyUploadFileTest {
 
         // Kiểm tra và log
         assertFalse(result, "Phải trả về false vì mảng chứa nhiều file");
-        // Không verify getOriginalFilename() vì phương thức không gọi nó khi images.length > 1
-        logger.info("Kết quả TC_isEmptyUploadFile_06: Trả về false như mong đợi.");
+        logger.info("Kết quả TC_P_06 - testIsEmptyUploadFile_WithMultipleFilesSomeEmpty: Kết thúc test case.");
     }
 
-    // TC_isEmptyUploadFile_07: Mảng chứa nhiều file
+    // TC_P_07 - testIsEmptyUploadFile_WithMultipleFilesAllNonEmpty: Mảng chứa nhiều file đều không rỗng
     @Test
     public void testIsEmptyUploadFile_WithMultipleFilesAllNonEmpty() {
-        logger.info("Bắt đầu TC_isEmptyUploadFile_07: Kiểm tra mảng chứa nhiều file.");
+        logger.info("Bắt đầu TC_P_07 - testIsEmptyUploadFile_WithMultipleFilesAllNonEmpty: Kiểm tra mảng chứa nhiều file đều không rỗng.");
         // Chuẩn bị: Mảng chứa 2 file không rỗng
         MultipartFile mockFile1 = mock(MultipartFile.class);
         MultipartFile mockFile2 = mock(MultipartFile.class);
@@ -187,14 +185,13 @@ public class ProductServiceIsEmptyUploadFileTest {
 
         // Kiểm tra và log
         assertFalse(result, "Phải trả về false vì mảng chứa nhiều file");
-        // Không verify getOriginalFilename() vì phương thức không gọi nó khi images.length > 1
-        logger.info("Kết quả TC_isEmptyUploadFile_07: Trả về false như mong đợi.");
+        logger.info("Kết quả TC_P_07 - testIsEmptyUploadFile_WithMultipleFilesAllNonEmpty: Kết thúc test case.");
     }
 
-    // TC_isEmptyUploadFile_08: Mảng chứa 1 file với originalFilename là null
+    // TC_P_08 - testIsEmptyUploadFile_WithSingleFileNullName: Mảng chứa 1 file với originalFilename là null
     @Test
     public void testIsEmptyUploadFile_WithSingleFileNullName() {
-        logger.info("Bắt đầu TC_isEmptyUploadFile_08: Kiểm tra mảng chứa 1 file với originalFilename là null.");
+        logger.info("Bắt đầu TC_P_08 - testIsEmptyUploadFile_WithSingleFileNullName: Kiểm tra mảng chứa 1 file với originalFilename là null.");
         // Chuẩn bị: Mảng chứa 1 file với originalFilename là null
         when(mockFile.getOriginalFilename()).thenReturn(null);
         MultipartFile[] images = new MultipartFile[]{mockFile};
@@ -207,6 +204,6 @@ public class ProductServiceIsEmptyUploadFileTest {
 
         // Kiểm tra tương tác và log
         verify(mockFile, times(1)).getOriginalFilename();
-        logger.info("Kết quả TC_isEmptyUploadFile_08: Ném NullPointerException như mong đợi.");
+        logger.info("Kết quả TC_P_08 - testIsEmptyUploadFile_WithSingleFileNullName: Kết thúc test case.");
     }
 }

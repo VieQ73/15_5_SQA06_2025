@@ -58,10 +58,10 @@ public class ProductServiceListAllDescTest {
         logger.info("Hoàn tác dữ liệu kiểm thử hoàn tất.");
     }
 
-    // Test case 1: keyword là null
+    // TC_P_32 - testListAllDesc_KeywordIsNull: Keyword là null
     @Test
     public void testListAllDesc_KeywordIsNull() {
-        logger.info("Bắt đầu testListAllDesc_KeywordIsNull: Kiểm tra listAllDesc với keyword là null.");
+        logger.info("Bắt đầu TC_P_32 - testListAllDesc_KeywordIsNull: Kiểm tra listAllDesc với keyword là null.");
         // Chuẩn bị dữ liệu
         String keyword = null;
         List<Product> mockProducts = new ArrayList<>();
@@ -83,13 +83,13 @@ public class ProductServiceListAllDescTest {
         verify(productRepo, times(1)).findAll();
         verify(entityManager, never()).createNativeQuery(anyString(), eq(Product.class));
         assertEquals(mockProducts, result, "Danh sách trả về phải giống mockProducts");
-        logger.info("Hoàn thành testListAllDesc_KeywordIsNull.");
+        logger.info("Kết quả TC_P_32 - testListAllDesc_KeywordIsNull: Kết thúc test case.");
     }
 
-    // Test case 2: keyword là chuỗi rỗng (sửa lại để phản ánh đúng logic của phương thức)
+    // TC_P_33 - testListAllDesc_KeywordIsEmpty: Keyword là chuỗi rỗng
     @Test
     public void testListAllDesc_KeywordIsEmpty() {
-        logger.info("Bắt đầu testListAllDesc_KeywordIsEmpty: Kiểm tra listAllDesc với keyword là chuỗi rỗng.");
+        logger.info("Bắt đầu TC_P_33 - testListAllDesc_KeywordIsEmpty: Kiểm tra listAllDesc với keyword là chuỗi rỗng.");
         // Chuẩn bị dữ liệu
         String keyword = "";
         List<Product> mockProducts = new ArrayList<>();
@@ -114,13 +114,13 @@ public class ProductServiceListAllDescTest {
         verify(mockQuery, times(1)).getResultList();
         verify(productRepo, never()).findAll();
         assertEquals(mockProducts, result, "Danh sách trả về phải giống mockProducts");
-        logger.info("Hoàn thành testListAllDesc_KeywordIsEmpty.");
+        logger.info("Kết quả TC_P_33 - testListAllDesc_KeywordIsEmpty: Kết thúc test case.");
     }
 
-    // Test case 3: keyword là chuỗi hợp lệ, có sản phẩm khớp
+    // TC_P_34 - testListAllDesc_KeywordValidWithMatchingProducts: Keyword hợp lệ, có sản phẩm khớp
     @Test
     public void testListAllDesc_KeywordValidWithMatchingProducts() {
-        logger.info("Bắt đầu testListAllDesc_KeywordValidWithMatchingProducts: Kiểm tra listAllDesc với keyword hợp lệ và có sản phẩm khớp.");
+        logger.info("Bắt đầu TC_P_34 - testListAllDesc_KeywordValidWithMatchingProducts: Kiểm tra listAllDesc với keyword hợp lệ và có sản phẩm khớp.");
         // Chuẩn bị dữ liệu
         String keyword = "phone";
         List<Product> mockProducts = new ArrayList<>();
@@ -145,13 +145,13 @@ public class ProductServiceListAllDescTest {
         verify(mockQuery, times(1)).getResultList();
         verify(productRepo, never()).findAll();
         assertEquals(mockProducts, result, "Danh sách trả về phải giống mockProducts");
-        logger.info("Hoàn thành testListAllDesc_KeywordValidWithMatchingProducts.");
+        logger.info("Kết quả TC_P_34 - testListAllDesc_KeywordValidWithMatchingProducts: Kết thúc test case.");
     }
 
-    // Test case 4: keyword chứa ký tự đặc biệt (sửa lại để mock đúng câu SQL thực tế)
+    // TC_P_35 - testListAllDesc_KeywordWithSpecialCharacters: Keyword chứa ký tự đặc biệt
     @Test
     public void testListAllDesc_KeywordWithSpecialCharacters() {
-        logger.info("Bắt đầu testListAllDesc_KeywordWithSpecialCharacters: Kiểm tra listAllDesc với keyword chứa ký tự đặc biệt.");
+        logger.info("Bắt đầu TC_P_35 - testListAllDesc_KeywordWithSpecialCharacters: Kiểm tra listAllDesc với keyword chứa ký tự đặc biệt.");
         // Chuẩn bị dữ liệu
         String keyword = "phone%";
         List<Product> mockProducts = new ArrayList<>();
@@ -160,7 +160,6 @@ public class ProductServiceListAllDescTest {
         product1.setTitle("Smartphone");
         product1.setPrice(new BigDecimal("1000"));
         mockProducts.add(product1);
-        // Mock câu SQL thực tế mà phương thức tạo ra (không escape ký tự đặc biệt)
         when(entityManager.createNativeQuery("SELECT * FROM tbl_product WHERE title LIKE '%phone%%' order by price desc", Product.class))
                 .thenReturn(mockQuery);
         when(mockQuery.getResultList()).thenReturn(mockProducts);
@@ -177,13 +176,13 @@ public class ProductServiceListAllDescTest {
         verify(mockQuery, times(1)).getResultList();
         verify(productRepo, never()).findAll();
         assertEquals(mockProducts, result, "Danh sách trả về phải giống mockProducts");
-        logger.info("Hoàn thành testListAllDesc_KeywordWithSpecialCharacters. Lưu ý: Phương thức cần sửa để escape ký tự đặc biệt tránh SQL injection.");
+        logger.info("Kết quả TC_P_35 - testListAllDesc_KeywordWithSpecialCharacters: Kết thúc test case.");
     }
 
-    // Test case 5: keyword không khớp với sản phẩm nào
+    // TC_P_36 - testListAllDesc_KeywordNoMatchingProducts: Keyword không khớp với sản phẩm nào
     @Test
     public void testListAllDesc_KeywordNoMatchingProducts() {
-        logger.info("Bắt đầu testListAllDesc_KeywordNoMatchingProducts: Kiểm tra listAllDesc với keyword không khớp với sản phẩm nào.");
+        logger.info("Bắt đầu TC_P_36 - testListAllDesc_KeywordNoMatchingProducts: Kiểm tra listAllDesc với keyword không khớp với sản phẩm nào.");
         // Chuẩn bị dữ liệu
         String keyword = "xyz";
         List<Product> mockProducts = new ArrayList<>();
@@ -203,13 +202,13 @@ public class ProductServiceListAllDescTest {
         verify(mockQuery, times(1)).getResultList();
         verify(productRepo, never()).findAll();
         assertTrue(result.isEmpty(), "Danh sách trả về phải rỗng");
-        logger.info("Hoàn thành testListAllDesc_KeywordNoMatchingProducts.");
+        logger.info("Kết quả TC_P_36 - testListAllDesc_KeywordNoMatchingProducts: Kết thúc test case.");
     }
 
-    // Test case 6: keyword khớp với nhiều sản phẩm, kiểm tra sắp xếp theo giá giảm dần (thêm kiểm tra sắp xếp)
+    // TC_P_37 - testListAllDesc_KeywordWithMultipleMatchingProducts: Keyword khớp với nhiều sản phẩm
     @Test
     public void testListAllDesc_KeywordWithMultipleMatchingProducts() {
-        logger.info("Bắt đầu testListAllDesc_KeywordWithMultipleMatchingProducts: Kiểm tra listAllDesc với keyword khớp với nhiều sản phẩm.");
+        logger.info("Bắt đầu TC_P_37 - testListAllDesc_KeywordWithMultipleMatchingProducts: Kiểm tra listAllDesc với keyword khớp với nhiều sản phẩm.");
         // Chuẩn bị dữ liệu
         String keyword = "phone";
         List<Product> mockProducts = new ArrayList<>();
@@ -240,15 +239,14 @@ public class ProductServiceListAllDescTest {
         verify(productRepo, never()).findAll();
         assertEquals(2, result.size(), "Danh sách trả về phải có 2 sản phẩm");
         assertEquals(mockProducts, result, "Danh sách trả về phải giống mockProducts");
-        // Kiểm tra sắp xếp theo giá giảm dần
         assertTrue(result.get(0).getPrice().compareTo(result.get(1).getPrice()) > 0, "Sản phẩm đầu tiên phải có giá cao hơn sản phẩm thứ hai");
-        logger.info("Hoàn thành testListAllDesc_KeywordWithMultipleMatchingProducts.");
+        logger.info("Kết quả TC_P_37 - testListAllDesc_KeywordWithMultipleMatchingProducts: Kết thúc test case.");
     }
 
-    // Test case 7: productRepo.findAll() trả về danh sách rỗng
+    // TC_P_38 - testListAllDesc_KeywordIsNullWithEmptyProductRepo: Keyword là null và productRepo rỗng
     @Test
     public void testListAllDesc_KeywordIsNullWithEmptyProductRepo() {
-        logger.info("Bắt đầu testListAllDesc_KeywordIsNullWithEmptyProductRepo: Kiểm tra listAllDesc với keyword là null và productRepo rỗng.");
+        logger.info("Bắt đầu TC_P_38 - testListAllDesc_KeywordIsNullWithEmptyProductRepo: Kiểm tra listAllDesc với keyword là null và productRepo rỗng.");
         // Chuẩn bị dữ liệu
         String keyword = null;
         List<Product> mockProducts = new ArrayList<>();
@@ -265,13 +263,13 @@ public class ProductServiceListAllDescTest {
         verify(productRepo, times(1)).findAll();
         verify(entityManager, never()).createNativeQuery(anyString(), eq(Product.class));
         assertTrue(result.isEmpty(), "Danh sách trả về phải rỗng");
-        logger.info("Hoàn thành testListAllDesc_KeywordIsNullWithEmptyProductRepo.");
+        logger.info("Kết quả TC_P_38 - testListAllDesc_KeywordIsNullWithEmptyProductRepo: Kết thúc test case.");
     }
 
-    // Test case 8: query.getResultList() ném ngoại lệ (thay thế test case cũ để kiểm tra lỗi database khi truy vấn SQL)
+    // TC_P_39 - testListAllDesc_KeywordValidWithQueryException: Keyword hợp lệ và query ném ngoại lệ
     @Test
     public void testListAllDesc_KeywordValidWithQueryException() {
-        logger.info("Bắt đầu testListAllDesc_KeywordValidWithQueryException: Kiểm tra listAllDesc với keyword hợp lệ và query ném ngoại lệ.");
+        logger.info("Bắt đầu TC_P_39 - testListAllDesc_KeywordValidWithQueryException: Kiểm tra listAllDesc với keyword hợp lệ và query ném ngoại lệ.");
         // Chuẩn bị dữ liệu
         String keyword = "phone";
         when(entityManager.createNativeQuery("SELECT * FROM tbl_product WHERE title LIKE '%phone%' order by price desc", Product.class))
@@ -291,6 +289,6 @@ public class ProductServiceListAllDescTest {
         verify(entityManager, times(1)).createNativeQuery("SELECT * FROM tbl_product WHERE title LIKE '%phone%' order by price desc", Product.class);
         verify(mockQuery, times(1)).getResultList();
         verify(productRepo, never()).findAll();
-        logger.info("Hoàn thành testListAllDesc_KeywordValidWithQueryException.");
+        logger.info("Kết quả TC_P_39 - testListAllDesc_KeywordValidWithQueryException: Kết thúc test case.");
     }
 }

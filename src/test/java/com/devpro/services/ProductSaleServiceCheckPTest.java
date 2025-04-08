@@ -69,10 +69,10 @@ public class ProductSaleServiceCheckPTest {
         logger.info("Hoàn tác dữ liệu kiểm thử hoàn tất. Danh sách ProductSale sau test: {}", danhSachProductSale);
     }
 
-    // TC_checkP_01: Tồn tại ProductSale khớp với idP và idS
+    // TC_PS_129 - testCheckP_WithMatchingProductSale: Tồn tại ProductSale khớp với idP và idS
     @Test
     public void testCheckP_WithMatchingProductSale() {
-        logger.info("Bắt đầu TC_checkP_01: Kiểm tra tồn tại ProductSale khớp với idP và idS.");
+        logger.info("Bắt đầu TC_PS_129: Kiểm tra tồn tại ProductSale khớp với idP và idS.");
         // Chuẩn bị: Tạo một ProductSale với product_id = 1, sale_id = 1
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -91,13 +91,13 @@ public class ProductSaleServiceCheckPTest {
         // Kiểm tra và log
         assertTrue(result, "Phải trả về true vì tồn tại ProductSale khớp");
         verify(productSaleRepo, times(1)).findAll();
-        logger.info("Kết quả TC_checkP_01: Trả về true như mong đợi. Danh sách ProductSale sau test: {}", danhSachProductSale);
+        logger.info("Kết quả TC_PS_129:  Kết thúc test case. Danh sách ProductSale sau test: {}", danhSachProductSale);
     }
 
-    // TC_checkP_02: Không có ProductSale nào khớp với idP và idS
+    // TC_PS_130 - testCheckP_WithNoMatchingProductSale: Không có ProductSale nào khớp với idP và idS
     @Test
     public void testCheckP_WithNoMatchingProductSale() {
-        logger.info("Bắt đầu TC_checkP_02: Kiểm tra không có ProductSale khớp với idP và idS.");
+        logger.info("Bắt đầu TC_PS_130: Kiểm tra không có ProductSale khớp với idP và idS.");
         // Chuẩn bị: Tạo một ProductSale với product_id = 1, sale_id = 1
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -116,13 +116,13 @@ public class ProductSaleServiceCheckPTest {
         // Kiểm tra và log
         assertFalse(result, "Phải trả về false vì không có ProductSale khớp");
         verify(productSaleRepo, times(1)).findAll();
-        logger.info("Kết quả TC_checkP_02: Trả về false như mong đợi. Danh sách ProductSale sau test: {}", danhSachProductSale);
+        logger.info("Kết quả TC_PS_130:  Kết thúc test case. Danh sách ProductSale sau test: {}", danhSachProductSale);
     }
 
-    // TC_checkP_03: Nhiều ProductSale, chỉ một cái khớp
+    // TC_PS_131 - testCheckP_WithMultipleProductSalesOneMatch: Nhiều ProductSale, chỉ một cái khớp
     @Test
     public void testCheckP_WithMultipleProductSalesOneMatch() {
-        logger.info("Bắt đầu TC_checkP_03: Kiểm tra nhiều ProductSale, chỉ một cái khớp.");
+        logger.info("Bắt đầu TC_PS_131: Kiểm tra nhiều ProductSale, chỉ một cái khớp.");
         // Chuẩn bị: Tạo 3 ProductSale, chỉ một cái khớp với idP = 2, idS = 2
         for (int i = 1; i <= 3; i++) {
             Product sanPham = new Product();
@@ -143,13 +143,13 @@ public class ProductSaleServiceCheckPTest {
         // Kiểm tra và log
         assertTrue(result, "Phải trả về true vì tồn tại một ProductSale khớp");
         verify(productSaleRepo, times(1)).findAll();
-        logger.info("Kết quả TC_checkP_03: Trả về true như mong đợi. Danh sách ProductSale sau test: {}", danhSachProductSale);
+        logger.info("Kết quả TC_PS_131:  Kết thúc test case. Danh sách ProductSale sau test: {}", danhSachProductSale);
     }
 
-    // TC_checkP_04: idP là null
+    // TC_PS_132 - testCheckP_WithNullIdP: idP là null
     @Test
     public void testCheckP_WithNullIdP() {
-        logger.info("Bắt đầu TC_checkP_04: Kiểm tra idP là null.");
+        logger.info("Bắt đầu TC_PS_132: Kiểm tra idP là null.");
         // Chuẩn bị: Tạo một ProductSale với product_id = 1, sale_id = 1
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -168,13 +168,13 @@ public class ProductSaleServiceCheckPTest {
         // Kiểm tra và log
         assertFalse(result, "Phải trả về false vì idP là null");
         verify(productSaleRepo, times(1)).findAll();
-        logger.info("Kết quả TC_checkP_04: Trả về false như mong đợi. Danh sách ProductSale sau test: {}", danhSachProductSale);
+        logger.info("Kết quả TC_PS_132:  Kết thúc test case. Danh sách ProductSale sau test: {}", danhSachProductSale);
     }
 
-    // TC_checkP_05: idS là null
+    // TC_PS_133 - testCheckP_WithNullIdS: idS là null
     @Test
     public void testCheckP_WithNullIdS() {
-        logger.info("Bắt đầu TC_checkP_05: Kiểm tra idS là null.");
+        logger.info("Bắt đầu TC_PS_133: Kiểm tra idS là null.");
         // Chuẩn bị: Tạo một ProductSale với product_id = 1, sale_id = 1
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -193,13 +193,13 @@ public class ProductSaleServiceCheckPTest {
         // Kiểm tra và log
         assertFalse(result, "Phải trả về false vì idS là null");
         verify(productSaleRepo, times(1)).findAll();
-        logger.info("Kết quả TC_checkP_05: Trả về false như mong đợi. Danh sách ProductSale sau test: {}", danhSachProductSale);
+        logger.info("Kết quả TC_PS_133: Kết thúc test case. Danh sách ProductSale sau test: {}", danhSachProductSale);
     }
 
-    // TC_checkP_06: Cả idP và idS đều là null
+    // TC_PS_134 - testCheckP_WithBothNullIds: Cả idP và idS đều là null
     @Test
     public void testCheckP_WithBothNullIds() {
-        logger.info("Bắt đầu TC_checkP_06: Kiểm tra cả idP và idS đều là null.");
+        logger.info("Bắt đầu TC_PS_134: Kiểm tra cả idP và idS đều là null.");
         // Chuẩn bị: Tạo một ProductSale với product_id = 1, sale_id = 1
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -218,13 +218,13 @@ public class ProductSaleServiceCheckPTest {
         // Kiểm tra và log
         assertFalse(result, "Phải trả về false vì cả idP và idS đều là null");
         verify(productSaleRepo, times(1)).findAll();
-        logger.info("Kết quả TC_checkP_06: Trả về false như mong đợi. Danh sách ProductSale sau test: {}", danhSachProductSale);
+        logger.info("Kết quả TC_PS_134:  Kết thúc test case. Danh sách ProductSale sau test: {}", danhSachProductSale);
     }
 
-    // TC_checkP_07: idP hoặc idS âm
+    // TC_PS_135 - testCheckP_WithNegativeIds: idP hoặc idS âm
     @Test
     public void testCheckP_WithNegativeIds() {
-        logger.info("Bắt đầu TC_checkP_07: Kiểm tra idP hoặc idS âm.");
+        logger.info("Bắt đầu TC_PS_135: Kiểm tra idP hoặc idS âm.");
         // Chuẩn bị: Tạo một ProductSale với product_id = 1, sale_id = 1
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -243,13 +243,13 @@ public class ProductSaleServiceCheckPTest {
         // Kiểm tra và log
         assertFalse(result, "Phải trả về false vì idP và idS âm không khớp");
         verify(productSaleRepo, times(1)).findAll();
-        logger.info("Kết quả TC_checkP_07: Trả về false như mong đợi. Danh sách ProductSale sau test: {}", danhSachProductSale);
+        logger.info("Kết quả TC_PS_135:  Kết thúc test case. Danh sách ProductSale sau test: {}", danhSachProductSale);
     }
 
-    // TC_checkP_08: idP hoặc idS là 0
+    // TC_PS_136 - testCheckP_WithZeroIds: idP hoặc idS là 0
     @Test
     public void testCheckP_WithZeroIds() {
-        logger.info("Bắt đầu TC_checkP_08: Kiểm tra idP hoặc idS là 0.");
+        logger.info("Bắt đầu TC_PS_136: Kiểm tra idP hoặc idS là 0.");
         // Chuẩn bị: Tạo một ProductSale với product_id = 1, sale_id = 1
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -268,13 +268,13 @@ public class ProductSaleServiceCheckPTest {
         // Kiểm tra và log
         assertFalse(result, "Phải trả về false vì idP và idS là 0 không khớp");
         verify(productSaleRepo, times(1)).findAll();
-        logger.info("Kết quả TC_checkP_08: Trả về false như mong đợi. Danh sách ProductSale sau test: {}", danhSachProductSale);
+        logger.info("Kết quả TC_PS_136:  Kết thúc test case. Danh sách ProductSale sau test: {}", danhSachProductSale);
     }
 
-    // TC_checkP_09: ProductSale có product hoặc sale là null
+    // TC_PS_137 - testCheckP_WithNullFields: ProductSale có product hoặc sale là null
     @Test
     public void testCheckP_WithNullFields() {
-        logger.info("Bắt đầu TC_checkP_09: Kiểm tra ProductSale có product hoặc sale là null.");
+        logger.info("Bắt đầu TC_PS_137: Kiểm tra ProductSale có product hoặc sale là null.");
         // Chuẩn bị: Tạo một ProductSale với product = null, sale = null
         ProductSale ps = new ProductSale();
         ps.setId(1);
@@ -290,13 +290,13 @@ public class ProductSaleServiceCheckPTest {
 
         // Kiểm tra tương tác và log
         verify(productSaleRepo, times(1)).findAll();
-        logger.info("Kết quả TC_checkP_09: Ném NullPointerException như mong đợi. Danh sách ProductSale sau test: {}", danhSachProductSale);
+        logger.info("Kết quả TC_PS_137:  Kết thúc test case. Danh sách ProductSale sau test: {}", danhSachProductSale);
     }
 
-    // TC_checkP_10: Danh sách ProductSale rỗng
+    // TC_PS_138 - testCheckP_WithEmptyList: Danh sách ProductSale rỗng
     @Test
     public void testCheckP_WithEmptyList() {
-        logger.info("Bắt đầu TC_checkP_10: Kiểm tra danh sách ProductSale rỗng.");
+        logger.info("Bắt đầu TC_PS_138: Kiểm tra danh sách ProductSale rỗng.");
         // Chuẩn bị: Danh sách ProductSale rỗng
         logger.info("Dữ liệu chuẩn bị: idP = 1, idS = 1, danh sách ProductSale: {}", danhSachProductSale);
 
@@ -306,6 +306,6 @@ public class ProductSaleServiceCheckPTest {
         // Kiểm tra và log
         assertFalse(result, "Phải trả về false vì danh sách ProductSale rỗng");
         verify(productSaleRepo, times(1)).findAll();
-        logger.info("Kết quả TC_checkP_10: Trả về false như mong đợi. Danh sách ProductSale sau test: {}", danhSachProductSale);
+        logger.info("Kết quả TC_PS_138:  Kết thúc test case. Danh sách ProductSale sau test: {}", danhSachProductSale);
     }
 }

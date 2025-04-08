@@ -67,10 +67,10 @@ public class ProductSaleServiceGetProductSaleByIdSaleTest {
         logger.info("Hoàn tác dữ liệu kiểm thử hoàn tất.");
     }
 
-    // TC_getProductSaleByIdSale_01: Tồn tại ProductSale với sale_id hợp lệ
+    // TC_PS_119 - testGetProductSaleByIdSale_WithValidId: Tồn tại ProductSale với sale_id hợp lệ
     @Test
     public void testGetProductSaleByIdSale_WithValidId() {
-        logger.info("Bắt đầu TC_getProductSaleByIdSale_01: Kiểm tra sale_id hợp lệ và tồn tại.");
+        logger.info("Bắt đầu TC_PS_119: Kiểm tra sale_id hợp lệ và tồn tại.");
         // Chuẩn bị: Mock trả về 1 ProductSale với sale_id = 1
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -90,13 +90,13 @@ public class ProductSaleServiceGetProductSaleByIdSaleTest {
         assertEquals(1, result.size(), "Danh sách phải chứa 1 ProductSale");
         assertEquals(1, result.get(0).getSale().getId(), "sale_id của ProductSale phải là 1");
         verify(entityManager, times(1)).createNativeQuery(anyString(), eq(ProductSale.class));
-        logger.info("Kết quả TC_getProductSaleByIdSale_01: Trả về danh sách chứa 1 ProductSale như mong đợi.");
+        logger.info("Kết quả TC_PS_119: Kết thúc test case.");
     }
 
-    // TC_getProductSaleByIdSale_02: Nhiều ProductSale khớp với sale_id
+    // TC_PS_120 - testGetProductSaleByIdSale_WithMultipleProductSales: Nhiều ProductSale khớp với sale_id
     @Test
     public void testGetProductSaleByIdSale_WithMultipleProductSales() {
-        logger.info("Bắt đầu TC_getProductSaleByIdSale_02: Kiểm tra nhiều ProductSale khớp với sale_id.");
+        logger.info("Bắt đầu TC_PS_120: Kiểm tra nhiều ProductSale khớp với sale_id.");
         // Chuẩn bị: Mock trả về 3 ProductSale với sale_id = 1
         Sale khuyenMai = new Sale();
         khuyenMai.setId(1);
@@ -120,13 +120,13 @@ public class ProductSaleServiceGetProductSaleByIdSaleTest {
             assertEquals(1, ps.getSale().getId(), "sale_id của ProductSale phải là 1");
         }
         verify(entityManager, times(1)).createNativeQuery(anyString(), eq(ProductSale.class));
-        logger.info("Kết quả TC_getProductSaleByIdSale_02: Trả về danh sách chứa 3 ProductSale như mong đợi.");
+        logger.info("Kết quả TC_PS_120: Kết thúc test case..");
     }
 
-    // TC_getProductSaleByIdSale_03: Không có ProductSale nào khớp với sale_id
+    // TC_PS_121 - testGetProductSaleByIdSale_WithNoMatchingSaleId: Không có ProductSale nào khớp với sale_id
     @Test
     public void testGetProductSaleByIdSale_WithNoMatchingSaleId() {
-        logger.info("Bắt đầu TC_getProductSaleByIdSale_03: Kiểm tra không có ProductSale khớp với sale_id.");
+        logger.info("Bắt đầu TC_PS_121: Kiểm tra không có ProductSale khớp với sale_id.");
         // Chuẩn bị: Mock trả về danh sách rỗng
         when(mockQuery.getResultList()).thenReturn(new ArrayList<>());
 
@@ -137,13 +137,13 @@ public class ProductSaleServiceGetProductSaleByIdSaleTest {
         assertNotNull(result, "Danh sách không được null");
         assertTrue(result.isEmpty(), "Danh sách phải rỗng");
         verify(entityManager, times(1)).createNativeQuery(anyString(), eq(ProductSale.class));
-        logger.info("Kết quả TC_getProductSaleByIdSale_03: Trả về danh sách rỗng như mong đợi.");
+        logger.info("Kết quả TC_PS_121: Kết thúc test case..");
     }
 
-    // TC_getProductSaleByIdSale_04: sale_id là null
+    // TC_PS_122 - testGetProductSaleByIdSale_WithNullId: sale_id là null
     @Test
     public void testGetProductSaleByIdSale_WithNullId() {
-        logger.info("Bắt đầu TC_getProductSaleByIdSale_04: Kiểm tra sale_id là null.");
+        logger.info("Bắt đầu TC_PS_122: Kiểm tra sale_id là null.");
         // Thực hiện & Kiểm tra: Mong đợi ngoại lệ
         assertThrows(IllegalArgumentException.class, () -> {
             productSaleService.getProductSaleByIdSale(null);
@@ -151,13 +151,13 @@ public class ProductSaleServiceGetProductSaleByIdSaleTest {
 
         // Kiểm tra tương tác và log
         verify(entityManager, never()).createNativeQuery(anyString(), eq(ProductSale.class));
-        logger.info("Kết quả TC_getProductSaleByIdSale_04: Ném IllegalArgumentException như mong đợi.");
+        logger.info("Kết quả TC_PS_122: Kết thúc test case..");
     }
 
-    // TC_getProductSaleByIdSale_05: sale_id âm
+    // TC_PS_123 - testGetProductSaleByIdSale_WithNegativeId: sale_id âm
     @Test
     public void testGetProductSaleByIdSale_WithNegativeId() {
-        logger.info("Bắt đầu TC_getProductSaleByIdSale_05: Kiểm tra sale_id âm.");
+        logger.info("Bắt đầu TC_PS_123: Kiểm tra sale_id âm.");
         // Chuẩn bị: Mock trả về danh sách rỗng
         when(mockQuery.getResultList()).thenReturn(new ArrayList<>());
 
@@ -168,13 +168,13 @@ public class ProductSaleServiceGetProductSaleByIdSaleTest {
         assertNotNull(result, "Danh sách không được null");
         assertTrue(result.isEmpty(), "Danh sách phải rỗng");
         verify(entityManager, times(1)).createNativeQuery(anyString(), eq(ProductSale.class));
-        logger.info("Kết quả TC_getProductSaleByIdSale_05: Trả về danh sách rỗng như mong đợi.");
+        logger.info("Kết quả TC_PS_123: Kết thúc test case..");
     }
 
-    // TC_getProductSaleByIdSale_06: sale_id = 0
+    // TC_PS_124 - testGetProductSaleByIdSale_WithZeroId: sale_id = 0
     @Test
     public void testGetProductSaleByIdSale_WithZeroId() {
-        logger.info("Bắt đầu TC_getProductSaleByIdSale_06: Kiểm tra sale_id = 0.");
+        logger.info("Bắt đầu TC_PS_124: Kiểm tra sale_id = 0.");
         // Chuẩn bị: Mock trả về danh sách rỗng
         when(mockQuery.getResultList()).thenReturn(new ArrayList<>());
 
@@ -185,13 +185,13 @@ public class ProductSaleServiceGetProductSaleByIdSaleTest {
         assertNotNull(result, "Danh sách không được null");
         assertTrue(result.isEmpty(), "Danh sách phải rỗng");
         verify(entityManager, times(1)).createNativeQuery(anyString(), eq(ProductSale.class));
-        logger.info("Kết quả TC_getProductSaleByIdSale_06: Trả về danh sách rỗng như mong đợi.");
+        logger.info("Kết quả TC_PS_124: Kết thúc test case..");
     }
 
-    // TC_getProductSaleByIdSale_07: Lỗi truy vấn cơ sở dữ liệu
+    // TC_PS_125 - testGetProductSaleByIdSale_WithDatabaseError: Lỗi truy vấn cơ sở dữ liệu
     @Test
     public void testGetProductSaleByIdSale_WithDatabaseError() {
-        logger.info("Bắt đầu TC_getProductSaleByIdSale_07: Kiểm tra lỗi truy vấn cơ sở dữ liệu.");
+        logger.info("Bắt đầu TC_PS_125: Kiểm tra lỗi truy vấn cơ sở dữ liệu.");
         // Chuẩn bị: Mock createNativeQuery ném RuntimeException
         when(entityManager.createNativeQuery(anyString(), eq(ProductSale.class)))
                 .thenThrow(new RuntimeException("Lỗi cơ sở dữ liệu"));
@@ -203,13 +203,13 @@ public class ProductSaleServiceGetProductSaleByIdSaleTest {
 
         // Kiểm tra tương tác và log
         verify(entityManager, times(1)).createNativeQuery(anyString(), eq(ProductSale.class));
-        logger.info("Kết quả TC_getProductSaleByIdSale_07: Ném RuntimeException như mong đợi.");
+        logger.info("Kết quả TC_PS_125: Kết thúc test case..");
     }
 
-    // TC_getProductSaleByIdSale_08: ProductSale có các thuộc tính null
+    // TC_PS_126 - testGetProductSaleByIdSale_WithNullFields: ProductSale có các thuộc tính null
     @Test
     public void testGetProductSaleByIdSale_WithNullFields() {
-        logger.info("Bắt đầu TC_getProductSaleByIdSale_08: Kiểm tra ProductSale có các thuộc tính null.");
+        logger.info("Bắt đầu TC_PS_126: Kiểm tra ProductSale có các thuộc tính null.");
         // Chuẩn bị: Mock trả về 1 ProductSale với product = null, sale = null
         ProductSale ps = new ProductSale();
         ps.setId(1);
@@ -226,13 +226,13 @@ public class ProductSaleServiceGetProductSaleByIdSaleTest {
         assertNull(result.get(0).getProduct(), "product phải là null");
         assertNull(result.get(0).getSale(), "sale phải là null");
         verify(entityManager, times(1)).createNativeQuery(anyString(), eq(ProductSale.class));
-        logger.info("Kết quả TC_getProductSaleByIdSale_08: Trả về danh sách chứa ProductSale với các thuộc tính null như mong đợi.");
+        logger.info("Kết quả TC_PS_126: Kết thúc test case.");
     }
 
-    // TC_getProductSaleByIdSale_09: Số lượng lớn ProductSale
+    // TC_PS_127 - testGetProductSaleByIdSale_WithLargeDataSet: Số lượng lớn ProductSale
     @Test
     public void testGetProductSaleByIdSale_WithLargeDataSet() {
-        logger.info("Bắt đầu TC_getProductSaleByIdSale_09: Kiểm tra với số lượng lớn ProductSale.");
+        logger.info("Bắt đầu TC_PS_127: Kiểm tra với số lượng lớn ProductSale.");
         // Chuẩn bị: Mock trả về 100 ProductSale với sale_id = 1
         Sale khuyenMai = new Sale();
         khuyenMai.setId(1);
@@ -256,13 +256,13 @@ public class ProductSaleServiceGetProductSaleByIdSaleTest {
             assertEquals(1, ps.getSale().getId(), "sale_id của ProductSale phải là 1");
         }
         verify(entityManager, times(1)).createNativeQuery(anyString(), eq(ProductSale.class));
-        logger.info("Kết quả TC_getProductSaleByIdSale_09: Trả về danh sách chứa 100 ProductSale như mong đợi.");
+        logger.info("Kết quả TC_PS_127: Kết thúc test case..");
     }
 
-    // TC_getProductSaleByIdSale_10: Gọi nhiều lần với cùng sale_id
+    // TC_PS_128 - testGetProductSaleByIdSale_MultipleCalls: Gọi nhiều lần với cùng sale_id
     @Test
     public void testGetProductSaleByIdSale_MultipleCalls() {
-        logger.info("Bắt đầu TC_getProductSaleByIdSale_10: Kiểm tra gọi nhiều lần với cùng sale_id.");
+        logger.info("Bắt đầu TC_PS_128: Kiểm tra gọi nhiều lần với cùng sale_id.");
         // Chuẩn bị: Mock trả về 1 ProductSale với sale_id = 1
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -289,6 +289,6 @@ public class ProductSaleServiceGetProductSaleByIdSaleTest {
         assertEquals(result1.get(0).getId(), result2.get(0).getId(), "ProductSale lần 1 và lần 2 phải có cùng id");
         assertEquals(result2.get(0).getId(), result3.get(0).getId(), "ProductSale lần 2 và lần 3 phải có cùng id");
         verify(entityManager, times(3)).createNativeQuery(anyString(), eq(ProductSale.class));
-        logger.info("Kết quả TC_getProductSaleByIdSale_10: Trả về cùng một danh sách ProductSale mỗi lần gọi như mong đợi.");
+        logger.info("Kết quả TC_PS_128: Kết  thúc test case.");
     }
 }

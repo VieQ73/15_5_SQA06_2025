@@ -73,10 +73,10 @@ public class ProductServiceSaveTest {
         logger.info("Hoàn tác dữ liệu kiểm thử hoàn tất.");
     }
 
-    // TC_save_01: Lưu sản phẩm mới không có ảnh
+    // TC_P_09 - testSave_NewProductNoImages: Lưu sản phẩm mới không có ảnh
     @Test
     public void testSave_NewProductNoImages() throws IOException {
-        logger.info("Bắt đầu TC_save_01: Kiểm tra lưu sản phẩm mới không có ảnh.");
+        logger.info("Bắt đầu TC_P_09 - testSave_NewProductNoImages: Kiểm tra lưu sản phẩm mới không có ảnh.");
         // Chuẩn bị: Sản phẩm mới, không có ảnh
         Product product = new Product();
         product.setId(null);
@@ -91,13 +91,13 @@ public class ProductServiceSaveTest {
         verify(productRepo, times(1)).save(product);
         verify(mockFile, never()).transferTo(any(File.class));
         assertNotNull(product.getUpdatedDate(), "UpdatedDate phải được thiết lập");
-        logger.info("Kết quả TC_save_01: Lưu sản phẩm thành công, không xử lý ảnh.");
+        logger.info("Kết quả TC_P_09 - testSave_NewProductNoImages: Kết thúc test case.");
     }
 
-    // TC_save_02: Lưu sản phẩm mới với mảng ảnh rỗng
+    // TC_P_10 - testSave_NewProductWithEmptyImages: Lưu sản phẩm mới với mảng ảnh rỗng
     @Test
     public void testSave_NewProductWithEmptyImages() throws IOException {
-        logger.info("Bắt đầu TC_save_02: Kiểm tra lưu sản phẩm mới với mảng ảnh rỗng.");
+        logger.info("Bắt đầu TC_P_10 - testSave_NewProductWithEmptyImages: Kiểm tra lưu sản phẩm mới với mảng ảnh rỗng.");
         // Chuẩn bị: Sản phẩm mới, mảng ảnh rỗng
         Product product = new Product();
         product.setId(null);
@@ -112,13 +112,13 @@ public class ProductServiceSaveTest {
         verify(productRepo, times(1)).save(product);
         verify(mockFile, never()).transferTo(any(File.class));
         assertNotNull(product.getUpdatedDate(), "UpdatedDate phải được thiết lập");
-        logger.info("Kết quả TC_save_02: Lưu sản phẩm thành công, không xử lý ảnh.");
+        logger.info("Kết quả TC_P_10 - testSave_NewProductWithEmptyImages: Kết thúc test case.");
     }
 
-    // TC_save_03: Lưu sản phẩm mới với 1 ảnh
+    // TC_P_11 - testSave_NewProductWithSingleImage: Lưu sản phẩm mới với 1 ảnh
     @Test
     public void testSave_NewProductWithSingleImage() throws IOException {
-        logger.info("Bắt đầu TC_save_03: Kiểm tra lưu sản phẩm mới với 1 ảnh.");
+        logger.info("Bắt đầu TC_P_11 - testSave_NewProductWithSingleImage: Kiểm tra lưu sản phẩm mới với 1 ảnh.");
         // Chuẩn bị: Sản phẩm mới, 1 ảnh
         Product product = new Product();
         product.setId(null);
@@ -136,13 +136,13 @@ public class ProductServiceSaveTest {
         assertEquals(1, product.getProductImages().size(), "Phải thêm 1 ảnh vào sản phẩm");
         assertEquals("image.jpg", product.getProductImages().get(0).getPath(), "Đường dẫn ảnh phải đúng");
         assertNotNull(product.getUpdatedDate(), "UpdatedDate phải được thiết lập");
-        logger.info("Kết quả TC_save_03: Lưu sản phẩm và ảnh thành công.");
+        logger.info("Kết quả TC_P_11 - testSave_NewProductWithSingleImage: Kết thúc test case.");
     }
 
-    // TC_save_04: Lưu sản phẩm mới với nhiều ảnh
+    // TC_P_12 - testSave_NewProductWithMultipleImages: Lưu sản phẩm mới với nhiều ảnh
     @Test
     public void testSave_NewProductWithMultipleImages() throws IOException {
-        logger.info("Bắt đầu TC_save_04: Kiểm tra lưu sản phẩm mới với nhiều ảnh.");
+        logger.info("Bắt đầu TC_P_12 - testSave_NewProductWithMultipleImages: Kiểm tra lưu sản phẩm mới với nhiều ảnh.");
         // Chuẩn bị: Sản phẩm mới, 2 ảnh
         Product product = new Product();
         product.setId(null);
@@ -165,13 +165,13 @@ public class ProductServiceSaveTest {
         assertEquals("image1.jpg", product.getProductImages().get(0).getPath(), "Đường dẫn ảnh 1 phải đúng");
         assertEquals("image2.jpg", product.getProductImages().get(1).getPath(), "Đường dẫn ảnh 2 phải đúng");
         assertNotNull(product.getUpdatedDate(), "UpdatedDate phải được thiết lập");
-        logger.info("Kết quả TC_save_04: Lưu sản phẩm và nhiều ảnh thành công.");
+        logger.info("Kết quả TC_P_12 - testSave_NewProductWithMultipleImages: Kết thúc test case.");
     }
 
-    // TC_save_05: Lưu sản phẩm đã tồn tại, không có ảnh
+    // TC_P_13 - testSave_ExistingProductNoImages: Lưu sản phẩm đã tồn tại, không có ảnh
     @Test
     public void testSave_ExistingProductNoImages() throws IOException {
-        logger.info("Bắt đầu TC_save_05: Kiểm tra lưu sản phẩm đã tồn tại, không có ảnh.");
+        logger.info("Bắt đầu TC_P_13 - testSave_ExistingProductNoImages: Kiểm tra lưu sản phẩm đã tồn tại, không có ảnh.");
         // Chuẩn bị: Sản phẩm đã tồn tại, không có ảnh mới
         Product product = new Product();
         product.setId(1);
@@ -199,13 +199,13 @@ public class ProductServiceSaveTest {
         assertEquals(oldImages, product.getProductImages(), "Ảnh cũ phải được giữ nguyên");
         assertEquals(oldProduct.getCreatedDate(), product.getCreatedDate(), "CreatedDate phải được giữ nguyên");
         assertNotNull(product.getUpdatedDate(), "UpdatedDate phải được thiết lập");
-        logger.info("Kết quả TC_save_05: Cập nhật sản phẩm thành công, giữ ảnh cũ.");
+        logger.info("Kết quả TC_P_13 - testSave_ExistingProductNoImages: Kết thúc test case.");
     }
 
-    // TC_save_06: Lưu sản phẩm đã tồn tại, mảng ảnh rỗng
+    // TC_P_14 - testSave_ExistingProductWithEmptyImages: Lưu sản phẩm đã tồn tại, mảng ảnh rỗng
     @Test
     public void testSave_ExistingProductWithEmptyImages() throws IOException {
-        logger.info("Bắt đầu TC_save_06: Kiểm tra lưu sản phẩm đã tồn tại, mảng ảnh rỗng.");
+        logger.info("Bắt đầu TC_P_14 - testSave_ExistingProductWithEmptyImages: Kiểm tra lưu sản phẩm đã tồn tại, mảng ảnh rỗng.");
         // Chuẩn bị: Sản phẩm đã tồn tại, mảng ảnh rỗng
         Product product = new Product();
         product.setId(1);
@@ -233,13 +233,15 @@ public class ProductServiceSaveTest {
         assertEquals(oldImages, product.getProductImages(), "Ảnh cũ phải được giữ nguyên");
         assertEquals(oldProduct.getCreatedDate(), product.getCreatedDate(), "CreatedDate phải được giữ nguyên");
         assertNotNull(product.getUpdatedDate(), "UpdatedDate phải được thiết lập");
-        logger.info("Kết quả TC_save_06: Cập nhật sản phẩm thành công, giữ ảnh cũ.");
+        logger.info("Kết quả TC_P_14 - testSave_ExistingProductWithEmptyImages: Kết thúc test case.");
     }
 
-    // TC_save_07: Lưu sản phẩm đã tồn tại, có ảnh mới
+    // WIP: I'll continue with the remaining test cases below and ensure numbering continues correctly.
+
+    // TC_P_15 - testSave_ExistingProductWithNewImages: Lưu sản phẩm đã tồn tại, có ảnh mới
     @Test
     public void testSave_ExistingProductWithNewImages() throws IOException {
-        logger.info("Bắt đầu TC_save_07: Kiểm tra lưu sản phẩm đã tồn tại, có ảnh mới.");
+        logger.info("Bắt đầu TC_P_15 - testSave_ExistingProductWithNewImages: Kiểm tra lưu sản phẩm đã tồn tại, có ảnh mới.");
         // Chuẩn bị: Sản phẩm đã tồn tại, có ảnh mới
         Product product = new Product();
         product.setId(1);
@@ -270,13 +272,13 @@ public class ProductServiceSaveTest {
         assertEquals(1, product.getProductImages().size(), "Phải có 1 ảnh mới");
         assertEquals("new.jpg", product.getProductImages().get(0).getPath(), "Đường dẫn ảnh mới phải đúng");
         assertNotNull(product.getUpdatedDate(), "UpdatedDate phải được thiết lập");
-        logger.info("Kết quả TC_save_07: Cập nhật sản phẩm thành công, xóa ảnh cũ, thêm ảnh mới.");
+        logger.info("Kết quả TC_P_15 - testSave_ExistingProductWithNewImages: Kết thúc test case.");
     }
 
-    // TC_save_08: Lưu sản phẩm đã tồn tại nhưng không tìm thấy trong DB
+    // TC_P_16 - testSave_ExistingProductNotFound: Lưu sản phẩm đã tồn tại nhưng không tìm thấy trong DB
     @Test
     public void testSave_ExistingProductNotFound() throws IOException {
-        logger.info("Bắt đầu TC_save_08: Kiểm tra lưu sản phẩm đã tồn tại nhưng không tìm thấy trong DB.");
+        logger.info("Bắt đầu TC_P_16 - testSave_ExistingProductNotFound: Kiểm tra lưu sản phẩm đã tồn tại nhưng không tìm thấy trong DB.");
         // Chuẩn bị: Sản phẩm đã tồn tại, không tìm thấy trong DB
         Product product = new Product();
         product.setId(1);
@@ -293,13 +295,13 @@ public class ProductServiceSaveTest {
         // Kiểm tra và log
         verify(productRepo, never()).save(any(Product.class));
         verify(mockFile, never()).transferTo(any(File.class));
-        logger.info("Kết quả TC_save_08: Ném NoSuchElementException như mong đợi.");
+        logger.info("Kết quả TC_P_16 - testSave_ExistingProductNotFound: Kết thúc test case.");
     }
 
-    // TC_save_09: Lưu sản phẩm khi product là null
+    // TC_P_17 - testSave_NullProduct: Lưu sản phẩm khi product là null
     @Test
     public void testSave_NullProduct() throws IOException {
-        logger.info("Bắt đầu TC_save_09: Kiểm tra lưu sản phẩm khi product là null.");
+        logger.info("Bắt đầu TC_P_17 - testSave_NullProduct: Kiểm tra lưu sản phẩm khi product là null.");
         // Chuẩn bị: product là null
         Product product = null;
         MultipartFile[] productImages = null;
@@ -313,13 +315,13 @@ public class ProductServiceSaveTest {
         // Kiểm tra và log
         verify(productRepo, never()).save(any(Product.class));
         verify(mockFile, never()).transferTo(any(File.class));
-        logger.info("Kết quả TC_save_09: Ném NullPointerException như mong đợi.");
+        logger.info("Kết quả TC_P_17 - testSave_NullProduct: Kết thúc test case.");
     }
 
-    // TC_save_10: Lưu sản phẩm mới khi transferTo() thất bại
+    // TC_P_18 - testSave_NewProductWithImageTransferFailure: Lưu sản phẩm mới khi transferTo() thất bại
     @Test
     public void testSave_NewProductWithImageTransferFailure() throws IOException {
-        logger.info("Bắt đầu TC_save_10: Kiểm tra lưu sản phẩm mới khi transferTo() thất bại.");
+        logger.info("Bắt đầu TC_P_18 - testSave_NewProductWithImageTransferFailure: Kiểm tra lưu sản phẩm mới khi transferTo() thất bại.");
         // Chuẩn bị: Sản phẩm mới, transferTo() ném IOException
         Product product = new Product();
         product.setId(null);
@@ -337,13 +339,13 @@ public class ProductServiceSaveTest {
         // Kiểm tra và log
         verify(productRepo, never()).save(any(Product.class));
         verify(mockFile, times(1)).transferTo(any(File.class));
-        logger.info("Kết quả TC_save_10: Ném IOException như mong đợi.");
+        logger.info("Kết quả TC_P_18 - testSave_NewProductWithImageTransferFailure: Kết thúc test case.");
     }
 
-    // TC_save_11: Lưu sản phẩm đã tồn tại khi transferTo() thất bại
+    // TC_P_19 - testSave_ExistingProductWithImageTransferFailure: Lưu sản phẩm đã tồn tại khi transferTo() thất bại
     @Test
     public void testSave_ExistingProductWithImageTransferFailure() throws IOException {
-        logger.info("Bắt đầu TC_save_11: Kiểm tra lưu sản phẩm đã tồn tại khi transferTo() thất bại.");
+        logger.info("Bắt đầu TC_P_19 - testSave_ExistingProductWithImageTransferFailure: Kiểm tra lưu sản phẩm đã tồn tại khi transferTo() thất bại.");
         // Chuẩn bị: Sản phẩm đã tồn tại, transferTo() ném IOException
         Product product = new Product();
         product.setId(1);
@@ -373,13 +375,13 @@ public class ProductServiceSaveTest {
         verify(productRepo, never()).save(any(Product.class));
         verify(mockFile, times(1)).transferTo(any(File.class));
         verify(mockPhysicalFile, times(1)).delete();
-        logger.info("Kết quả TC_save_11: Ném IOException như mong đợi.");
+        logger.info("Kết quả TC_P_19 - testSave_ExistingProductWithImageTransferFailure: Kết thúc test case.");
     }
 
-    // TC_save_12: Lưu sản phẩm đã tồn tại, ảnh cũ là null
+    // TC_P_20 - testSave_ExistingProductWithNullOldImages: Lưu sản phẩm đã tồn tại, ảnh cũ là null
     @Test
     public void testSave_ExistingProductWithNullOldImages() throws IOException {
-        logger.info("Bắt đầu TC_save_12: Kiểm tra lưu sản phẩm đã tồn tại, ảnh cũ là null.");
+        logger.info("Bắt đầu TC_P_20 - testSave_ExistingProductWithNullOldImages: Kiểm tra lưu sản phẩm đã tồn tại, ảnh cũ là null.");
         // Chuẩn bị: Sản phẩm đã tồn tại, ảnh cũ là null
         Product product = new Product();
         product.setId(1);
@@ -403,13 +405,13 @@ public class ProductServiceSaveTest {
         assertNull(product.getProductImages(), "Ảnh cũ là null, không thay đổi");
         assertEquals(oldProduct.getCreatedDate(), product.getCreatedDate(), "CreatedDate phải được giữ nguyên");
         assertNotNull(product.getUpdatedDate(), "UpdatedDate phải được thiết lập");
-        logger.info("Kết quả TC_save_12: Cập nhật sản phẩm thành công, không xử lý ảnh.");
+        logger.info("Kết quả TC_P_20 - testSave_ExistingProductWithNullOldImages: Kết thúc test case.");
     }
 
-    // TC_save_13: Lưu sản phẩm đã tồn tại, danh sách ảnh cũ rỗng
+    // TC_P_21 - testSave_ExistingProductWithEmptyOldImages: Lưu sản phẩm đã tồn tại, danh sách ảnh cũ rỗng
     @Test
     public void testSave_ExistingProductWithEmptyOldImages() throws IOException {
-        logger.info("Bắt đầu TC_save_13: Kiểm tra lưu sản phẩm đã tồn tại, danh sách ảnh cũ rỗng.");
+        logger.info("Bắt đầu TC_P_21 - testSave_ExistingProductWithEmptyOldImages: Kiểm tra lưu sản phẩm đã tồn tại, danh sách ảnh cũ rỗng.");
         // Chuẩn bị: Sản phẩm đã tồn tại, danh sách ảnh cũ rỗng
         Product product = new Product();
         product.setId(1);
@@ -433,13 +435,13 @@ public class ProductServiceSaveTest {
         assertTrue(product.getProductImages().isEmpty(), "Danh sách ảnh cũ rỗng, không thay đổi");
         assertEquals(oldProduct.getCreatedDate(), product.getCreatedDate(), "CreatedDate phải được giữ nguyên");
         assertNotNull(product.getUpdatedDate(), "UpdatedDate phải được thiết lập");
-        logger.info("Kết quả TC_save_13: Cập nhật sản phẩm thành công, không xử lý ảnh.");
+        logger.info("Kết quả TC_P_21 - testSave_ExistingProductWithEmptyOldImages: Kết thúc test case.");
     }
 
-    // TC_save_14: Lưu sản phẩm đã tồn tại, xóa ảnh cũ thất bại
+    // TC_P_22 - testSave_ExistingProductWithNewImagesAndDeleteFailure: Lưu sản phẩm đã tồn tại, xóa ảnh cũ thất bại
     @Test
     public void testSave_ExistingProductWithNewImagesAndDeleteFailure() throws IOException {
-        logger.info("Bắt đầu TC_save_14: Kiểm tra lưu sản phẩm đã tồn tại, xóa ảnh cũ thất bại.");
+        logger.info("Bắt đầu TC_P_22 - testSave_ExistingProductWithNewImagesAndDeleteFailure: Kiểm tra lưu sản phẩm đã tồn tại, xóa ảnh cũ thất bại.");
         // Chuẩn bị: Sản phẩm đã tồn tại, xóa ảnh cũ thất bại
         Product product = new Product();
         product.setId(1);
@@ -470,13 +472,13 @@ public class ProductServiceSaveTest {
         assertEquals(1, product.getProductImages().size(), "Phải có 1 ảnh mới");
         assertEquals("new.jpg", product.getProductImages().get(0).getPath(), "Đường dẫn ảnh mới phải đúng");
         assertNotNull(product.getUpdatedDate(), "UpdatedDate phải được thiết lập");
-        logger.info("Kết quả TC_save_14: Cập nhật sản phẩm thành công, vẫn lưu ảnh mới dù xóa ảnh cũ thất bại.");
+        logger.info("Kết quả TC_P_22 - testSave_ExistingProductWithNewImagesAndDeleteFailure: Kết thúc test case.");
     }
 
-    // TC_save_15: Lưu sản phẩm đã tồn tại, amount = 0
+    // TC_P_23 - testSave_ExistingProductWithZeroAmount: Lưu sản phẩm đã tồn tại, amount = 0
     @Test
     public void testSave_ExistingProductWithZeroAmount() throws IOException {
-        logger.info("Bắt đầu TC_save_15: Kiểm tra lưu sản phẩm đã tồn tại, amount = 0.");
+        logger.info("Bắt đầu TC_P_23 - testSave_ExistingProductWithZeroAmount: Kiểm tra lưu sản phẩm đã tồn tại, amount = 0.");
         // Chuẩn bị: Sản phẩm đã tồn tại, amount = 0
         Product product = new Product();
         product.setId(1);
@@ -504,6 +506,6 @@ public class ProductServiceSaveTest {
         assertEquals(oldImages, product.getProductImages(), "Ảnh cũ phải được giữ nguyên");
         assertEquals(oldProduct.getCreatedDate(), product.getCreatedDate(), "CreatedDate phải được giữ nguyên");
         assertNotNull(product.getUpdatedDate(), "UpdatedDate phải được thiết lập");
-        logger.info("Kết quả TC_save_15: Cập nhật sản phẩm thành công, giữ ảnh cũ.");
+        logger.info("Kết quả TC_P_23 - testSave_ExistingProductWithZeroAmount: Kết thúc test case.");
     }
 }

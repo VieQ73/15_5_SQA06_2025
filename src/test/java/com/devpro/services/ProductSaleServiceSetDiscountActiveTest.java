@@ -74,10 +74,10 @@ public class ProductSaleServiceSetDiscountActiveTest {
         logger.info("Hoàn tác dữ liệu kiểm thử hoàn tất.");
     }
 
-    // TC_setDiscountActive_01: Kiểm tra khi không có product sale nào
+    // TC_PS_73 - testSetDiscountActiveWithEmptyList: Kiểm tra danh sách rỗng
     @Test
     public void testSetDiscountActiveWithEmptyList() {
-        logger.info("Bắt đầu TC_setDiscountActive_01: Kiểm tra danh sách rỗng.");
+        logger.info("Bắt đầu TC_PS_73: Kiểm tra danh sách rỗng.");
         // Chuẩn bị: Không có product sale trong DB
         when(mockQuery.getResultList()).thenReturn(new ArrayList<>());
 
@@ -86,13 +86,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
 
         // Kiểm tra và log
         verify(productSaleRepo, never()).save(any(ProductSale.class));
-        logger.info("Kết quả TC_setDiscountActive_01: Không có tương tác với repository.");
+        logger.info("Kết quả TC_PS_73: Kết thúc test case..");
     }
 
-    // TC_setDiscountActive_02: Một discount đang trong khoảng thời gian hợp lệ
+    // TC_PS_74 - testSetDiscountActiveWithOneValidDiscount: Kiểm tra một discount hợp lệ
     @Test
     public void testSetDiscountActiveWithOneValidDiscount() {
-        logger.info("Bắt đầu TC_setDiscountActive_02: Kiểm tra một discount hợp lệ.");
+        logger.info("Bắt đầu TC_PS_74: Kiểm tra một discount hợp lệ.");
         // Chuẩn bị: Một product sale với ngày hợp lệ
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -119,13 +119,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
 
         // Kiểm tra
         assertTrue(ps.getActive(), "Discount phải được đặt thành active");
-        logger.info("Kết quả TC_setDiscountActive_02: Discount được kích hoạt thành công.");
+        logger.info("Kết quả TC_PS_74: Kết thúc test case. ");
     }
 
-    // TC_setDiscountActive_03: Nhiều discount, chỉ một cái active
+    // TC_PS_75 - testSetDiscountActiveWithMultipleDiscounts: Nhiều discount, chỉ một cái active
     @Test
     public void testSetDiscountActiveWithMultipleDiscounts() {
-        logger.info("Bắt đầu TC_setDiscountActive_03: Kiểm tra nhiều discount.");
+        logger.info("Bắt đầu TC_PS_75: Kiểm tra nhiều discount.");
         // Chuẩn bị: Hai product sale, một trong thời gian, một đã hết hạn
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -167,13 +167,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
         // Kiểm tra
         assertFalse(ps1.getActive(), "Discount hết hạn phải là inactive");
         assertTrue(ps2.getActive(), "Discount hợp lệ phải là active");
-        logger.info("Kết quả TC_setDiscountActive_03: Chỉ discount hợp lệ được kích hoạt.");
+        logger.info("Kết quả TC_PS_75: Kết thúc test case..");
     }
 
-    // TC_setDiscountActive_04: Tất cả discount đã hết hạn
+    // TC_PS_76 - testSetDiscountActiveWithAllExpired: Tất cả discount đã hết hạn
     @Test
     public void testSetDiscountActiveWithAllExpired() {
-        logger.info("Bắt đầu TC_setDiscountActive_04: Kiểm tra discount hết hạn.");
+        logger.info("Bắt đầu TC_PS_76: Kiểm tra discount hết hạn.");
         // Chuẩn bị: Một product sale đã hết hạn
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -200,13 +200,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
 
         // Kiểm tra
         assertFalse(ps.getActive(), "Discount hết hạn phải là inactive");
-        logger.info("Kết quả TC_setDiscountActive_04: Discount hết hạn bị vô hiệu hóa.");
+        logger.info("Kết quả TC_PS_76: Kết thúc test case..");
     }
 
-    // TC_setDiscountActive_05: Tất cả discount chưa bắt đầu
+    // TC_PS_77 - testSetDiscountActiveWithFutureDiscounts: Tất cả discount chưa bắt đầu
     @Test
     public void testSetDiscountActiveWithFutureDiscounts() {
-        logger.info("Bắt đầu TC_setDiscountActive_05: Kiểm tra discount tương lai.");
+        logger.info("Bắt đầu TC_PS_77: Kiểm tra discount tương lai.");
         // Chuẩn bị: Một product sale trong tương lai
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -233,13 +233,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
 
         // Kiểm tra
         assertFalse(ps.getActive(), "Discount tương lai phải là inactive");
-        logger.info("Kết quả TC_setDiscountActive_05: Discount tương lai bị vô hiệu hóa.");
+        logger.info("Kết quả TC_PS_77: Kết thúc test case..");
     }
 
-    // TC_setDiscountActive_06: Nhiều sản phẩm với discount
+    // TC_PS_78 - testSetDiscountActiveWithMultipleProducts: Nhiều sản phẩm với discount
     @Test
     public void testSetDiscountActiveWithMultipleProducts() {
-        logger.info("Bắt đầu TC_setDiscountActive_06: Kiểm tra nhiều sản phẩm.");
+        logger.info("Bắt đầu TC_PS_78: Kiểm tra nhiều sản phẩm.");
         // Chuẩn bị: Hai sản phẩm, mỗi sản phẩm có một discount
         Product sp1 = new Product();
         sp1.setId(1);
@@ -282,13 +282,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
         // Kiểm tra
         assertTrue(ps1.getActive(), "Discount cho sản phẩm 1 phải là active");
         assertTrue(ps2.getActive(), "Discount cho sản phẩm 2 phải là active");
-        logger.info("Kết quả TC_setDiscountActive_06: Cả hai discount được kích hoạt.");
+        logger.info("Kết quả TC_PS_78: Kết thúc test case..");
     }
 
-    // TC_setDiscountActive_07: Discount bắt đầu hôm nay
+    // TC_PS_79 - testSetDiscountActiveWithStartToday: Discount bắt đầu hôm nay
     @Test
     public void testSetDiscountActiveWithStartToday() {
-        logger.info("Bắt đầu TC_setDiscountActive_07: Kiểm tra discount bắt đầu hôm nay.");
+        logger.info("Bắt đầu TC_PS_79: Kiểm tra discount bắt đầu hôm nay.");
         // Chuẩn bị: Discount bắt đầu hôm nay
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -315,13 +315,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
 
         // Kiểm tra
         assertTrue(ps.getActive(), "Discount bắt đầu hôm nay phải là active");
-        logger.info("Kết quả TC_setDiscountActive_07: Discount bắt đầu hôm nay được kích hoạt.");
+        logger.info("Kết quả TC_PS_79: Kết thúc test case..");
     }
 
-    // TC_setDiscountActive_08: Discount kết thúc hôm nay
+    // TC_PS_80 - testSetDiscountActiveWithEndToday: Discount kết thúc hôm nay
     @Test
     public void testSetDiscountActiveWithEndToday() {
-        logger.info("Bắt đầu TC_setDiscountActive_08: Kiểm tra discount kết thúc hôm nay.");
+        logger.info("Bắt đầu TC_PS_80: Kiểm tra discount kết thúc hôm nay.");
         // Chuẩn bị: Discount kết thúc hôm nay
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -348,13 +348,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
 
         // Kiểm tra
         assertTrue(ps.getActive(), "Discount kết thúc hôm nay vẫn phải là active");
-        logger.info("Kết quả TC_setDiscountActive_08: Discount kết thúc hôm nay vẫn được kích hoạt.");
+        logger.info("Kết quả TC_PS_80: Kết thúc test case..");
     }
 
-    // TC_setDiscountActive_09: Discount chồng lấp cho cùng sản phẩm
+    // TC_PS_81 - testSetDiscountActiveWithOverlappingDiscounts: Discount chồng lấp cho cùng sản phẩm
     @Test
     public void testSetDiscountActiveWithOverlappingDiscounts() {
-        logger.info("Bắt đầu TC_setDiscountActive_09: Kiểm tra discount chồng lấp.");
+        logger.info("Bắt đầu TC_PS_81: Kiểm tra discount chồng lấp.");
         // Chuẩn bị: Hai discount chồng lấp cho cùng sản phẩm
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -396,13 +396,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
         // Kiểm tra
         assertFalse(ps1.getActive(), "Discount cũ hơn phải là inactive");
         assertTrue(ps2.getActive(), "Discount mới hơn phải là active");
-        logger.info("Kết quả TC_setDiscountActive_09: Discount mới hơn được kích hoạt.");
+        logger.info("Kết quả TC_PS_81: Kết thúc test case..");
     }
 
-    // TC_setDiscountActive_10: Lỗi khi lưu vào DB
+    // TC_PS_82 - testSetDiscountActiveWithSaveDBError: Lỗi khi lưu vào DB
     @Test
     public void testSetDiscountActiveWithSaveDBError() {
-        logger.info("Bắt đầu TC_setDiscountActive_10: Kiểm tra lỗi lưu DB.");
+        logger.info("Bắt đầu TC_PS_82: Kiểm tra lỗi lưu DB.");
         // Chuẩn bị: Một product sale hợp lệ, nhưng lưu DB thất bại
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -427,13 +427,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
         }, "Phải ném ngoại lệ khi lưu thất bại");
 
         // Log kết quả (thường không đến đây do ngoại lệ)
-        logger.info("Kết quả TC_setDiscountActive_10: Ngoại lệ được ném khi lưu thất bại.");
+        logger.info("Kết quả TC_PS_82: Kết thúc test case.");
     }
 
-    // TC_setDiscountActive_11: Discount với ngày null
+    // TC_PS_83 - testSetDiscountActiveWithNullDates: Discount với ngày null
     @Test
     public void testSetDiscountActiveWithNullDates() {
-        logger.info("Bắt đầu TC_setDiscountActive_11: Kiểm tra discount với ngày null.");
+        logger.info("Bắt đầu TC_PS_83: Kiểm tra discount với ngày null.");
         // Chuẩn bị: Một ProductSale với start_date và end_date là null
         Product product = new Product();
         product.setId(1);
@@ -454,13 +454,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
         }, "Phải ném NullPointerException khi ngày là null");
 
         // Log
-        logger.info("Kết quả TC_setDiscountActive_11: Ném NullPointerException như mong đợi.");
+        logger.info("Kết quả TC_PS_83: Kết thúc test case.");
     }
 
-    // TC_setDiscountActive_12: 2 discount có cùng start_date
+    // TC_PS_84 - testSetDiscountActiveWithSameStartDate: 2 discount có cùng start_date
     @Test
     public void testSetDiscountActiveWithSameStartDate() {
-        logger.info("Bắt đầu TC_setDiscountActive_12: Kiểm tra 2 discount có cùng start_date.");
+        logger.info("Bắt đầu TC_PS_84: Kiểm tra 2 discount có cùng start_date.");
         // Chuẩn bị: 2 ProductSale với cùng start_date, end_date khác nhau
         Date now = new Date();
         cal.setTime(now);
@@ -503,13 +503,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
         assertFalse(ps1.getActive(), "ps1 phải không active");
         assertTrue(ps2.getActive(), "ps2 phải active vì end_date xa hơn");
         verify(productSaleRepo, times(2)).save(any(ProductSale.class));
-        logger.info("Kết quả TC_setDiscountActive_12: Discount có end_date xa hơn được kích hoạt.");
+        logger.info("Kết quả TC_PS_84: Kết thúc test case.");
     }
 
-    // TC_setDiscountActive_13: ProductSale với product null
+    // TC_PS_85 - testSetDiscountActiveWithNullProduct: ProductSale với product null
     @Test
     public void testSetDiscountActiveWithNullProduct() {
-        logger.info("Bắt đầu TC_setDiscountActive_13: Kiểm tra ProductSale với product null.");
+        logger.info("Bắt đầu TC_PS_85: Kiểm tra ProductSale với product null.");
         // Chuẩn bị: Một ProductSale với product = null
         Sale sale = new Sale();
         sale.setId(1);
@@ -531,13 +531,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
         }, "Phải ném NullPointerException khi product là null");
 
         // Log
-        logger.info("Kết quả TC_setDiscountActive_13: Ném NullPointerException như mong đợi.");
+        logger.info("Kết quả TC_PS_85: Kết thúc test case.");
     }
 
-    // TC_setDiscountActive_14: Discount với ngày không hợp lệ (start_date sau end_date)
+    // TC_PS_86 - testSetDiscountActiveWithInvalidDates: Discount với ngày không hợp lệ (start_date sau end_date)
     @Test
     public void testSetDiscountActiveWithInvalidDates() {
-        logger.info("Bắt đầu TC_setDiscountActive_14: Kiểm tra discount với ngày không hợp lệ.");
+        logger.info("Bắt đầu TC_PS_86: Kiểm tra discount với ngày không hợp lệ.");
         // Chuẩn bị: Một ProductSale với start_date sau end_date
         Product product = new Product();
         product.setId(1);
@@ -563,13 +563,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
         // Kiểm tra và log
         assertFalse(ps.getActive(), "Discount không hợp lệ phải bị vô hiệu hóa");
         verify(productSaleRepo, times(1)).save(ps);
-        logger.info("Kết quả TC_setDiscountActive_14: Discount không hợp lệ bị vô hiệu hóa.");
+        logger.info("Kết quả TC_PS_86: Kết thúc test case.");
     }
 
-    // TC_setDiscountActive_15: Nhiều discount hết hạn cho cùng productId
+    // TC_PS_87 - testSetDiscountActiveWithMultipleExpired: Nhiều discount hết hạn cho cùng productId
     @Test
     public void testSetDiscountActiveWithMultipleExpired() {
-        logger.info("Bắt đầu TC_setDiscountActive_15: Kiểm tra nhiều discount hết hạn.");
+        logger.info("Bắt đầu TC_PS_87: Kiểm tra nhiều discount hết hạn.");
         // Chuẩn bị: 3 ProductSale hết hạn
         Product product = new Product();
         product.setId(1);
@@ -622,13 +622,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
         assertFalse(ps1.getActive(), "ps1 phải không active");
         assertFalse(ps2.getActive(), "ps2 phải không active");
         assertFalse(ps3.getActive(), "ps3 phải không active");
-        logger.info("Kết quả TC_setDiscountActive_15: Tất cả discount bị vô hiệu hóa.");
+        logger.info("Kết quả TC_PS_87: Kết thúc test case.");
     }
 
-    // TC_setDiscountActive_16: Nhiều discount chưa bắt đầu cho cùng productId
+    // TC_PS_88 - testSetDiscountActiveWithMultipleFuture: Nhiều discount chưa bắt đầu cho cùng productId
     @Test
     public void testSetDiscountActiveWithMultipleFuture() {
-        logger.info("Bắt đầu TC_setDiscountActive_16: Kiểm tra nhiều discount chưa bắt đầu.");
+        logger.info("Bắt đầu TC_PS_88: Kiểm tra nhiều discount chưa bắt đầu.");
         // Chuẩn bị: 3 ProductSale chưa bắt đầu
         Product product = new Product();
         product.setId(1);
@@ -681,13 +681,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
         assertFalse(ps1.getActive(), "ps1 phải không active");
         assertFalse(ps2.getActive(), "ps2 phải không active");
         assertFalse(ps3.getActive(), "ps3 phải không active");
-        logger.info("Kết quả TC_setDiscountActive_16: Tất cả discount bị vô hiệu hóa.");
+        logger.info("Kết quả TC_PS_88: Kết thúc test case.");
     }
 
-    // TC_setDiscountActive_17: Hỗn hợp discount hợp lệ, hết hạn, và chưa bắt đầu
+    // TC_PS_89 - testSetDiscountActiveWithMixedDiscounts: Hỗn hợp discount hợp lệ, hết hạn, và chưa bắt đầu
     @Test
     public void testSetDiscountActiveWithMixedDiscounts() {
-        logger.info("Bắt đầu TC_setDiscountActive_17: Kiểm tra hỗn hợp discount.");
+        logger.info("Bắt đầu TC_PS_89: Kiểm tra hỗn hợp discount.");
         // Chuẩn bị: 3 ProductSale: 1 hợp lệ, 1 hết hạn, 1 chưa bắt đầu
         Product product = new Product();
         product.setId(1);
@@ -740,13 +740,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
         assertFalse(ps1.getActive(), "ps1 phải không active");
         assertTrue(ps2.getActive(), "ps2 phải active");
         assertFalse(ps3.getActive(), "ps3 phải không active");
-        logger.info("Kết quả TC_setDiscountActive_17: Chỉ discount hợp lệ được kích hoạt.");
+        logger.info("Kết quả TC_PS_89: Kết thúc test case.");
     }
 
-    // TC_setDiscountActive_18: Nhiều sản phẩm với discount chồng lấp
+    // TC_PS_90 - testSetDiscountActiveWithMultipleProductsAndOverlapping: Nhiều sản phẩm với discount chồng lấp
     @Test
     public void testSetDiscountActiveWithMultipleProductsAndOverlapping() {
-        logger.info("Bắt đầu TC_setDiscountActive_18: Kiểm tra nhiều sản phẩm với discount chồng lấp.");
+        logger.info("Bắt đầu TC_PS_90: Kiểm tra nhiều sản phẩm với discount chồng lấp.");
         // Chuẩn bị: 3 ProductSale: 2 cho productId 1 (chồng lấp), 1 cho productId 2
         Product product1 = new Product();
         product1.setId(1);
@@ -801,13 +801,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
         assertFalse(ps1.getActive(), "ps1 phải không active");
         assertTrue(ps2.getActive(), "ps2 phải active vì start_date gần hơn");
         assertTrue(ps3.getActive(), "ps3 phải active");
-        logger.info("Kết quả TC_setDiscountActive_18: Discount hợp lệ được kích hoạt.");
+        logger.info("Kết quả TC_PS_90: Kết thúc test case.");
     }
 
-    // TC_setDiscountActive_19: Số lượng lớn ProductSale
+    // TC_PS_91 - testSetDiscountActiveWithLargeDataSet: Số lượng lớn ProductSale
     @Test
     public void testSetDiscountActiveWithLargeDataSet() {
-        logger.info("Bắt đầu TC_setDiscountActive_19: Kiểm tra với số lượng lớn ProductSale.");
+        logger.info("Bắt đầu TC_PS_91: Kiểm tra với số lượng lớn ProductSale.");
         // Chuẩn bị: 100 ProductSale cho 10 productId
         for (int i = 1; i <= 100; i++) {
             Product product = new Product();
@@ -841,13 +841,13 @@ public class ProductSaleServiceSetDiscountActiveTest {
         }
         logger.info("activeCount: " + activeCount);
         assertEquals(10, activeCount, "Chỉ 10 discount (1 cho mỗi productId) được kích hoạt");
-        logger.info("Kết quả TC_setDiscountActive_19: Xử lý đúng với dữ liệu lớn.");
+        logger.info("Kết quả TC_PS_91: Kết thúc test case.");
     }
 
-    // TC_setDiscountActive_20: Lỗi truy vấn cơ sở dữ liệu
+    // TC_PS_92 - testSetDiscountActiveWithDatabaseError: Lỗi truy vấn cơ sở dữ liệu
     @Test
     public void testSetDiscountActiveWithDatabaseError() {
-        logger.info("Bắt đầu TC_setDiscountActive_20: Kiểm tra lỗi truy vấn cơ sở dữ liệu.");
+        logger.info("Bắt đầu TC_PS_92: Kiểm tra lỗi truy vấn cơ sở dữ liệu.");
         // Chuẩn bị: Mock getProductSale() ném DataAccessException
         when(entityManager.createNativeQuery(anyString(), eq(ProductSale.class)))
                 .thenThrow(new RuntimeException("Lỗi cơ sở dữ liệu"));
@@ -859,7 +859,7 @@ public class ProductSaleServiceSetDiscountActiveTest {
 
         // Kiểm tra tương tác và log
         verify(entityManager, times(1)).createNativeQuery(anyString(), eq(ProductSale.class));
-        logger.info("Kết quả TC_setDiscountActive_20: Ném ngoại lệ như mong đợi.");
+        logger.info("Kết quả TC_PS_92: Kết thúc test case.");
     }
 
     /**

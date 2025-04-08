@@ -54,10 +54,10 @@ public class ProductServiceSearchProductWithCate8Test {
         logger.info("Hoàn tác dữ liệu kiểm thử hoàn tất.");
     }
 
-    // Test case 1: idCate hợp lệ, có nhiều sản phẩm khớp (trả về đúng 8 sản phẩm)
+    // TC_P_48 - testSearchProductWithCate8_ValidIdCateWithManyProducts: idCate hợp lệ, có nhiều sản phẩm khớp
     @Test
     public void testSearchProductWithCate8_ValidIdCateWithManyProducts() {
-        logger.info("Bắt đầu testSearchProductWithCate8_ValidIdCateWithManyProducts: Kiểm tra searchProductWithCate8 với idCate hợp lệ và có nhiều sản phẩm khớp.");
+        logger.info("Bắt đầu TC_P_48 - testSearchProductWithCate8_ValidIdCateWithManyProducts: Kiểm tra searchProductWithCate8 với idCate hợp lệ và có nhiều sản phẩm khớp.");
         // Chuẩn bị dữ liệu
         int idCate = 1;
         List<Product> mockProducts = new ArrayList<>();
@@ -84,13 +84,13 @@ public class ProductServiceSearchProductWithCate8Test {
         verify(entityManager, times(1)).createNativeQuery("select * from tbl_product where status = 1 and category_id=1 order by rand() limit 0,8;", Product.class);
         verify(mockQuery, times(1)).getResultList();
         assertEquals(8, result.size(), "Danh sách trả về phải có đúng 8 sản phẩm");
-        logger.info("Hoàn thành testSearchProductWithCate8_ValidIdCateWithManyProducts.");
+        logger.info("Kết quả TC_P_48 - testSearchProductWithCate8_ValidIdCateWithManyProducts: Kết thúc test case.");
     }
 
-    // Test case 2: idCate hợp lệ, có ít sản phẩm khớp (ít hơn 8 sản phẩm)
+    // TC_P_49 - testSearchProductWithCate8_ValidIdCateWithFewProducts: idCate hợp lệ, có ít sản phẩm khớp
     @Test
     public void testSearchProductWithCate8_ValidIdCateWithFewProducts() {
-        logger.info("Bắt đầu testSearchProductWithCate8_ValidIdCateWithFewProducts: Kiểm tra searchProductWithCate8 với idCate hợp lệ và có ít sản phẩm khớp.");
+        logger.info("Bắt đầu TC_P_49 - testSearchProductWithCate8_ValidIdCateWithFewProducts: Kiểm tra searchProductWithCate8 với idCate hợp lệ và có ít sản phẩm khớp.");
         // Chuẩn bị dữ liệu
         int idCate = 2;
         List<Product> mockProducts = new ArrayList<>();
@@ -117,13 +117,13 @@ public class ProductServiceSearchProductWithCate8Test {
         verify(entityManager, times(1)).createNativeQuery("select * from tbl_product where status = 1 and category_id=2 order by rand() limit 0,8;", Product.class);
         verify(mockQuery, times(1)).getResultList();
         assertEquals(5, result.size(), "Danh sách trả về phải có đúng 5 sản phẩm");
-        logger.info("Hoàn thành testSearchProductWithCate8_ValidIdCateWithFewProducts.");
+        logger.info("Kết quả TC_P_49 - testSearchProductWithCate8_ValidIdCateWithFewProducts: Kết thúc test case.");
     }
 
-    // Test case 3: idCate hợp lệ, không có sản phẩm nào khớp
+    // TC_P_50 - testSearchProductWithCate8_ValidIdCateWithNoProducts: idCate hợp lệ, không có sản phẩm nào khớp
     @Test
     public void testSearchProductWithCate8_ValidIdCateWithNoProducts() {
-        logger.info("Bắt đầu testSearchProductWithCate8_ValidIdCateWithNoProducts: Kiểm tra searchProductWithCate8 với idCate hợp lệ nhưng không có sản phẩm nào khớp.");
+        logger.info("Bắt đầu TC_P_50 - testSearchProductWithCate8_ValidIdCateWithNoProducts: Kiểm tra searchProductWithCate8 với idCate hợp lệ nhưng không có sản phẩm nào khớp.");
         // Chuẩn bị dữ liệu
         int idCate = 3;
         List<Product> mockProducts = new ArrayList<>();
@@ -142,13 +142,13 @@ public class ProductServiceSearchProductWithCate8Test {
         verify(entityManager, times(1)).createNativeQuery("select * from tbl_product where status = 1 and category_id=3 order by rand() limit 0,8;", Product.class);
         verify(mockQuery, times(1)).getResultList();
         assertTrue(result.isEmpty(), "Danh sách trả về phải rỗng");
-        logger.info("Hoàn thành testSearchProductWithCate8_ValidIdCateWithNoProducts.");
+        logger.info("Kết quả TC_P_50 - testSearchProductWithCate8_ValidIdCateWithNoProducts: Kết thúc test case.");
     }
 
-    // Test case 4: idCate là giá trị âm
+    // TC_P_51 - testSearchProductWithCate8_NegativeIdCate: idCate là giá trị âm
     @Test
     public void testSearchProductWithCate8_NegativeIdCate() {
-        logger.info("Bắt đầu testSearchProductWithCate8_NegativeIdCate: Kiểm tra searchProductWithCate8 với idCate là giá trị âm.");
+        logger.info("Bắt đầu TC_P_51 - testSearchProductWithCate8_NegativeIdCate: Kiểm tra searchProductWithCate8 với idCate là giá trị âm.");
         // Chuẩn bị dữ liệu
         int idCate = -1;
         List<Product> mockProducts = new ArrayList<>();
@@ -167,13 +167,13 @@ public class ProductServiceSearchProductWithCate8Test {
         verify(entityManager, times(1)).createNativeQuery("select * from tbl_product where status = 1 and category_id=-1 order by rand() limit 0,8;", Product.class);
         verify(mockQuery, times(1)).getResultList();
         assertTrue(result.isEmpty(), "Danh sách trả về phải rỗng vì idCate âm không hợp lệ");
-        logger.info("Hoàn thành testSearchProductWithCate8_NegativeIdCate. Lưu ý: Phương thức cần kiểm tra giá trị idCate để tránh giá trị không hợp lệ.");
+        logger.info("Kết quả TC_P_51 - testSearchProductWithCate8_NegativeIdCate: Kết thúc test case.");
     }
 
-    // Test case 5: idCate là 0
+    // TC_P_52 - testSearchProductWithCate8_ZeroIdCate: idCate là 0
     @Test
     public void testSearchProductWithCate8_ZeroIdCate() {
-        logger.info("Bắt đầu testSearchProductWithCate8_ZeroIdCate: Kiểm tra searchProductWithCate8 với idCate là 0.");
+        logger.info("Bắt đầu TC_P_52 - testSearchProductWithCate8_ZeroIdCate: Kiểm tra searchProductWithCate8 với idCate là 0.");
         // Chuẩn bị dữ liệu
         int idCate = 0;
         List<Product> mockProducts = new ArrayList<>();
@@ -192,13 +192,13 @@ public class ProductServiceSearchProductWithCate8Test {
         verify(entityManager, times(1)).createNativeQuery("select * from tbl_product where status = 1 and category_id=0 order by rand() limit 0,8;", Product.class);
         verify(mockQuery, times(1)).getResultList();
         assertTrue(result.isEmpty(), "Danh sách trả về phải rỗng vì idCate = 0 không hợp lệ");
-        logger.info("Hoàn thành testSearchProductWithCate8_ZeroIdCate. Lưu ý: Phương thức cần kiểm tra giá trị idCate để tránh giá trị không hợp lệ.");
+        logger.info("Kết quả TC_P_52 - testSearchProductWithCate8_ZeroIdCate: Kết thúc test case.");
     }
 
-    // Test case 6: idCate hợp lệ, nhưng tất cả sản phẩm có status = 0
+    // TC_P_53 - testSearchProductWithCate8_ValidIdCateWithInactiveProducts: idCate hợp lệ, nhưng tất cả sản phẩm có status = 0
     @Test
     public void testSearchProductWithCate8_ValidIdCateWithInactiveProducts() {
-        logger.info("Bắt đầu testSearchProductWithCate8_ValidIdCateWithInactiveProducts: Kiểm tra searchProductWithCate8 với idCate hợp lệ nhưng tất cả sản phẩm có status = 0.");
+        logger.info("Bắt đầu TC_P_53 - testSearchProductWithCate8_ValidIdCateWithInactiveProducts: Kiểm tra searchProductWithCate8 với idCate hợp lệ nhưng tất cả sản phẩm có status = 0.");
         // Chuẩn bị dữ liệu
         int idCate = 4;
         List<Product> mockProducts = new ArrayList<>();
@@ -217,13 +217,13 @@ public class ProductServiceSearchProductWithCate8Test {
         verify(entityManager, times(1)).createNativeQuery("select * from tbl_product where status = 1 and category_id=4 order by rand() limit 0,8;", Product.class);
         verify(mockQuery, times(1)).getResultList();
         assertTrue(result.isEmpty(), "Danh sách trả về phải rỗng vì không có sản phẩm nào có status = 1");
-        logger.info("Hoàn thành testSearchProductWithCate8_ValidIdCateWithInactiveProducts.");
+        logger.info("Kết quả TC_P_53 - testSearchProductWithCate8_ValidIdCateWithInactiveProducts: Kết thúc test case.");
     }
 
-    // Test case 7: entityManager.createNativeQuery() ném ngoại lệ
+    // TC_P_54 - testSearchProductWithCate8_CreateQueryException: entityManager.createNativeQuery() ném ngoại lệ
     @Test
     public void testSearchProductWithCate8_CreateQueryException() {
-        logger.info("Bắt đầu testSearchProductWithCate8_CreateQueryException: Kiểm tra searchProductWithCate8 khi entityManager.createNativeQuery() ném ngoại lệ.");
+        logger.info("Bắt đầu TC_P_54 - testSearchProductWithCate8_CreateQueryException: Kiểm tra searchProductWithCate8 khi entityManager.createNativeQuery() ném ngoại lệ.");
         // Chuẩn bị dữ liệu
         int idCate = 5;
         when(entityManager.createNativeQuery("select * from tbl_product where status = 1 and category_id=5 order by rand() limit 0,8;", Product.class))
@@ -241,13 +241,13 @@ public class ProductServiceSearchProductWithCate8Test {
         // Kiểm tra
         verify(entityManager, times(1)).createNativeQuery("select * from tbl_product where status = 1 and category_id=5 order by rand() limit 0,8;", Product.class);
         verify(mockQuery, never()).getResultList();
-        logger.info("Hoàn thành testSearchProductWithCate8_CreateQueryException.");
+        logger.info("Kết quả TC_P_54 - testSearchProductWithCate8_CreateQueryException: Kết thúc test case.");
     }
 
-    // Test case 8: query.getResultList() ném ngoại lệ
+    // TC_P_55 - testSearchProductWithCate8_QueryResultException: query.getResultList() ném ngoại lệ
     @Test
     public void testSearchProductWithCate8_QueryResultException() {
-        logger.info("Bắt đầu testSearchProductWithCate8_QueryResultException: Kiểm tra searchProductWithCate8 khi query.getResultList() ném ngoại lệ.");
+        logger.info("Bắt đầu TC_P_55 - testSearchProductWithCate8_QueryResultException: Kiểm tra searchProductWithCate8 khi query.getResultList() ném ngoại lệ.");
         // Chuẩn bị dữ liệu
         int idCate = 6;
         when(entityManager.createNativeQuery("select * from tbl_product where status = 1 and category_id=6 order by rand() limit 0,8;", Product.class))
@@ -266,6 +266,6 @@ public class ProductServiceSearchProductWithCate8Test {
         // Kiểm tra
         verify(entityManager, times(1)).createNativeQuery("select * from tbl_product where status = 1 and category_id=6 order by rand() limit 0,8;", Product.class);
         verify(mockQuery, times(1)).getResultList();
-        logger.info("Hoàn thành testSearchProductWithCate8_QueryResultException.");
+        logger.info("Kết quả TC_P_55 - testSearchProductWithCate8_QueryResultException: Kết thúc test case.");
     }
 }

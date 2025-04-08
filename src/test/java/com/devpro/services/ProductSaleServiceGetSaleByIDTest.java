@@ -57,10 +57,10 @@ public class ProductSaleServiceGetSaleByIDTest {
         logger.info("Hoàn tác dữ liệu kiểm thử hoàn tất.");
     }
 
-    // TC_getSaleByID_01: Tồn tại Sale với id hợp lệ
+    // TC_PS_111 - testGetSaleByID_WithValidId: Tồn tại Sale với id hợp lệ
     @Test
     public void testGetSaleByID_WithValidId() {
-        logger.info("Bắt đầu TC_getSaleByID_01: Kiểm tra id hợp lệ và tồn tại.");
+        logger.info("Bắt đầu TC_PS_111: Kiểm tra id hợp lệ và tồn tại.");
         // Chuẩn bị: Mock saleRepo.getOne(1) trả về một Sale
         Sale sale = new Sale();
         sale.setId(1);
@@ -73,13 +73,13 @@ public class ProductSaleServiceGetSaleByIDTest {
         assertNotNull(result, "Sale không được null");
         assertEquals(1, result.getId(), "ID của Sale phải là 1");
         verify(saleRepo, times(1)).getOne(1);
-        logger.info("Kết quả TC_getSaleByID_01: Trả về Sale với id = 1 như mong đợi.");
+        logger.info("Kết quả TC_PS_111: Kết thúc test case. Trả về sale id: " + result.getId());
     }
 
-    // TC_getSaleByID_02: id không tồn tại
+    // TC_PS_112 - testGetSaleByID_WithNonExistentId: id không tồn tại
     @Test
     public void testGetSaleByID_WithNonExistentId() {
-        logger.info("Bắt đầu TC_getSaleByID_02: Kiểm tra id không tồn tại.");
+        logger.info("Bắt đầu TC_PS_112: Kiểm tra id không tồn tại.");
         // Chuẩn bị: Mock saleRepo.getOne(2) ném EntityNotFoundException
         when(saleRepo.getOne(2)).thenThrow(new EntityNotFoundException("Sale không tồn tại với id = 2"));
 
@@ -90,13 +90,13 @@ public class ProductSaleServiceGetSaleByIDTest {
 
         // Kiểm tra tương tác và log
         verify(saleRepo, times(1)).getOne(2);
-        logger.info("Kết quả TC_getSaleByID_02: Ném EntityNotFoundException như mong đợi.");
+        logger.info("Kết quả TC_PS_112: Kết thúc test case.");
     }
 
-    // TC_getSaleByID_03: id là null
+    // TC_PS_113 - testGetSaleByID_WithNullId: id là null
     @Test
     public void testGetSaleByID_WithNullId() {
-        logger.info("Bắt đầu TC_getSaleByID_03: Kiểm tra id là null.");
+        logger.info("Bắt đầu TC_PS_113: Kiểm tra id là null.");
         // Chuẩn bị: Gọi với id = null
         // Thực hiện & Kiểm tra: Mong đợi ngoại lệ
         assertThrows(IllegalArgumentException.class, () -> {
@@ -105,13 +105,13 @@ public class ProductSaleServiceGetSaleByIDTest {
 
         // Kiểm tra tương tác và log
         verify(saleRepo, never()).getOne(anyInt());
-        logger.info("Kết quả TC_getSaleByID_03: Ném IllegalArgumentException như mong đợi.");
+        logger.info("Kết quả TC_PS_113: Kết thúc test case.");
     }
 
-    // TC_getSaleByID_04: id âm
+    // TC_PS_114 - testGetSaleByID_WithNegativeId: id âm
     @Test
     public void testGetSaleByID_WithNegativeId() {
-        logger.info("Bắt đầu TC_getSaleByID_04: Kiểm tra id âm.");
+        logger.info("Bắt đầu TC_PS_114: Kiểm tra id âm.");
         // Chuẩn bị: Mock saleRepo.getOne(-1) ném EntityNotFoundException
         when(saleRepo.getOne(-1)).thenThrow(new EntityNotFoundException("Sale không tồn tại với id = -1"));
 
@@ -122,13 +122,13 @@ public class ProductSaleServiceGetSaleByIDTest {
 
         // Kiểm tra tương tác và log
         verify(saleRepo, times(1)).getOne(-1);
-        logger.info("Kết quả TC_getSaleByID_04: Ném EntityNotFoundException như mong đợi.");
+        logger.info("Kết quả TC_PS_114: Kết thúc test case.");
     }
 
-    // TC_getSaleByID_05: id = 0
+    // TC_PS_115 - testGetSaleByID_WithZeroId: id = 0
     @Test
     public void testGetSaleByID_WithZeroId() {
-        logger.info("Bắt đầu TC_getSaleByID_05: Kiểm tra id = 0.");
+        logger.info("Bắt đầu TC_PS_115: Kiểm tra id = 0.");
         // Chuẩn bị: Mock saleRepo.getOne(0) ném EntityNotFoundException
         when(saleRepo.getOne(0)).thenThrow(new EntityNotFoundException("Sale không tồn tại với id = 0"));
 
@@ -139,13 +139,13 @@ public class ProductSaleServiceGetSaleByIDTest {
 
         // Kiểm tra tương tác và log
         verify(saleRepo, times(1)).getOne(0);
-        logger.info("Kết quả TC_getSaleByID_05: Ném EntityNotFoundException như mong đợi.");
+        logger.info("Kết quả TC_PS_115: Kết thúc test case.");
     }
 
-    // TC_getSaleByID_06: Lỗi cơ sở dữ liệu
+    // TC_PS_116 - testGetSaleByID_WithDatabaseError: Lỗi cơ sở dữ liệu
     @Test
     public void testGetSaleByID_WithDatabaseError() {
-        logger.info("Bắt đầu TC_getSaleByID_06: Kiểm tra lỗi cơ sở dữ liệu.");
+        logger.info("Bắt đầu TC_PS_116: Kiểm tra lỗi cơ sở dữ liệu.");
         // Chuẩn bị: Mock saleRepo.getOne(1) ném RuntimeException
         when(saleRepo.getOne(1)).thenThrow(new RuntimeException("Lỗi cơ sở dữ liệu"));
 
@@ -156,13 +156,13 @@ public class ProductSaleServiceGetSaleByIDTest {
 
         // Kiểm tra tương tác và log
         verify(saleRepo, times(1)).getOne(1);
-        logger.info("Kết quả TC_getSaleByID_06: Ném RuntimeException như mong đợi.");
+        logger.info("Kết quả TC_PS_116: Kết thúc test case.");
     }
 
-    // TC_getSaleByID_07: Sale có các thuộc tính null
+    // TC_PS_117 - testGetSaleByID_WithNullFields: Sale có các thuộc tính null
     @Test
     public void testGetSaleByID_WithNullFields() {
-        logger.info("Bắt đầu TC_getSaleByID_07: Kiểm tra Sale có các thuộc tính null.");
+        logger.info("Bắt đầu TC_PS_117: Kiểm tra Sale có các thuộc tính null.");
         // Chuẩn bị: Mock saleRepo.getOne(1) trả về Sale với các thuộc tính null
         Sale sale = new Sale();
         sale.setId(1);
@@ -179,13 +179,13 @@ public class ProductSaleServiceGetSaleByIDTest {
         assertNull(result.getStart_date(), "start_date phải là null");
         assertNull(result.getEnd_date(), "end_date phải là null");
         verify(saleRepo, times(1)).getOne(1);
-        logger.info("Kết quả TC_getSaleByID_07: Trả về Sale với các thuộc tính null như mong đợi.");
+        logger.info("Kết quả TC_PS_117: Kết thúc test case.");
     }
 
-    // TC_getSaleByID_08: Gọi nhiều lần với cùng id
+    // TC_PS_118 - testGetSaleByID_MultipleCalls: Gọi nhiều lần với cùng id
     @Test
     public void testGetSaleByID_MultipleCalls() {
-        logger.info("Bắt đầu TC_getSaleByID_08: Kiểm tra gọi nhiều lần với cùng id.");
+        logger.info("Bắt đầu TC_PS_118: Kiểm tra gọi nhiều lần với cùng id.");
         // Chuẩn bị: Mock saleRepo.getOne(1) trả về một Sale
         Sale sale = new Sale();
         sale.setId(1);
@@ -206,6 +206,6 @@ public class ProductSaleServiceGetSaleByIDTest {
         assertSame(result1, result2, "Sale lần 1 và lần 2 phải là cùng một đối tượng");
         assertSame(result2, result3, "Sale lần 2 và lần 3 phải là cùng một đối tượng");
         verify(saleRepo, times(3)).getOne(1);
-        logger.info("Kết quả TC_getSaleByID_08: Trả về cùng một Sale mỗi lần gọi như mong đợi.");
+        logger.info("Kết quả TC_PS_118: Kết thúc test case.");
     }
 }

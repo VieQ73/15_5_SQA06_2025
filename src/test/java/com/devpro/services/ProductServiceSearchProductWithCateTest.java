@@ -54,10 +54,10 @@ public class ProductServiceSearchProductWithCateTest {
         logger.info("Hoàn tác dữ liệu kiểm thử hoàn tất.");
     }
 
-    // Test case 1: seo hợp lệ, có danh mục và sản phẩm khớp
+    // TC_P_56 - testSearchProductWithCate_ValidSeoWithMatchingCategoryAndProducts: seo hợp lệ, có danh mục và sản phẩm khớp
     @Test
     public void testSearchProductWithCate_ValidSeoWithMatchingCategoryAndProducts() {
-        logger.info("Bắt đầu testSearchProductWithCate_ValidSeoWithMatchingCategoryAndProducts: Kiểm tra searchProductWithCate với seo hợp lệ, có danh mục và sản phẩm khớp.");
+        logger.info("Bắt đầu TC_P_56 - testSearchProductWithCate_ValidSeoWithMatchingCategoryAndProducts: Kiểm tra searchProductWithCate với seo hợp lệ, có danh mục và sản phẩm khớp.");
         // Chuẩn bị dữ liệu
         String seo = "electronics";
         List<Product> mockProducts = new ArrayList<>();
@@ -85,13 +85,13 @@ public class ProductServiceSearchProductWithCateTest {
         verify(mockQuery, times(1)).getResultList();
         assertEquals(3, result.size(), "Danh sách trả về phải có đúng 3 sản phẩm");
         assertEquals(mockProducts, result, "Danh sách trả về phải giống mockProducts");
-        logger.info("Hoàn thành testSearchProductWithCate_ValidSeoWithMatchingCategoryAndProducts.");
+        logger.info("Kết quả TC_P_56 - testSearchProductWithCate_ValidSeoWithMatchingCategoryAndProducts: Kết thúc test case.");
     }
 
-    // Test case 2: seo hợp lệ, có danh mục khớp nhưng không có sản phẩm
+    // TC_P_57 - testSearchProductWithCate_ValidSeoWithMatchingCategoryButNoProducts: seo hợp lệ, có danh mục khớp nhưng không có sản phẩm
     @Test
     public void testSearchProductWithCate_ValidSeoWithMatchingCategoryButNoProducts() {
-        logger.info("Bắt đầu testSearchProductWithCate_ValidSeoWithMatchingCategoryButNoProducts: Kiểm tra searchProductWithCate với seo hợp lệ, có danh mục nhưng không có sản phẩm.");
+        logger.info("Bắt đầu TC_P_57 - testSearchProductWithCate_ValidSeoWithMatchingCategoryButNoProducts: Kiểm tra searchProductWithCate với seo hợp lệ, có danh mục nhưng không có sản phẩm.");
         // Chuẩn bị dữ liệu
         String seo = "clothing";
         List<Product> mockProducts = new ArrayList<>();
@@ -110,13 +110,13 @@ public class ProductServiceSearchProductWithCateTest {
         verify(entityManager, times(1)).createNativeQuery("select * from tbl_product where status = 1 and category_id in (select id from tbl_category where seo='clothing')", Product.class);
         verify(mockQuery, times(1)).getResultList();
         assertTrue(result.isEmpty(), "Danh sách trả về phải rỗng");
-        logger.info("Hoàn thành testSearchProductWithCate_ValidSeoWithMatchingCategoryButNoProducts.");
+        logger.info("Kết quả TC_P_57 - testSearchProductWithCate_ValidSeoWithMatchingCategoryButNoProducts: Kết thúc test case.");
     }
 
-    // Test case 3: seo hợp lệ, không có danh mục nào khớp
+    // TC_P_58 - testSearchProductWithCate_ValidSeoWithNoMatchingCategory: seo hợp lệ, không có danh mục nào khớp
     @Test
     public void testSearchProductWithCate_ValidSeoWithNoMatchingCategory() {
-        logger.info("Bắt đầu testSearchProductWithCate_ValidSeoWithNoMatchingCategory: Kiểm tra searchProductWithCate với seo hợp lệ nhưng không có danh mục nào khớp.");
+        logger.info("Bắt đầu TC_P_58 - testSearchProductWithCate_ValidSeoWithNoMatchingCategory: Kiểm tra searchProductWithCate với seo hợp lệ nhưng không có danh mục nào khớp.");
         // Chuẩn bị dữ liệu
         String seo = "nonexistent";
         List<Product> mockProducts = new ArrayList<>();
@@ -135,13 +135,13 @@ public class ProductServiceSearchProductWithCateTest {
         verify(entityManager, times(1)).createNativeQuery("select * from tbl_product where status = 1 and category_id in (select id from tbl_category where seo='nonexistent')", Product.class);
         verify(mockQuery, times(1)).getResultList();
         assertTrue(result.isEmpty(), "Danh sách trả về phải rỗng");
-        logger.info("Hoàn thành testSearchProductWithCate_ValidSeoWithNoMatchingCategory.");
+        logger.info("Kết quả TC_P_58 - testSearchProductWithCate_ValidSeoWithNoMatchingCategory: Kết thúc test case.");
     }
 
-    // Test case 4: seo là null
+    // TC_P_59 - testSearchProductWithCate_SeoIsNull: seo là null
     @Test
     public void testSearchProductWithCate_SeoIsNull() {
-        logger.info("Bắt đầu testSearchProductWithCate_SeoIsNull: Kiểm tra searchProductWithCate với seo là null.");
+        logger.info("Bắt đầu TC_P_59 - testSearchProductWithCate_SeoIsNull: Kiểm tra searchProductWithCate với seo là null.");
         // Chuẩn bị dữ liệu
         String seo = null;
         logger.info("Dữ liệu trước khi gọi: seo = {}", seo);
@@ -157,13 +157,13 @@ public class ProductServiceSearchProductWithCateTest {
         // Kiểm tra
         verify(entityManager, never()).createNativeQuery(anyString(), eq(Product.class));
         verify(mockQuery, never()).getResultList();
-        logger.info("Hoàn thành testSearchProductWithCate_SeoIsNull. Lưu ý: Phương thức cần kiểm tra giá trị seo để tránh ngoại lệ.");
+        logger.info("Kết quả TC_P_59 - testSearchProductWithCate_SeoIsNull: Kết thúc test case.");
     }
 
-    // Test case 5: seo là chuỗi rỗng
+    // TC_P_60 - testSearchProductWithCate_SeoIsEmpty: seo là chuỗi rỗng
     @Test
     public void testSearchProductWithCate_SeoIsEmpty() {
-        logger.info("Bắt đầu testSearchProductWithCate_SeoIsEmpty: Kiểm tra searchProductWithCate với seo là chuỗi rỗng.");
+        logger.info("Bắt đầu TC_P_60 - testSearchProductWithCate_SeoIsEmpty: Kiểm tra searchProductWithCate với seo là chuỗi rỗng.");
         // Chuẩn bị dữ liệu
         String seo = "";
         List<Product> mockProducts = new ArrayList<>();
@@ -182,13 +182,13 @@ public class ProductServiceSearchProductWithCateTest {
         verify(entityManager, times(1)).createNativeQuery("select * from tbl_product where status = 1 and category_id in (select id from tbl_category where seo='')", Product.class);
         verify(mockQuery, times(1)).getResultList();
         assertTrue(result.isEmpty(), "Danh sách trả về phải rỗng vì seo rỗng không hợp lệ");
-        logger.info("Hoàn thành testSearchProductWithCate_SeoIsEmpty. Lưu ý: Phương thức cần kiểm tra giá trị seo để tránh giá trị không hợp lệ.");
+        logger.info("Kết quả TC_P_60 - testSearchProductWithCate_SeoIsEmpty: Kết thúc test case.");
     }
 
-    // Test case 6: seo chứa ký tự đặc biệt (kiểm tra nguy cơ SQL injection)
+    // TC_P_61 - testSearchProductWithCate_SeoWithSpecialCharacters: seo chứa ký tự đặc biệt
     @Test
     public void testSearchProductWithCate_SeoWithSpecialCharacters() {
-        logger.info("Bắt đầu testSearchProductWithCate_SeoWithSpecialCharacters: Kiểm tra searchProductWithCate với seo chứa ký tự đặc biệt.");
+        logger.info("Bắt đầu TC_P_61 - testSearchProductWithCate_SeoWithSpecialCharacters: Kiểm tra searchProductWithCate với seo chứa ký tự đặc biệt.");
         // Chuẩn bị dữ liệu
         String seo = "' OR '1'='1";
         List<Product> mockProducts = new ArrayList<>();
@@ -207,13 +207,13 @@ public class ProductServiceSearchProductWithCateTest {
         verify(entityManager, times(1)).createNativeQuery("select * from tbl_product where status = 1 and category_id in (select id from tbl_category where seo='' OR '1'='1')", Product.class);
         verify(mockQuery, times(1)).getResultList();
         assertTrue(result.isEmpty(), "Danh sách trả về phải rỗng (giả lập trường hợp không có sản phẩm)");
-        logger.info("Hoàn thành testSearchProductWithCate_SeoWithSpecialCharacters. Lưu ý: Phương thức cần sửa để sử dụng parameterized query tránh SQL injection.");
+        logger.info("Kết quả TC_P_61 - testSearchProductWithCate_SeoWithSpecialCharacters: Kết thúc test case.");
     }
 
-    // Test case 7: entityManager.createNativeQuery() ném ngoại lệ
+    // TC_P_62 - testSearchProductWithCate_CreateQueryException: entityManager.createNativeQuery() ném ngoại lệ
     @Test
     public void testSearchProductWithCate_CreateQueryException() {
-        logger.info("Bắt đầu testSearchProductWithCate_CreateQueryException: Kiểm tra searchProductWithCate khi entityManager.createNativeQuery() ném ngoại lệ.");
+        logger.info("Bắt đầu TC_P_62 - testSearchProductWithCate_CreateQueryException: Kiểm tra searchProductWithCate khi entityManager.createNativeQuery() ném ngoại lệ.");
         // Chuẩn bị dữ liệu
         String seo = "electronics";
         when(entityManager.createNativeQuery("select * from tbl_product where status = 1 and category_id in (select id from tbl_category where seo='electronics')", Product.class))
@@ -231,13 +231,13 @@ public class ProductServiceSearchProductWithCateTest {
         // Kiểm tra
         verify(entityManager, times(1)).createNativeQuery("select * from tbl_product where status = 1 and category_id in (select id from tbl_category where seo='electronics')", Product.class);
         verify(mockQuery, never()).getResultList();
-        logger.info("Hoàn thành testSearchProductWithCate_CreateQueryException.");
+        logger.info("Kết quả TC_P_62 - testSearchProductWithCate_CreateQueryException: Kết thúc test case.");
     }
 
-    // Test case 8: query.getResultList() ném ngoại lệ
+    // TC_P_63 - testSearchProductWithCate_QueryResultException: query.getResultList() ném ngoại lệ
     @Test
     public void testSearchProductWithCate_QueryResultException() {
-        logger.info("Bắt đầu testSearchProductWithCate_QueryResultException: Kiểm tra searchProductWithCate khi query.getResultList() ném ngoại lệ.");
+        logger.info("Bắt đầu TC_P_63 - testSearchProductWithCate_QueryResultException: Kiểm tra searchProductWithCate khi query.getResultList() ném ngoại lệ.");
         // Chuẩn bị dữ liệu
         String seo = "electronics";
         when(entityManager.createNativeQuery("select * from tbl_product where status = 1 and category_id in (select id from tbl_category where seo='electronics')", Product.class))
@@ -256,6 +256,6 @@ public class ProductServiceSearchProductWithCateTest {
         // Kiểm tra
         verify(entityManager, times(1)).createNativeQuery("select * from tbl_product where status = 1 and category_id in (select id from tbl_category where seo='electronics')", Product.class);
         verify(mockQuery, times(1)).getResultList();
-        logger.info("Hoàn thành testSearchProductWithCate_QueryResultException.");
+        logger.info("Kết quả TC_P_63 - testSearchProductWithCate_QueryResultException: Kết thúc test case.");
     }
 }

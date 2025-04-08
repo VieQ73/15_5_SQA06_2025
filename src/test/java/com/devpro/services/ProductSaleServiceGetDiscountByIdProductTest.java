@@ -67,10 +67,10 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
         logger.info("Hoàn tác dữ liệu kiểm thử hoàn tất.");
     }
 
-    // TC_getDiscountByIdProduct_01: Có ProductSale khớp với productId và active = true
+    // TC_PS_93 - testGetDiscountByIdProduct_WithMatchingProductIdAndActive: Có ProductSale khớp với productId và active = true
     @Test
     public void testGetDiscountByIdProduct_WithMatchingProductIdAndActive() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_01: Kiểm tra productId hợp lệ và active = true.");
+        logger.info("Bắt đầu TC_PS_93: Kiểm tra productId hợp lệ và active = true.");
         // Chuẩn bị: Một ProductSale với productId = 1, active = true, discount = 10
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -88,13 +88,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(10, result, "Discount phải là 10");
-        logger.info("Kết quả TC_getDiscountByIdProduct_01: Trả về discount = 10 như mong đợi.");
+        logger.info("Kết quả TC_PS_93: Kết thúc test case. Trả về discount: "+result);
     }
 
-    // TC_getDiscountByIdProduct_02: Có ProductSale khớp với productId nhưng active = false
+    // TC_PS_94 - testGetDiscountByIdProduct_WithMatchingProductIdButNotActive: Có ProductSale khớp với productId nhưng active = false
     @Test
     public void testGetDiscountByIdProduct_WithMatchingProductIdButNotActive() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_02: Kiểm tra productId hợp lệ nhưng active = false.");
+        logger.info("Bắt đầu TC_PS_94: Kiểm tra productId hợp lệ nhưng active = false.");
         // Chuẩn bị: Một ProductSale với productId = 1, active = false, discount = 20
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -112,13 +112,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(0, result, "Discount phải là 0 vì active = false");
-        logger.info("Kết quả TC_getDiscountByIdProduct_02: Trả về discount = 0 như mong đợi.");
+        logger.info("Kết quả TC_PS_94: Kết thúc test case. Trả về discount: "+result);
     }
 
-    // TC_getDiscountByIdProduct_03: Không có ProductSale nào khớp với productId
+    // TC_PS_95 - testGetDiscountByIdProduct_WithNoMatchingProductId: Không có ProductSale nào khớp với productId
     @Test
     public void testGetDiscountByIdProduct_WithNoMatchingProductId() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_03: Kiểm tra productId không tồn tại.");
+        logger.info("Bắt đầu TC_PS_95: Kiểm tra productId không tồn tại.");
         // Chuẩn bị: Một ProductSale với productId = 1, nhưng gọi với productId = 2
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -136,13 +136,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(0, result, "Discount phải là 0 vì không tìm thấy productId");
-        logger.info("Kết quả TC_getDiscountByIdProduct_03: Trả về discount = 0 như mong đợi.");
+        logger.info("Kết quả TC_PS_95: Kết thúc test case. Trả về discount: "+result);
     }
 
-    // TC_getDiscountByIdProduct_04: Danh sách ProductSale rỗng
+    // TC_PS_96 - testGetDiscountByIdProduct_WithEmptyList: Danh sách ProductSale rỗng
     @Test
     public void testGetDiscountByIdProduct_WithEmptyList() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_04: Kiểm tra danh sách rỗng.");
+        logger.info("Bắt đầu TC_PS_96: Kiểm tra danh sách rỗng.");
         // Chuẩn bị: Danh sách ProductSale rỗng
         when(mockQuery.getResultList()).thenReturn(new ArrayList<>());
 
@@ -151,13 +151,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(0, result, "Discount phải là 0 vì danh sách rỗng");
-        logger.info("Kết quả TC_getDiscountByIdProduct_04: Trả về discount = 0 như mong đợi.");
+        logger.info("Kết quả TC_PS_96: Kết thúc test case. Trả về discount: "+result);
     }
 
-    // TC_getDiscountByIdProduct_05: productId là null
+    // TC_PS_97 - testGetDiscountByIdProduct_WithNullProductId: productId là null
     @Test
     public void testGetDiscountByIdProduct_WithNullProductId() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_05: Kiểm tra productId là null.");
+        logger.info("Bắt đầu TC_PS_97: Kiểm tra productId là null.");
         // Chuẩn bị: Một ProductSale với productId = 1
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -175,13 +175,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(0, result, "Discount phải là 0 khi productId là null");
-        logger.info("Kết quả TC_getDiscountByIdProduct_05: Trả về discount = 0 như mong đợi.");
+        logger.info("Kết quả TC_PS_97: Kết thúc test case. Trả về discount: "+result);
     }
 
-    // TC_getDiscountByIdProduct_06: Nhiều ProductSale khớp với productId, nhưng chỉ một cái active = true
+    // TC_PS_98 - testGetDiscountByIdProduct_WithMultipleMatchingProductId: Nhiều ProductSale khớp với productId, nhưng chỉ một cái active = true
     @Test
     public void testGetDiscountByIdProduct_WithMultipleMatchingProductId() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_06: Kiểm tra nhiều ProductSale khớp với productId.");
+        logger.info("Bắt đầu TC_PS_98: Kiểm tra nhiều ProductSale khớp với productId.");
         // Chuẩn bị: 2 ProductSale với productId = 1
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -207,13 +207,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(10, result, "Discount phải là 10 vì chỉ ps1 active = true");
-        logger.info("Kết quả TC_getDiscountByIdProduct_06: Trả về discount = 10 như mong đợi.");
+        logger.info("Kết quả TC_PS_98: Kết thúc test case. Trả về discount: "+result);
     }
 
-    // TC_getDiscountByIdProduct_07: Nhiều ProductSale khớp với productId, nhưng tất cả active = false
+    // TC_PS_99 - testGetDiscountByIdProduct_WithMultipleMatchingButNotActive: Nhiều ProductSale khớp với productId, nhưng tất cả active = false
     @Test
     public void testGetDiscountByIdProduct_WithMultipleMatchingButNotActive() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_07: Kiểm tra nhiều ProductSale nhưng không active.");
+        logger.info("Bắt đầu TC_PS_99: Kiểm tra nhiều ProductSale nhưng không active.");
         // Chuẩn bị: 2 ProductSale với productId = 1, cả 2 active = false
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -239,13 +239,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(0, result, "Discount phải là 0 vì không có ProductSale nào active");
-        logger.info("Kết quả TC_getDiscountByIdProduct_07: Trả về discount = 0 như mong đợi.");
+        logger.info("Kết quả TC_PS_99: Kết thúc test case. Trả về discount: "+result);
     }
 
-    // TC_getDiscountByIdProduct_08: ProductSale với product = null
+    // TC_PS_100 - testGetDiscountByIdProduct_WithNullProduct: ProductSale với product = null
     @Test
     public void testGetDiscountByIdProduct_WithNullProduct() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_08: Kiểm tra ProductSale với product = null.");
+        logger.info("Bắt đầu TC_PS_100: Kiểm tra ProductSale với product = null.");
         // Chuẩn bị: Một ProductSale với product = null
         ProductSale ps = new ProductSale();
         ps.setId(1);
@@ -261,13 +261,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
         }, "Phải ném NullPointerException khi product là null");
 
         // Log
-        logger.info("Kết quả TC_getDiscountByIdProduct_08: Ném NullPointerException như mong đợi.");
+        logger.info("Kết quả TC_PS_100: Kết thúc test case.");
     }
 
-    // TC_getDiscountByIdProduct_09: ProductSale với discount = null
+    // TC_PS_101 - testGetDiscountByIdProduct_WithNullDiscount: ProductSale với discount = null
     @Test
     public void testGetDiscountByIdProduct_WithNullDiscount() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_09: Kiểm tra ProductSale với discount = null.");
+        logger.info("Bắt đầu TC_PS_101: Kiểm tra ProductSale với discount = null.");
         // Chuẩn bị: Một ProductSale với discount = null
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -286,13 +286,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
         }, "Phải ném NullPointerException khi discount là null");
 
         // Log
-        logger.info("Kết quả TC_getDiscountByIdProduct_09: Ném NullPointerException như mong đợi.");
+        logger.info("Kết quả TC_PS_101: Kết thúc test case");
     }
 
-    // TC_getDiscountByIdProduct_10: ProductSale với discount âm
+    // TC_PS_102 - testGetDiscountByIdProduct_WithNegativeDiscount: ProductSale với discount âm
     @Test
     public void testGetDiscountByIdProduct_WithNegativeDiscount() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_10: Kiểm tra ProductSale với discount âm.");
+        logger.info("Bắt đầu TC_PS_102: Kiểm tra ProductSale với discount âm.");
         // Chuẩn bị: Một ProductSale với discount = -5
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -310,13 +310,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(-5, result, "Discount phải là -5");
-        logger.info("Kết quả TC_getDiscountByIdProduct_10: Trả về discount = -5 như mong đợi.");
+        logger.info("Kết quả TC_PS_102: Kết thúc test case. Trả về discount: "+result);
     }
 
-    // TC_getDiscountByIdProduct_11: ProductSale với discount = 0
+    // TC_PS_103 - testGetDiscountByIdProduct_WithZeroDiscount: ProductSale với discount = 0
     @Test
     public void testGetDiscountByIdProduct_WithZeroDiscount() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_11: Kiểm tra ProductSale với discount = 0.");
+        logger.info("Bắt đầu TC_PS_103: Kiểm tra ProductSale với discount = 0.");
         // Chuẩn bị: Một ProductSale với discount = 0
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -334,13 +334,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(0, result, "Discount phải là 0");
-        logger.info("Kết quả TC_getDiscountByIdProduct_11: Trả về discount = 0 như mong đợi.");
+        logger.info("Kết quả TC_PS_103: Kết thúc test case. Trả về discount: "+result);
     }
 
-    // TC_getDiscountByIdProduct_12: Nhiều ProductSale với productId khác nhau
+    // TC_PS_104 - testGetDiscountByIdProduct_WithMultipleProducts: Nhiều ProductSale với productId khác nhau
     @Test
     public void testGetDiscountByIdProduct_WithMultipleProducts() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_12: Kiểm tra nhiều ProductSale với productId khác nhau.");
+        logger.info("Bắt đầu TC_PS_104: Kiểm tra nhiều ProductSale với productId khác nhau.");
         // Chuẩn bị: 2 ProductSale với productId khác nhau
         Product sanPham1 = new Product();
         sanPham1.setId(1);
@@ -368,13 +368,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(10, result, "Discount phải là 10 cho productId = 1");
-        logger.info("Kết quả TC_getDiscountByIdProduct_12: Trả về discount = 10 như mong đợi.");
+        logger.info("Kết quả TC_PS_104: Kết thúc test case. Trả về discount: "+result);
     }
 
-    // TC_getDiscountByIdProduct_13: productId âm
+    // TC_PS_105 - testGetDiscountByIdProduct_WithNegativeProductId: productId âm
     @Test
     public void testGetDiscountByIdProduct_WithNegativeProductId() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_13: Kiểm tra productId âm.");
+        logger.info("Bắt đầu TC_PS_105: Kiểm tra productId âm.");
         // Chuẩn bị: Một ProductSale với productId = 1
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -392,13 +392,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(0, result, "Discount phải là 0 vì productId âm không khớp");
-        logger.info("Kết quả TC_getDiscountByIdProduct_13: Trả về discount = 0 như mong đợi.");
+        logger.info("Kết quả TC_PS_105: Kết thúc test case. Trả về discount: "+result);
     }
 
-    // TC_getDiscountByIdProduct_14: productId = 0
+    // TC_PS_106 - testGetDiscountByIdProduct_WithZeroProductId: productId = 0
     @Test
     public void testGetDiscountByIdProduct_WithZeroProductId() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_14: Kiểm tra productId = 0.");
+        logger.info("Bắt đầu TC_PS_106: Kiểm tra productId = 0.");
         // Chuẩn bị: Một ProductSale với productId = 1
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -416,13 +416,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(0, result, "Discount phải là 0 vì productId = 0 không khớp");
-        logger.info("Kết quả TC_getDiscountByIdProduct_14: Trả về discount = 0 như mong đợi.");
+        logger.info("Kết quả TC_PS_106: Kết thúc test case. Trả về discount: "+result);
     }
 
-    // TC_getDiscountByIdProduct_15: Lỗi truy vấn cơ sở dữ liệu
+    // TC_PS_107 - testGetDiscountByIdProduct_WithDatabaseError: Lỗi truy vấn cơ sở dữ liệu
     @Test
     public void testGetDiscountByIdProduct_WithDatabaseError() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_15: Kiểm tra lỗi truy vấn cơ sở dữ liệu.");
+        logger.info("Bắt đầu TC_PS_107: Kiểm tra lỗi truy vấn cơ sở dữ liệu.");
         // Chuẩn bị: Mock getProductSale() ném RuntimeException
         when(entityManager.createNativeQuery(anyString(), eq(ProductSale.class)))
                 .thenThrow(new RuntimeException("Lỗi cơ sở dữ liệu"));
@@ -434,13 +434,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra tương tác và log
         verify(entityManager, times(1)).createNativeQuery(anyString(), eq(ProductSale.class));
-        logger.info("Kết quả TC_getDiscountByIdProduct_15: Ném ngoại lệ như mong đợi.");
+        logger.info("Kết quả TC_PS_107: Kết thúc test case.");
     }
 
-    // TC_getDiscountByIdProduct_16: Số lượng lớn ProductSale
+    // TC_PS_108 - testGetDiscountByIdProduct_WithLargeDataSet: Số lượng lớn ProductSale
     @Test
     public void testGetDiscountByIdProduct_WithLargeDataSet() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_16: Kiểm tra với số lượng lớn ProductSale.");
+        logger.info("Bắt đầu TC_PS_108: Kiểm tra với số lượng lớn ProductSale.");
         // Chuẩn bị: 100 ProductSale, 1 ProductSale với productId = 1
         for (int i = 1; i <= 99; i++) {
             Product sanPham = new Product();
@@ -470,13 +470,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(10, result, "Discount phải là 10 cho productId = 1");
-        logger.info("Kết quả TC_getDiscountByIdProduct_16: Trả về discount = 10 như mong đợi.");
+        logger.info("Kết quả TC_PS_108:  Kết thúc test case. Trả về discount: "+result);
     }
 
-    // TC_getDiscountByIdProduct_17: ProductSale với active = null
+    // TC_PS_109 - testGetDiscountByIdProduct_WithNullActive: ProductSale với active = null
     @Test
     public void testGetDiscountByIdProduct_WithNullActive() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_17: Kiểm tra ProductSale với active = null.");
+        logger.info("Bắt đầu TC_PS_109: Kiểm tra ProductSale với active = null.");
         // Chuẩn bị: Một ProductSale với active = null
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -494,13 +494,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(0, result, "Discount phải là 0 vì active = null");
-        logger.info("Kết quả TC_getDiscountByIdProduct_17: Trả về discount = 0 như mong đợi.");
+        logger.info("Kết quả TC_PS_109:  Kết thúc test case. Trả về discount: " + result);
     }
 
-    // TC_getDiscountByIdProduct_18: ProductSale với sale = null
+    // TC_PS_110 - testGetDiscountByIdProduct_WithNullSale: ProductSale với sale = null
     @Test
     public void testGetDiscountByIdProduct_WithNullSale() {
-        logger.info("Bắt đầu TC_getDiscountByIdProduct_18: Kiểm tra ProductSale với sale = null.");
+        logger.info("Bắt đầu TC_PS_110: Kiểm tra ProductSale với sale = null.");
         // Chuẩn bị: Một ProductSale với sale = null
         Product sanPham = new Product();
         sanPham.setId(1);
@@ -517,6 +517,6 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
 
         // Kiểm tra và log
         assertEquals(10, result, "Discount phải là 10 vì sale không ảnh hưởng đến logic");
-        logger.info("Kết quả TC_getDiscountByIdProduct_18: Trả về discount = 10 như mong đợi.");
+        logger.info("Kết quả TC_PS_110: Kết thúc test case. Trả về discount: "+result);
     }
 }
