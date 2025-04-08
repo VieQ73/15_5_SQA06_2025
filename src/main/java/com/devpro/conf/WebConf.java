@@ -31,6 +31,6 @@ public class WebConf implements WebMvcConfigurer {
 		
 		// Sửa đường dẫn để trỏ tới thư mục upload thực tế của bạn
 		registry.addResourceHandler("/file/upload/**")
-				.addResourceLocations("file:///D:/ki2nam4/dambaoclpm/DoAnTotNghiepHaUI/upload/");
+				.addResourceLocations("file:///D:/ki2nam4/dambaoclpm/dbclpm/upload/");
 	}
 }
