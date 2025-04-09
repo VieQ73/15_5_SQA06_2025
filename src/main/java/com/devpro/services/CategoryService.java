@@ -56,7 +56,7 @@ public class CategoryService {
 			sql += " AND name LIKE '%" + categorySearch.getName() + "%'";
 		}
 		if (categorySearch.getDescrition() != null && !categorySearch.getDescrition().isEmpty()) {
-			sql += " AND descrption LIKE '%" + categorySearch.getDescrition() + "%'";
+			sql += " AND description LIKE '%" + categorySearch.getDescrition() + "%'";
 		}
 		if (categorySearch.getSeo() != null && !categorySearch.getSeo().isEmpty()) {
 			sql += " AND seo LIKE '%" + categorySearch.getSeo() + "%'";

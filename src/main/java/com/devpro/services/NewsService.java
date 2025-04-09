@@ -53,7 +53,7 @@ public class NewsService {
 			for(MultipartFile newsImage : newsImages) {
 				
 				// lưu vật lí
-				newsImage.transferTo(new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\test\\resources\\" + newsImage.getOriginalFilename()));
+				newsImage.transferTo(new File("C:\\Users\\ASUS\\IdeaProjects\\DoAnTotNghiepHaUI\\src\\test\\resources" + newsImage.getOriginalFilename()));
 
 				Images _newsImages = new Images();
 				_newsImages.setPath(newsImage.getOriginalFilename());

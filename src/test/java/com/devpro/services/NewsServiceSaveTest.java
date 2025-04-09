@@ -32,7 +32,7 @@ class NewsServiceSaveTest {
     @Autowired
     private NewsRepo newsRepo;
 
-    private static final String IMAGE_PATH = "D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\test\\resources\\";
+    private static final String IMAGE_PATH = "C:\\Users\\ASUS\\IdeaProjects\\DoAnTotNghiepHaUI\\src\\test\\resources";
 
     /**
      * TC_NS_10: Test chức năng thêm mới một tin tức với ảnh

@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -75,7 +76,7 @@ class CategoryServiceSaveTest {
     @Transactional
     @Rollback
     void testSaveCategoryWithExistingId() {
-        category.setId(45);
+        categoryRepo.findById(16).get();
         category.setName("Updated Category");
         long count = categoryRepo.count();
         categoryService.save(category);  // Cập nhật Category đã tồn tại
@@ -93,14 +94,14 @@ class CategoryServiceSaveTest {
     @Transactional
     @Rollback
     void testSaveCategoryWithExistingIdIs() {
-        category.setId(55);
+        category = categoryRepo.findById(16).get();
         category.setName("Updating Category");
         long count1 = categoryRepo.count();
         categoryService.save(category);
         long count2 = categoryRepo.count();
         Category updatedCategory = categoryRepo.findById(category.getId()).orElse(null);
         assertNotNull(updatedCategory);  // Kiểm tra Category vẫn tồn tại trong DB
-        assertEquals(count1 + 1 , count2);  // Kiểm tra số lượng bảng ghi
+        assertEquals(count1 + 1, count2);  // Kiểm tra số lượng bảng ghi
     }
 
     /**
@@ -114,9 +115,8 @@ class CategoryServiceSaveTest {
         newCategory.setDescription("Description without name");
         newCategory.setSeo("missing-name-seo");
 
-        // Gọi save, kiểm tra xem sẽ không lưu được vào DB
-        categoryService.save(newCategory);
-
-        assertNull(newCategory.getId());  // ID vẫn null vì không thể lưu nếu thiếu thông tin quan trọng như tên
+        assertThrows(DataIntegrityViolationException.class, () -> {
+            categoryService.save(newCategory);
+        });
     }
 }

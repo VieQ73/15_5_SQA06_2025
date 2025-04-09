@@ -44,7 +44,7 @@ class GiftServiceSaveTest {
     @BeforeEach
     void setUp() {
         // Tạo tệp hình ảnh kiểm thử
-        testImageFile = new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\test\\resources\\22.jpg");
+        testImageFile = new File("C:\\Users\\ASUS\\IdeaProjects\\DoAnTotNghiepHaUI\\src\\test\\resources\\2.jpg");
 
         // Tạo một món quà kiểm thử
         testGift = new Gift();
@@ -66,13 +66,13 @@ class GiftServiceSaveTest {
         testProduct = productRepo.save(testProduct);
     }
 
-    @AfterEach
-    void tearDown() {
-        // Dọn dẹp dữ liệu kiểm thử
-        if (testImageFile != null && testImageFile.exists()) {
-            testImageFile.deleteOnExit();
-        }
-    }
+//    @AfterEach
+//    void tearDown() {
+//        // Dọn dẹp dữ liệu kiểm thử
+//        if (testImageFile != null && testImageFile.exists()) {
+//            testImageFile.deleteOnExit();
+//        }
+//    }
 
     /**
      * TC_GS_07: Kiểm thử lưu một món quà mới mà không có hình ảnh.
@@ -181,11 +181,11 @@ class GiftServiceSaveTest {
         assertEquals(1, savedGift.getGiftImages().size());
         assertEquals("test-image.jpg", savedGift.getGiftImages().get(0).getPath());
 
-        // Dọn dẹp tệp đã tải lên
-        File uploadedFile = new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\main\\resources\\META-INF\\images\\upload" + testImage.getOriginalFilename());
-        if (uploadedFile.exists()) {
-            uploadedFile.delete();
-        }
+//        // Dọn dẹp tệp đã tải lên
+//        File uploadedFile = new File("C:\\Users\\ASUS\\IdeaProjects\\DoAnTotNghiepHaUI\\src\\main\\resources\\META-INF\\images\\upload" + testImage.getOriginalFilename());
+//        if (uploadedFile.exists()) {
+//            uploadedFile.delete();
+//        }
     }
 
     /**
@@ -229,10 +229,18 @@ class GiftServiceSaveTest {
 
         // Thêm một hình ảnh cũ giả
         Images oldImage = new Images();
-        oldImage.setPath("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\test\\resources\\2.jpg");
+        oldImage.setPath("old-image.jpg");
         oldImage.setTitle("old-image.jpg");
         existingGift.addGiftImages(oldImage);
         giftRepo.save(existingGift);
+
+
+        // Tạo một đối tượng Gift mới thay vì lấy lại từ database
+        Gift giftToUpdate = new Gift();
+        giftToUpdate.setId(existingGift.getId());
+        giftToUpdate.setTitle("Updated Gift Title");
+        giftToUpdate.setPrice(existingGift.getPrice());
+        giftToUpdate.setDescription(existingGift.getDescription());
 
         // Tạo một hình ảnh mới để thay thế hình ảnh cũ
         FileInputStream fis = new FileInputStream(testImageFile);
@@ -240,7 +248,8 @@ class GiftServiceSaveTest {
         MultipartFile[] newImages = new MultipartFile[]{newImage};
 
         // Thực hiện
-        giftService.save(newImages, existingGift);
+        giftService.save(newImages, giftToUpdate);
+        fis.close();
 
         // Kiểm tra
         Gift updatedGift = giftRepo.findById(existingGift.getId()).orElse(null);
@@ -248,11 +257,12 @@ class GiftServiceSaveTest {
         assertEquals(1, updatedGift.getGiftImages().size());
         assertEquals("new-image.jpg", updatedGift.getGiftImages().get(0).getPath());
 
-        // Dọn dẹp tệp đã tải lên
-        File uploadedFile = new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\main\\resources\\META-INF\\images\\upload" + newImage.getOriginalFilename());
-        if (uploadedFile.exists()) {
-            uploadedFile.delete();
-        }
+//        // Dọn dẹp tệp đã tải lên
+//        File uploadedFile = new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\main\\resources\\META-INF\\images\\upload" + newImage.getOriginalFilename());
+//        if (uploadedFile.exists()) {
+//            uploadedFile.delete();
+//        }
+//    }
     }
 
     /**
@@ -319,10 +329,10 @@ class GiftServiceSaveTest {
         assertEquals("valid.jpg", savedGift.getGiftImages().get(0).getPath());
 
         // Dọn dẹp tệp đã tải lên
-        File uploadedFile = new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\main\\resources\\META-INF\\images\\upload" + validImage.getOriginalFilename());
-        if (uploadedFile.exists()) {
-            uploadedFile.delete();
-        }
+//        File uploadedFile = new File("C:\\Users\\ASUS\\IdeaProjects\\DoAnTotNghiepHaUI\\src\\main\\resources\\META-INF\\images\\upload" + validImage.getOriginalFilename());
+//        if (uploadedFile.exists()) {
+//            //uploadedFile.delete();
+//        }
     }
 
     /**
