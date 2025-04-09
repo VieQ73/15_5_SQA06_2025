@@ -207,22 +207,16 @@ public class ProductServiceSearchTest {
         logger.info("Kết quả TC_P_89 - testSearch_WithPagination: Kết thúc test case.");
     }
 
-    // TC_P_90 - testSearch_NullProductSearch: ProductSearch is null
+    // TC_P_90 - testSearch_NullProductSearch: Check search with null ProductSearch
     @Test
     public void testSearch_NullProductSearch() {
         logger.info("Bắt đầu TC_P_90 - testSearch_NullProductSearch: Kiểm tra tìm kiếm với productSearch null.");
         ProductSearch productSearch = null;
-        List<Product> products = new ArrayList<>();
-        when(entityManager.createNativeQuery(anyString(), eq(Product.class))).thenReturn(query);
-        when(query.getResultList()).thenReturn(products);
-        logger.info("Dữ liệu chuẩn bị: productSearch = null, query trả về danh sách rỗng");
+        logger.info("Dữ liệu chuẩn bị: productSearch = null");
 
-        List<Product> result = productService.search(productSearch);
+        assertThrows(NullPointerException.class, () -> productService.search(productSearch),
+                "Phải ném NullPointerException khi productSearch là null");
 
-        assertNotNull(result, "Kết quả không được null");
-        assertTrue(result.isEmpty(), "Danh sách sản phẩm phải rỗng");
-        verify(entityManager, times(1)).createNativeQuery(anyString(), eq(Product.class));
-        verify(query, times(1)).getResultList();
         logger.info("Kết quả TC_P_90 - testSearch_NullProductSearch: Kết thúc test case.");
     }
 

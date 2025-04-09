@@ -241,19 +241,32 @@ public class UserServiceSearchUserTest {
         logger.info("Kết quả TC_US_09 - testSearchUser_DuplicatePhones: Kết thúc test case.");
     }
 
-    // TC_US_10 - testSearchUser_EntityManagerThrowsException: EntityManager throws an exception
+    // TC_US_10 - testSearchUser_SpecificPhoneInUser
     @Test
-    public void testSearchUser_EntityManagerThrowsException() {
-        logger.info("Bắt đầu TC_US_10 - testSearchUser_EntityManagerThrowsException: Kiểm tra khi EntityManager ném ngoại lệ.");
+    public void testSearchUser_SpecificPhoneInUser() {
+        logger.info("Bắt đầu TC_US_10 - testSearchUser_SpecificPhoneInUser: Kiểm tra với user có số điện thoại cụ thể.");
         Customer user = new Customer();
-        when(entityManager.createNativeQuery(anyString(), eq(Customer.class)))
-                .thenThrow(new RuntimeException("EntityManager error"));
-        logger.info("Dữ liệu chuẩn bị: user = {}, EntityManager ném ngoại lệ");
+        user.setPhone("5555555555"); // Set a specific phone number
+        List<Customer> customers = new ArrayList<>();
+        Customer c1 = new Customer();
+        c1.setId(1);
+        c1.setPhone("1234567890");
+        Customer c2 = new Customer();
+        c2.setId(2);
+        c2.setPhone("0987654321");
+        customers.add(c1);
+        customers.add(c2);
+        when(query.getResultList()).thenReturn(customers);
+        logger.info("Dữ liệu chuẩn bị: user = {phone=5555555555}, query trả về 2 khách hàng");
 
-        assertThrows(RuntimeException.class, () -> userService.searchUser(user),
-                "Phải ném RuntimeException khi EntityManager thất bại");
+        List<Customer> result = userService.searchUser(user);
 
+        assertNotNull(result, "Kết quả không được null");
+        assertEquals(2, result.size(), "Phải trả về 2 khách hàng");
+        assertEquals("1234567890", result.get(0).getPhone(), "Số điện thoại khách hàng 1 phải đúng");
+        assertEquals("0987654321", result.get(1).getPhone(), "Số điện thoại khách hàng 2 phải đúng");
         verify(entityManager, times(1)).createNativeQuery(anyString(), eq(Customer.class));
-        logger.info("Kết quả TC_US_10 - testSearchUser_EntityManagerThrowsException: Kết thúc test case.");
+        verify(query, times(1)).getResultList();
+        logger.info("Kết quả TC_US_10 - testSearchUser_SpecificPhoneInUser: Kết thúc test case.");
     }
 }

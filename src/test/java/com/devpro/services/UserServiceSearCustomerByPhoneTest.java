@@ -209,19 +209,31 @@ public class UserServiceSearCustomerByPhoneTest {
         logger.info("Kết quả TC_US_19 - testSearCustomerByPhone_SQLInjectionAttempt: Kết thúc test case.");
     }
 
-    // TC_US_20 - testSearCustomerByPhone_EntityManagerThrowsException: EntityManager throws an exception
+    // TC_US_20 - testSearCustomerByPhone_MultipleMatches
     @Test
-    public void testSearCustomerByPhone_EntityManagerThrowsException() {
-        logger.info("Bắt đầu TC_US_20 - testSearCustomerByPhone_EntityManagerThrowsException: Kiểm tra khi EntityManager ném ngoại lệ.");
+    public void testSearCustomerByPhone_MultipleMatches() {
+        logger.info("Bắt đầu TC_US_20 - testSearCustomerByPhone_MultipleMatches: Kiểm tra với số điện thoại khớp nhiều khách hàng.");
         String phone = "1234567890";
-        when(entityManager.createNativeQuery(anyString(), eq(Customer.class)))
-                .thenThrow(new RuntimeException("EntityManager error"));
-        logger.info("Dữ liệu chuẩn bị: phone = 1234567890, EntityManager ném ngoại lệ");
+        List<Customer> customers = new ArrayList<>();
+        Customer c1 = new Customer();
+        c1.setId(1);
+        c1.setPhone("1234567890");
+        Customer c2 = new Customer();
+        c2.setId(2);
+        c2.setPhone("1234567890"); // Same phone number as c1
+        customers.add(c1); // Only the first customer is returned due to "limit 1"
+        // Note: In a real DB query, c2 would also match, but "limit 1" ensures only c1 is returned
+        when(query.getResultList()).thenReturn(customers);
+        logger.info("Dữ liệu chuẩn bị: phone = 1234567890, query trả về 1 khách hàng (mặc dù có 2 khách hàng khớp)");
 
-        assertThrows(RuntimeException.class, () -> userService.searCustomerByPhone(phone),
-                "Phải ném RuntimeException khi EntityManager thất bại");
+        List<Customer> result = userService.searCustomerByPhone(phone);
 
+        assertNotNull(result, "Kết quả không được null");
+        assertEquals(1, result.size(), "Phải trả về 1 khách hàng (do limit 1)");
+        assertEquals(1, result.get(0).getId(), "Phải trả về khách hàng đầu tiên (id=1)");
+        assertEquals("1234567890", result.get(0).getPhone(), "Số điện thoại phải đúng");
         verify(entityManager, times(1)).createNativeQuery(anyString(), eq(Customer.class));
-        logger.info("Kết quả TC_US_20 - testSearCustomerByPhone_EntityManagerThrowsException: Kết thúc test case.");
+        verify(query, times(1)).getResultList();
+        logger.info("Kết quả TC_US_20 - testSearCustomerByPhone_MultipleMatches: Kết thúc test case.");
     }
 }
