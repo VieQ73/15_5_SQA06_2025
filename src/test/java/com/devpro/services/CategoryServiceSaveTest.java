@@ -69,7 +69,7 @@ class CategoryServiceSaveTest {
     }
 
     /**
-     * TC_CS_02: Lưu Category đã có ID (id không null tồn tại trong csdl), không thay đổi dữ liệu
+     * TC_CS_02: Lưu Category mới (id không null) tồn tại  → cập nhật vào DB mà không tạo bảng ghi mới
      */
     @Test
     @Transactional
@@ -77,11 +77,13 @@ class CategoryServiceSaveTest {
     void testSaveCategoryWithExistingId() {
         category.setId(45);
         category.setName("Updated Category");
+        long count = categoryRepo.count();
         categoryService.save(category);  // Cập nhật Category đã tồn tại
-
+        long newCount = categoryRepo.count();
+        assertTrue(count == newCount);
         Category updatedCategory = categoryRepo.findById(category.getId()).orElse(null);
         assertNotNull(updatedCategory);  // Kiểm tra Category vẫn tồn tại trong DB
-        assertEquals("Test Category", updatedCategory.getName());  // Kiểm tra tên không thay đổi
+        assertEquals("Updated Category", updatedCategory.getName());  // Kiểm tra tên không thay đổi
     }
 
     /**

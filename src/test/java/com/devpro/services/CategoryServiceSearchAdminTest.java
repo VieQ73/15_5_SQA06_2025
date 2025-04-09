@@ -4,8 +4,6 @@ import com.devpro.entities.Category;
 import com.devpro.model.CategorySearch;
 import com.devpro.repositories.CategoryRepo;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
@@ -160,7 +158,7 @@ class CategoryServiceSearchAdminTest {
 
     /**
      * TC_CS_13: Tìm kiếm với name chứa ký tự SQL đặc biệt → hệ thống vẫn xử lý an toàn.
-     * Dữ liệu chỉ được lưu tạm và sẽ rollback sau test.
+     *
      */
     @Test
     @Transactional
