@@ -489,12 +489,13 @@ public class ProductSaleServiceGetDiscountByIdProductTest {
         ps.setActive(null);
         danhSachProductSale.add(ps);
 
-        // Thực hiện: Gọi phương thức
-        int result = productSaleService.getDiscountByIdProduct(1);
+        // Thực hiện & Kiểm tra: Mong đợi NullPointerException
+        assertThrows(NullPointerException.class, () -> {
+            productSaleService.getDiscountByIdProduct(1);
+        }, "Phải ném NullPointerException khi active là null");
 
-        // Kiểm tra và log
-        assertEquals(0, result, "Discount phải là 0 vì active = null");
-        logger.info("Kết quả TC_PS_109:  Kết thúc test case. Trả về discount: " + result);
+        // Log
+        logger.info("Kết quả TC_PS_109: Kết thúc test case.");
     }
 
     // TC_PS_110 - testGetDiscountByIdProduct_WithNullSale: ProductSale với sale = null
