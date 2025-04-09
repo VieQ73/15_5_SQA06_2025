@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
-import org.junit.jupiter.api.AfterEach;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,13 +66,7 @@ class GiftServiceSaveTest {
         testProduct = productRepo.save(testProduct);
     }
 
-    @AfterEach
-    void tearDown() {
-        // Dọn dẹp dữ liệu kiểm thử
-        if (testImageFile != null && testImageFile.exists()) {
-            testImageFile.deleteOnExit();
-        }
-    }
+
 
     /**
      * TC_GS_07: Kiểm thử lưu một món quà mới mà không có hình ảnh.
@@ -229,10 +223,13 @@ class GiftServiceSaveTest {
 
         // Thêm một hình ảnh cũ giả
         Images oldImage = new Images();
-        oldImage.setPath("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\test\\resources\\2.jpg");
+        oldImage.setPath("old-image.jpg");
         oldImage.setTitle("old-image.jpg");
         existingGift.addGiftImages(oldImage);
         giftRepo.save(existingGift);
+
+        // Lấy lại gift từ DB để cập nhật, tránh dùng object cũ đang chứa collection
+        Gift giftToUpdate = giftRepo.findById(existingGift.getId()).get();
 
         // Tạo một hình ảnh mới để thay thế hình ảnh cũ
         FileInputStream fis = new FileInputStream(testImageFile);
@@ -240,7 +237,8 @@ class GiftServiceSaveTest {
         MultipartFile[] newImages = new MultipartFile[]{newImage};
 
         // Thực hiện
-        giftService.save(newImages, existingGift);
+        giftService.save(newImages, giftToUpdate);
+        fis.close();
 
         // Kiểm tra
         Gift updatedGift = giftRepo.findById(existingGift.getId()).orElse(null);
@@ -277,7 +275,6 @@ class GiftServiceSaveTest {
 
         // Thực hiện
         giftService.save(images, existingGift);
-
         // Kiểm tra
         Gift updatedGift = giftRepo.findById(existingGift.getId()).orElse(null);
         assertNotNull(updatedGift);
@@ -310,7 +307,7 @@ class GiftServiceSaveTest {
 
         // Thực hiện
         giftService.save(mixedImages, newGift);
-
+        fis.close();
         // Kiểm tra
         Gift savedGift = giftRepo.findById(newGift.getId()).orElse(null);
         assertNotNull(savedGift);

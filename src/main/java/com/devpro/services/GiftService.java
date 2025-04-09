@@ -57,7 +57,7 @@ public class GiftService {
 			if(!isEmptyUploadFile(giftImages)) { 
 				List<Images> oldGiftImages = giftInDb.getGiftImages();
 				for(Images _images : oldGiftImages) {
-					new File("C:\\Users\\PV\\OneDrive\\Máy tính\\DoAnTotNghiepHaUI\\upload\\" + _images.getPath()).delete();
+					new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\main\\resources\\META-INF\\images\\upload" + _images.getPath()).delete();
 				}
 				gift.removeGiftImages();
 				
