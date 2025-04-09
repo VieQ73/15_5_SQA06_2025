@@ -34,7 +34,7 @@ public class ProductService {
 	@Autowired
 	private ProductSaleService productSaleService;
 	private boolean isEmptyUploadFile(MultipartFile[] images) {
-		if(images == null || images.length <= 0) return true; 
+		if(images == null || images.length <= 0) return true;
 		if(images.length == 1 && images[0].getOriginalFilename().isEmpty()) return true;
 		return false;
 	}
@@ -65,7 +65,7 @@ public class ProductService {
 				
 				// xoá ảnh cũ trên vật lí(host)
 				for(Images _images : oldProductImages) {
-					new File("C:\\Users\\PV\\OneDrive\\Máy tính\\DoAnTotNghiepHaUI\\upload\\" + _images.getPath()).delete();
+					new File("C:\\Users\\ASUS\\IdeaProjects\\DoAnTotNghiepHaUI\\upload" + _images.getPath()).delete();
 				}
 				
 				// xoá ảnh trên database
@@ -81,8 +81,8 @@ public class ProductService {
 			for(MultipartFile productImage : productImages) {
 				
 				// lưu vật lí
-				productImage.transferTo(new File("C:\\Users\\PV\\OneDrive\\Máy tính\\DoAnTotNghiepHaUI\\upload\\" + productImage.getOriginalFilename()));
-				
+				productImage.transferTo(new File("C:\\Users\\ASUS\\IdeaProjects\\DoAnTotNghiepHaUI\\upload" + productImage.getOriginalFilename()));
+
 				Images _productImages = new Images();
 				_productImages.setPath(productImage.getOriginalFilename());
 				_productImages.setTitle(productImage.getOriginalFilename());

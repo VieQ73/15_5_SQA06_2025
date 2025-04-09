@@ -39,7 +39,7 @@ public class NewsService {
 			if(!isEmptyUploadFile(newsImages)) { 
 				List<Images> oldNewsImages = newsInDb.getNewsImages();
 				for(Images _images : oldNewsImages) {
-					new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\test\\resources\\" + _images.getPath()).delete();
+					new File("C:\\Users\\ASUS\\IdeaProjects\\DoAnTotNghiepHaUI\\src\\test\\resources" + _images.getPath()).delete();
 				}
 				news.removeNewsImages();
 				
