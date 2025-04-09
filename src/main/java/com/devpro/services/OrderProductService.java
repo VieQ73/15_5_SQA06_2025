@@ -8,6 +8,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,7 +32,7 @@ import javax.persistence.Query;
 public class OrderProductService {
 	@PersistenceContext
 	protected EntityManager entityManager;
-	
+
 	@Autowired
 	private SaleRepo saleRepo;
 	

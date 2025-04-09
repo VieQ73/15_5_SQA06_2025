@@ -7,6 +7,8 @@ import java.util.List;
 import javax.persistence.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -52,7 +54,7 @@ public class NewsService {
 				
 				// lưu vật lí
 				newsImage.transferTo(new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\test\\resources\\" + newsImage.getOriginalFilename()));
-				
+
 				Images _newsImages = new Images();
 				_newsImages.setPath(newsImage.getOriginalFilename());
 				_newsImages.setTitle(newsImage.getOriginalFilename());

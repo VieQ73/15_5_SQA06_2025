@@ -67,7 +67,6 @@ public class GiftService {
 			for(MultipartFile giftImage : giftImages) {
 				
 				// lưu vật lí
-				giftImage.transferTo(new File("C:\\Users\\ASUS\\IdeaProjects\\DoAnTotNghiepHaUI\\upload\\" + giftImage.getOriginalFilename()));
 				
 				Images _giftImages = new Images();
 				_giftImages.setPath(giftImage.getOriginalFilename());
