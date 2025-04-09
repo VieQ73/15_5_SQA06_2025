@@ -9,4 +9,5 @@ import com.devpro.entities.Product;
 			// -> Dùng connection tới database.
 public interface ProductRepo extends JpaRepository<Product, Integer> {
 
+    Product findByGift_Id(Integer giftId);
 }

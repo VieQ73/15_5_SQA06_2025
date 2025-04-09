@@ -56,8 +56,8 @@ public class AdminCategoryController {
 	public String list(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
 			throws Exception {
 		model.addAttribute("messsage", "");
-		String messsage = request.getParameter("add");
-		if (messsage != null && messsage.equalsIgnoreCase("success")) {
+		String message = request.getParameter("add");
+		if (message != null && message.equalsIgnoreCase("success")) {
 			model.addAttribute("messsage", "<div class=\"alert alert-success\">"
 					+ "  <strong>Success!</strong> Cập nhật thành công." + "</div>");
 		}

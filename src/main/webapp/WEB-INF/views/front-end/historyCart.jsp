@@ -101,7 +101,7 @@
 																						<img style="width: 100px; height: 120px;" src="http://placehold.it/700x400" alt="">
 																					</c:when>
 																					<c:otherwise>
-																						<img style="width: 100px; height: 120px;" src="${pageContext.request.contextPath}/file/upload/${historyCartDetail.product.productImages.get(0).path }" alt="">
+																						<img style="width: 100px; height: 120px;" src="${pageContext.request.contextPath}/images/upload/${historyCartDetail.product.productImages.get(0).path }" alt="">
 																					</c:otherwise>
 																				</c:choose>
 																				<div class="shopee-image__content--blur"
@@ -261,7 +261,7 @@
 																						<img style="width: 100px; height: 120px;" src="http://placehold.it/700x400" alt="">
 																					</c:when>
 																					<c:otherwise>
-																						<img style="width: 100px; height: 120px;" src="${pageContext.request.contextPath}/file/upload/${historyCartDetail.product.productImages.get(0).path }" alt="">
+																						<img style="width: 100px; height: 120px;" src="${pageContext.request.contextPath}/images/upload/${historyCartDetail.product.productImages.get(0).path }" alt="">
 																					</c:otherwise>
 																				</c:choose>
 																				<div class="shopee-image__content--blur"
@@ -423,7 +423,7 @@
 																						<img style="width: 100px; height: 120px;" src="http://placehold.it/700x400" alt="">
 																					</c:when>
 																					<c:otherwise>
-																						<img style="width: 100px; height: 120px;" src="${pageContext.request.contextPath}/file/upload/${historyCartDetail.product.productImages.get(0).path }" alt="">
+																						<img style="width: 100px; height: 120px;" src="${pageContext.request.contextPath}/images/upload/${historyCartDetail.product.productImages.get(0).path }" alt="">
 																					</c:otherwise>
 																				</c:choose>
 																				<div class="shopee-image__content--blur"
@@ -565,7 +565,7 @@
 																						<img style="width: 100px; height: 120px;" src="http://placehold.it/700x400" alt="">
 																					</c:when>
 																					<c:otherwise>
-																						<img style="width: 100px; height: 120px;" src="${pageContext.request.contextPath}/file/upload/${historyCartDetail.product.productImages.get(0).path }" alt="">
+																						<img style="width: 100px; height: 120px;" src="${pageContext.request.contextPath}/images/upload/${historyCartDetail.product.productImages.get(0).path }" alt="">
 																					</c:otherwise>
 																				</c:choose>
 																				<div class="shopee-image__content--blur"

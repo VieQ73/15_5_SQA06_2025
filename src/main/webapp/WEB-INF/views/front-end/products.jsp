@@ -59,13 +59,13 @@
 										<img  class="card-img-top" src="http://placehold.it/700x400" alt="">
 									</c:when>
 									<c:otherwise>
-										<img  class="card-img-top" src="${pageContext.request.contextPath}/file/upload/${productCustom.product.productImages.get(0).path }" alt="">
+										<img  class="card-img-top" src="${pageContext.request.contextPath}/images/upload/${productCustom.product.productImages.get(0).path }" alt="">
 									</c:otherwise>
 								</c:choose>
 							</div>
 							<div id="sub-img" class="container" style="margin-top: 15px;">
 								<c:forEach var="img" items= "${productCustom.product.productImages}">
-									<img src="${pageContext.request.contextPath}/file/upload/${img.getPath()}">
+									<img src="${pageContext.request.contextPath}/images/upload/${img.getPath()}">
 								</c:forEach>
 							</div>
 						</div>
@@ -126,7 +126,8 @@
 							<div class="bonus">
 								<p class="bonus-top">Quà tặng khi mua sản phầm</p>
 								<div class="bonus-products">
-									<img src="${pageContext.request.contextPath}/file/upload/${productCustom.product.gift.giftImages.get(0).path }">
+									<img src="${pageContext.request.contextPath}/images/upload/${productCustom.product.gift.giftImages.get(0).path }">
+
 									<div class="bonus-info">
 										<a href="#">${productCustom.product.gift.title }</a>
 										<div class="bonus-price">
