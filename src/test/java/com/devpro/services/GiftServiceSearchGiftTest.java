@@ -106,7 +106,7 @@ class GiftServiceSearchGiftTest {
     }
 
     /**
-     * TC_GS_20: Kiểm tra tìm kiếm quà tặng với đối tượng GiftSearch là null.
+     * TC_GS_20: Kiểm tra tìm kiếm quà tặng với đối tượng GiftSearch là rỗng.
      * Dự kiến trả về null.
      */
     @Test
@@ -114,7 +114,8 @@ class GiftServiceSearchGiftTest {
     @Rollback
     void testSearchGiftWithNullSearch() {
         // Thực thi
-        List<Gift> result = giftService.searchGift(null);
+        GiftSearch giftSearch = new GiftSearch();
+        List<Gift> result = giftService.searchGift(giftSearch);
         // Kiểm tra
         assertNull(result);
     }

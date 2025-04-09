@@ -32,7 +32,7 @@ public class GiftService {
 	@PersistenceContext
 	protected EntityManager entityManager;
 
-	private boolean isEmptyUploadFile(MultipartFile[] images) {
+	boolean isEmptyUploadFile(MultipartFile[] images) {
 		if(images == null || images.length <= 0) return true; 
 		if(images.length == 1 && images[0].getOriginalFilename().isEmpty()) return true;
 		return false;
@@ -45,41 +45,41 @@ public class GiftService {
 	 * @throws IOException 
 	 * @throws  
 	 */
-	
+
 	public void save(MultipartFile[] giftImages, Gift gift) throws IOException {
-		
-		
+
+
 		if(gift.getId() != null) {
 			Gift giftInDb = giftRepo.findById(gift.getId()).get();
 			java.util.Calendar cal = java.util.Calendar.getInstance();
 			java.util.Date d = cal.getTime();
 			gift.setUpdatedDate(d);
-			if(!isEmptyUploadFile(giftImages)) { 
+			if(!isEmptyUploadFile(giftImages)) {
 				List<Images> oldGiftImages = giftInDb.getGiftImages();
 				for(Images _images : oldGiftImages) {
 					new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\main\\resources\\META-INF\\images\\upload" + _images.getPath()).delete();
 				}
 				gift.removeGiftImages();
-				
+
 			} else { // ảnh phải giữ nguyên
 				gift.setGiftImages(giftInDb.getGiftImages());
 				gift.setCreatedDate(giftInDb.getCreatedDate());
 			}
 		}
-		
+
 		if(!isEmptyUploadFile(giftImages)) { // có upload ảnh lên.
 			for(MultipartFile giftImage : giftImages) {
-				
+
 				// lưu vật lí
 				giftImage.transferTo(new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\main\\resources\\META-INF\\images\\upload" + giftImage.getOriginalFilename()));
-				
+
 				Images _giftImages = new Images();
 				_giftImages.setPath(giftImage.getOriginalFilename());
 				_giftImages.setTitle(giftImage.getOriginalFilename());
 				gift.addGiftImages(_giftImages);
 			}
 		}
-		
+
 		giftRepo.save(gift);
 	}
 	public List<Gift> searchGift(final GiftSearch giftSearch) {

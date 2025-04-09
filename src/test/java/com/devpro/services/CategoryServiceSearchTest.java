@@ -28,7 +28,7 @@ class CategoryServiceSearchTest {
 
 
     /**
-     * Trường hợp: Tìm kiếm với tất cả trường rỗng/null → trả về null.
+     * TC_CS_14: Tìm kiếm với tất cả trường rỗng/null → trả về null.
      */
     @Test
     @Transactional
@@ -40,7 +40,7 @@ class CategoryServiceSearchTest {
     }
 
     /**
-     * TC_CS_14: Tìm kiếm với chỉ trường name → lọc theo name chứa "Test".
+     * TC_CS_15: Tìm kiếm với chỉ trường name → lọc theo name chứa "Test".
      */
     @Test
     @Transactional
@@ -54,7 +54,7 @@ class CategoryServiceSearchTest {
     }
 
     /**
-     * TC_CS_15: Tìm kiếm với chỉ trường descrition → lọc theo mô tả chứa "desc".
+     * TC_CS_16: Tìm kiếm với chỉ trường descrition → lọc theo mô tả chứa "desc".
      */
     @Test
     @Transactional
@@ -68,7 +68,7 @@ class CategoryServiceSearchTest {
     }
 
     /**
-     * TC_CS_16: Tìm kiếm với chỉ trường seo → lọc theo SEO chứa "seo".
+     * TC_CS_17: Tìm kiếm với chỉ trường seo → lọc theo SEO chứa "seo".
      */
     @Test
     @Transactional
@@ -83,7 +83,7 @@ class CategoryServiceSearchTest {
     }
 
     /**
-     * TC_CS_17: Tìm kiếm với cả name và descrition → lọc theo cả 2 điều kiện.
+     * TC_CS_18: Tìm kiếm với cả name và descrition → lọc theo cả 2 điều kiện.
      */
     @Test
     @Transactional
@@ -101,7 +101,7 @@ class CategoryServiceSearchTest {
     }
 
     /**
-     * TC_CS_18: Tìm kiếm với cả name và seo → lọc theo cả 2 điều kiện.
+     * TC_CS_19: Tìm kiếm với cả name và seo → lọc theo cả 2 điều kiện.
      */
     @Test
     @Transactional
@@ -119,7 +119,7 @@ class CategoryServiceSearchTest {
     }
 
     /**
-     *TC_CS_19: Tìm kiếm với cả descrition và seo → lọc theo cả 2 điều kiện.
+     *TC_CS_20: Tìm kiếm với cả descrition và seo → lọc theo cả 2 điều kiện.
      */
     @Test
     @Transactional
@@ -137,7 +137,7 @@ class CategoryServiceSearchTest {
     }
 
     /**
-     * TC_CS_20: Tìm kiếm với đầy đủ name, descrition và seo → lọc chính xác cả 3 điều kiện.
+     * TC_CS_21: Tìm kiếm với đầy đủ name, descrition và seo → lọc chính xác cả 3 điều kiện.
      */
     @Test
     @Transactional
@@ -157,7 +157,7 @@ class CategoryServiceSearchTest {
     }
 
     /**
-     * TC_CS_21: Tìm kiếm với name chứa ký tự SQL đặc biệt → hệ thống vẫn xử lý an toàn.
+     * TC_CS_22: Tìm kiếm với name chứa ký tự SQL đặc biệt → hệ thống vẫn xử lý an toàn.
      * Dữ liệu chỉ được lưu tạm và sẽ rollback sau test.
      */
     @Test

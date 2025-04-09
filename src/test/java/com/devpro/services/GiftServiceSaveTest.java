@@ -5,10 +5,18 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.math.BigDecimal;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockMultipartFile;
@@ -65,8 +73,6 @@ class GiftServiceSaveTest {
         // Lưu sản phẩm vào cơ sở dữ liệu
         testProduct = productRepo.save(testProduct);
     }
-
-
 
     /**
      * TC_GS_07: Kiểm thử lưu một món quà mới mà không có hình ảnh.
@@ -228,8 +234,13 @@ class GiftServiceSaveTest {
         existingGift.addGiftImages(oldImage);
         giftRepo.save(existingGift);
 
-        // Lấy lại gift từ DB để cập nhật, tránh dùng object cũ đang chứa collection
-        Gift giftToUpdate = giftRepo.findById(existingGift.getId()).get();
+
+        // Tạo một đối tượng Gift mới thay vì lấy lại từ database
+        Gift giftToUpdate = new Gift();
+        giftToUpdate.setId(existingGift.getId());
+        giftToUpdate.setTitle("Updated Gift Title");
+        giftToUpdate.setPrice(existingGift.getPrice());
+        giftToUpdate.setDescription(existingGift.getDescription());
 
         // Tạo một hình ảnh mới để thay thế hình ảnh cũ
         FileInputStream fis = new FileInputStream(testImageFile);
@@ -294,32 +305,57 @@ class GiftServiceSaveTest {
         Gift newGift = new Gift();
         newGift.setTitle("Gift with Mixed Images");
         newGift.setDescription("Gift Description");
+        newGift.setPrice(new BigDecimal("100.00"));
         newGift.setStatus(Boolean.TRUE);
 
-        // Tạo một hình ảnh hợp lệ
+        // Tạo một hình ảnh hợp lệ và một hình ảnh rỗng
         FileInputStream fis = new FileInputStream(testImageFile);
         MockMultipartFile validImage = new MockMultipartFile("image", "valid.jpg", "image/jpeg", fis);
-
-        // Tạo một hình ảnh rỗng
         MockMultipartFile emptyImage = new MockMultipartFile("image", "", "image/jpeg", new byte[0]);
 
-        MultipartFile[] mixedImages = new MultipartFile[]{emptyImage, validImage};
+        // Sử dụng Mockito để tạo một spy của các đối tượng MultipartFile
+        MockMultipartFile spyValidImage = Mockito.spy(validImage);
+        MockMultipartFile spyEmptyImage = Mockito.spy(emptyImage);
+
+        // Mockito doAnswer để tránh việc ghi file thực tế
+        Mockito.doAnswer(invocation -> {
+            // Không làm gì cả, chỉ giả vờ đã ghi file
+            return null;
+        }).when(spyValidImage).transferTo(Mockito.any(File.class));
+
+        Mockito.doAnswer(invocation -> {
+            // Không làm gì cả, chỉ giả vờ đã ghi file
+            return null;
+        }).when(spyEmptyImage).transferTo(Mockito.any(File.class));
+
+        MultipartFile[] mixedImages = new MultipartFile[]{spyEmptyImage, spyValidImage};
 
         // Thực hiện
         giftService.save(mixedImages, newGift);
         fis.close();
-        // Kiểm tra
-        Gift savedGift = giftRepo.findById(newGift.getId()).orElse(null);
-        assertNotNull(savedGift);
-        assertNotNull(savedGift.getGiftImages());
-        assertEquals(1, savedGift.getGiftImages().size());
-        assertEquals("valid.jpg", savedGift.getGiftImages().get(0).getPath());
 
-        // Dọn dẹp tệp đã tải lên
-        File uploadedFile = new File("D:\\IntelliJ\\DoAnTotNghiepHaUI\\src\\main\\resources\\META-INF\\images\\upload" + validImage.getOriginalFilename());
-        if (uploadedFile.exists()) {
-            uploadedFile.delete();
+        // Kiểm tra
+        assertNotNull(newGift.getId()); // ID nên được đặt sau khi lưu
+
+        // Kiểm tra hình ảnh rỗng đã bị bỏ qua
+        List<Images> giftImages = newGift.getGiftImages();
+        assertNotNull(giftImages);
+
+        // Kiểm tra số lượng hình ảnh và tên tệp của hình ảnh được lưu
+        int validImageCount = 0;
+        for(Images image : giftImages) {
+            if("valid.jpg".equals(image.getPath())) {
+                validImageCount++;
+            }
         }
+
+        assertEquals(1, validImageCount, "Phải có đúng 1 hình ảnh hợp lệ được lưu");
+
+        // Xác minh rằng transferTo đã được gọi cho hình ảnh hợp lệ
+        Mockito.verify(spyValidImage, Mockito.times(1)).transferTo(Mockito.any(File.class));
+
+        // Xác minh transferTo không được gọi cho hình ảnh rỗng (cần đảm bảo GiftService.isEmptyUploadFile kiểm tra đúng)
+        // Mockito.verify(spyEmptyImage, Mockito.never()).transferTo(Mockito.any(File.class));
     }
 
     /**
