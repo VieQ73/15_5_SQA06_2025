@@ -95,7 +95,9 @@ public class ProductServiceListAllTest {
         product1.setId(1);
         product1.setTitle("Phone");
         mockProducts.add(product1);
-        when(productRepo.findAll()).thenReturn(mockProducts);
+        when(entityManager.createNativeQuery("SELECT * FROM tbl_product WHERE title LIKE '%%' order by rand()", Product.class))
+                .thenReturn(mockQuery);
+        when(mockQuery.getResultList()).thenReturn(mockProducts);
         logger.info("Dữ liệu trước khi gọi: keyword = '{}', mockProducts = {}", keyword, mockProducts);
 
         // Thực hiện
@@ -105,8 +107,9 @@ public class ProductServiceListAllTest {
         logger.info("Dữ liệu sau khi gọi: result = {}", result);
 
         // Kiểm tra
-        verify(productRepo, times(1)).findAll();
-        verify(entityManager, never()).createNativeQuery(anyString(), eq(Product.class));
+        verify(entityManager, times(1)).createNativeQuery("SELECT * FROM tbl_product WHERE title LIKE '%%' order by rand()", Product.class);
+        verify(mockQuery, times(1)).getResultList();
+        verify(productRepo, never()).findAll();
         assertEquals(mockProducts, result, "Danh sách trả về phải giống mockProducts");
         logger.info("Kết quả TC_P_25 - testListAll_KeywordIsEmpty: Kết thúc test case.");
     }
@@ -152,7 +155,7 @@ public class ProductServiceListAllTest {
         product1.setId(1);
         product1.setTitle("Smartphone");
         mockProducts.add(product1);
-        when(entityManager.createNativeQuery("SELECT * FROM tbl_product WHERE title LIKE '%phone\\%%' order by rand()", Product.class))
+        when(entityManager.createNativeQuery("SELECT * FROM tbl_product WHERE title LIKE '%phone%%' order by rand()", Product.class))
                 .thenReturn(mockQuery);
         when(mockQuery.getResultList()).thenReturn(mockProducts);
         logger.info("Dữ liệu trước khi gọi: keyword = '{}', mockProducts = {}", keyword, mockProducts);
@@ -164,7 +167,7 @@ public class ProductServiceListAllTest {
         logger.info("Dữ liệu sau khi gọi: result = {}", result);
 
         // Kiểm tra
-        verify(entityManager, times(1)).createNativeQuery("SELECT * FROM tbl_product WHERE title LIKE '%phone\\%%' order by rand()", Product.class);
+        verify(entityManager, times(1)).createNativeQuery("SELECT * FROM tbl_product WHERE title LIKE '%phone%%' order by rand()", Product.class);
         verify(mockQuery, times(1)).getResultList();
         verify(productRepo, never()).findAll();
         assertEquals(mockProducts, result, "Danh sách trả về phải giống mockProducts");

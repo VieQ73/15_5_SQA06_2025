@@ -33,7 +33,7 @@ public class ProductService {
 	private ProductRepo productRepo;
 	@Autowired
 	private ProductSaleService productSaleService;
-	private boolean isEmptyUploadFile(MultipartFile[] images) {
+	public boolean isEmptyUploadFile(MultipartFile[] images) {
 		if(images == null || images.length <= 0) return true;
 		if(images.length == 1 && images[0].getOriginalFilename().isEmpty()) return true;
 		return false;
