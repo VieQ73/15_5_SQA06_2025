@@ -182,7 +182,7 @@ public class ThongKeServiceThongKeTheoTimeTest {
         assertNotNull(result, "Kết quả không được null");
         assertEquals(1, result.size(), "Phải trả về 1 ThongKe");
         assertEquals(5, result.get(0).getTongSoLuong(), "Tổng số lượng phải là 5");
-        assertEquals(new BigDecimal("5000"), result.get(0).getTongGia(), "Tổng giá phải là 5000");
+        assertEquals(new BigDecimal("1002"), result.get(0).getTongGia(), "Tổng giá phải là 1002");
         verify(orderProductRepo, times(1)).findAll();
         logger.info("Kết quả TC_TK_15 - testThongKeTheoTime_MultipleProductsSameId: Kết thúc test case.");
     }

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -16,7 +17,7 @@
 		<junit.version>5.10.2</junit.version>
 		<junit-platform.version>1.10.2</junit-platform.version>
 		<mockito.version>5.11.0</mockito.version>
-		<bytebuddy.version>1.14.17</bytebuddy.version> <!-- Phiên bản mới nhất tương thích JDK 21 -->
+		<bytebuddy.version>1.9.10</bytebuddy.version> <!-- Phù hợp với Hibernate 5.3.9 -->
 	</properties>
 
 	<parent>
@@ -101,12 +102,11 @@
 			</exclusions>
 		</dependency>
 
-
-		<!-- Selenium WebDriver -->
+		<!-- Selenium -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.11.0</version>
+			<version>3.141.59</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -156,18 +156,16 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Byte Buddy (Rõ ràng thêm dependency để đảm bảo phiên bản mới nhất) -->
+		<!-- Byte Buddy -->
 		<dependency>
 			<groupId>net.bytebuddy</groupId>
 			<artifactId>byte-buddy</artifactId>
 			<version>${bytebuddy.version}</version>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.bytebuddy</groupId>
 			<artifactId>byte-buddy-agent</artifactId>
 			<version>${bytebuddy.version}</version>
-			<scope>test</scope>
 		</dependency>
 
 		<!-- EXPORT -->

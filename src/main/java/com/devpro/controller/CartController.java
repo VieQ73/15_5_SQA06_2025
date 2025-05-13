@@ -73,17 +73,6 @@ public class CartController extends BaseController{
 	public ResponseEntity<AjaxResponse> muaHang(@RequestBody ProductInCart sanPhamTrongGioHang,
 			final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
 			throws IOException {
-		
-		/*
-		 * Product productInDB=productRepo.getOne(sanPhamTrongGioHang.getProductId());
-		 * int slCu = productInDB.getAmount(); if(slCu >=
-		 * sanPhamTrongGioHang.getSoluong()) { productInDB.setAmount(slCu -
-		 * sanPhamTrongGioHang.getSoluong());
-		 * productInDB.setSelling(productInDB.getSelling()+sanPhamTrongGioHang.
-		 * getSoluong()); productRepo.save(productInDB); } else {
-		 * 
-		 * }
-		 */
 		// lấy đối tượng SESSION trong memory dựa vào SESSION_ID có trong request.
 		HttpSession httpSession = request.getSession();
 		

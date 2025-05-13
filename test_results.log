@@ -1,0 +1,928 @@
+TestCaseID: SELE_QLSP_10 | Scenario: Kiểm tra thêm sản phẩm với file ảnh không hợp lệ | Expected: Hiển thị thông báo lỗi: "File không phải định dạng ảnh!" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56553}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 560fc2ddda826cb7e39ed74070297fec
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_15 | Scenario: Kiểm tra ẩn sản phẩm | Expected: Sản phẩm được ẩn (trạng thái = 0), danh sách cập nhật | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56574}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d662145dccfb6bba60f99d3bff1790a8
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_08 | Scenario: Kiểm tra thêm sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56594}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4dc294e95ad6bb26e71dcbc3fee2b7c8
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_03 | Scenario: Kiểm tra đăng nhập với username rỗng | Expected: Hiển thị thông báo lỗi hoặc không gửi được form | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56614}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ec4643b58fced47357a6a85eec1dd47e
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_04 | Scenario: Kiểm tra hiển thị danh sách sản phẩm | Expected: Danh sách sản phẩm hiển thị với các cột: #, Tên, Hình ảnh, Danh mục, Giá, Số lượng, Trạng thái | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56634}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1fda6cb44d8abcca237bd079c4b354a9
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_13 | Scenario: Kiểm tra sửa sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56655}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ce2294eb2e5e11932dd0e8550ad8a57d
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_19 | Scenario: Kiểm tra thêm sản phẩm với mô tả vượt giới hạn | Expected: Hiển thị thông báo lỗi hoặc cắt bớt mô tả theo giới hạn | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56675}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 017e735fb1b69e9924b1d1a128b9f272
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_11 | Scenario: Kiểm tra thêm sản phẩm không chọn danh mục | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56698}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ba429b27480585e7c362b28e9e452c2f
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_18 | Scenario: Kiểm tra chuyển hướng sai menu | Expected: Không chuyển đến trang Quản lý sản phẩm (/admin/listProducts hoặc /admin/addProduct) | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56719}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a82a9f4d72773b518e3d93b1deb081f4
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_16 | Scenario: Kiểm tra hủy ẩn sản phẩm | Expected: Sản phẩm không bị ẩn, trạng thái không đổi | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56739}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cf6759cb4be8a2d3d79c38d847f35dc8
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_12 | Scenario: Kiểm tra sửa sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được cập nhật, danh sách hiển thị thông tin mới | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56759}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: da2594d74119f7e2cafeea1e098f0f3c
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_09 | Scenario: Kiểm tra thêm sản phẩm với số lượng âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56779}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 68526a431a5ec019ff2fd8af7f5c9576
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_07 | Scenario: Kiểm tra thêm sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56799}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5bb306d208773a98798a0b819e46d8ef
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_02 | Scenario: Kiểm tra đăng nhập với password sai | Expected: Hiển thị thông báo lỗi: "Login attempt was not successful, try again." | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56819}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4e5fe1808737d3665be4097c3bb68fbf
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_17 | Scenario: Kiểm tra menu "Quản lý sản phẩm" xổ xuống/thu lại | Expected: Menu xổ xuống hiển thị 2 lựa chọn, nhấn lại thì thu lại | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56839}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6fafba39b217fc7998bfe2cac60e07cb
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_20 | Scenario: Kiểm tra thêm sản phẩm khi upload nhiều ảnh | Expected: Chỉ lưu ảnh đầu tiên hoặc hiển thị thông báo lỗi nếu không hỗ trợ nhiều ảnh | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56859}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7bac0f41e6e4e7670bc8bf526cc63df6
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56980}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2e8c294b64bdfd27279ee89182cb0380
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_01 | Scenario: Kiểm tra đăng nhập với tài khoản hợp lệ | Expected: Chuyển hướng đến http://localhost:9090/admin | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57000}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7c4d639168051c83109a45fa0d1b2487
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_05 | Scenario: Kiểm tra hiển thị sản phẩm với trạng thái ẩn | Expected: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57020}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 15cf6e1a81a61522e6a3e61fd0dbdbc1
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_14 | Scenario: Kiểm tra sửa sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép cập nhật | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57040}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d6e7556c195e6300863ffd64f4ef8c74
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_10 | Scenario: Kiểm tra thêm sản phẩm với file ảnh không hợp lệ | Expected: Hiển thị thông báo lỗi: "File không phải định dạng ảnh!" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57130}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 00c1c44963c3f1b6469e903d87f4007c
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_15 | Scenario: Kiểm tra ẩn sản phẩm | Expected: Sản phẩm được ẩn (trạng thái = 0), danh sách cập nhật | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57150}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a6901f96c2ae300c4f8d30c56f608007
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_08 | Scenario: Kiểm tra thêm sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57171}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 658b02565568dbc70e7226ac43055175
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_03 | Scenario: Kiểm tra đăng nhập với username rỗng | Expected: Hiển thị thông báo lỗi hoặc không gửi được form | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57191}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 97f1b45300ad7cca59c624fa6e910600
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_04 | Scenario: Kiểm tra hiển thị danh sách sản phẩm | Expected: Danh sách sản phẩm hiển thị với các cột: #, Tên, Hình ảnh, Danh mục, Giá, Số lượng, Trạng thái | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57211}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1a80d791ce32608579302f3d3d8c2beb
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_13 | Scenario: Kiểm tra sửa sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57233}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 530ae9aaadecbf314df42e43ab102800
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_19 | Scenario: Kiểm tra thêm sản phẩm với mô tả vượt giới hạn | Expected: Hiển thị thông báo lỗi hoặc cắt bớt mô tả theo giới hạn | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57252}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 32ac182b77a2a90eee24fb207cd26738
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_11 | Scenario: Kiểm tra thêm sản phẩm không chọn danh mục | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57272}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bd008bbffdf32621892cac12cf1520c6
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_18 | Scenario: Kiểm tra chuyển hướng sai menu | Expected: Không chuyển đến trang Quản lý sản phẩm (/admin/listProducts hoặc /admin/addProduct) | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57292}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9cc5b03b7713ec5d92035211c240afb2
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_16 | Scenario: Kiểm tra hủy ẩn sản phẩm | Expected: Sản phẩm không bị ẩn, trạng thái không đổi | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57312}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 822ff5ccb1d23fec2461591fe41e877d
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_12 | Scenario: Kiểm tra sửa sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được cập nhật, danh sách hiển thị thông tin mới | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57332}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a50d3586c666b469f32b44e7d4ae62d0
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_09 | Scenario: Kiểm tra thêm sản phẩm với số lượng âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57351}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d022b453d1adb271fbc09d03d647fbf
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_07 | Scenario: Kiểm tra thêm sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57371}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1d9c1cb42e91fe3f08d05c00266e3e0c
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_02 | Scenario: Kiểm tra đăng nhập với password sai | Expected: Hiển thị thông báo lỗi: "Login attempt was not successful, try again." | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57391}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f0c9509c329cc3443170f7342d66fc82
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_17 | Scenario: Kiểm tra menu "Quản lý sản phẩm" xổ xuống/thu lại | Expected: Menu xổ xuống hiển thị 2 lựa chọn, nhấn lại thì thu lại | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57411}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4c190fb1168b10f1e84928636a58eb01
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_20 | Scenario: Kiểm tra thêm sản phẩm khi upload nhiều ảnh | Expected: Chỉ lưu ảnh đầu tiên hoặc hiển thị thông báo lỗi nếu không hỗ trợ nhiều ảnh | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57431}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d5b603af86438116b0964ea9e6e7887
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57451}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: dff9abba086570d51c2ef60d149f6bfc
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_01 | Scenario: Kiểm tra đăng nhập với tài khoản hợp lệ | Expected: Chuyển hướng đến http://localhost:9090/admin | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57471}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 12b58de40bd4876df576bcc29fc9f241
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_05 | Scenario: Kiểm tra hiển thị sản phẩm với trạng thái ẩn | Expected: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57491}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 96784a8d77feca2b1a467e1d9846e760
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_14 | Scenario: Kiểm tra sửa sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép cập nhật | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":".login100\-form\-btn"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57510}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 867466d34db8e9bc859716474b24951e
+*** Element info: {Using=class name, value=login100-form-btn} | Status: Fail
+TestCaseID: SELE_QLSP_04 | Scenario: Kiểm tra hiển thị danh sách sản phẩm | Expected: Danh sách sản phẩm hiển thị với các cột: #, Tên, Hình ảnh, Danh mục, Giá, Số lượng, Trạng thái | Actual: Lỗi: For input string: "200,000" | Status: Fail
+TestCaseID: SELE_QLSP_04 | Scenario: Kiểm tra hiển thị danh sách sản phẩm | Expected: Danh sách sản phẩm hiển thị với các cột: #, Tên, Hình ảnh, Danh mục, Giá, Số lượng, Trạng thái | Actual: Lỗi: For input string: "200,000" | Status: Fail
+TestCaseID: SELE_QLSP_04 | Scenario: Kiểm tra hiển thị danh sách sản phẩm | Expected: Danh sách sản phẩm hiển thị với các cột: #, Tên, Hình ảnh, Danh mục, Giá, Số lượng, Trạng thái | Actual: Danh sách sản phẩm hiển thị với các cột hợp lệ | Status: Pass
+TestCaseID: SELE_QLSP_10 | Scenario: Kiểm tra thêm sản phẩm với file ảnh không hợp lệ | Expected: Hiển thị thông báo lỗi: "File không phải định dạng ảnh!" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='category']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60927}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 718a606e3db5308c3eecd058e9b40a9e
+*** Element info: {Using=name, value=category} | Status: Fail
+TestCaseID: SELE_QLSP_15 | Scenario: Kiểm tra ẩn sản phẩm | Expected: Sản phẩm được ẩn (trạng thái = 0), danh sách cập nhật | Actual: Sản phẩm được ẩn, danh sách cập nhật | Status: Pass
+TestCaseID: SELE_QLSP_08 | Scenario: Kiểm tra thêm sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='category']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61018}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a73dc88c37ea4cbbd601f39240bb14c6
+*** Element info: {Using=name, value=category} | Status: Fail
+TestCaseID: SELE_QLSP_04 | Scenario: Kiểm tra hiển thị danh sách sản phẩm | Expected: Danh sách sản phẩm hiển thị với các cột: #, Tên, Hình ảnh, Danh mục, Giá, Số lượng, Trạng thái | Actual: Danh sách sản phẩm hiển thị với các cột hợp lệ | Status: Pass
+TestCaseID: SELE_QLSP_19 | Scenario: Kiểm tra thêm sản phẩm với mô tả vượt giới hạn | Expected: Hiển thị thông báo lỗi hoặc cắt bớt mô tả theo giới hạn | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='category']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61301}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 24e699b2070aa012563e5ec0c09fa5f8
+*** Element info: {Using=name, value=category} | Status: Fail
+TestCaseID: SELE_QLSP_11 | Scenario: Kiểm tra thêm sản phẩm không chọn danh mục | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61331}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 81f0fa0e5445f851d24d3eac6d71e0b2 | Status: Fail
+TestCaseID: SELE_QLSP_18 | Scenario: Kiểm tra chuyển hướng sai menu | Expected: Không chuyển đến trang Quản lý sản phẩm (/admin/listProducts hoặc /admin/addProduct) | Actual: Không chuyển hướng đến trang Quản lý sản phẩm | Status: Pass
+TestCaseID: SELE_QLSP_12 | Scenario: Kiểm tra sửa sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được cập nhật, danh sách hiển thị thông tin mới | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='category']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61551}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b3ef56290f5d8add6c3938877289ba77
+*** Element info: {Using=name, value=category} | Status: Fail
+TestCaseID: SELE_QLSP_09 | Scenario: Kiểm tra thêm sản phẩm với số lượng âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='category']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61605}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0ae4990b70948c6d644a66c889d51be
+*** Element info: {Using=name, value=category} | Status: Fail
+TestCaseID: SELE_QLSP_07 | Scenario: Kiểm tra thêm sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='category']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61632}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3d7f09e1c79cf949ea4626dada9f1137
+*** Element info: {Using=name, value=category} | Status: Fail
+TestCaseID: SELE_QLSP_17 | Scenario: Kiểm tra menu "Quản lý sản phẩm" xổ xuống/thu lại | Expected: Menu xổ xuống hiển thị 2 lựa chọn, nhấn lại thì thu lại | Actual: Menu xổ xuống và thu lại thành công | Status: Pass
+TestCaseID: SELE_QLSP_20 | Scenario: Kiểm tra thêm sản phẩm khi upload nhiều ảnh | Expected: Chỉ lưu ảnh đầu tiên hoặc hiển thị thông báo lỗi nếu không hỗ trợ nhiều ảnh | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='category']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61683}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d23f2ed5bee952083275325e6964b8ff
+*** Element info: {Using=name, value=category} | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='category']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61709}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 12bf2c80f5d59ceae03235fe60e78a05
+*** Element info: {Using=name, value=category} | Status: Fail
+TestCaseID: SELE_QLSP_05 | Scenario: Kiểm tra hiển thị sản phẩm với trạng thái ẩn | Expected: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Actual: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Status: Pass
+TestCaseID: SELE_QLSP_14 | Scenario: Kiểm tra sửa sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép cập nhật | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: #price + span.form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_10 | Scenario: Kiểm tra thêm sản phẩm với file ảnh không hợp lệ | Expected: Hiển thị thông báo lỗi: "File không phải định dạng ảnh!" | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62223}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f8c93e00d9b2870274c13899473bd855 | Status: Fail
+TestCaseID: SELE_QLSP_15 | Scenario: Kiểm tra ẩn sản phẩm | Expected: Sản phẩm được ẩn (trạng thái = 0), danh sách cập nhật | Actual: Sản phẩm được ẩn, danh sách cập nhật | Status: Pass
+TestCaseID: SELE_QLSP_08 | Scenario: Kiểm tra thêm sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62305}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fbeb448d15f9de9b0c5bea86183d51de | Status: Fail
+TestCaseID: SELE_QLSP_04 | Scenario: Kiểm tra hiển thị danh sách sản phẩm | Expected: Danh sách sản phẩm hiển thị với các cột: #, Tên, Hình ảnh, Danh mục, Giá, Số lượng, Trạng thái | Actual: Danh sách sản phẩm hiển thị với các cột hợp lệ | Status: Pass
+TestCaseID: SELE_QLSP_13 | Scenario: Kiểm tra sửa sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Status: Pass
+TestCaseID: SELE_QLSP_19 | Scenario: Kiểm tra thêm sản phẩm với mô tả vượt giới hạn | Expected: Hiển thị thông báo lỗi hoặc cắt bớt mô tả theo giới hạn | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='category']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62423}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: da760665d2d9471bfc38c858adef9244
+*** Element info: {Using=name, value=category} | Status: Fail
+TestCaseID: SELE_QLSP_11 | Scenario: Kiểm tra thêm sản phẩm không chọn danh mục | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62448}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9f57d9681b3b68c8072a5df1abeaf8ac | Status: Fail
+TestCaseID: SELE_QLSP_18 | Scenario: Kiểm tra chuyển hướng sai menu | Expected: Không chuyển đến trang Quản lý sản phẩm (/admin/listProducts hoặc /admin/addProduct) | Actual: Không chuyển hướng đến trang Quản lý sản phẩm | Status: Pass
+TestCaseID: SELE_QLSP_09 | Scenario: Kiểm tra thêm sản phẩm với số lượng âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62625}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: da2833e6974a13959b082fc7a9e6cc93 | Status: Fail
+TestCaseID: SELE_QLSP_07 | Scenario: Kiểm tra thêm sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62652}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7f087056d136032354733aa53b6eadcd | Status: Fail
+TestCaseID: SELE_QLSP_17 | Scenario: Kiểm tra menu "Quản lý sản phẩm" xổ xuống/thu lại | Expected: Menu xổ xuống hiển thị 2 lựa chọn, nhấn lại thì thu lại | Actual: Menu xổ xuống và thu lại thành công | Status: Pass
+TestCaseID: SELE_QLSP_20 | Scenario: Kiểm tra thêm sản phẩm khi upload nhiều ảnh | Expected: Chỉ lưu ảnh đầu tiên hoặc hiển thị thông báo lỗi nếu không hỗ trợ nhiều ảnh | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='category']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62704}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6f2de4fdfbe06e095f456eef6f1b9a97
+*** Element info: {Using=name, value=category} | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62731}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b1d320044f3163a1fccc4d9e48e4e285 | Status: Fail
+TestCaseID: SELE_QLSP_05 | Scenario: Kiểm tra hiển thị sản phẩm với trạng thái ẩn | Expected: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Actual: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Status: Pass
+TestCaseID: SELE_QLSP_10 | Scenario: Kiểm tra thêm sản phẩm với file ảnh không hợp lệ | Expected: Hiển thị thông báo lỗi: "File không phải định dạng ảnh!" | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64630}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 059224bad4643b07be81d1e5e6fc1cd3 | Status: Fail
+TestCaseID: SELE_QLSP_15 | Scenario: Kiểm tra ẩn sản phẩm | Expected: Sản phẩm được ẩn (trạng thái = 0), danh sách cập nhật | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"button.btn-danger[data-target*='myModal']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64659}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f29e076ebe9f6d6af8db3095848e93c4
+*** Element info: {Using=css selector, value=button.btn-danger[data-target*='myModal']} | Status: Fail
+TestCaseID: SELE_QLSP_08 | Scenario: Kiểm tra thêm sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64705}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 37d611b8bf25678c6eee9ad7f29cedd7 | Status: Fail
+TestCaseID: SELE_QLSP_04 | Scenario: Kiểm tra hiển thị danh sách sản phẩm | Expected: Danh sách sản phẩm hiển thị với các cột: #, Tên, Hình ảnh, Danh mục, Giá, Số lượng, Trạng thái | Actual: Danh sách sản phẩm hiển thị với các cột hợp lệ | Status: Pass
+TestCaseID: SELE_QLSP_13 | Scenario: Kiểm tra sửa sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"a.btn-warning[href*='/admin/product/']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64778}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 87decc103ad8533556ed07d1a3a7c3a1
+*** Element info: {Using=css selector, value=a.btn-warning[href*='/admin/product/']} | Status: Fail
+TestCaseID: SELE_QLSP_19 | Scenario: Kiểm tra thêm sản phẩm với mô tả vượt giới hạn | Expected: Hiển thị thông báo lỗi hoặc cắt bớt mô tả theo giới hạn | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64836}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d1f4af07cc87acb8126c73f53ae70a15 | Status: Fail
+TestCaseID: SELE_QLSP_11 | Scenario: Kiểm tra thêm sản phẩm không chọn danh mục | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64863}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 527e0e88679fdf81a3a1fe444defaf76 | Status: Fail
+TestCaseID: SELE_QLSP_18 | Scenario: Kiểm tra chuyển hướng sai menu | Expected: Không chuyển đến trang Quản lý sản phẩm (/admin/listProducts hoặc /admin/addProduct) | Actual: Không chuyển hướng đến trang Quản lý sản phẩm | Status: Pass
+TestCaseID: SELE_QLSP_16 | Scenario: Kiểm tra hủy ẩn sản phẩm | Expected: Sản phẩm giữ nguyên trạng thái ban đầu | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"button.btn-danger[data-target*='myModal']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64916}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 931ee6bf748da86c11c10caad4bc7c48
+*** Element info: {Using=css selector, value=button.btn-danger[data-target*='myModal']} | Status: Fail
+TestCaseID: SELE_QLSP_12 | Scenario: Kiểm tra sửa sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được cập nhật, danh sách hiển thị thông tin mới | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"a.btn-warning[href*='/admin/product/']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64966}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f173351e3b5793a0979d64718b18ab9d
+*** Element info: {Using=css selector, value=a.btn-warning[href*='/admin/product/']} | Status: Fail
+TestCaseID: SELE_QLSP_09 | Scenario: Kiểm tra thêm sản phẩm với số lượng âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65014}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f28d171fdc6b15c107aeec9a4e0fdbd7 | Status: Fail
+TestCaseID: SELE_QLSP_07 | Scenario: Kiểm tra thêm sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65039}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 86210197ec8ebb2505fbc3a6889d84bc | Status: Fail
+TestCaseID: SELE_QLSP_17 | Scenario: Kiểm tra menu "Quản lý sản phẩm" xổ xuống/thu lại | Expected: Menu xổ xuống hiển thị 2 lựa chọn, nhấn lại thì thu lại | Actual: Menu xổ xuống và thu lại thành công | Status: Pass
+TestCaseID: SELE_QLSP_20 | Scenario: Kiểm tra thêm sản phẩm khi upload nhiều ảnh | Expected: Chỉ lưu ảnh đầu tiên hoặc hiển thị thông báo lỗi nếu không hỗ trợ nhiều ảnh | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65092}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 087b08ae204a90b89d2667f0f4cbc13d | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Lỗi: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65119}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 226ba31c974f1a4360bd33851cb8d578 | Status: Fail
+TestCaseID: SELE_QLSP_05 | Scenario: Kiểm tra hiển thị sản phẩm với trạng thái ẩn | Expected: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Actual: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Status: Pass
+TestCaseID: SELE_QLSP_14 | Scenario: Kiểm tra sửa sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép cập nhật | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"a.btn-warning[href*='/admin/product/']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.1.43', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65190}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ef57e16328d2db44047ff5626bf3f1f7
+*** Element info: {Using=css selector, value=a.btn-warning[href*='/admin/product/']} | Status: Fail
+TestCaseID: SELE_QLSP_10 | Scenario: Kiểm tra thêm sản phẩm với file ảnh không hợp lệ | Expected: Hiển thị thông báo lỗi: "File không phải định dạng ảnh!" | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: input[name='product_image'] + span.form-message (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56739}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 11630e6b4be0a1864bef4ea9b87f9031 | Status: Fail
+TestCaseID: SELE_QLSP_15 | Scenario: Kiểm tra ẩn sản phẩm | Expected: Sản phẩm được ẩn (trạng thái = 0), danh sách cập nhật | Actual: Sản phẩm được ẩn, danh sách cập nhật | Status: Pass
+TestCaseID: SELE_QLSP_28 | Scenario: Kiểm tra nhấn nút 'Hủy' trên form thêm sản phẩm | Expected: Hủy form thêm sản phẩm, quay lại trang danh sách sản phẩm | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"button.btn-default"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56807}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: da074dd1f8adda2c96aeef062ffb015a
+*** Element info: {Using=css selector, value=button.btn-default} | Status: Fail
+TestCaseID: SELE_QLSP_08 | Scenario: Kiểm tra thêm sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: #price + span.form-message (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56832}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ff1b420b775a4180c33dfb1fb898670e | Status: Fail
+TestCaseID: SELE_QLSP_04 | Scenario: Kiểm tra hiển thị danh sách sản phẩm | Expected: Danh sách sản phẩm hiển thị với các cột: #, Tên, Hình ảnh, Danh mục, Giá, Số lượng, Trạng thái | Actual: Danh sách sản phẩm hiển thị với các cột hợp lệ | Status: Pass
+TestCaseID: SELE_QLSP_13 | Scenario: Kiểm tra sửa sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Status: Pass
+TestCaseID: SELE_QLSP_19 | Scenario: Kiểm tra thêm sản phẩm với mô tả vượt giới hạn | Expected: Hiển thị thông báo lỗi hoặc cắt bớt mô tả theo giới hạn | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: #txtDetailDescription + span.form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_26 | Scenario: Kiểm tra thêm sản phẩm với mô tả ngắn rỗng | Expected: Hiển thị thông báo lỗi: "Vắn tắt không được để trống!" | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: #txtShortlDescription + span.form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_23 | Scenario: Kiểm tra chuyển sang trang tiếp theo trong bảng sản phẩm | Expected: Chuyển sang trang tiếp theo, hiển thị các sản phẩm mới | Actual: Lỗi: Expected condition failed: waiting for element to be clickable: By.cssSelector: a.dataTables_paginate[title='Next'] (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_11 | Scenario: Kiểm tra thêm sản phẩm không chọn danh mục | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: select[name='category.id'] + span.form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_18 | Scenario: Kiểm tra chuyển hướng sai menu | Expected: Không chuyển đến trang Quản lý sản phẩm (/admin/listProducts hoặc /admin/addProduct) | Actual: Không chuyển hướng đến trang Quản lý sản phẩm | Status: Pass
+TestCaseID: SELE_QLSP_16 | Scenario: Kiểm tra hủy ẩn sản phẩm | Expected: Sản phẩm giữ nguyên trạng thái ban đầu | Actual: Sản phẩm giữ nguyên trạng thái ban đầu | Status: Pass
+TestCaseID: SELE_QLSP_09 | Scenario: Kiểm tra thêm sản phẩm với số lượng âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: #amount + span.form-message (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57242}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 682f2fb0d3ee8088ecc2011c1f3cb5e4 | Status: Fail
+TestCaseID: SELE_QLSP_25 | Scenario: Kiểm tra hiển thị badge trạng thái (xanh cho active, đỏ cho hidden) | Expected: Badge xanh cho trạng thái active, đỏ cho trạng thái hidden | Actual: Badge hiển thị đúng màu cho trạng thái | Status: Pass
+TestCaseID: SELE_QLSP_07 | Scenario: Kiểm tra thêm sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Status: Pass
+TestCaseID: SELE_QLSP_17 | Scenario: Kiểm tra menu "Quản lý sản phẩm" xổ xuống/thu lại | Expected: Menu xổ xuống hiển thị 2 lựa chọn, nhấn lại thì thu lại | Actual: Menu xổ xuống và thu lại thành công | Status: Pass
+TestCaseID: SELE_QLSP_20 | Scenario: Kiểm tra thêm sản phẩm khi upload nhiều ảnh | Expected: Chỉ lưu ảnh đầu tiên hoặc hiển thị thông báo lỗi nếu không hỗ trợ nhiều ảnh | Actual: Lỗi: Expected condition failed: waiting for url to be "http://localhost:9090/admin/listProducts". Current url: "http://localhost:9090/admin/addProduct" (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57345}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 99456b34f1c95a2f431d8664bce685d8 | Status: Fail
+TestCaseID: SELE_QLSP_24 | Scenario: Kiểm tra hiển thị hình ảnh mặc định khi sản phẩm không có ảnh | Expected: Hiển thị hình ảnh mặc định 'http://placehold.it/700x400' | Actual: Không tìm thấy sản phẩm với ảnh mặc định | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Lỗi: Expected condition failed: waiting for url to be "http://localhost:9090/admin/listProducts". Current url: "http://localhost:9090/admin/listProducts/?add=success" (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57400}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 074f72bfac8a7b34bd1e77b1212ece60 | Status: Fail
+TestCaseID: SELE_QLSP_22 | Scenario: Kiểm tra tìm kiếm sản phẩm trong bảng | Expected: Hiển thị các sản phẩm chứa từ khóa tìm kiếm | Actual: Hiển thị các sản phẩm chứa từ khóa 'Son' | Status: Pass
+TestCaseID: SELE_QLSP_21 | Scenario: Kiểm tra sắp xếp bảng sản phẩm theo tên (A-Z) | Expected: Danh sách sản phẩm được sắp xếp theo thứ tự alphabet (A-Z) | Actual: Danh sách sản phẩm được sắp xếp A-Z | Status: Pass
+TestCaseID: SELE_QLSP_05 | Scenario: Kiểm tra hiển thị sản phẩm với trạng thái ẩn | Expected: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Actual: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Status: Pass
+TestCaseID: SELE_QLSP_14 | Scenario: Kiểm tra sửa sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép cập nhật | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: #price + span.form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_10 | Scenario: Kiểm tra thêm sản phẩm với file ảnh không hợp lệ | Expected: Hiển thị thông báo lỗi: "File không phải định dạng ảnh!" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"#txtShortDescription + .note-editor .note-editable"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57559}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bf24270c3159e399949edaf9dc262715
+*** Element info: {Using=css selector, value=#txtShortDescription + .note-editor .note-editable} | Status: Fail
+TestCaseID: SELE_QLSP_15 | Scenario: Kiểm tra ẩn sản phẩm | Expected: Sản phẩm được ẩn (trạng thái = 0), danh sách cập nhật | Actual: Sản phẩm được ẩn, danh sách cập nhật | Status: Pass
+TestCaseID: SELE_QLSP_28 | Scenario: Kiểm tra nhấn nút 'Hủy' trên form thêm sản phẩm | Expected: Hủy form thêm sản phẩm, quay lại trang danh sách sản phẩm | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"button.btn-secondary"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57611}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d253e68154cb453359fe423a35d7fcf8
+*** Element info: {Using=css selector, value=button.btn-secondary} | Status: Fail
+TestCaseID: SELE_QLSP_08 | Scenario: Kiểm tra thêm sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"#txtShortDescription + .note-editor .note-editable"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57635}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e5be209d64282e48a41ff31081736b96
+*** Element info: {Using=css selector, value=#txtShortDescription + .note-editor .note-editable} | Status: Fail
+TestCaseID: SELE_QLSP_04 | Scenario: Kiểm tra hiển thị danh sách sản phẩm | Expected: Danh sách sản phẩm hiển thị với các cột: #, Tên, Hình ảnh, Danh mục, Giá, Số lượng, Trạng thái | Actual: Danh sách sản phẩm hiển thị với các cột hợp lệ | Status: Pass
+TestCaseID: SELE_QLSP_13 | Scenario: Kiểm tra sửa sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Status: Pass
+TestCaseID: SELE_QLSP_19 | Scenario: Kiểm tra thêm sản phẩm với mô tả vượt giới hạn | Expected: Hiển thị thông báo lỗi hoặc cắt bớt mô tả theo giới hạn | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"#txtShortDescription + .note-editor .note-editable"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57711}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5de2d3cdaa4869eb8e2fcb3de3f736a3
+*** Element info: {Using=css selector, value=#txtShortDescription + .note-editor .note-editable} | Status: Fail
+TestCaseID: SELE_QLSP_26 | Scenario: Kiểm tra thêm sản phẩm với mô tả ngắn rỗng | Expected: Hiển thị thông báo lỗi: "Vắn tắt không được để trống!" | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57736}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 877547cf4ace18a0c9abe830047c0591 | Status: Fail
+TestCaseID: SELE_QLSP_23 | Scenario: Kiểm tra chuyển sang trang tiếp theo trong bảng sản phẩm | Expected: Chuyển sang trang tiếp theo, hiển thị các sản phẩm mới | Actual: Chuyển sang trang tiếp theo thành công | Status: Pass
+TestCaseID: SELE_QLSP_11 | Scenario: Kiểm tra thêm sản phẩm không chọn danh mục | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"#txtShortDescription + .note-editor .note-editable"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57792}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0034524ceef6dcc3b920f51ba697f751
+*** Element info: {Using=css selector, value=#txtShortDescription + .note-editor .note-editable} | Status: Fail
+TestCaseID: SELE_QLSP_18 | Scenario: Kiểm tra chuyển hướng sai menu | Expected: Không chuyển đến trang Quản lý sản phẩm (/admin/listProducts hoặc /admin/addProduct) | Actual: Không chuyển hướng đến trang Quản lý sản phẩm | Status: Pass
+TestCaseID: SELE_QLSP_16 | Scenario: Kiểm tra hủy ẩn sản phẩm | Expected: Sản phẩm giữ nguyên trạng thái ban đầu | Actual: Sản phẩm giữ nguyên trạng thái ban đầu | Status: Pass
+TestCaseID: SELE_QLSP_27 | Scenario: Kiểm tra sửa sản phẩm với số lượng rỗng | Expected: Hiển thị thông báo lỗi: "Số lượng không được để trống!" | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57869}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9e1f07f4521ceaaddd8915295512fbd3 | Status: Fail
+TestCaseID: SELE_QLSP_12 | Scenario: Kiểm tra sửa sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được cập nhật, danh sách hiển thị thông tin mới | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"#txtShortDescription + .note-editor .note-editable"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57901}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 468e1a78755e4fa381bee6cd1e0818c8
+*** Element info: {Using=css selector, value=#txtShortDescription + .note-editor .note-editable} | Status: Fail
+TestCaseID: SELE_QLSP_09 | Scenario: Kiểm tra thêm sản phẩm với số lượng âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"#txtShortDescription + .note-editor .note-editable"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57928}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: eef8182a76e8b8ff98ef9853b5f61678
+*** Element info: {Using=css selector, value=#txtShortDescription + .note-editor .note-editable} | Status: Fail
+TestCaseID: SELE_QLSP_25 | Scenario: Kiểm tra hiển thị badge trạng thái (xanh cho active, đỏ cho hidden) | Expected: Badge xanh cho trạng thái active, đỏ cho trạng thái hidden | Actual: Badge hiển thị đúng màu cho trạng thái | Status: Pass
+TestCaseID: SELE_QLSP_07 | Scenario: Kiểm tra thêm sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Status: Pass
+TestCaseID: SELE_QLSP_17 | Scenario: Kiểm tra menu "Quản lý sản phẩm" xổ xuống/thu lại | Expected: Menu xổ xuống hiển thị 2 lựa chọn, nhấn lại thì thu lại | Actual: Menu xổ xuống và thu lại thành công | Status: Pass
+TestCaseID: SELE_QLSP_20 | Scenario: Kiểm tra thêm sản phẩm khi upload nhiều ảnh | Expected: Chỉ lưu ảnh đầu tiên hoặc hiển thị thông báo lỗi nếu không hỗ trợ nhiều ảnh | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"#txtShortDescription + .note-editor .note-editable"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58031}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5575d1e10f1f63a4074edaf83f06b016
+*** Element info: {Using=css selector, value=#txtShortDescription + .note-editor .note-editable} | Status: Fail
+TestCaseID: SELE_QLSP_24 | Scenario: Kiểm tra hiển thị hình ảnh mặc định khi sản phẩm không có ảnh | Expected: Hiển thị hình ảnh mặc định 'http://placehold.it/700x400' | Actual: Không tìm thấy sản phẩm với ảnh mặc định | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"#txtShortDescription + .note-editor .note-editable"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58084}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 24d7606585bfad8579d8efe6f0614aca
+*** Element info: {Using=css selector, value=#txtShortDescription + .note-editor .note-editable} | Status: Fail
+TestCaseID: SELE_QLSP_22 | Scenario: Kiểm tra tìm kiếm sản phẩm trong bảng | Expected: Hiển thị các sản phẩm chứa từ khóa tìm kiếm | Actual: Hiển thị các sản phẩm chứa từ khóa 'Son' | Status: Pass
+TestCaseID: SELE_QLSP_21 | Scenario: Kiểm tra sắp xếp bảng sản phẩm theo tên (A-Z) | Expected: Danh sách sản phẩm được sắp xếp theo thứ tự alphabet (A-Z) | Actual: Danh sách sản phẩm được sắp xếp A-Z | Status: Pass
+TestCaseID: SELE_QLSP_05 | Scenario: Kiểm tra hiển thị sản phẩm với trạng thái ẩn | Expected: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Actual: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Status: Pass
+TestCaseID: SELE_QLSP_14 | Scenario: Kiểm tra sửa sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép cập nhật | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: #price + span.form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_10 | Scenario: Kiểm tra thêm sản phẩm với file ảnh không hợp lệ | Expected: Hiển thị thông báo lỗi: "File không phải định dạng ảnh!" | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: input[name='product_image'] + span.form-message (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58283}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d0cb98f6cdf67a4e6bff72dcb2530d57 | Status: Fail
+TestCaseID: SELE_QLSP_28 | Scenario: Kiểm tra nhấn nút 'Hủy' trên form thêm sản phẩm | Expected: Hủy form thêm sản phẩm, quay lại trang danh sách sản phẩm | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"button.btn-default"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58311}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 62ece7822af50347dab2a55d174cfd0c
+*** Element info: {Using=css selector, value=button.btn-default} | Status: Fail
+TestCaseID: SELE_QLSP_08 | Scenario: Kiểm tra thêm sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: #price + span.form-message (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58336}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c3a452f3322868af49acea4f5e615606 | Status: Fail
+TestCaseID: SELE_QLSP_19 | Scenario: Kiểm tra thêm sản phẩm với mô tả vượt giới hạn | Expected: Hiển thị thông báo lỗi hoặc cắt bớt mô tả theo giới hạn | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: #txtDetailDescription + span.form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_26 | Scenario: Kiểm tra thêm sản phẩm với mô tả ngắn rỗng | Expected: Hiển thị thông báo lỗi: "Vắn tắt không được để trống!" | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: #txtShortDescription + span.form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_11 | Scenario: Kiểm tra thêm sản phẩm không chọn danh mục | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: select[name='category.id'] + span.form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_09 | Scenario: Kiểm tra thêm sản phẩm với số lượng âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: #amount + span.form-message (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58509}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3f3da4f47e6c5c0e58022c36f6b4edc0 | Status: Fail
+TestCaseID: SELE_QLSP_20 | Scenario: Kiểm tra thêm sản phẩm khi upload nhiều ảnh | Expected: Chỉ lưu ảnh đầu tiên hoặc hiển thị thông báo lỗi nếu không hỗ trợ nhiều ảnh | Actual: Lỗi: Expected condition failed: waiting for url to contain "http://localhost:9090/admin/listProducts". Current url: "http://localhost:9090/admin/addProduct" (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58541}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 12ef046a00a24081b35d3569c4d7fbe4 | Status: Fail
+TestCaseID: SELE_QLSP_24 | Scenario: Kiểm tra hiển thị hình ảnh mặc định khi sản phẩm không có ảnh | Expected: Hiển thị hình ảnh mặc định 'http://placehold.it/700x400' | Actual: Lỗi: Expected condition failed: waiting for url to contain "http://localhost:9090/admin/listProducts". Current url: "http://localhost:9090/admin/addProduct" (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58569}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 87d9145dd54952a7a43fede6007f804e | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Lỗi: Expected condition failed: waiting for url to contain "http://localhost:9090/admin/listProducts". Current url: "http://localhost:9090/admin/addProduct" (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58598}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6269e8ea39ac6fa0d05690b55e60fdf5 | Status: Fail
+TestCaseID: SELE_QLSP_14 | Scenario: Kiểm tra sửa sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép cập nhật | Actual: Lỗi: Expected condition failed: waiting for visibility of element located by By.cssSelector: #price + span.form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_28 | Scenario: Kiểm tra nhấn nút 'Hủy' trên form thêm sản phẩm | Expected: Hủy form thêm sản phẩm, quay lại trang danh sách sản phẩm | Actual: Lỗi: Expected condition failed: waiting for element to be clickable: By.cssSelector: button.btn-cancel (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_19 | Scenario: Kiểm tra thêm sản phẩm với mô tả vượt giới hạn | Expected: Hiển thị thông báo lỗi hoặc cắt bớt mô tả theo giới hạn | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_20 | Scenario: Kiểm tra thêm sản phẩm khi upload nhiều ảnh | Expected: Chỉ lưu ảnh đầu tiên hoặc hiển thị thông báo lỗi nếu không hỗ trợ nhiều ảnh | Actual: Lỗi: Expected condition failed: waiting for url to be "http://localhost:9090/admin/listProducts/?add=success". Current url: "http://localhost:9090/admin/addProduct" (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59238}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9c476f32551cd33edc92194d2129ecb9 | Status: Fail
+TestCaseID: SELE_QLSP_24 | Scenario: Kiểm tra hiển thị hình ảnh mặc định khi sản phẩm không có ảnh | Expected: Hiển thị hình ảnh mặc định 'http://placehold.it/700x400' | Actual: Lỗi: Expected condition failed: waiting for url to be "http://localhost:9090/admin/listProducts/?add=success". Current url: "http://localhost:9090/admin/addProduct" (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59266}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a5746d5bf45248a376d764b9debfa763 | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Lỗi: Expected condition failed: waiting for url to be "http://localhost:9090/admin/listProducts/?add=success". Current url: "http://localhost:9090/admin/addProduct" (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f29423305824918d37f569a194ef66cc | Status: Fail
+TestCaseID: SELE_QLSP_14 | Scenario: Kiểm tra sửa sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép cập nhật | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Hiển thị thông báo thêm sản phẩm thành công | Actual: Lỗi: Expected condition failed: waiting for url to contain "/admin/listProducts". Current url: "http://localhost:9090/admin/addProduct" (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59382}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 324e9c2d6595f5b76b829c0d9b59c304 | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Hiển thị thông báo thêm sản phẩm thành công | Actual: Lỗi: Expected condition failed: waiting for url to contain "localhost:9090/admin/listProducts". Current url: "http://localhost:9090/admin/addProduct" (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59413}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 926f08ec09df3cd166a1c75e5cb71c36 | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Hiển thị thông báo thêm sản phẩm thành công | Actual: Lỗi: Expected condition failed: waiting for url to contain "localhost:9090/admin/listProducts". Current url: "http://localhost:9090/admin/addProduct" (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59446}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5ad460dd0ca0579d556a0bba34a12ad2 | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Lỗi: Expected condition failed: waiting for url to be "http://localhost:9090/admin/listProducts/?add=success". Current url: "http://localhost:9090/admin/addProduct" (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59478}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 578be985d9115cd096c1e36181f27a42 | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Lỗi: Expected condition failed: waiting for url to contain "http://localhost:9090/admin/listProducts". Current url: "http://localhost:9090/admin/addProduct" (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59527}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 23f7e86967fd64794f4116c0134f90ac | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"#txtShortDescription + .note-editor .note-editable"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0b601cbf1c9574e38544032a84dfcd78
+*** Element info: {Using=css selector, value=#txtShortDescription + .note-editor .note-editable} | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"#txtShortDescription + .note-editor .note-editable"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59611}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7278119c7d4cb251562e13a1574397da
+*** Element info: {Using=css selector, value=#txtShortDescription + .note-editor .note-editable} | Status: Fail
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Hiển thị thông báo thêm sản phẩm thành công | Status: Pass
+TestCaseID: SELE_QLSP_10 | Scenario: Kiểm tra thêm sản phẩm với file ảnh không hợp lệ | Expected: Hiển thị thông báo lỗi: "File không phải định dạng ảnh!" | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_28 | Scenario: Kiểm tra nhấn nút 'Hủy' trên form thêm sản phẩm | Expected: Hủy form thêm sản phẩm, quay lại trang danh sách sản phẩm | Actual: Lỗi: Expected condition failed: waiting for element to be clickable: By.cssSelector: button.btn-cancel (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_08 | Scenario: Kiểm tra thêm sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_19 | Scenario: Kiểm tra thêm sản phẩm với mô tả vượt giới hạn | Expected: Hiển thị thông báo lỗi hoặc cắt bớt mô tả theo giới hạn | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_11 | Scenario: Kiểm tra thêm sản phẩm không chọn danh mục | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_12 | Scenario: Kiểm tra sửa sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được cập nhật, hiển thị thông báo thành công | Actual: Hiển thị thông báo cập nhật sản phẩm thành công | Status: Pass
+TestCaseID: SELE_QLSP_09 | Scenario: Kiểm tra thêm sản phẩm với số lượng âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_20 | Scenario: Kiểm tra thêm sản phẩm khi upload nhiều ảnh | Expected: Chỉ lưu ảnh đầu tiên, hiển thị thông báo thành công | Actual: Hiển thị thông báo thêm sản phẩm thành công | Status: Pass
+TestCaseID: SELE_QLSP_24 | Scenario: Kiểm tra hiển thị hình ảnh mặc định khi sản phẩm không có ảnh | Expected: Hiển thị thông báo thêm sản phẩm thành công | Actual: Hiển thị thông báo thêm sản phẩm thành công | Status: Pass
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Hiển thị thông báo thêm sản phẩm thành công | Status: Pass
+TestCaseID: SELE_QLSP_14 | Scenario: Kiểm tra sửa sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép cập nhật | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_11 | Scenario: Kiểm tra thêm sản phẩm không chọn danh mục | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_12 | Scenario: Kiểm tra sửa sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được cập nhật, hiển thị thông báo thành công | Actual: Hiển thị thông báo cập nhật sản phẩm thành công | Status: Pass
+TestCaseID: SELE_QLSP_19 | Scenario: Kiểm tra thêm sản phẩm với mô tả vượt giới hạn | Expected: Hiển thị thông báo lỗi hoặc cắt bớt mô tả theo giới hạn | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_20 | Scenario: Kiểm tra thêm sản phẩm khi upload nhiều ảnh | Expected: Chỉ lưu ảnh đầu tiên, hiển thị thông báo thành công | Actual: Hiển thị thông báo thêm sản phẩm thành công | Status: Pass
+TestCaseID: SELE_QLSP_20 | Scenario: Kiểm tra thêm sản phẩm khi upload nhiều ảnh | Expected: Chỉ lưu ảnh đầu tiên, hiển thị thông báo thành công | Actual: Hiển thị thông báo thêm sản phẩm thành công | Status: Pass
+TestCaseID: SELE_QLSP_10 | Scenario: Kiểm tra thêm sản phẩm với file ảnh không hợp lệ | Expected: Hiển thị thông báo lỗi: "File không phải định dạng ảnh!" | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_28 | Scenario: Kiểm tra nhấn nút 'Hủy' trên form thêm sản phẩm | Expected: Hủy form thêm sản phẩm, quay lại trang danh sách sản phẩm | Actual: Lỗi: Expected condition failed: waiting for element to be clickable: By.cssSelector: button.btn-cancel (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_08 | Scenario: Kiểm tra thêm sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_19 | Scenario: Kiểm tra thêm sản phẩm với mô tả vượt giới hạn | Expected: Hiển thị thông báo lỗi hoặc cắt bớt mô tả theo giới hạn | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_11 | Scenario: Kiểm tra thêm sản phẩm không chọn danh mục | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Hiển thị thông báo cập nhật sản phẩm thành công | Status: Pass
+TestCaseID: SELE_QLSP_12 | Scenario: Kiểm tra sửa sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được cập nhật, hiển thị thông báo thành công | Actual: Hiển thị thông báo cập nhật sản phẩm thành công | Status: Pass
+TestCaseID: SELE_QLSP_09 | Scenario: Kiểm tra thêm sản phẩm với số lượng âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép thêm sản phẩm | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail
+TestCaseID: SELE_QLSP_20 | Scenario: Kiểm tra thêm sản phẩm khi upload nhiều ảnh | Expected: Chỉ lưu ảnh đầu tiên, hiển thị thông báo thành công | Actual: Hiển thị thông báo thêm sản phẩm thành công | Status: Pass
+TestCaseID: SELE_QLSP_24 | Scenario: Kiểm tra hiển thị hình ảnh mặc định khi sản phẩm không có ảnh | Expected: Hiển thị thông báo thêm sản phẩm thành công | Actual: Hiển thị thông báo thêm sản phẩm thành công | Status: Pass
+TestCaseID: SELE_QLSP_06 | Scenario: Kiểm tra thêm sản phẩm với thông tin hợp lệ | Expected: Sản phẩm được thêm thành công, chuyển hướng đến danh sách sản phẩm với sản phẩm mới | Actual: Hiển thị thông báo thêm sản phẩm thành công | Status: Pass
+TestCaseID: SELE_QLSP_14 | Scenario: Kiểm tra sửa sản phẩm với giá âm | Expected: Hiển thị thông báo lỗi hoặc không cho phép cập nhật | Actual: Lỗi: Expected condition failed: waiting for presence of element located by: By.cssSelector: .form-message (tried for 10 second(s) with 500 milliseconds interval) | Status: Fail

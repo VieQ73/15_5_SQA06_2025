@@ -78,32 +78,27 @@ public class GiftService {
 		
 		giftRepo.save(gift);
 	}
+
 	public List<Gift> searchGift(final GiftSearch giftSearch) {
-		String sql = "select g.* from tbl_gift as g left join tbl_product p on g.id = p.gift_id where 1=1";
-		if (giftSearch.getTitle() != null && !giftSearch.getTitle().isEmpty()) {
-			sql += " AND g.title LIKE '%" + giftSearch.getTitle() + "%'";
-		}
-		if (giftSearch.getGiftSeo() != null && !giftSearch.getGiftSeo().isEmpty()) {
-			sql += " AND p.seo LIKE '%" + giftSearch.getGiftSeo() + "%'";
-		}
+		String sql = "select * from tbl_gift where 1=1";
 		sql = sql + " order by updated_date desc;";
 		Query query = entityManager.createNativeQuery(sql, Gift.class);
-		
+
 		return query.getResultList();
 	}
-	
+
 	public List<Product> searchProductGift(Integer id) {
 		String sql = "select * from tbl_product where status = true and gift_id = "+id+" limit 0,3;";
 		Query query = entityManager.createNativeQuery(sql, Product.class);
-		
+
 		return query.getResultList();
 	}
 	public List<Product> searchProductGiftAdmin(Integer id) {
 		String sql = "select * from tbl_product where status = true and gift_id = "+id;
 		Query query = entityManager.createNativeQuery(sql, Product.class);
-		
+
 		return query.getResultList();
 	}
-	
+
 	
 }

@@ -6077,7 +6077,7 @@ var Editor_Editor = /*#__PURE__*/function () {
         this.$editor.find('.note-status-output').html('<div id="note-status-output-' + noteStatusOutput + '" class="alert alert-info">' + this.lang.output.noSelection + '</div>');
         setTimeout(function () {
           external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()('#note-status-output-' + noteStatusOutput).remove();
-        }, 5000);
+        }, 1002);
       }
     }
     /**

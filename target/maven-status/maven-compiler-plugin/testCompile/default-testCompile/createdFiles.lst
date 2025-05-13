@@ -33,6 +33,7 @@ com\devpro\services\UserServiceSearCustomerByPhoneTest.class
 com\devpro\services\ProductSaleServiceSaveSaleTest$1.class
 com\devpro\services\ProductServiceIsEmptyUploadFileTest.class
 com\devpro\services\ProductSaleServiceGetSaleAdminTest.class
+com\devpro\seleniumqlsp\AdminProductTest$TestResult.class
 com\devpro\services\ProductSaleServiceGetProductSaleByIdSaleTest.class
 com\devpro\services\ProductSaleServiceSaveProductSaleTest$1.class
 com\devpro\services\CategoryServiceSearchAdminTest.class
@@ -40,6 +41,7 @@ com\devpro\services\ProductSaleServiceGetProductSaleByIdProductTest.class
 com\devpro\services\ProductSaleServiceGetSaleByIDTest.class
 com\devpro\services\ProductServiceListAllAscTest.class
 com\devpro\services\ProductSaleServiceSetDiscountActiveTest.class
+com\devpro\seleniumqlsp\AdminProductTest.class
 com\devpro\services\ProductSaleServiceCheckPTest.class
 com\devpro\services\ProductServiceListAllDescTest.class
 com\devpro\services\NewsServiceSaveTest.class

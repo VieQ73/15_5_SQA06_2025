@@ -1,0 +1,63 @@
+TestCaseID: SELE_QLSP_15 | Scenario: Kiểm tra ẩn sản phẩm | Expected: Sản phẩm được ẩn (trạng thái = 0), danh sách cập nhật | Actual: Sản phẩm được ẩn, danh sách cập nhật | Status: Pass
+TestCaseID: SELE_QLSP_04 | Scenario: Kiểm tra hiển thị danh sách sản phẩm | Expected: Danh sách sản phẩm hiển thị với các cột: #, Tên, Hình ảnh, Danh mục, Giá, Số lượng, Trạng thái | Actual: Danh sách sản phẩm hiển thị với các cột hợp lệ | Status: Pass
+TestCaseID: SELE_QLSP_13 | Scenario: Kiểm tra sửa sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Status: Pass
+TestCaseID: SELE_QLSP_23 | Scenario: Kiểm tra chuyển sang trang tiếp theo trong bảng sản phẩm | Expected: Chuyển sang trang tiếp theo, hiển thị các sản phẩm mới | Actual: Chuyển sang trang tiếp theo thành công | Status: Pass
+TestCaseID: SELE_QLSP_18 | Scenario: Kiểm tra chuyển hướng sai menu | Expected: Không chuyển đến trang Quản lý sản phẩm (/admin/listProducts hoặc /admin/addProduct) | Actual: Không chuyển hướng đến trang Quản lý sản phẩm | Status: Pass
+TestCaseID: SELE_QLSP_16 | Scenario: Kiểm tra hủy ẩn sản phẩm | Expected: Sản phẩm giữ nguyên trạng thái ban đầu | Actual: Sản phẩm giữ nguyên trạng thái ban đầu | Status: Pass
+TestCaseID: SELE_QLSP_25 | Scenario: Kiểm tra hiển thị badge trạng thái (xanh cho active, đỏ cho hidden) | Expected: Badge xanh cho trạng thái active, đỏ cho trạng thái hidden | Actual: Badge hiển thị đúng màu cho trạng thái | Status: Pass
+TestCaseID: SELE_QLSP_07 | Scenario: Kiểm tra thêm sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"#txtShortDescription + .note-editor .note-editable"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f7dd81468afbcd851ff683cf8c1e6873
+*** Element info: {Using=css selector, value=#txtShortDescription + .note-editor .note-editable} | Status: Fail
+TestCaseID: SELE_QLSP_17 | Scenario: Kiểm tra menu "Quản lý sản phẩm" xổ xuống/thu lại | Expected: Menu xổ xuống hiển thị 2 lựa chọn, nhấn lại thì thu lại | Actual: Menu xổ xuống và thu lại thành công | Status: Pass
+TestCaseID: SELE_QLSP_22 | Scenario: Kiểm tra tìm kiếm sản phẩm trong bảng | Expected: Hiển thị các sản phẩm chứa từ khóa tìm kiếm | Actual: Hiển thị các sản phẩm chứa từ khóa 'Son' | Status: Pass
+TestCaseID: SELE_QLSP_21 | Scenario: Kiểm tra sắp xếp bảng sản phẩm theo tên (A-Z) | Expected: Danh sách sản phẩm được sắp xếp theo thứ tự alphabet (A-Z) | Actual: Danh sách sản phẩm được sắp xếp A-Z | Status: Pass
+TestCaseID: SELE_QLSP_05 | Scenario: Kiểm tra hiển thị sản phẩm với trạng thái ẩn | Expected: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Actual: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Status: Pass
+TestCaseID: SELE_QLSP_15 | Scenario: Kiểm tra ẩn sản phẩm | Expected: Sản phẩm được ẩn (trạng thái = 0), danh sách cập nhật | Actual: Sản phẩm được ẩn, danh sách cập nhật | Status: Pass
+TestCaseID: SELE_QLSP_04 | Scenario: Kiểm tra hiển thị danh sách sản phẩm | Expected: Danh sách sản phẩm hiển thị với các cột: #, Tên, Hình ảnh, Danh mục, Giá, Số lượng, Trạng thái | Actual: Danh sách sản phẩm hiển thị với các cột hợp lệ | Status: Pass
+TestCaseID: SELE_QLSP_13 | Scenario: Kiểm tra sửa sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Status: Pass
+TestCaseID: SELE_QLSP_23 | Scenario: Kiểm tra chuyển sang trang tiếp theo trong bảng sản phẩm | Expected: Chuyển sang trang tiếp theo, hiển thị các sản phẩm mới | Actual: Chuyển sang trang tiếp theo thành công | Status: Pass
+TestCaseID: SELE_QLSP_18 | Scenario: Kiểm tra chuyển hướng sai menu | Expected: Không chuyển đến trang Quản lý sản phẩm (/admin/listProducts hoặc /admin/addProduct) | Actual: Không chuyển hướng đến trang Quản lý sản phẩm | Status: Pass
+TestCaseID: SELE_QLSP_16 | Scenario: Kiểm tra hủy ẩn sản phẩm | Expected: Sản phẩm giữ nguyên trạng thái ban đầu | Actual: Sản phẩm giữ nguyên trạng thái ban đầu | Status: Pass
+TestCaseID: SELE_QLSP_25 | Scenario: Kiểm tra hiển thị badge trạng thái (xanh cho active, đỏ cho hidden) | Expected: Badge xanh cho trạng thái active, đỏ cho trạng thái hidden | Actual: Badge hiển thị đúng màu cho trạng thái | Status: Pass
+TestCaseID: SELE_QLSP_07 | Scenario: Kiểm tra thêm sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"#txtShortDescription + .note-editor .note-editable"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60412}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b36c9ad23a11614030d62491e92c0f0a
+*** Element info: {Using=css selector, value=#txtShortDescription + .note-editor .note-editable} | Status: Fail
+TestCaseID: SELE_QLSP_17 | Scenario: Kiểm tra menu "Quản lý sản phẩm" xổ xuống/thu lại | Expected: Menu xổ xuống hiển thị 2 lựa chọn, nhấn lại thì thu lại | Actual: Menu xổ xuống và thu lại thành công | Status: Pass
+TestCaseID: SELE_QLSP_22 | Scenario: Kiểm tra tìm kiếm sản phẩm trong bảng | Expected: Hiển thị các sản phẩm chứa từ khóa tìm kiếm | Actual: Hiển thị các sản phẩm chứa từ khóa 'Son' | Status: Pass
+TestCaseID: SELE_QLSP_21 | Scenario: Kiểm tra sắp xếp bảng sản phẩm theo tên (A-Z) | Expected: Danh sách sản phẩm được sắp xếp theo thứ tự alphabet (A-Z) | Actual: Danh sách sản phẩm được sắp xếp A-Z | Status: Pass
+TestCaseID: SELE_QLSP_05 | Scenario: Kiểm tra hiển thị sản phẩm với trạng thái ẩn | Expected: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Actual: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Status: Pass
+TestCaseID: SELE_QLSP_07 | Scenario: Kiểm tra thêm sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Lỗi: no such element: Unable to locate element: {"method":"css selector","selector":"#txtShortDescription + .note-editor .note-editable"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'DESKTOP-N3HMP8R', ip: '192.168.0.102', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60554}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 747d8118992929c57d74e8994416de8a
+*** Element info: {Using=css selector, value=#txtShortDescription + .note-editor .note-editable} | Status: Fail
+TestCaseID: SELE_QLSP_07 | Scenario: Kiểm tra thêm sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Status: Pass
+TestCaseID: SELE_QLSP_15 | Scenario: Kiểm tra ẩn sản phẩm | Expected: Sản phẩm được ẩn (trạng thái = 0), danh sách cập nhật | Actual: Sản phẩm được ẩn, danh sách cập nhật | Status: Pass
+TestCaseID: SELE_QLSP_16 | Scenario: Kiểm tra hủy ẩn sản phẩm | Expected: Sản phẩm giữ nguyên trạng thái ban đầu | Actual: Sản phẩm giữ nguyên trạng thái ban đầu | Status: Pass
+TestCaseID: SELE_QLSP_04 | Scenario: Kiểm tra hiển thị danh sách sản phẩm | Expected: Danh sách sản phẩm hiển thị với các cột: #, Tên, Hình ảnh, Danh mục, Giá, Số lượng, Trạng thái | Actual: Danh sách sản phẩm hiển thị với các cột hợp lệ | Status: Pass
+TestCaseID: SELE_QLSP_13 | Scenario: Kiểm tra sửa sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Status: Pass
+TestCaseID: SELE_QLSP_23 | Scenario: Kiểm tra chuyển sang trang tiếp theo trong bảng sản phẩm | Expected: Chuyển sang trang tiếp theo, hiển thị các sản phẩm mới | Actual: Chuyển sang trang tiếp theo thành công | Status: Pass
+TestCaseID: SELE_QLSP_18 | Scenario: Kiểm tra chuyển hướng sai menu | Expected: Không chuyển đến trang Quản lý sản phẩm (/admin/listProducts hoặc /admin/addProduct) | Actual: Không chuyển hướng đến trang Quản lý sản phẩm | Status: Pass
+TestCaseID: SELE_QLSP_16 | Scenario: Kiểm tra hủy ẩn sản phẩm | Expected: Sản phẩm giữ nguyên trạng thái ban đầu | Actual: Sản phẩm giữ nguyên trạng thái ban đầu | Status: Pass
+TestCaseID: SELE_QLSP_25 | Scenario: Kiểm tra hiển thị badge trạng thái (xanh cho active, đỏ cho hidden) | Expected: Badge xanh cho trạng thái active, đỏ cho trạng thái hidden | Actual: Badge hiển thị đúng màu cho trạng thái | Status: Pass
+TestCaseID: SELE_QLSP_07 | Scenario: Kiểm tra thêm sản phẩm với tên rỗng | Expected: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Actual: Hiển thị thông báo lỗi: "Tên sản phẩm không được để trống!" | Status: Pass
+TestCaseID: SELE_QLSP_17 | Scenario: Kiểm tra menu "Quản lý sản phẩm" xổ xuống/thu lại | Expected: Menu xổ xuống hiển thị 2 lựa chọn, nhấn lại thì thu lại | Actual: Menu xổ xuống và thu lại thành công | Status: Pass
+TestCaseID: SELE_QLSP_22 | Scenario: Kiểm tra tìm kiếm sản phẩm trong bảng | Expected: Hiển thị các sản phẩm chứa từ khóa tìm kiếm | Actual: Hiển thị các sản phẩm chứa từ khóa 'Son' | Status: Pass
+TestCaseID: SELE_QLSP_21 | Scenario: Kiểm tra sắp xếp bảng sản phẩm theo tên (A-Z) | Expected: Danh sách sản phẩm được sắp xếp theo thứ tự alphabet (A-Z) | Actual: Danh sách sản phẩm được sắp xếp A-Z | Status: Pass
+TestCaseID: SELE_QLSP_05 | Scenario: Kiểm tra hiển thị sản phẩm với trạng thái ẩn | Expected: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Actual: Sản phẩm ẩn hiển thị với badge đỏ và biểu tượng "x" | Status: Pass
