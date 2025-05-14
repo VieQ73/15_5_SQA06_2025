@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
+import com.devpro.model.GiftSearch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,7 +27,7 @@ public class GiftController extends BaseController{
 	public String hdmh(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response)
 			throws Exception {
 		
-		List<Gift> gift = giftService.searchGift(null);
+		List<Gift> gift = giftService.searchGift(new GiftSearch() );
 		List<GiftCustom> gifts = new ArrayList<>();
 		for (Gift item : gift) {
 			List<Product> p = giftService.searchProductGift(item.getId());

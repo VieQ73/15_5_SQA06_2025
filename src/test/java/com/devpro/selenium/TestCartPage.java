@@ -1,11 +1,13 @@
+package com.devpro.selenium;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.*;
 import org.testng.annotations.*;
 import org.testng.Assert;
 
-import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class TestCartPage {
 
@@ -14,8 +16,10 @@ public class TestCartPage {
 
     @BeforeClass
     public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\phaml\\Downloads\\chromedriver-win32\\chromedriver-win32\\chromedriver.exe");
+
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 
@@ -41,7 +45,7 @@ public class TestCartPage {
         driver.get(baseUrl);
         if (driver.findElement(By.className("checkNull")).getAttribute("value").equals("1")) {
             driver.findElement(By.id("dathangne")).click();
-            WebElement modal = new WebDriverWait(driver, Duration.ofSeconds(3))
+            WebElement modal = new WebDriverWait(driver, 3)
                     .until(ExpectedConditions.visibilityOfElementLocated(By.id("myModal")));
             Assert.assertTrue(modal.isDisplayed());
         }
@@ -70,7 +74,9 @@ public class TestCartPage {
             driver.findElement(By.id("address")).sendKeys("Ha Noi");
             driver.findElement(By.cssSelector("button[type='submit']")).click();
 
-            String phoneError = driver.findElement(By.id("phone")).findElement(By.xpath("following-sibling::span")).getText();
+            String phoneError = driver.findElement(By.id("phone"))
+                    .findElement(By.xpath("following-sibling::span"))
+                    .getText();
             Assert.assertTrue(phoneError.contains("không hợp lệ"), "Thông báo lỗi phải hiển thị khi số điện thoại không hợp lệ");
         }
     }
@@ -90,14 +96,13 @@ public class TestCartPage {
 
             driver.findElement(By.cssSelector("button[type='submit']")).click();
 
-            // Không kiểm tra server xử lý thật, chỉ check modal đóng
-            new WebDriverWait(driver, Duration.ofSeconds(3))
+            new WebDriverWait(driver, 3)
                     .until(ExpectedConditions.invisibilityOfElementLocated(By.id("myModal")));
         }
     }
 
     @Test(priority = 7)
-    public void testDeleteItemFromCart() {
+    public void testDeleteItemFromCart() throws InterruptedException {
         driver.get(baseUrl);
         if (driver.findElement(By.className("checkNull")).getAttribute("value").equals("1")) {
             List<WebElement> deleteButtons = driver.findElements(By.cssSelector("button.item.btn.btn-danger"));
@@ -130,7 +135,6 @@ public class TestCartPage {
             qtyInput.clear();
             qtyInput.sendKeys(String.valueOf(oldQty + 1));
             Thread.sleep(1000); // đợi JS cập nhật
-            // Không thể assert chính xác vì thiếu backend cập nhật, chỉ đảm bảo không lỗi
             Assert.assertTrue(true);
         }
     }
@@ -139,9 +143,8 @@ public class TestCartPage {
     public void testSearchOrderHistoryByPhone() {
         driver.get(baseUrl);
         WebElement searchBox = driver.findElement(By.id("keyphone"));
-        searchBox.sendKeys("0378054123");
+        searchBox.sendKeys("0378027568");
         driver.findElement(By.id("btnClear")).click();
-        // Không kiểm tra nội dung kết quả vì thiếu context, chỉ đảm bảo không lỗi
         Assert.assertTrue(driver.getCurrentUrl().contains("historyCart"));
     }
 

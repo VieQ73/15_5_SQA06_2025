@@ -1,0 +1,628 @@
+{
+	"info": {
+		"_postman_id": "4a9c2fb3-5b0a-43ad-bcd0-198b40ee441c",
+		"name": "shop_beauty",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32362818"
+	},
+	"item": [
+		{
+			"name": "Mua hàng",
+			"item": [
+				{
+					"name": "Thêm sản phẩm vào giỏ hàng",
+					"item": [
+						{
+							"name": "thêm một sản phẩm vào giỏ hàng thành công",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 59,\n    \"soluong\": 2\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/chon-san-pham-dua-vao-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"chon-san-pham-dua-vao-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "thêm một sản phẩm vào giỏ hàng với số lượng là 1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 59,\n    \"soluong\": 1\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/chon-san-pham-dua-vao-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"chon-san-pham-dua-vao-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "thêm một sản phẩm vào giỏ hàng với số lượng là 2.5",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 59,\n    \"soluong\": 2.5\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/chon-san-pham-dua-vao-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"chon-san-pham-dua-vao-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "thêm một sản phẩm vào giỏ hàng với số lượng là 0",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 59,\n    \"soluong\": 0\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/chon-san-pham-dua-vao-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"chon-san-pham-dua-vao-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "thêm một sản phẩm vào giỏ hàng với số lượng là -1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 59,\n    \"soluong\": -1\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/chon-san-pham-dua-vao-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"chon-san-pham-dua-vao-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "thêm một sản phẩm vào giỏ hàng với số lượng là 1000",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 59,\n    \"soluong\": 1000\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/chon-san-pham-dua-vao-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"chon-san-pham-dua-vao-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "thêm một sản phẩm vào giỏ hàng với mã sản phẩm không phải là số",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": \"a59\",\n    \"soluong\": 1\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/chon-san-pham-dua-vao-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"chon-san-pham-dua-vao-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "thêm một sản phẩm vào giỏ hàng với sản phẩm không tồn tại",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 1,\n    \"soluong\": 2\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/chon-san-pham-dua-vao-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"chon-san-pham-dua-vao-gio-hang"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Xóa sản phẩm ra khỏi giỏ hàng",
+					"item": [
+						{
+							"name": "Xóa sản phẩm ra khỏi giỏ hàng với sản phẩm có trong giỏ hàng",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 59\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/xoa-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"xoa-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Xóa sản phẩm ra khỏi giỏ hàng với sản phẩm không có trong giỏ hàng",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 60\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/xoa-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"xoa-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Xóa sản phẩm ra khỏi giỏ hàng với sản phẩm không tồn tại",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 1\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/xoa-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"xoa-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Xóa sản phẩm ra khỏi giỏ hàng với sản phẩm với id =0",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 0\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/xoa-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"xoa-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Xóa sản phẩm ra khỏi giỏ hàng với sản phẩm với id = -1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": -1\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/xoa-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"xoa-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Xóa sản phẩm ra khỏi giỏ hàng với sản phẩm với id = addcaq1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": -1\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/xoa-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"xoa-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cập nhật số lượng sản phẩm trong giỏ hàng",
+					"item": [
+						{
+							"name": "Cập nhật sản phẩm có trong giỏ hàng",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 59,\n    \"soluong\": 3\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/update-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"update-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cập nhật sản phẩm có trong giỏ hàng với số lượng = 0",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 59,\n    \"soluong\": 0\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/update-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"update-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cập nhật sản phẩm có trong giỏ hàng với số lượng = -1",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 59,\n    \"soluong\": 3\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/update-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"update-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cập nhật sản phẩm có trong giỏ hàng với số lượng = 100",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 59,\n    \"soluong\": 3\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/update-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"update-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cập nhật sản phẩm có trong giỏ hàng với số lượng = 1,5",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 59,\n    \"soluong\": 1.5\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/update-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"update-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cập nhật sản phẩm có trong giỏ hàng với số lượng = 1e9",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 59,\n    \"soluong\": \"1e9\"\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/update-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"update-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cập nhật sản phẩm không có trong giỏ hàng",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 66,\n    \"soluong\": 3\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/update-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"update-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cập nhật sản phẩm không tồn tại",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 1,\n    \"soluong\": 3\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/update-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"update-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cập nhật sản phẩm với id có chữ",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": \"a59\",\n    \"soluong\": 3\n}"
+								},
+								"url": {
+									"raw": "{{SHOP_BEAUTY}}/update-sp-gio-hang",
+									"host": [
+										"{{SHOP_BEAUTY}}"
+									],
+									"path": [
+										"update-sp-gio-hang"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

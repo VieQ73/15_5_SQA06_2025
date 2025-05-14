@@ -145,7 +145,7 @@
 						<form action="${pageContext.request.contextPath}/historyCart" method="post" class="input-group">
 							<input type="text" class="form-control" style="width: 150px;"
 								placeholder="Nhập số điện thoại" name="keyphone" id="keyphone">
-							<button type="submit" id="btnClear" class="btn btn-success">
+							<button type="submit" id="btnClear btnClear1" class="btn btn-success">
 								<i class="fas fa-search"></i>
 							</button>
 						</form>

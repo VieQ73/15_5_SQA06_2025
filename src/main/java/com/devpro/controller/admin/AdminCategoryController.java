@@ -7,6 +7,7 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.devpro.model.CategorySearch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -61,7 +62,7 @@ public class AdminCategoryController {
 			model.addAttribute("messsage", "<div class=\"alert alert-success\">"
 					+ "  <strong>Success!</strong> Cập nhật thành công." + "</div>");
 		}
-		model.addAttribute("categorys", categoryService.searchAdmin(null));
+		model.addAttribute("categorys", categoryService.searchAdmin(new CategorySearch()));
 		return "back-end/listCategory";
 	}
 	

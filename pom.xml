@@ -16,7 +16,7 @@
         <junit.version>5.10.2</junit.version>
         <junit-platform.version>1.10.2</junit-platform.version>
         <mockito.version>5.11.0</mockito.version>
-        <bytebuddy.version>1.14.17</bytebuddy.version> <!-- Phiên bản mới nhất tương thích JDK 21 -->
+        <bytebuddy.version>1.10.20</bytebuddy.version>
     </properties>
 
     <parent>
@@ -147,17 +147,29 @@
             <scope>test</scope>
         </dependency>
 
+
         <!-- Byte Buddy (Rõ ràng thêm dependency để đảm bảo phiên bản mới nhất) -->
         <dependency>
             <groupId>net.bytebuddy</groupId>
             <artifactId>byte-buddy</artifactId>
             <version>${bytebuddy.version}</version>
-            <scope>test</scope>
+
         </dependency>
         <dependency>
             <groupId>net.bytebuddy</groupId>
             <artifactId>byte-buddy-agent</artifactId>
             <version>${bytebuddy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.10.2</version>
             <scope>test</scope>
         </dependency>
 
